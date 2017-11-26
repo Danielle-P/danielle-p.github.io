@@ -11,16 +11,19 @@
 </head>
 
 <body>
-  <div class="nav">
-    <ul>
-      <li>My Work</li>
-      <li>About Me </li>
-      <li>Contact</li>
-    </ul>
+  <div class="container">
+    <div class="nav">
+      <ul>
+        <li><a href="/index.html"><div id="profile-icon"></div></a></li>
+        <li><a href="/work/index.html"> My Work </a></li>
+        <li><a href="/about"> About Me </a></li>
+        <li><a href="/contact"> Contact </a></li>
+      </ul>
+    </div>
+
+    {{ content }}
+
   </div>
-
-  {{ content }}
-
 </body>
 
 </html>

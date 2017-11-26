@@ -1,31 +1,50 @@
-body
-  background-color: #1f4154
-  font-size: 14px
-  margin: 10px 30px
+$background: #1f4154
+$highlight: #648FAA
+$text: #edcbcb
+$hover-text: #B9A8AD
 
-h1,
-h2
-  color: #edcbcb
-  font-family: 'Playfair Display'
+$font-stack: 'Playfair Display', sans-serif
+
 
 h1
-  font-weight: bold
   font-size: 3em
 
 h2
-  font-weight: normal
   font-size: 1.6em
 
+a
+  color: $text
+  text-decoration: none
+
+  &:hover
+    color: $hover-text
+    transition: .4s ease
+  &:active
+    color: $hover-text
+
+html, body
+  height: 100%
+
+body
+  background-color: $background
+  font-size: 14px
+  color: $text
+  font-family: $font-stack
+
+.container
+  height: 100%
+  display: flex
+  flex-direction: column
+
 .nav
-  color: #f5e3e0
-  padding: 10px
-  border-bottom: solid 1px #95989a
+  display: flex
   justify-content: flex-end
-  width: 25%
-  margin-left: 75%
+  padding: 30px
 
   ul
-    list-style-type: none
+    padding: 10px 20px 15px
+    list-style: none
+    border-bottom: solid 1px $highlight
 
   li
     display: inline-block
@@ -36,6 +55,26 @@ h2
     &:last-of-type
       padding-right: 0
 
+  #profile-icon
+    background-color: $highlight
+    width: 25px
+    height: 25px
+    border-radius: 50%
+
 #landing-content
   display: flex
+  flex: 1
+  flex-direction: column
   justify-content: center
+  align-items: center
+  padding-bottom: 100px
+
+  h1
+    padding: 15px 0
+
+  img
+    height: 200px
+    width: 200px
+    border-radius: 50%
+    filter: grayscale(65%)
+    padding: 10px 0
