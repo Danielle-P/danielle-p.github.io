@@ -5,6 +5,11 @@ $hover-text: #B9A8AD
 
 $font-stack: 'Playfair Display', sans-serif
 
+html
+  box-sizing: border-box
+
+  *, *:before, *:after
+    box-sizing: inherit
 
 h1
   font-size: 3em
@@ -37,29 +42,35 @@ body
   flex-direction: column
 
 .nav
-  display: flex
-  justify-content: flex-end
-  padding: 30px
+  position: absolute
+  margin: 3em 0 0 2.5em
+  padding: 1em
+  background-color: $highlight
+  width: 5em
+  border-radius: 2.5em
 
   ul
-    padding: 10px 20px 15px
     list-style: none
-    border-bottom: solid 1px $highlight
+    padding: 0.75em 0
+
+    &:first-of-type
+      padding: 0.15em
 
   li
-    display: inline-block
     text-align: center
-    padding-right: 40px
-    font-size: 1.1em
 
-    &:last-of-type
-      padding-right: 0
+  .material-icons
+    font-size: 2.5em
 
-  #profile-icon
-    background-color: $highlight
-    width: 25px
-    height: 25px
-    border-radius: 50%
+  .nav-text
+    font-size: 0.8em
+
+
+  // #profile-icon
+  //   background-color: $highlight
+  //   width: 25px
+  //   height: 25px
+  //   border-radius: 50%
 
 #landing-content
   display: flex
@@ -73,8 +84,7 @@ body
     padding: 15px 0
 
   img
-    height: 200px
-    width: 200px
+    height: 14em
+    width: 14em
     border-radius: 50%
     filter: grayscale(65%)
-    padding: 10px 0
