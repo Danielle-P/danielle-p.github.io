@@ -7,43 +7,59 @@ $nav-hover: #6e9dba
 $font-main: 'Titillium Web', sans-serif
 $font-title: 'Volkhorn SC', serif
 
+$page-margin: 50px 40px
+
+
 html
   box-sizing: border-box
 
   *, *:before, *:after
     box-sizing: inherit
 
-h1
-  font-family: $font-title
-  font-size: 3em
-
-h2
-  font-size: 1.6em
-
-a
-  color: $text
-  text-decoration: none
-
-  &:hover
-    color: $hover-text
-    transition: .4s ease
-  &:active
-    color: $hover-text
-
 html, body
   height: 100%
 
+//General styling
 body
   background-color: $background
   font-size: 14px
   color: $text
   font-family: $font-main
 
-.container
+  h1
+    margin: $page-margin
+    padding-bottom: 0.2em
+    font-family: $font-title
+    font-size: 3em
+
+  h2
+    font-size: 1.6em
+    padding-bottom: 1.1em
+
+  p
+    padding-bottom: 1em
+
+  a
+    color: $text
+    text-decoration: none
+
+    &:hover
+      color: $hover-text
+      transition: .4s ease
+    &:active
+      color: $hover-text
+
+.tiles-container
+  margin: $page-margin
   height: 100%
   display: flex
-  flex-direction: column
+  flex-direction: row
+  flex-flow: nowrap
 
+  .tiles-container > *
+    flex: 1 100%
+
+//Nav
 .nav
   $width: 4.2em
   $margin: 2em
@@ -64,7 +80,6 @@ body
       background-color: $nav-hover
       border-radius: $width / 2
 
-
   li
   text-align: center
   display: inline
@@ -78,21 +93,48 @@ body
   a:hover
     color: $text
 
+    // &:active
+    //   background-color: $nav-hover
+    //   border-radius: $width / 2
 
+//Pages
 #landing-content
+  height: 100%
   display: flex
-  flex: 1
   flex-direction: column
   justify-content: center
   align-items: center
 
   h1
+    margin: 0
     padding: 15px 0
 
   h2
+    margin: 0
     font-family: $font-title
+
   img
     height: 14em
     width: 14em
     border-radius: 50%
     filter: grayscale(50%)
+
+#portfolio
+  .tiles-container
+    .info-tile
+      //width: 50%
+      //height: auto
+      flex: 2
+      padding: 1.5em
+      background-color: rgba(255,255,255, 0.2)
+      margin-right: 30px
+
+    .image-tile
+      // width: 50%
+      // height: auto
+      flex: 1
+      background-color: rgba(255,255,255, 0.4)
+
+    img
+      width: 100%
+

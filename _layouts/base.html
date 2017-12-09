@@ -12,36 +12,38 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="nav">
-        <ul>
-          <a href="/index.html">
-            <li> <i class="material-icons">home</i> </li>
-            <li class="nav-text"> Home </li>
-            </a>
-        </ul>
-        <ul>
-          <a href="/work/index.html">
-            <li><i class="material-icons">crop_original</i> </li>
-            <li class="nav-text"> Portfolio </li>
+    <div class="nav">
+      <ul>
+        <a href="/index.html">
+          <li> <i class="material-icons">home</i> </li>
+          <li class="nav-text"> Home </li>
           </a>
-        </ul>
-        <ul>
-          <a href="/about">
-            <li><i class="material-icons">face</i> </li>
-            <li class="nav-text"> About </li>
-          </a>
-        </ul>
-        <ul>
-          <a href="/contact">
-            <li><i class="material-icons">chat_bubble_outline</i></li>
-            <li class="nav-text"> Contact </li>
-          </a>
-        </ul>
-      </div>
-
-      {{ content }}
-
+      </ul>
+      <ul>
+        <a href="/portfolio/index.html">
+          <li><i class="material-icons">crop_original</i> </li>
+          <li class="nav-text"> Portfolio </li>
+        </a>
+      </ul>
+      <ul>
+        <a href="/about">
+          <li><i class="material-icons">face</i> </li>
+          <li class="nav-text"> About </li>
+        </a>
+      </ul>
+      <ul>
+        <a href="/contact">
+          <li><i class="material-icons">chat_bubble_outline</i></li>
+          <li class="nav-text"> Contact </li>
+        </a>
+      </ul>
     </div>
+
+    {{ content }}
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="text/javascript">
+      var s = skrollr.init();
+      </script>
   </body>
 </html>
