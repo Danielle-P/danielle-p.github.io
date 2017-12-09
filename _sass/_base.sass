@@ -1,9 +1,11 @@
-$background: #1f4154
-$highlight: #648FAA
+$background: #1b3849 //#1f4154
+$highlight: #567b92 //#648FAA
 $text: #edcbcb
 $hover-text: #B9A8AD
+$nav-hover: #6e9dba
 
-$font-stack: 'Playfair Display', sans-serif
+$font-main: 'Titillium Web', sans-serif
+$font-title: 'Volkhorn SC', serif
 
 html
   box-sizing: border-box
@@ -12,6 +14,7 @@ html
     box-sizing: inherit
 
 h1
+  font-family: $font-title
   font-size: 3em
 
 h2
@@ -34,7 +37,7 @@ body
   background-color: $background
   font-size: 14px
   color: $text
-  font-family: $font-stack
+  font-family: $font-main
 
 .container
   height: 100%
@@ -42,35 +45,39 @@ body
   flex-direction: column
 
 .nav
+  $width: 4.2em
+  $margin: 2em
   position: absolute
-  margin: 3em 0 0 2.5em
-  padding: 1em
+  top: $margin
+  left: auto
+  right: $margin
+  padding: 0.3em
   background-color: $highlight
-  width: 5em
-  border-radius: 2.5em
+  width: $width
+  border-radius: $width / 2
 
   ul
     list-style: none
     padding: 0.75em 0
 
-    &:first-of-type
-      padding: 0.15em
+    &:hover
+      background-color: $nav-hover
+      border-radius: $width / 2
+
 
   li
-    text-align: center
+  text-align: center
+  display: inline
 
   .material-icons
     font-size: 2.5em
 
   .nav-text
-    font-size: 0.8em
+    font-size: 0.7em
 
+  a:hover
+    color: $text
 
-  // #profile-icon
-  //   background-color: $highlight
-  //   width: 25px
-  //   height: 25px
-  //   border-radius: 50%
 
 #landing-content
   display: flex
@@ -78,13 +85,14 @@ body
   flex-direction: column
   justify-content: center
   align-items: center
-  padding-bottom: 100px
 
   h1
     padding: 15px 0
 
+  h2
+    font-family: $font-title
   img
     height: 14em
     width: 14em
     border-radius: 50%
-    filter: grayscale(65%)
+    filter: grayscale(50%)
