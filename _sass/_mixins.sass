@@ -1,0 +1,23 @@
+=transition-ease($speed: 0.25s)
+  -webkit-transition: $speed ease-in-out
+  -moz-transition: $speed ease-in-out
+  -o-transition: $speed ease-in-out
+  transition: $speed ease-in-out
+
+=transition-transform-ease($speed: 0.5s)
+  -webkit-transition: transform $speed ease-in-out
+  -moz-transition: transform $speed ease-in-out
+  -o-transition: transform $speed ease-in-out
+  transition: transform $speed ease-in-out
+
+=transform-rotate($rotate: rotate(0deg))
+  -webkit-transform: $rotate
+  -moz-transform: $rotate
+  -o-transform: $rotate
+  transform: $rotate
+
+=fade-on-load($speed: 1s)
+  animation: fadein $speed
+  -moz-animation: fadein $speed
+  -webkit-animation: fadein $speed
+  -o-animation: fadein $speed
