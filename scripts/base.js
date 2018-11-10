@@ -7,13 +7,16 @@
   var navPanel = $('nav-panel')
   var menuIcon = $('nav-icon')
 
-  navButton.addEventListener('click', function() {
-    if (navPanel.classList.contains('active')) {
-      navPanel.classList.remove('active')
-      menuIcon.classList.remove('open')
-    } else {
-      navPanel.classList.add('active')
-      menuIcon.classList.add('open')
-    }
-  })
+  if (navButton) {
+    navButton.addEventListener('click', function() {
+      if (navPanel.classList.contains('show')) {
+        navPanel.classList.remove('show')
+        menuIcon.classList.remove('open')
+      } else {
+        navPanel.classList.add('show')
+        menuIcon.classList.add('open')
+      }
+    })
+  } else {
+  }
 })()
