@@ -5,7 +5,7 @@
   -o-transition: $speed ease-in-out
   transition: $speed ease-in-out
 
-=transition-transform-ease($speed: 0.5s)
+=transform-ease($speed: 0.5s)
   -webkit-transition: transform $speed ease-in-out
   -moz-transition: transform $speed ease-in-out
   -o-transition: transform $speed ease-in-out
@@ -23,37 +23,18 @@
   -webkit-animation: fadein $speed
   -o-animation: fadein $speed
 
-  //Styling
-=image-shadow()
-  box-shadow: 0px 0px 7px rgba(0,0,0,0.6)
-
-=body-font-style($font-size: 1em)
-  color: $body-text
-  font-family: $body-font
-  font-size: $font-size
-  line-height: 1.4em
-
-=header-font-style($font-size: 4em)
+//Styling
+=header-font-style($font-size: 4em, $margin-bottom: 0.8em)
   font-family: $header-font
   color: $heading-text
   font-size: $font-size
   font-weight: 700
+  margin-bottom: $margin-bottom
 
-=project-journey-stage
-  position: absolute
-  height: 30px
-  width: 30px
-  border-radius: 50%
-  background-color: $highlight
-  border: 7px solid $background
-
-  &:before
-    content: ''
-    position: absolute
-    border-radius: 50%
-    height: 34px
-    width: 34px
-    border: 2px solid $highlight
-    top: -9px
-    left: -9px
+=body-font-style($font-size: 1em, $margin-bottom: 0.6em)
+  color: $body-text
+  font-family: $body-font
+  font-size: $font-size
+  line-height: 1.4em
+  margin-bottom: $margin-bottom
 

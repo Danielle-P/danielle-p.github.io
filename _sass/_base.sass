@@ -19,24 +19,20 @@ body
 
 h1
   +header-font-style
-  margin-bottom: 0.8em
 
 h2
   +body-font-style(1.4em)
-  margin-bottom: 0.6em
 
 h3
   +body-font-style(1.2em)
-  margin-bottom: 0.6em
 
 p
-  +body-font-style
+  +body-font-style(...,1em)
   padding-bottom: 1em
-  margin-bottom: 1.4em
 
 a
-  text-transform: uppercase
   color: $highlight
+  text-transform: uppercase
   text-decoration: none
 
   &:hover, &:active, &:focus
@@ -46,100 +42,100 @@ a
   &:focus
     outline-color: $background
     border-bottom: 1px dotted $hover-highlight
+
 ul
-  +body-font-style
-  margin-bottom: 0.8em
+  +body-font-style(..., 0.8em)
 
 button
-  border: none
   background: $highlight
+  border: none
   cursor: pointer
 
   &:focus
     outline: 0
+
   &:hover
-    transition: .25s ease
     background: $hover-highlight
+    transition: .25s ease
 
 // Navigation
 .nav-button
-  position: fixed
-  right: 0
   width: 6em
   height: 6em
+  position: fixed
+  right: 0
   margin: 2.2em 3.5em
   border-radius: 50%
-  z-index: 2
+  z-index: 4
 
   .menu-label, .hide-label
     display: none
 
     &.show
+      display: block
       color: $white
       text-transform: uppercase
       font-size: 0.85em
-      display: block
 
 .nav-icon
   width: 56%
   height: 1.4em
   margin: 0.2em auto 1.2em
   +transform-rotate
-  +transition-transform-ease(0.5s)
 
   span
+    width: 100%
+    height: 3px
     display: block
     position: absolute
-    height: 3px
-    width: 100%
     background: $white
     border-radius: 10px
     +transform-rotate
-    +transition-transform-ease(0.25s)
+    +transform-ease(0.25s)
 
-  span#icon-top
+  #icon-top
     top: 3px
 
-  span#icon-middle
+  #icon-middle
     top: 12px
 
-  span#icon-bottom
+  #icon-bottom
     top: 21px
 
-  &.open span#icon-top
+  &.open #icon-top
+    width: 64%
     top: 3px
     left: 39%
-    width: 64%
     +transform-rotate(rotate(45deg))
 
-  &.open span#icon-middle
+  &.open #icon-middle
+    width: 64%
     top: 3px
     left: -3%
-    width: 64%
     +transform-rotate(rotate(-45deg))
 
-  &.open span#icon-bottom
+  &.open #icon-bottom
+    left: 7.5%
     top: 9px
     width: 85%
-    left: 7.5%
     +transform-rotate(rotate(90deg))
 
 .nav-panel
-  display: flex
-  position: absolute
   width: 100%
   height: 7.2em
+  display: flex
+  position: absolute
   top: -8.2em
+  align-items: center
   padding-right: 3em
   background: rgba(17,40,72,.98)//rgba(0,67,96,.97)//rgba(4,19,41,.97)//rgba(10,32,63,.97)
   box-shadow: 0 3px 32px rgba(0,0,0,.4)
-  align-items: center
   +transition-ease(.3s)
 
   ul
+    width: 100%
     display: flex
     flex-direction: row
-    width: 100%
     justify-content: space-evenly
     padding: 0 8em 0 4em
     text-decoration: none
@@ -147,8 +143,8 @@ button
     font-size: 1.1em
 
 .nav-panel.show
-  top: 0
   position: fixed
+  top: 0
 
 //Panels
 .panel
@@ -158,9 +154,9 @@ button
     flex: 1
 
   .image-panel
+    max-width: 100%
     display: flex
     flex: 1
-    max-width: 100%
     padding: 0 1.5em
 
     a:focus
@@ -170,7 +166,7 @@ button
       img
         width: 100%
         height: auto
-        +image-shadow
+        box-shadow: 0px 0px 7px rgba(0,0,0,0.6)
 
 #landing
   height: 100%
@@ -183,28 +179,28 @@ button
 
   h1, h2
     display: flex
-    +fade-on-load(1s)
+    +fade-on-load(2s)
 
   a
     font-size: 1.2em
 
   .profile-photo
-    border-radius: 50%
     width: 9em
     height: auto
     margin: 2em
-    -webkit-filter: grayscale(40%)
+    border-radius: 50%
     filter: grayscale(40%)
-    +fade-on-load(2s)
+    -webkit-filter: grayscale(40%)
+    +fade-on-load(1s)
 
   .landing-nav
-    display: flex
     width: 100%
+    display: flex
     flex-direction: row
     justify-content: space-between
     padding: 10em 10em 3em
     font-size: 1.1em
-    +fade-on-load(2s)
+    +fade-on-load(2.5s)
 
   @keyframes fadein
     from
@@ -247,10 +243,13 @@ button
     color: lighten($hover-highlight, 10%)
 
   .selectable-image
+
     &:first-of-type
       z-index: 1
+
     &:nth-of-type(2)
       z-index: 2
+
     &:last-of-type
       z-index: 3
 
@@ -264,12 +263,30 @@ button
 
   .project-journey
     .stage-1, .stage-2, .stage-3, .stage-4
-      border-top: 1px dotted
-      border-color: $highlight
+      min-height: 30em
+      display: flex
       margin: 0
       padding: 2em 1em
-      display: flex
-      min-height: 30em
+      border-top: 1px dotted
+      border-color: $highlight
+
+      %journey-stage-marker
+        position: absolute
+        height: 30px
+        width: 30px
+        border-radius: 50%
+        background-color: $highlight
+        border: 7px solid $background
+
+        &:before
+          content: ''
+          position: absolute
+          border-radius: 50%
+          height: 34px
+          width: 34px
+          border: 2px solid $highlight
+          top: -9px
+          left: -9px
 
       .info-section
         padding: 0 1em
@@ -279,39 +296,39 @@ button
 
         .project-image
           flex: 1
+          justify-content: center
           background-size: contain
           background-repeat: no-repeat
           background-position: center
-          justify-content: center
 
     .stage-1, .stage-3
-      border-left: 1px dotted $highlight
-      border-top-left-radius: 2em
-      border-bottom-left-radius: 2em
       margin-right: 2em
       padding-right: 0
       padding-left: 2em
+      border-left: 1px dotted $highlight
+      border-top-left-radius: 2em
+      border-bottom-left-radius: 2em
 
       .journey-stage
-        +project-journey-stage
+        @extend %journey-stage-marker
         left: 3em
 
     .stage-1
+      padding-top: 0
       border-top: 0
       border-top-right-radius: 0
       border-top-left-radius: 0
-      padding-top: 0
 
     .stage-2, .stage-4
+      margin-left: 2em
+      padding-right: 2em
+      padding-left: 0
       border-right: 1px dotted $highlight
       border-top-right-radius: 2em
       border-bottom-right-radius: 2em
-      margin-left: 2em
-      padding-left: 0
-      padding-right: 2em
 
       .journey-stage
-        +project-journey-stage
+        @extend %journey-stage-marker
         right: 3em
 
     .stage-4
