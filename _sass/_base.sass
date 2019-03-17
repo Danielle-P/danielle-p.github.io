@@ -21,42 +21,42 @@ h1
   +header-font-style
 
 h2
-  +body-font-style(1.4em)
+  +body-font-style($font-size: 1.4em)
 
 h3
-  +body-font-style(1.2em)
+  +body-font-style($font-size: 1.2em)
 
 p
-  +body-font-style(...,1em)
+  +body-font-style($margin-bottom: 1em)
   padding-bottom: 1em
 
 a
   color: $highlight
   text-transform: uppercase
   text-decoration: none
+  +transition-ease(.2s)
 
   &:hover, &:active, &:focus
     color: $hover-highlight
-    transition: .2s ease
 
   &:focus
     outline-color: $background
     border-bottom: 1px dotted $hover-highlight
 
 ul
-  +body-font-style(..., 0.8em)
+  +body-font-style($margin-bottom: 0.8em)
 
 button
   background: $highlight
   border: none
   cursor: pointer
+  +transition-ease
 
   &:focus
     outline: 0
 
-  &:hover
+  &:hover, &:focus
     background: $hover-highlight
-    transition: .25s ease
 
 // Navigation
 .nav-button
@@ -81,7 +81,7 @@ button
   width: 56%
   height: 1.4em
   margin: 0.2em auto 1.2em
-  +transform-rotate
+  +transform($transform: rotate(0deg))
 
   span
     width: 100%
@@ -90,8 +90,7 @@ button
     position: absolute
     background: $white
     border-radius: 10px
-    +transform-rotate
-    +transform-ease(0.25s)
+    +transition-ease(0.25s)
 
   #icon-top
     top: 3px
@@ -106,19 +105,19 @@ button
     width: 64%
     top: 3px
     left: 39%
-    +transform-rotate(rotate(45deg))
+    +transform($transform: rotate(45deg))
 
   &.open #icon-middle
     width: 64%
     top: 3px
     left: -3%
-    +transform-rotate(rotate(-45deg))
+    +transform($transform: rotate(-45deg))
 
   &.open #icon-bottom
     left: 7.5%
     top: 9px
     width: 85%
-    +transform-rotate(rotate(90deg))
+    +transform($transform: rotate(90deg))
 
 .nav-panel
   width: 100%
@@ -166,7 +165,7 @@ button
       img
         width: 100%
         height: auto
-        box-shadow: 0px 0px 7px rgba(0,0,0,0.6)
+        box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.6)
 
 #landing
   height: 100%
@@ -254,15 +253,15 @@ button
       z-index: 3
 
     &:hover
-      transform: translateY(-0.4em) scale(1.02)
-      +transition-ease()
+      +transform (translateY(-0.4em) scale(1.02))
+      +transition-ease
 
 #projects
   .nav-panel .portfolio
     color: lighten($hover-highlight, 10%)
 
   .project-journey
-    .stage-1, .stage-2, .stage-3, .stage-4
+    .stage
       min-height: 30em
       display: flex
       margin: 0
@@ -291,17 +290,14 @@ button
       .info-section
         padding: 0 1em
 
-      .image-panel
+      .image-panel .project-image
         flex: 1
+        justify-content: center
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
 
-        .project-image
-          flex: 1
-          justify-content: center
-          background-size: contain
-          background-repeat: no-repeat
-          background-position: center
-
-    .stage-1, .stage-3
+    .stage.odd
       margin-right: 2em
       padding-right: 0
       padding-left: 2em
@@ -313,13 +309,7 @@ button
         @extend %journey-stage-marker
         left: 3em
 
-    .stage-1
-      padding-top: 0
-      border-top: 0
-      border-top-right-radius: 0
-      border-top-left-radius: 0
-
-    .stage-2, .stage-4
+    .stage.even
       margin-left: 2em
       padding-right: 2em
       padding-left: 0
@@ -331,21 +321,29 @@ button
         @extend %journey-stage-marker
         right: 3em
 
-    .stage-4
+    .stage:first-of-type
+      padding-top: 0
+      border-top: 0
+      border-top-right-radius: 0
+      border-top-left-radius: 0
+
+      .project-image
+        background-image: url("/images/test-image.png")
+
+    .stage:nth-of-type(2)
+      .project-image
+        background-image: url("/images/test-image.png")
+
+    .stage:nth-of-type(3)
+      .project-image
+        background-image: url("/images/test-image.png")
+
+    .stage:last-of-type
       border-bottom-right-radius: 0
       border-bottom-left-radius: 0
 
-    .stage-1 .project-image
-      background-image: url("/images/test-image.png")
-
-    .stage-2 .project-image
-      background-image: url("/images/test-image.png")
-
-    .stage-3 .project-image
-      background-image: url("/images/test-image.png")
-
-    .stage-4 .project-image
-      background-image: url("/images/test-image.png")
+      .project-image
+        background-image: url("/images/test-image.png")
 
 #contact .nav-panel .contact
   color: lighten($hover-highlight, 10%)
