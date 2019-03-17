@@ -50,13 +50,14 @@ button
   background: $highlight
   border: none
   cursor: pointer
-  +transition-ease
 
   &:focus
     outline: 0
 
   &:hover, &:focus
     background: $hover-highlight
+    +transition-ease
+
 
 // Navigation
 .nav-button
@@ -276,6 +277,7 @@ button
         border-radius: 50%
         background-color: $highlight
         border: 7px solid $background
+        z-index: 2
 
         &:before
           content: ''
@@ -305,7 +307,7 @@ button
       border-top-left-radius: 2em
       border-bottom-left-radius: 2em
 
-      .journey-stage
+      .journey-marker
         @extend %journey-stage-marker
         left: 3em
 
@@ -317,7 +319,7 @@ button
       border-top-right-radius: 2em
       border-bottom-right-radius: 2em
 
-      .journey-stage
+      .journey-marker
         @extend %journey-stage-marker
         right: 3em
 
@@ -344,6 +346,26 @@ button
 
       .project-image
         background-image: url("/images/test-image.png")
+
+#projects .svg-test
+
+  .stage
+    padding: 0
+
+    &.odd, &.even
+      padding: 0
+
+  .panel
+    flex: 1
+    padding: 0 1em 1em
+
+  .journey-lines
+    position: absolute
+    width: 5px
+    padding-top: 17px
+    fill: none
+    stroke-width: 5px
+    stroke: $white
 
 #contact .nav-panel .contact
   color: lighten($hover-highlight, 10%)
