@@ -5,7 +5,7 @@ function SVGLineDraw() {
 
   var journeyMarkers = getElements('journey-marker')
 
-  var svgElements = ['line-1', 'line-2', 'line-3', 'line-4'].map(function(id) {
+  var svgElements = ['line-1'].map(function(id) {
     var svgElement = document.getElementById(id)
     return svgElement
   })
@@ -25,8 +25,14 @@ function SVGLineDraw() {
   })
 
   svgElements.forEach(function(element, index) {
-    element.style.left = markerXPositions[index] + 14
-    element.style.height = markerYPositions[index + 1] - markerYPositions[index]
+    var margin = 48
+    var cPathValues = ' c0 50 0 40 100 40 '
+    var mPathValues = 'M' + (markerXPositions[index] - margin) + ' 0'
+    var vPathValues =
+      'v' + (markerYPositions[index + 1] - markerYPositions[index] - 60)
+    var hPathValues = 'h ' + (markerXPositions[index + 1] - 92 - margin)
+    var drawPath = mPathValues + vPathValues + cPathValues + hPathValues
+    element.setAttribute('d', drawPath)
   })
 }
 
