@@ -265,10 +265,8 @@ button
     .stage
       min-height: 30em
       display: flex
-      margin: 0
+      margin: 1.5em 0
       padding: 2em 1em
-      border-top: 1px dotted
-      border-color: $highlight
 
       %journey-stage-marker
         position: absolute
@@ -299,36 +297,15 @@ button
         background-repeat: no-repeat
         background-position: center
 
-    .stage.odd
-      margin-right: 2em
-      padding-right: 0
-      padding-left: 2em
-      border-left: 1px dotted $highlight
-      border-top-left-radius: 2em
-      border-bottom-left-radius: 2em
+    .stage.odd .journey-marker
+      @extend %journey-stage-marker
+      left: 3em
 
-      .journey-marker
-        @extend %journey-stage-marker
-        left: 3em
-
-    .stage.even
-      margin-left: 2em
-      padding-right: 2em
-      padding-left: 0
-      border-right: 1px dotted $highlight
-      border-top-right-radius: 2em
-      border-bottom-right-radius: 2em
-
-      .journey-marker
-        @extend %journey-stage-marker
-        right: 3em
+    .stage.even .journey-marker
+      @extend %journey-stage-marker
+      right: 3em
 
     .stage:first-of-type
-      padding-top: 0
-      border-top: 0
-      border-top-right-radius: 0
-      border-top-left-radius: 0
-
       .project-image
         background-image: url("/images/test-image.png")
 
@@ -361,11 +338,13 @@ button
 
   .journey-lines
     position: absolute
-    width: 5px
     padding-top: 17px
     fill: none
-    stroke-width: 5px
-    stroke: $white
+    stroke-width: 1px
+    stroke: $highlight
+    width: 100% // NEED TO REMOVE THIS AND SET SVG WIDTH TO AUTO
+    //height: -webkit-fill-available
+    height: 1000px
 
 #contact .nav-panel .contact
   color: lighten($hover-highlight, 10%)
