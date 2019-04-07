@@ -12,13 +12,10 @@ function SVGLineDraw() {
     return svgElement
   })
 
-  console.log(svgElements)
-
   var panelHeights = panels.map(function(element) {
     var panelHeight = element.clientHeight
     return panelHeight
   })
-  console.log('panel heights', panelHeights)
 
   var markerXPositions = journeyMarkers.map(function(element) {
     var markerPosition = element.getBoundingClientRect()
@@ -36,7 +33,7 @@ function SVGLineDraw() {
   svgElements.forEach(function(element, index, arr) {
     if (element.classList.contains('odd')) {
       var margin = 48
-      var cPathValues = ' c0 50 0 40 100 40 '
+      var cPathValues = index === arr.length - 1 ? '' : ' c0 50 0 40 100 40 '
       var mPathValues = 'M' + (markerXPositions[index] - margin) + ' 0 '
       var vPathValues = 'v' + (panelHeights[index] - 60)
 
@@ -57,7 +54,7 @@ function SVGLineDraw() {
       element.setAttribute('d', drawPath)
     } else {
       var margin = 48
-      var cPathValues = ' c0 50 0 40 -100 40 '
+      var cPathValues = index === arr.length - 1 ? '' : ' c0 50 0 40 -100 40 '
       var mPathValues = 'M' + (markerXPositions[index] - margin) + ' 0 '
       var vPathValues = 'v' + (panelHeights[index] - 60)
 
@@ -66,11 +63,11 @@ function SVGLineDraw() {
           ? ''
           : 'h' +
             (markerXPositions[index + 1] -
-              markerXPositions[index] -
-              margin * 2 -
+              markerXPositions[index] +
+              margin * 2 +
               30)
 
-      var c2PathValues = index === arr.length - 1 ? '' : ' c50 0 0 60 40 40 '
+      var c2PathValues = index === arr.length - 1 ? '' : ' c-50 0 0 60 -50 60 '
 
       var drawPath =
         mPathValues + vPathValues + cPathValues + hPathValues + c2PathValues
