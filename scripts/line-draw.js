@@ -1,33 +1,68 @@
+function createQueue(duration) {
+  // list of { id: 0, triggerAnimation: function, hasCompleted: true }
+  var animationList = []
+
+  function triggerNextAnimation() {
+    // loop over list until one returns true
+    animationList.some(function(animationObj) {
+      if (animationObj.hasCompleted) {
+        return false
+      } else {
+        animationObj.triggerAnimation()
+
+        function whenComplete() {
+          animationObj.hasCompleted = true
+          triggerNextAnimation()
+        }
+
+        setTimeout(whenComplete, duration)
+
+        return true
+      }
+    })
+  }
+
+  return function(id, triggerAnimation) {
+    if (
+      animationList.some(function(animationObj) {
+        return animationObj.id === id
+      })
+    ) {
+      // do nothing
+    } else {
+      animationList.push({id, triggerAnimation, hasCompleted: false})
+      triggerNextAnimation()
+    }
+  }
+}
+
+////////////////////////
+
+var addAnimation = createQueue(5000)
+
 function SVGLineDraw() {
   function getElements(className) {
     return Array.from(document.getElementsByClassName(className))
   }
 
-  //var svgElements = getElements('svg')
-  var journeyMarkers = getElements('journey-marker')
   var panels = getElements('panel')
+  var journeyMarkers = getElements('journey-marker')
 
-  var svgElements = ['line-1', 'line-2', 'line-3'].map(function(id) {
-    var svgElement = document.getElementById(id)
-    return svgElement
-  })
-
-  var panelHeights = panels.map(function(element) {
+  var panelHeights = panels.map(element => {
     var panelHeight = element.clientHeight
     return panelHeight
   })
 
-  var markerXPositions = journeyMarkers.map(function(element) {
-    var markerPosition = element.getBoundingClientRect()
-    var markerXPosition = markerPosition.x
-    return markerXPosition
+  var svgElements = ['line-1', 'line-2', 'line-3'].map(id => {
+    return document.getElementById(id)
   })
-  console.log(markerXPositions)
+
+  var markerXPositions = journeyMarkers.map(function(element) {
+    return element.getBoundingClientRect().x
+  })
 
   var markerYPositions = journeyMarkers.map(function(element) {
-    var markerPosition = element.getBoundingClientRect()
-    var markerYPosition = markerPosition.y
-    return markerYPosition
+    return element.getBoundingClientRect().y
   })
 
   svgElements.forEach(function(element, index, arr) {
@@ -74,8 +109,22 @@ function SVGLineDraw() {
 
       element.setAttribute('d', drawPath)
     }
+
+    var pathLength = element.getTotalLength()
+
+    Object.assign(element.style, {
+      strokeDashoffset: pathLength,
+      strokeDasharray: pathLength,
+    })
+
+    if (window.pageYOffset > markerYPositions[index]) {
+      addAnimation(index, function() {
+        element.classList.add('draw')
+      })
+    }
   })
 }
 
 window.addEventListener('DOMContentLoaded', SVGLineDraw)
 window.addEventListener('resize', SVGLineDraw)
+window.addEventListener('scroll', SVGLineDraw)
