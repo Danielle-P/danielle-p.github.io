@@ -1,0 +1,324 @@
+//General
+body
+  background-color: var(--color-bg)
+  color: var(--text-color)
+  font-family: $body-font
+  font-size: 16px
+
+body[data-theme="light"], body[data-theme="dark"]
+  +transition-ease(1s)
+
+.page-content
+  padding: 4em 6em
+
+h1
+  +header-font-style
+
+h2
+  +body-font-style($font-size: 1.4em)
+
+h3
+  +body-font-style($font-size: 1.2em)
+
+p
+  +body-font-style($margin-bottom: 1em)
+  padding-bottom: 1em
+
+a
+  color: $highlight
+  text-transform: uppercase
+  text-decoration: none
+  +transition-ease(.2s)
+
+  &:hover, &:active, &:focus
+    color: $hover-highlight
+
+  &:focus
+    outline-color: var(--color-bg)
+    border-bottom: 1px dotted $hover-highlight
+
+ul
+  +body-font-style($margin-bottom: 0.8em)
+
+button
+  background: $highlight
+  border: none
+  cursor: pointer
+
+  &:focus
+    outline: 0
+
+  &:hover, &:focus
+    background: $hover-highlight
+    +transition-ease
+
+// Navigation
+.nav-button
+  width: 5em
+  height: 5em
+  position: fixed
+  right: 0
+  margin: 2.8em 3em
+  border-radius: 50%
+  z-index: 4
+
+  .menu-label, .hide-label
+    display: none
+
+    &.show
+      display: block
+      color: $white
+      text-transform: uppercase
+      font-size: 0.85em
+
+.nav-icon
+  width: 56%
+  height: 1em
+  margin: 0.2em auto 1.2em
+  +transform($transform: rotate(0deg))
+
+  span
+    width: 100%
+    height: 2px
+    display: block
+    position: absolute
+    background: $white
+    border-radius: 10px
+    +transition-ease(0.25s)
+
+  #icon-top
+    top: 3px
+
+  #icon-middle
+    top: 10px
+
+  #icon-bottom
+    top: 17px
+
+  &.open #icon-top
+    width: 64%
+    top: 3px
+    left: 39%
+    +transform($transform: rotate(45deg))
+
+  &.open #icon-middle
+    width: 64%
+    top: 3px
+    left: -3%
+    +transform($transform: rotate(-45deg))
+
+  &.open #icon-bottom
+    left: 7.5%
+    top: 9px
+    width: 85%
+    +transform($transform: rotate(90deg))
+
+.nav-panel
+  width: 100%
+  height: 7.2em
+  display: flex
+  position: absolute
+  top: -8.2em
+  align-items: center
+  padding: 0 2.2em
+  background: rgba(17,40,72,.99)//rgba(0,67,96,.97)//rgba(4,19,41,.97)//rgba(10,32,63,.97)
+  box-shadow: 0 3px 32px rgba(0,0,0,.4)
+  +transition-ease(.3s)
+  z-index: 1
+
+  .home
+    width: 5em
+    height: 5em
+    border-radius: 50%
+    background: url('/../images/profile-photo.jpg') no-repeat
+    background-size: contain
+    -webkit-filter: sepia(.7)
+    filter: sepia(.7)
+    border: 0.2em solid $highlight
+    +transform($transform: scaleX(-1))
+
+  ul
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    padding: 0 8em 0 4em
+    margin-bottom: 0
+    font-size: 1.1em
+    color: $highlight
+    opacity: 1
+
+.nav-panel.show
+  position: fixed
+  top: 0
+
+//Toggle dark/light theme
+#theme-switch
+  position: absolute
+  right: 0
+  margin: 0 2.2em 1.5em
+
+.toggle-switch
+  position: relative
+  display: inline-block
+  width: 45px
+  height: 25px
+
+.switch input
+  opacity: 0
+  width: 0
+  height: 0
+
+.slider
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  cursor: pointer
+  background-color: $hover-highlight
+  border-radius: 34px
+  font-family: IcoFont
+  +transition-ease
+
+.slider:before
+  position: absolute
+  height: 17px
+  width: 17px
+  left: 4px
+  bottom: 4px
+  background-color: $white
+  border-radius: 34px
+  content: '\ee81'
+  color: $highlight
+  +transition-ease
+
+input:checked + .slider
+  background-color: $hover-highlight
+
+input:checked + .slider:before
+  padding-left: 1px
+  content: '\ef9e'
+  color: $background
+  +transform($transform: translateX(18px))
+
+//Panels
+.panel
+  display: flex
+
+  .info-section
+    flex: 1
+
+  .image-panel
+    display: flex
+    flex: 1
+    max-width: 100%
+    padding: 0 1.5em
+    perspective: 1000px
+
+    .selectable-image
+      flex: 1
+
+      &:focus
+        border-bottom: none
+
+      img
+        width: 100%
+        box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.6)
+        +transform($transform: rotateY(30deg))
+
+//Timeline
+.timeline
+  display: flex
+  align-items: center
+  margin: 3em auto 4em
+
+  .marker
+    display: flex
+    position: relative
+    flex: 1
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    text-align: center
+
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 1px
+      top: 1.5em
+      left: 50%
+      background: $highlight
+
+    &:last-of-type:after
+      content: ''
+      position: absolute
+      width: 0
+      height: 0
+
+    .marker-label
+      min-height: 4em
+      margin: 0.6em
+      line-height: 1.3em
+
+  .button-container
+    position: relative
+    text-align: center
+    z-index: 1
+
+    .button-toggle-panel
+      width: 4.2em
+      height: 4.2em
+      border-radius: 50%
+      background-color: lighten($highlight, 10%)
+      color: white
+      z-index: 2
+
+      i
+        font-size: 2.2em
+
+      &:after
+        display: block
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        content: ""
+        border-radius: 50%
+        background-color: lighten($highlight, 50%)
+        opacity: 0
+        +transform($transform: scale(0.2))
+        +transition-ease(0.3s)
+
+      &:hover:after
+        opacity: 0.3
+        +transform($transform: scale(1))
+
+.slide-down-panel
+  display: none
+
+  &.show
+    display: block
+
+    h2
+      text-align: center
+      +slide-down
+
+    h3
+      opacity: 0
+      text-align: center
+      +slide-down($delay: .2s)
+
+    p
+      opacity: 0
+
+      &:first-of-type
+        +slide-down($delay: .6s)
+
+      &:nth-of-type(2)
+        +slide-down($delay: .8s)
+
+      &:nth-of-type(3)
+        +slide-down($delay: 1s)

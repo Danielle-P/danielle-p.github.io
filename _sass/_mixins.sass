@@ -1,34 +1,32 @@
-//Transitions
-=transition-ease($speed: .25s, $timing-function: ease-in-out)
-  -webkit-transition: $speed $timing-function
-  -moz-transition: $speed $timing-function
-  -o-transition: $speed $timing-function
-  transition: $speed $timing-function
-
-=transform($transform)
-  -webkit-transform: $transform
-  -moz-transform: $transform
-  -o-transform: $transform
-  transform: $transform
-
-=fade-on-load($speed: 1s)
-  -moz-animation: fadein $speed
-  -webkit-animation: fadein $speed
-  -o-animation: fadein $speed
-  animation: fadein $speed
-
-//Styling
 =header-font-style($font-size: 4em, $margin-bottom: 0.8em)
+  color: var(--text-color)
+  opacity: var(--header-text-opacity)
   font-family: $header-font
-  color: $heading-text
   font-size: $font-size
-  font-weight: 700
+  font-weight: bold
   margin-bottom: $margin-bottom
 
 =body-font-style($font-size: 1em, $margin-bottom: 0.6em)
-  color: $body-text
+  color: var(--text-color)
+  opacity: var(--body-text-opacity)
   font-family: $body-font
   font-size: $font-size
   line-height: 1.4em
   margin-bottom: $margin-bottom
 
+=transition-ease($speed: .25s, $timing-function: ease-in-out)
+  transition: $speed $timing-function
+
+=transform($transform)
+  transform: $transform
+
+=fade-on-load($speed: .8s)
+  animation: fade-in $speed
+
+=translate-on-load($speed: .4s, $delay: .4s)
+  animation: translate-fade $speed $delay cubic-bezier(0.42, 0.0, 1.0, 1.0)
+  animation-fill-mode: forwards
+
+=slide-down($delay: 0s)
+  animation: slide-down .4s $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
+  animation-fill-mode: forwards
