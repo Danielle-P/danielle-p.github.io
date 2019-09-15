@@ -24,6 +24,9 @@ p
   +body-font-style($margin-bottom: 1em)
   padding-bottom: 1em
 
+  a
+    text-transform: none
+
 a
   color: $highlight
   text-transform: uppercase
@@ -118,11 +121,11 @@ button
   height: 7.2em
   display: flex
   position: absolute
-  top: -8.2em
+  top: calc(-7.2em - 20px)
   align-items: center
   padding: 0 2.2em
   background: rgba(17,40,72,.99)//rgba(0,67,96,.97)//rgba(4,19,41,.97)//rgba(10,32,63,.97)
-  box-shadow: 0 3px 32px rgba(0,0,0,.4)
+  box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 1
 
@@ -311,7 +314,7 @@ input:checked + .slider:before
       text-align: center
       +slide-down($delay: .2s)
 
-    p
+    .slide-in
       opacity: 0
 
       &:first-of-type
@@ -322,3 +325,15 @@ input:checked + .slider:before
 
       &:nth-of-type(3)
         +slide-down($delay: 1s)
+
+      &:nth-of-type(4)
+        +slide-down($delay: 1.2s)
+
+      &:nth-of-type(5)
+        +slide-down($delay: 1.4s)
+
+      &:nth-of-type(6)
+        +slide-down($delay: 1.6s)
+
+      &:nth-of-type(7)
+        +slide-down($delay: 1.7s)
