@@ -7,7 +7,7 @@
   font-weight: bold
   color: var(--text-color)
 
-=subheader-font-style($font-size: 1.4em, $margin-bottom: 0.6em)
+=subheader-font-style($font-size: 1.4em, $margin-bottom: 0)
   opacity: var(--body-text-opacity)
   margin-bottom: $margin-bottom
   line-height: 1.4em
@@ -15,9 +15,9 @@
   font-size: $font-size
   color: var(--subheader-color)
 
-=body-font-style($font-size: 1em, $margin-bottom: 1.2em)
+=body-font-style($font-size: 1em, $padding: 0.6em)
   opacity: var(--body-text-opacity)
-  margin-bottom: $margin-bottom
+  padding: $padding 0
   line-height: 1.4em
   font-family: $body-font
   font-size: $font-size
