@@ -10,16 +10,22 @@
 
   h1, h2
     display: flex
+    margin-bottom: 0.6em
     +fade-on-load(2s)
+
+  h2
+    margin-top: 0
+    font-size: 1.6em
 
   a
     font-size: 1.2em
 
   .profile-photo
-    width: 9em
-    height: auto
-    margin: 4em 2em 2em
+    width: 9.4em
+    height: 9.4em
+    margin: 4.2em 2em 2.2em
     border-radius: 50%
+    border: 0.2em solid var(--highlight)
     +fade-on-load(2s)
 
   .landing-nav
@@ -30,6 +36,7 @@
     opacity: 0
     padding: 10em 10em 3em
     font-size: 1.1em
+    font-weight: 600
     +translate-on-load(1.5s)
 
 #about .nav-panel .about
