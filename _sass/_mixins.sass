@@ -1,18 +1,27 @@
 =header-font-style($font-size: 4em, $margin-bottom: 0.8em)
-  color: var(--text-color)
   opacity: var(--header-text-opacity)
+  margin-bottom: $margin-bottom
+  text-align: center
   font-family: $header-font
   font-size: $font-size
   font-weight: bold
-  margin-bottom: $margin-bottom
-
-=body-font-style($font-size: 1em, $margin-bottom: 0.6em)
   color: var(--text-color)
+
+=subheader-font-style($font-size: 1.4em, $margin-bottom: 0.6em)
   opacity: var(--body-text-opacity)
+  margin-bottom: $margin-bottom
+  line-height: 1.4em
   font-family: $body-font
   font-size: $font-size
-  line-height: 1.4em
+  color: var(--subheader-color)
+
+=body-font-style($font-size: 1em, $margin-bottom: 1.2em)
+  opacity: var(--body-text-opacity)
   margin-bottom: $margin-bottom
+  line-height: 1.4em
+  font-family: $body-font
+  font-size: $font-size
+  color: var(--text-color)
 
 =transition-ease($speed: .25s, $timing-function: ease-in-out)
   transition: $speed $timing-function
