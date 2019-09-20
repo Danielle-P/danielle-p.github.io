@@ -1,4 +1,3 @@
-//General
 body
   background-color: var(--color-bg)
   color: var(--text-color)
@@ -17,7 +16,6 @@ h1
 h2
   +subheader-font-style
   margin-top: 1.8em
-  text-align: center
 
 h3
   +subheader-font-style($font-size: 1.2em)
@@ -42,6 +40,18 @@ a
     outline-color: var(--color-bg)
     border-bottom: 1px dotted var(--hover-highlight)
 
+ul
+  +body-font-style($padding: 0)
+  margin: 0.8em 0 0.65em
+  padding-left: 1.4em
+
+.page-content ul li:before
+  position: absolute
+  margin-left: -0.7em
+  content: '\2022'
+  font-size: 2em
+  color: var(--highlight)
+
 button
   background: var(--highlight)
   border: none
@@ -54,22 +64,8 @@ button
     background: var(--hover-highlight)
     +transition-ease
 
-ul
-  +body-font-style($padding: 0)
-  margin-bottom: 0.65em
-
-.page-content
-  ul
-    padding-left: 1.4em
-
-  li:before
-    position: absolute
-    margin-left: -0.6em
-    content: '\2022'
-    font-size: 2em
-    color: var(--highlight)
-
-// Navigation
+/** Navigation
+  */
 .nav-button
   width: 5em
   height: 5em
@@ -158,8 +154,8 @@ ul
     display: flex
     flex-direction: row
     justify-content: space-evenly
-    padding: 0 8em 0 4em
-    margin-bottom: 0
+    padding: 0 6em 0 7em
+    margin: 0
     font-size: 1.1em
     color: var(--highlight)
     opacity: 1
@@ -168,12 +164,8 @@ ul
   position: fixed
   top: 0
 
-//Toggle dark/light theme
-#theme-switch
-  position: absolute
-  right: 0
-  margin: 0 2.2em 1.5em
-
+/**Toggle
+  */
 .toggle-switch
   position: relative
   display: inline-block
@@ -218,7 +210,57 @@ input:checked + .slider:before
   color: var(--color-bg)
   +transform($transform: translateX(18px))
 
-//Panels
+#theme-switch
+  position: absolute
+  right: 0
+  margin: 0 2.2em 1.5em
+
+/**Grid
+  */
+.grid-container
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+
+  .grid-item
+    grid-row-start: 1
+    text-align: center
+
+    .ellipse
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 6em
+      height: 6em
+      margin: 2em auto 1.2em
+      padding: 0
+      border-radius: 50%
+      border: 1px dotted var(--subheader-color)
+
+      i
+        font-size: 2.5em
+        color: var(--subheader-color)
+
+    h4
+      +subheader-font-style($font-size: 1.1em)
+
+    ul
+      margin-top: 0.25em
+      padding: 0
+
+      li:before
+        content: ''
+
+    &.item-1
+      grid-column-start: 1
+
+    &.item-2
+      grid-column-start: 2
+
+    &.item-3
+      grid-column-start: 3
+
+/**Panels
+ */
 .panel
   display: flex
 
@@ -243,7 +285,8 @@ input:checked + .slider:before
         box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.6)
         +transform($transform: rotateY(30deg))
 
-//Timeline
+/** Timeline
+  */
 .timeline
   display: flex
   align-items: center
@@ -355,4 +398,7 @@ input:checked + .slider:before
         +slide-down($delay: 1.6s)
 
       &:nth-child(7)
-        +slide-down($delay: 1.7s)
+        +slide-down($delay: 1.8s)
+
+      &:nth-child(8)
+        +slide-down($delay: 2s)
