@@ -74,11 +74,82 @@
         +transform (translateY(-0.4em) scale(1.03) rotateY(30deg))
 
 #projects
-  overflow-x: hidden
-
   .nav-panel .portfolio
     color: var(--hover-highlight)
     border-bottom: 1px dotted var(--hover-highlight)
+
+  .portfolio-links
+    width: auto
+    position: absolute
+    top: 1.8em
+
+    .button-container
+      .back, button:after
+        width: 5.8em
+        height: 5.8em
+        margin-left: 3em
+        color: $white
+
+      .back
+        span
+          font-size: 0.8em
+          text-transform: uppercase
+
+        i
+          font-size: 2em
+
+    .toggle-display-links
+      width: 100%
+      display: none
+      padding: 0.4em 0 2em 2.9em
+
+      &.show
+        display: block
+
+      %project-link
+        width: 100%
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        padding: 0.4em 0
+        opacity: 0
+
+        .button-label
+          padding-left: 0.8em
+          font-size: 0.7em
+
+        a
+          width: 2.2em
+          height: 2.2em
+          border-radius: 50%
+
+      .wedding
+        @extend %project-link
+        color: #eec232
+        +slide-down ($duration: .2s)
+
+        .wedding-bg
+          background: url("/images/wedding-icon.png") no-repeat center 0px
+          background-size: cover
+
+      .dashboards
+        @extend %project-link
+        color: #07a1d7
+        +slide-down ($duration: .2s, $delay: .1s)
+
+        .dashboard-bg
+          background: url("/images/dashboard-icon.png") no-repeat center 0px
+          background-size: cover
+
+      .meals-up
+        @extend %project-link
+        color: #f97878
+        +slide-down ($duration: .2s, $delay: .2s)
+
+        .meals-up-bg
+          background: url("/images/meals-up-logo.png") no-repeat center 0px
+          background-size: cover
 
   .project-journey
     .stage

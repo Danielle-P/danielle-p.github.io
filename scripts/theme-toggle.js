@@ -3,7 +3,9 @@
 
   if (localStorage.getItem('theme') === 'dark') {
     document.body.setAttribute('data-theme', 'dark')
-    themeToggle.checked = true
+    if (themeToggle) {
+      themeToggle.checked = true
+    }
   }
 
   if (themeToggle) {

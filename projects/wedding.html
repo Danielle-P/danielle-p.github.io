@@ -2,22 +2,36 @@
 layout: page
 id: projects
 ---
-<div class="page-content">
-  <div class="projects-nav">
-    <a href="/portfolio"><i class="icofont-stock-mobile"></i></a>
-    <a class="wedding-bg" href="#"></a>
-    <a href="/projects">
-      <img src="/images/mealsup-project.png" alt="screenshot image of..." />
-    </a>
-    <a href="dashboards.html">
-      <img src="/images/dashboard-project.png" alt="screenshot image of..." />
-    </a>
+<div class="portfolio-links">
+  <a class="button-container" href="/portfolio">
+    <button class="back">
+      <i class="icofont-briefcase-2"></i>
+      <span>Portfolio</span>
+    </button>
+  </a>
+  <div class="toggle-display-links">
+    <div class="project-link wedding">
+      <a href="#" class="wedding-bg"></a>
+      <span class="button-label">Wedding</span>
+    </div>
+    <div class="project-link dashboards">
+      <a href="/projects/dashboards.html" class="dashboard-bg"></a>
+      <span class="button-label">Dashboards</span>
+    </div>
+    <div class="project-link meals-up">
+      <a href="/projects/index.html" class="meals-up-bg"></a>
+      <span class="button-label">MealsUp</span>
+    </div>
   </div>
+</div>
+
+<div class="page-content">
   <h1>Wedding Website</h1>
 
   <h2>The brief</h2>
   <p>To build a user-friendly website with the following requirements:</p>
-  <ul>Functionality for guests to RSVP
+  <ul>
+    <li>Functionality for guests to RSVP</li>
     <li>Include a feature to add to a Spotify Playlist</li>
     <li>A page informing guests of timings on the wedding day</li>
     <li>Pages for other useful wedding information</li>
