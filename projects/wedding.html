@@ -10,17 +10,17 @@ id: projects
     </button>
   </a>
   <div class="toggle-display-links">
-    <div class="project-link wedding">
-      <a href="#" class="wedding-bg"></a>
-      <span class="button-label">Wedding</span>
+    <div class="project-link meals-up">
+      <a href="/projects/index.html" class="meals-up-bg"></a>
+      <span class="button-label">MealsUp</span>
     </div>
     <div class="project-link dashboards">
       <a href="/projects/dashboards.html" class="dashboard-bg"></a>
       <span class="button-label">Dashboards</span>
     </div>
-    <div class="project-link meals-up">
-      <a href="/projects/index.html" class="meals-up-bg"></a>
-      <span class="button-label">MealsUp</span>
+    <div class="project-link wedding">
+      <a href="#" class="wedding-bg"></a>
+      <span class="button-label">Wedding</span>
     </div>
   </div>
 </div>
@@ -28,54 +28,91 @@ id: projects
 <div class="page-content">
   <h1>Wedding Website</h1>
 
-  <h2>The brief</h2>
-  <p>To build a user-friendly website with the following requirements:</p>
-  <ul>
-    <li>Functionality for guests to RSVP</li>
-    <li>Include a feature to add to a Spotify Playlist</li>
-    <li>A page informing guests of timings on the wedding day</li>
-    <li>Pages for other useful wedding information</li>
-    <li>A gallery page where guests can upload photos</li>
-  </ul>
+  <div class="project-information wedding">
+    <div class="panel odd">
+      <div class="info-section">
+        <h2>The brief</h2>
+        <p>To build a user-friendly website with the following requirements:</p>
+        <ul>
+          <li>Functionality for guests to RSVP</li>
+          <li>Include a feature to add to a Spotify Playlist</li>
+          <li>A page informing guests of timings on the wedding day</li>
+          <li>Pages for other useful wedding information</li>
+          <li>A gallery page where guests can upload photos</li>
+        </ul>
 
-  <h2>The Design</h2>
-  <p>I began by identifying the content which needed to be included on each page; I split the content into logical
-    categories, which became the pages. I identified the main purpose of the website to be the RSVP functionality and
-    the
-    couple also mentioned they were keen for guests to add to their Spotify playlist, so these two sections became my
-    starting point.</p>
-  <p>I then moved on to the layout for each page. As most of the guests would be receiving the wedding invitation by
-    email,
-    with a link to the wedding website included in that email, it was likely that most guests would view the website
-    primarily on mobile devices. I therefore designed the site mobile-first.</p>
+        <h2>The Design</h2>
+        <p>I began by identifying the content which needed to be included on each page; I split the content into logical
+          categories, which became the pages. I identified the main purpose of the website to be the RSVP functionality
+          and
+          the
+          couple also mentioned they were keen for guests to add to their Spotify playlist, so these two sections became
+          my
+          starting point.</p>
+      </div>
+      <div class="image-panel">
+        <div class="project-image screenshots"></div>
+      </div>
+    </div>
 
-  <p>As the couple had already chosen a template for an invitation, I began by creating a simple colour palette using
-    the
-    colours from the image to be used on that invitation.</p>
+    <div class="panel even">
+      <div class="info-section">
+        <p>I then moved on to the layout for each page. As most of the guests would be receiving the wedding invitation
+          by
+          email,
+          with a link to the wedding website included in that email, it was likely that most guests would view the
+          website
+          primarily on mobile devices. I therefore designed the site mobile-first.</p>
+        <p>As the couple had already chosen a template for an invitation, I began by creating a simple colour palette
+          using
+          the
+          colours from the image to be used on that invitation.</p>
 
-  <p>Whilst the colour contrasts I had chosen were WCAG compliant, once I had begun building the page it became clear
-    that
-    the colours in my design were not bold enough when viewed on mobile devices. I therefore increased the colour
-    contrasts to make the text clearer and the design look bolder and cleaner.</p>
+        <p>Whilst the colour contrasts I had chosen were WCAG compliant, once I had begun building the page it became
+          clear
+          that
+          the colours in my design were not bold enough when viewed on mobile devices. I therefore increased the colour
+          contrasts to make the text clearer and the design look bolder and cleaner.</p>
 
-  <p>As the site was to be relatively light content-wise, I decided to add a background image to the header of each page
-    to
-    add some visual interest. Beginning with the RSVP/Homepage, I chose images that broadly matched the theme of the
-    wedding invitation and the tone of the copy the couple had provided. The challenge I faced with adding the images
-    when
-    building the site was making sure the text was still readable, particularly on mobile devices or low resolution
-    screens.</p>
+        <p>As the site was to be relatively light content-wise, I decided to add a background image to the header of
+          each page
+          to
+          add some visual interest. Beginning with the RSVP/Homepage, I chose images that broadly matched the theme of
+          the
+          wedding invitation and the tone of the copy the couple had provided. The challenge I faced with adding the
+          images
+          when
+          building the site was making sure the text was still readable, particularly on mobile devices or low
+          resolution
+          screens.</p>
+      </div>
+      <div class="image-panel">
+        <div class="project-image initial-designs"></div>
+      </div>
+    </div>
 
-  <h2>The Build</h2>
-  <p>My main aim when building the site was to make it accessible and intuitive, particularly given the likely varying
-    age
-    and technical abilities of the users. My main focus was again on the RSVP form, this being the primary reason for
-    users to visit the site.</p>
-  <p>As many of the guests would be RSVP-ing on behalf of their partners or families as well as themselves, I included a
-    dropdown box to allow users to select how many guests they were RSVP-ing for. Selecting an option from the dropdown
-    box would then show an extra section of the form for each guest. Including the vegetarian and dietary requirements
-    checkboxes for each guest individually meant the database would have clear dietary information per guest.</p>
-  <p>As the website design was relatively simple with only 4 pages, I used standard HTML, LESS and JavaScript. I used
-    React
-    for the RSVP form.</p>
+    <div class="panel odd">
+      <div class="info-section">
+        <h2>The Build</h2>
+        <p>My main aim when building the site was to make it accessible and intuitive, particularly given the likely
+          varying
+          age
+          and technical abilities of the users. My main focus was again on the RSVP form, this being the primary reason
+          for
+          users to visit the site.</p>
+        <p>As many of the guests would be RSVP-ing on behalf of their partners or families as well as themselves, I
+          included a
+          dropdown box to allow users to select how many guests they were RSVP-ing for. Selecting an option from the
+          dropdown
+          box would then show an extra section of the form for each guest. Including the vegetarian and dietary
+          requirements
+          checkboxes for each guest individually meant the database would have clear dietary information per guest.</p>
+        <p>As the website design was relatively simple with only 4 pages, I used standard HTML, LESS and JavaScript. I
+          used
+          React
+          for the RSVP form.</p>
+      </div>
+    </div>
+  </div>
+
 </div>

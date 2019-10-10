@@ -134,13 +134,13 @@
           height: 2.2em
           border-radius: 50%
 
-      .wedding
+      .meals-up
         @extend %project-link
-        color: #eec232
+        color: #f97878
         +slide-down ($duration: .2s)
 
-        .wedding-bg
-          background: url("/images/wedding-icon.png") no-repeat center 0px
+        .meals-up-bg
+          background: url("/images/meals-up-logo.png") no-repeat center 0px
           background-size: cover
 
       .dashboards
@@ -152,79 +152,132 @@
           background: url("/images/dashboard-icon.png") no-repeat center 0px
           background-size: cover
 
-      .meals-up
+      .wedding
         @extend %project-link
-        color: #f97878
+        color: #eec232
         +slide-down ($duration: .2s, $delay: .2s)
 
-        .meals-up-bg
-          background: url("/images/meals-up-logo.png") no-repeat center 0px
+        .wedding-bg
+          background: url("/images/wedding-icon.png") no-repeat center 0px
           background-size: cover
 
-  .project-journey
-    .stage
-      min-height: 30em
-      display: flex
-      margin: 1.5em 0
-      padding: 2em 1em
+  .project-information
 
-      %journey-stage-marker
-        position: absolute
-        height: 30px
-        width: 30px
-        border-radius: 50%
-        background-color: var--(highlight)
-        border: 7px solid var(--color-bg)
-        z-index: 2
+    h2
+      text-align: left
 
-        &:before
-          content: ''
-          position: absolute
-          border-radius: 50%
-          height: 34px
-          width: 34px
-          border: 2px solid var--(highlight)
-          top: -9px
-          left: -9px
+    .panel
+      &.odd, &.even
+        min-height: 300px
 
-      .info-section
-        padding: 0 1em
+      &.even
+        margin: 4em 0
+        flex-direction: row-reverse
 
-      .image-panel .project-image
-        flex: 1
-        justify-content: center
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center
+      &:first-of-type
+        margin-top: 5em
 
-    .stage.odd .journey-marker
-      @extend %journey-stage-marker
-      left: 3em
+        h2
+          margin-top: 0
 
-    .stage.even .journey-marker
-      @extend %journey-stage-marker
-      right: 3em
+    .info-section
+      flex: 1
 
-    .stage:first-of-type
-      .project-image
-        background-image: url("/images/test-image.png")
+    .image-panel .project-image
+      flex: 1
+      justify-content: center
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
+      margin-bottom: 0.5em
 
-    .stage:nth-of-type(2)
-      .project-image
-        background-image: url("/images/test-image.png")
+    .even .image-panel
+      padding: 0 2em 0 0
 
-    .stage:nth-of-type(3)
-      .project-image
-        background-image: url("/images/test-image.png")
+    .odd .image-panel
+      padding: 0 0 0 2em
 
-    .stage:last-of-type
-      border-bottom-right-radius: 0
-      border-bottom-left-radius: 0
+    &.dashboards .image-panel
+      .wireframes
+        background-image: url("/images/dashboard/wireframes.png")
 
-      .project-image
-        background-image: url("/images/test-image.png")
+      .tile-demo
+        background-image: url("/images/dashboard/tile-row.png")
 
-#projects .svg-test
+      .journey-section
+        background-image: url("/images/dashboard/journey-mock-up.png")
+
+    &.wedding .image-panel
+      .screenshots
+        background-image: url("/images/wedding/wedding-wireframes.png")
+
+      .initial-designs
+        background-image: url("/images/wedding/initial-designs.png")
+
+  // .project-journey
+  //   .stage
+  //     min-height: 30em
+  //     display: flex
+  //     margin: 1.5em 0
+  //     padding: 2em 1em
+
+  //     %journey-stage-marker
+  //       position: absolute
+  //       height: 30px
+  //       width: 30px
+  //       border-radius: 50%
+  //       background-color: var--(highlight)
+  //       border: 7px solid var(--color-bg)
+  //       z-index: 2
+
+  //       &:before
+  //         content: ''
+  //         position: absolute
+  //         border-radius: 50%
+  //         height: 34px
+  //         width: 34px
+  //         border: 2px solid var--(highlight)
+  //         top: -9px
+  //         left: -9px
+
+  //     .info-section
+  //       padding: 0 1em
+
+  //     .image-panel .project-image
+  //       flex: 1
+  //       justify-content: center
+  //       background-size: contain
+  //       background-repeat: no-repeat
+  //       background-position: center
+
+  //   .stage.odd .journey-marker
+  //     @extend %journey-stage-marker
+  //     left: 3em
+
+  //   .stage.even .journey-marker
+  //     @extend %journey-stage-marker
+  //     right: 3em
+
+  //   .stage:first-of-type
+  //     .project-image
+  //       background-image: url("/images/test-image.png")
+
+  //   .stage:nth-of-type(2)
+  //     .project-image
+  //       background-image: url("/images/test-image.png")
+
+  //   .stage:nth-of-type(3)
+  //     .project-image
+  //       background-image: url("/images/test-image.png")
+
+  //   .stage:last-of-type
+  //     border-bottom-right-radius: 0
+  //     border-bottom-left-radius: 0
+
+  //     .project-image
+  //       background-image: url("/images/test-image.png")
+
+// #projects .svg-test
   .stage
     padding: 0
 
