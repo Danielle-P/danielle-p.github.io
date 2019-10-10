@@ -1,78 +1,111 @@
-//General
 body
   background-color: var(--color-bg)
   color: var(--text-color)
   font-family: $body-font
   font-size: 16px
 
-body[data-theme="light"], body[data-theme="dark"]
+body[data-theme-animate]
   +transition-ease(1s)
 
 .page-content
-  padding: 4em 6em
+  min-height: calc(100vh - 55px)
+  padding: 4em 10em 1.8em
 
 h1
   +header-font-style
 
 h2
-  +body-font-style($font-size: 1.4em)
+  +subheader-font-style
+  margin-top: 1.8em
 
 h3
-  +body-font-style($font-size: 1.2em)
+  +subheader-font-style($font-size: 1.2em)
+  margin-top: 1.2em
 
 p
-  +body-font-style($margin-bottom: 1em)
-  padding-bottom: 1em
+  +body-font-style
 
   a
     text-transform: none
 
 a
-  color: $highlight
+  color: var(--highlight)
   text-transform: uppercase
   text-decoration: none
   +transition-ease(.2s)
 
-  &:hover, &:active, &:focus
-    color: $hover-highlight
+  &:hover, &:active
+    color: var(--hover-highlight)
 
   &:focus
     outline-color: var(--color-bg)
-    border-bottom: 1px dotted $hover-highlight
+    border-bottom: 1px dotted var(--hover-highlight)
 
 ul
-  +body-font-style($margin-bottom: 0.8em)
+  +body-font-style($padding: 0)
+  margin: 0.8em 0 0.65em
+  padding-left: 1.4em
+
+.page-content ul li:before
+  position: absolute
+  margin-left: -0.7em
+  content: '\2022'
+  font-size: 2em
+  color: var(--highlight)
 
 button
-  background: $highlight
+  background: var(--highlight)
   border: none
+  border-radius: 50%
   cursor: pointer
 
-  &:focus
-    outline: 0
+  .button-label
+    display: block
+    color: $white
+    text-transform: uppercase
+    font-size: 0.8em
 
-  &:hover, &:focus
-    background: $hover-highlight
+  &:after
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    content: ""
+    border-radius: 50%
+    background-color: $white
+    opacity: 0
+    +transform($transform: scale(0.2))
+    +transition-ease(0.3s)
+
+  &:hover:after
+    background: $white
+    opacity: 0.2
+    +transform($transform: scale(1))
+
+  &:focus
+    background: var(--hover-highlight)
+    outline: 0
     +transition-ease
 
-// Navigation
+/** Navigation
+  */
 .nav-button
-  width: 5em
-  height: 5em
+  width: 5.8em
+  height: 5.8em
   position: fixed
   right: 0
-  margin: 2.8em 3em
-  border-radius: 50%
+  margin: 2.6em 3em
   z-index: 4
 
-  .menu-label, .hide-label
+  .button-label, .hide-label
     display: none
+    color: $white
+    text-transform: uppercase
 
     &.show
       display: block
-      color: $white
-      text-transform: uppercase
-      font-size: 0.85em
 
 .nav-icon
   width: 56%
@@ -118,49 +151,44 @@ button
 
 .nav-panel
   width: 100%
-  height: 7.2em
+  height: 7.6em
   display: flex
   position: absolute
-  top: calc(-7.2em - 20px)
+  top: calc(-7.6em - 20px)
   align-items: center
   padding: 0 2.2em
-  background: rgba(17,40,72,.99)//rgba(0,67,96,.97)//rgba(4,19,41,.97)//rgba(10,32,63,.97)
+  background: rgba(17,40,72,.99)
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 1
 
   .home
-    width: 5em
-    height: 5em
+    width: 5.8em
+    height: 5.8em
     border-radius: 50%
     background: url('/../images/profile-photo.jpg') no-repeat
     background-size: contain
-    -webkit-filter: sepia(.7)
-    filter: sepia(.7)
-    border: 0.2em solid $highlight
-    +transform($transform: scaleX(-1))
+    -webkit-filter: sepia(.6)
+    filter: sepia(.6)
+    border: 0.2em solid var(--highlight)
 
   ul
     width: 100%
     display: flex
     flex-direction: row
     justify-content: space-evenly
-    padding: 0 8em 0 4em
-    margin-bottom: 0
+    padding: 0 5em 0 2em
+    margin: 0
     font-size: 1.1em
-    color: $highlight
+    color: var(--highlight)
     opacity: 1
 
 .nav-panel.show
   position: fixed
   top: 0
 
-//Toggle dark/light theme
-#theme-switch
-  position: absolute
-  right: 0
-  margin: 0 2.2em 1.5em
-
+/**Toggle
+  */
 .toggle-switch
   position: relative
   display: inline-block
@@ -179,7 +207,7 @@ button
   right: 0
   bottom: 0
   cursor: pointer
-  background-color: $hover-highlight
+  background-color: var(--hover-highlight)
   border-radius: 34px
   font-family: IcoFont
   +transition-ease
@@ -190,22 +218,71 @@ button
   width: 17px
   left: 4px
   bottom: 4px
-  background-color: $white
   border-radius: 34px
   content: '\ee81'
-  color: $highlight
+  color: var(--color-bg)
   +transition-ease
 
 input:checked + .slider
-  background-color: $hover-highlight
+  background-color: var(--hover-highlight)
 
 input:checked + .slider:before
   padding-left: 1px
   content: '\ef9e'
-  color: $background
+  color: var(--color-bg)
   +transform($transform: translateX(18px))
 
-//Panels
+#theme-switch
+  position: absolute
+  right: 0
+  margin: 0 2.2em 1.5em
+
+/**Grid
+  */
+.grid-container
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+
+  .grid-item
+    grid-row-start: 1
+    text-align: center
+
+    .ellipse
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 6em
+      height: 6em
+      margin: 2em auto 1.2em
+      padding: 0
+      border-radius: 50%
+      border: 1px dotted var(--subheader-color)
+
+      i
+        font-size: 2.5em
+        color: var(--subheader-color)
+
+    h4
+      +subheader-font-style($font-size: 1.1em)
+
+    ul
+      margin-top: 0.25em
+      padding: 0
+
+      li:before
+        content: ''
+
+    &.item-1
+      grid-column-start: 1
+
+    &.item-2
+      grid-column-start: 2
+
+    &.item-3
+      grid-column-start: 3
+
+/** Panels
+ */
 .panel
   display: flex
 
@@ -229,19 +306,33 @@ input:checked + .slider:before
         width: 100%
         box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.6)
         +transform($transform: rotateY(30deg))
+/** Divider
+  */
+.ellipses-divider
+  text-align: center
+  margin-top: 2.2em
 
-//Timeline
+  span
+    display: inline-block
+    width: 5px
+    height: 5px
+    margin: 3px
+    border-radius: 50%
+    background-color: var(--subheader-color)
+    opacity: var(--body-text-opacity)
+
+/** Timeline
+  */
 .timeline
   display: flex
   align-items: center
-  margin: 3em auto 4em
+  margin: 15% auto 1.5em
 
   .marker
-    display: flex
     position: relative
+    display: flex
     flex: 1
     flex-direction: column
-    justify-content: space-between
     align-items: center
     text-align: center
 
@@ -249,10 +340,10 @@ input:checked + .slider:before
       content: ''
       position: absolute
       width: 100%
-      height: 1px
-      top: 1.5em
+      height: 2px
+      top: 1.65em
       left: 50%
-      background: $highlight
+      background: var(--highlight)
 
     &:last-of-type:after
       content: ''
@@ -271,33 +362,16 @@ input:checked + .slider:before
     z-index: 1
 
     .button-toggle-panel
-      width: 4.2em
-      height: 4.2em
-      border-radius: 50%
-      background-color: lighten($highlight, 10%)
+      width: 5.2em
+      height: 5.2em
       color: white
       z-index: 2
 
       i
-        font-size: 2.2em
+        font-size: 2.8em
 
-      &:after
-        display: block
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-        content: ""
-        border-radius: 50%
-        background-color: lighten($highlight, 50%)
-        opacity: 0
-        +transform($transform: scale(0.2))
-        +transition-ease(0.3s)
-
-      &:hover:after
-        opacity: 0.3
-        +transform($transform: scale(1))
+      &.active
+        background: var(--hover-highlight)
 
 .slide-down-panel
   display: none
@@ -305,35 +379,46 @@ input:checked + .slider:before
   &.show
     display: block
 
-    h2
-      text-align: center
-      +slide-down
+    .panel-heading
+      margin-bottom: 1.7em
 
-    h3
-      opacity: 0
-      text-align: center
-      +slide-down($delay: .2s)
+      h2
+        margin: 0.2em
+        text-align: center
+        font-size: 0.9em
+        font-weight: 600
+        color: var(--hover-highlight)
+        +slide-down
+
+      h3
+        opacity: 0
+        margin: 0
+        text-align: center
+        +slide-down($delay: .2s)
 
     .slide-in
       opacity: 0
 
-      &:first-of-type
+      &:first-child
+        +slide-down($delay: .4s)
+
+      &:nth-child(2)
+        +slide-down($delay: .5s)
+
+      &:nth-child(3)
         +slide-down($delay: .6s)
 
-      &:nth-of-type(2)
+      &:nth-child(4)
+        +slide-down($delay: .7s)
+
+      &:nth-child(5)
         +slide-down($delay: .8s)
 
-      &:nth-of-type(3)
+      &:nth-child(6)
+        +slide-down($delay: .9s)
+
+      &:nth-child(7)
         +slide-down($delay: 1s)
 
-      &:nth-of-type(4)
-        +slide-down($delay: 1.2s)
-
-      &:nth-of-type(5)
-        +slide-down($delay: 1.4s)
-
-      &:nth-of-type(6)
-        +slide-down($delay: 1.6s)
-
-      &:nth-of-type(7)
-        +slide-down($delay: 1.7s)
+      &:nth-child(8)
+        +slide-down($delay: 1.1s)

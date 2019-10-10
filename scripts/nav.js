@@ -6,9 +6,10 @@
   var navButton = getElement('nav-button')
   var navPanel = getElement('nav-panel')
   var menuIcon = getElement('nav-icon')
-  var iconMenuLabel = getElement('menu-label')
+  var iconMenuLabel = getElement('button-label')
   var iconHideLabel = getElement('hide-label')
   var pageContent = getElement('page-content')
+  var portfolioLinks = getElement('portfolio-links')
 
   if (navButton) {
     navButton.addEventListener('click', function() {
@@ -38,5 +39,20 @@
       }
     })
   } else {
+  }
+
+  if (portfolioLinks) {
+    var portfolioBackButton = document.querySelector(
+      '.portfolio-links button.back'
+    )
+    var portfolioToggleLinks = getElement('toggle-display-links')
+
+    portfolioBackButton.addEventListener('mouseover', function() {
+      portfolioToggleLinks.classList.add('show')
+    })
+
+    portfolioLinks.addEventListener('mouseleave', function() {
+      portfolioToggleLinks.classList.remove('show')
+    })
   }
 })()

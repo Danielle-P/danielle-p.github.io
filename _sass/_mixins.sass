@@ -1,18 +1,28 @@
 =header-font-style($font-size: 4em, $margin-bottom: 0.8em)
-  color: var(--text-color)
   opacity: var(--header-text-opacity)
+  margin-bottom: $margin-bottom
+  text-align: center
   font-family: $header-font
   font-size: $font-size
   font-weight: bold
-  margin-bottom: $margin-bottom
-
-=body-font-style($font-size: 1em, $margin-bottom: 0.6em)
   color: var(--text-color)
+
+=subheader-font-style($font-size: 1.4em, $margin-bottom: 0)
   opacity: var(--body-text-opacity)
+  margin-bottom: $margin-bottom
+  text-align: center
+  line-height: 1.4em
   font-family: $body-font
   font-size: $font-size
+  color: var(--subheader-color)
+
+=body-font-style($font-size: 1em, $padding: 0.6em)
+  opacity: var(--body-text-opacity)
+  padding: $padding 0
   line-height: 1.4em
-  margin-bottom: $margin-bottom
+  font-family: $body-font
+  font-size: $font-size
+  color: var(--text-color)
 
 =transition-ease($speed: .25s, $timing-function: ease-in-out)
   transition: $speed $timing-function
@@ -28,6 +38,6 @@
   animation: translate-fade $speed $delay cubic-bezier(0.42, 0.0, 1.0, 1.0)
   animation-fill-mode: forwards
 
-=slide-down($delay: 0s)
-  animation: slide-down .4s $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
+=slide-down($delay: 0s, $duration: .4s)
+  animation: slide-down $duration $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
   animation-fill-mode: forwards
