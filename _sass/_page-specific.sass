@@ -36,7 +36,7 @@
     padding: 10em 10em 3em
     font-size: 1.1em
     font-weight: 600
-    +translate-on-load(1.5s)
+    +translate-scale-on-load(1.5s)
 
 #about .nav-panel .about
   color: var(--hover-highlight)
@@ -162,40 +162,8 @@
           background-size: cover
 
   .project-information
-
     h2
       text-align: left
-
-    .panel
-      &.odd, &.even
-        min-height: 300px
-
-      &.even
-        margin: 4em 0
-        flex-direction: row-reverse
-
-      &:first-of-type
-        margin-top: 5em
-
-        h2
-          margin-top: 0
-
-    .info-section
-      flex: 1
-
-    .image-panel .project-image
-      flex: 1
-      justify-content: center
-      background-size: contain
-      background-repeat: no-repeat
-      background-position: center
-      margin-bottom: 0.5em
-
-    .even .image-panel
-      padding: 0 2em 0 0
-
-    .odd .image-panel
-      padding: 0 0 0 2em
 
     &.dashboards .image-panel
       .wireframes
@@ -214,103 +182,136 @@
       .initial-designs
         background-image: url("/images/wedding/initial-designs.png")
 
-  // .project-journey
-  //   .stage
-  //     min-height: 30em
-  //     display: flex
-  //     margin: 1.5em 0
-  //     padding: 2em 1em
+    .panel
+      .info-section
+        flex: 1
 
-  //     %journey-stage-marker
-  //       position: absolute
-  //       height: 30px
-  //       width: 30px
-  //       border-radius: 50%
-  //       background-color: var--(highlight)
-  //       border: 7px solid var(--color-bg)
-  //       z-index: 2
+      &:first-of-type
+        margin-top: 5em
 
-  //       &:before
-  //         content: ''
-  //         position: absolute
-  //         border-radius: 50%
-  //         height: 34px
-  //         width: 34px
-  //         border: 2px solid var--(highlight)
-  //         top: -9px
-  //         left: -9px
+        h2
+          margin-top: 0
 
-  //     .info-section
-  //       padding: 0 1em
+      &.odd, &.even
+        min-height: 300px
 
-  //     .image-panel .project-image
-  //       flex: 1
-  //       justify-content: center
-  //       background-size: contain
-  //       background-repeat: no-repeat
-  //       background-position: center
+      &.odd .image-panel
+        padding: 0 0 0 2em
+        +fade-left-on-load
 
-  //   .stage.odd .journey-marker
-  //     @extend %journey-stage-marker
-  //     left: 3em
+      &.even
+        margin: 4em 0
+        flex-direction: row-reverse
 
-  //   .stage.even .journey-marker
-  //     @extend %journey-stage-marker
-  //     right: 3em
+        .image-panel
+          padding: 0 2em 0 0
+          +fade-right-on-load
 
-  //   .stage:first-of-type
-  //     .project-image
-  //       background-image: url("/images/test-image.png")
-
-  //   .stage:nth-of-type(2)
-  //     .project-image
-  //       background-image: url("/images/test-image.png")
-
-  //   .stage:nth-of-type(3)
-  //     .project-image
-  //       background-image: url("/images/test-image.png")
-
-  //   .stage:last-of-type
-  //     border-bottom-right-radius: 0
-  //     border-bottom-left-radius: 0
-
-  //     .project-image
-  //       background-image: url("/images/test-image.png")
+      .image-panel .project-image
+        flex: 1
+        justify-content: center
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        margin-bottom: 0.5em
 
 // #projects .svg-test
-  .stage
-    padding: 0
+//   .project-journey
+//     .stage
+//       min-height: 30em
+//       display: flex
+//       margin: 1.5em 0
+//       padding: 2em 1em
 
-    &.odd, &.even
-      padding: 0
+//       %journey-stage-marker
+//         position: absolute
+//         height: 30px
+//         width: 30px
+//         border-radius: 50%
+//         background-color: var--(highlight)
+//         border: 7px solid var(--color-bg)
+//         z-index: 2
 
-  .panel
-    flex: 1
-    padding: 0 1em 1em
+//         &:before
+//           content: ''
+//           position: absolute
+//           border-radius: 50%
+//           height: 34px
+//           width: 34px
+//           border: 2px solid var--(highlight)
+//           top: -9px
+//           left: -9px
 
-  .journey-lines
-    position: absolute
-    padding-top: 17px
-    fill: none
-    stroke-width: 1px
-    stroke: var--(highlight)
-    width: 100%
-    height: 1000px
+//       .info-section
+//         padding: 0 1em
 
-    path
-      display: none
+//       .image-panel .project-image
+//         flex: 1
+//         justify-content: center
+//         background-size: contain
+//         background-repeat: no-repeat
+//         background-position: center
 
-      &.draw-first
-        display: block
-        animation: dash 5s linear forwards
+//     .stage.odd .journey-marker
+//       @extend %journey-stage-marker
+//       left: 3em
 
-      &.draw
-        display: block
-        animation: dash 5s linear forwards
+//     .stage.even .journey-marker
+//       @extend %journey-stage-marker
+//       right: 3em
 
-        @keyframes dash
-          to
-            stroke-dashoffset: 0
+//     .stage:first-of-type
+//       .project-image
+//         background-image: url("/images/test-image.png")
+
+//     .stage:nth-of-type(2)
+//       .project-image
+//         background-image: url("/images/test-image.png")
+
+//     .stage:nth-of-type(3)
+//       .project-image
+//         background-image: url("/images/test-image.png")
+
+//     .stage:last-of-type
+//       border-bottom-right-radius: 0
+//       border-bottom-left-radius: 0
+
+//       .project-image
+//         background-image: url("/images/test-image.png")
+
+//   .stage
+//     padding: 0
+
+//     &.odd, &.even
+//       padding: 0
+
+//   .panel
+//     flex: 1
+//     padding: 0 1em 1em
+
+//   .journey-lines
+//     position: absolute
+//     padding-top: 17px
+//     fill: none
+//     stroke-width: 1px
+//     stroke: var--(highlight)
+//     width: 100%
+//     height: 1000px
+
+//     path
+//       display: none
+
+//       &.draw-first
+//         display: block
+//         animation: dash 5s linear forwards
+
+//       &.draw
+//         display: block
+//         animation: dash 5s linear forwards
+
+//         @keyframes dash
+//           to
+//             stroke-dashoffset: 0
 
 #contact .nav-panel .contact
   color: var(--hover-highlight)

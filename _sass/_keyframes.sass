@@ -1,4 +1,4 @@
-@keyframes fade-in
+@keyframes fade-in-scale
   from
     opacity: 0
     transform: scale(1.1)
@@ -7,7 +7,7 @@
     opacity: var(--header-text-opacity)
     transform: scale(1)
 
-@keyframes translate-fade
+@keyframes translateY-fade-scale
   from
     opacity: 0
     transform: scale(1.05) translateY(5px)
@@ -15,6 +15,24 @@
   to
     opacity: 1
     transform: scale(1) translateY(0)
+
+@keyframes slide-in-left
+  from
+    opacity: 0
+    transform: translateX(12px) translateY(-2px)
+
+  to
+    opacity: 1
+    transform: translateX(0) translateY(0)
+
+@keyframes slide-in-right
+  from
+    opacity: 0
+    transform: translateX(-12px) translateY(-2px)
+
+  to
+    opacity: 1
+    transform: translateX(0) translateY(0)
 
 @keyframes slide-down
   from

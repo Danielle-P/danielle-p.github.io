@@ -31,11 +31,19 @@
   transform: $transform
 
 =fade-on-load($speed: .8s)
-  animation: fade-in $speed
+  animation: fade-in-scale $speed
   animation-fill-mode: forwards
 
-=translate-on-load($speed: .4s, $delay: .4s)
-  animation: translate-fade $speed $delay cubic-bezier(0.42, 0.0, 1.0, 1.0)
+=translate-scale-on-load($speed: .4s, $delay: .4s)
+  animation: translateY-fade-scale $speed $delay cubic-bezier(0.42, 0.0, 1.0, 1.0)
+  animation-fill-mode: forwards
+
+=fade-left-on-load($speed: 1s)
+  animation: slide-in-left $speed
+  animation-fill-mode: forwards
+
+=fade-right-on-load($speed: 1s)
+  animation: slide-in-right $speed
   animation-fill-mode: forwards
 
 =slide-down($delay: 0s, $duration: .4s)
