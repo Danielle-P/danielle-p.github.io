@@ -8,6 +8,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="/assets/fonts/icofont/icofont.min.css" />
   <link rel="stylesheet" type="text/css" href="/assets/main.css" />
+
+  {% if page.preloads %}
+  {% for url in page.preloads %}
+  <link rel="prefetch" href="{{ url }}" as="image" />
+  {% endfor %}
+  {% endif %}
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="author" content="Danielle Parkinson" />
