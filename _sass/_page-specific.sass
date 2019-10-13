@@ -92,12 +92,12 @@
     width: auto
     position: absolute
     top: 1.8em
+    left: 3em
 
     .button-container
       .back, button:after
         width: 5.8em
         height: 5.8em
-        margin-left: 3em
         color: $white
 
       .back
@@ -111,7 +111,7 @@
     .toggle-display-links
       width: 100%
       display: none
-      padding: 0.4em 0 2em 2.9em
+      padding: 0 0 0.4em 0.4em
 
       &.show
         display: block
@@ -121,26 +121,32 @@
         display: flex
         flex-direction: row
         align-items: center
-        justify-content: flex-start
-        padding: 0.4em 0
+        margin: 0.8em 0
+        padding-left: 0.5em
         opacity: 0
 
-        .button-label
-          padding-left: 0.8em
-          font-size: 0.7em
+        button
+          width: 3em
+          height: 3em
 
-        a
-          width: 2.2em
-          height: 2.2em
-          border-radius: 50%
+          &:after
+            display: none
+
+        .button-label
+          padding-left: 0.4em
+          font-size: 0.65em
+
+        &:hover
+          button, .button-label
+            opacity: 0.8
 
       .meals-up
         @extend %project-link
         color: #f97878
         +slide-down ($duration: .2s)
 
-        .meals-up-bg
-          background: url("/images/meals-up-logo.png") no-repeat center 0px
+        button
+          background: url("/images/meals-up-logo.svg") no-repeat center 0px
           background-size: cover
 
       .dashboards
@@ -148,8 +154,8 @@
         color: #07a1d7
         +slide-down ($duration: .2s, $delay: .1s)
 
-        .dashboard-bg
-          background: url("/images/dashboard-icon.png") no-repeat center 0px
+        button
+          background: url("/images/dashboard-icon.svg") no-repeat center 0px
           background-size: cover
 
       .wedding
@@ -157,8 +163,8 @@
         color: #eec232
         +slide-down ($duration: .2s, $delay: .2s)
 
-        .wedding-bg
-          background: url("/images/wedding-icon.png") no-repeat center 0px
+        button
+          background: url("/images/wedding-icon.svg") no-repeat center 0px
           background-size: cover
 
   .project-information
