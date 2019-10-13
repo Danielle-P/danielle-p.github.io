@@ -64,6 +64,7 @@
     .image-panel
       max-width: 65%
       padding: 2em
+      perspective: 1000px
 
   .selectable-image
     &:first-of-type img
@@ -185,8 +186,47 @@
       .screenshots
         background-image: url("/images/wedding/wedding-wireframes.png")
 
-      .initial-designs
-        background-image: url("/images/wedding/initial-designs.png")
+      &.initial-designs
+        flex-direction: column
+        max-width: 50%
+        perspective: 1000px
+
+        .image-row
+          display: flex
+          flex-direction: row
+          margin-bottom: 0.5em
+
+          .project-image
+            flex: none
+            width: auto
+            max-width: 50%
+
+            img
+              max-width: 100%
+              height: 15em
+              transform: rotateY(30deg)
+              perspective: 1000px
+              border-radius: 10%
+              +image-box-shadow
+
+          &:nth-of-type(2n) .project-image
+
+            &:nth-of-type(2n) img
+              margin-left: -50%
+
+            &:nth-of-type(3n) img
+              margin-left: -100%
+
+            &:nth-of-type(4n) img
+              margin-left: -150%
+
+          &:first-of-type .project-image
+            &:nth-of-type(2n) img
+              margin-left: -64%
+              box-shadow: none
+
+            &:nth-of-type(3n) img
+              margin-left: -60%
 
     .panel
       .info-section

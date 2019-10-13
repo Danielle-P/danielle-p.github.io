@@ -297,7 +297,6 @@ input:checked + .slider:before
     flex: 1
     max-width: 100%
     padding: 0 1.5em
-    perspective: 1000px
 
     .selectable-image
       flex: 1
@@ -307,7 +306,7 @@ input:checked + .slider:before
 
       img
         width: 100%
-        box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.6)
+        +image-box-shadow
         +transform($transform: rotateY(30deg))
 
 /** Divider
