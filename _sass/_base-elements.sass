@@ -292,7 +292,7 @@ input:checked + .slider:before
   .info-section
     flex: 1
 
-  .image-panel
+  .portfolio-images, .image-section
     display: flex
     flex: 1
     max-width: 100%
@@ -324,12 +324,11 @@ input:checked + .slider:before
     background-color: var(--subheader-color)
     opacity: var(--body-text-opacity)
 
-/** Timeline
+/** Timeline and Journey
   */
-.timeline
+.timeline, .journey
   display: flex
-  align-items: center
-  margin: 15% auto 1.5em
+  align-items: flex-start
 
   .marker
     position: relative
@@ -348,26 +347,20 @@ input:checked + .slider:before
       left: 50%
       background: var(--highlight)
 
-    &:last-of-type:after
-      content: ''
-      position: absolute
-      width: 0
-      height: 0
-
     .marker-label
       min-height: 4em
       margin: 0.6em
       line-height: 1.3em
 
-  .button-container
+  .button-container, .stage-container
     position: relative
     text-align: center
     z-index: 1
 
-    .button-toggle-panel
+    .button-toggle-panel, .journey-stage
       width: 5.2em
       height: 5.2em
-      color: white
+      color: $white
       z-index: 2
 
       i
@@ -375,6 +368,55 @@ input:checked + .slider:before
 
       &.active
         background: var(--hover-highlight)
+
+.timeline .marker:last-of-type, .journey .journey-section:last-of-type .marker:last-of-type
+  &:after
+    width: 0
+
+.journey
+  .journey-section
+    display: flex
+    flex-direction: column
+
+    .stage-name
+      padding-bottom: 1em
+      text-align: center
+      text-transform: uppercase
+      font-size: 0.8em
+      color: var(--subheader-color)
+
+    .marker-section
+      display: flex
+      flex-direction: row
+
+      .marker:after
+        background: var(--subheader-color)
+        height: 1px
+
+      .stage-container .journey-stage
+        display: flex
+        align-items: center
+        justify-content: center
+        background: var(--color-bg)
+        border-radius: 50%
+        border: 1px dotted var(--subheader-color)
+        color: var(--subheader-color)
+        font-size: 0.65em
+
+      .marker-label
+        color: var(--subheader-color)
+        font-size: 0.9em
+
+    &:nth-of-type(even)
+      .stage-name
+        color: var(--highlight)
+
+      .marker-section .marker:after
+        background: var(--highlight)
+
+      .stage-container .journey-stage
+        border: 1px dotted var(--highlight)
+        color: var(--highlight)
 
 .slide-down-panel
   display: none

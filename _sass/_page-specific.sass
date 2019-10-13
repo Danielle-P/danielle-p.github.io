@@ -50,6 +50,9 @@
   .page-content
     padding: 4em 5em 1.8em
 
+    .timeline
+      margin: 15% auto 1.5em
+
     .slide-down-panel
       padding: 0 5em
 
@@ -61,7 +64,7 @@
   .panel
     justify-content: center
 
-    .image-panel
+    .portfolio-images
       max-width: 65%
       padding: 2em
       perspective: 1000px
@@ -168,11 +171,51 @@
           background: url("/images/wedding-icon.svg") no-repeat center 0px
           background-size: cover
 
-  .project-information
+  .panel
+    h2:first-of-type
+      margin-top: 0
+
+    &:nth-of-type(odd), &:nth-of-type(even)
+      //min-height: 300px
+
+    &:nth-of-type(odd) .image-section
+      padding: 0 0 0 2em
+      +fade-left-on-load
+
+    &:nth-of-type(even)
+      margin: 2em 0
+      flex-direction: row-reverse
+
+      .image-section
+        padding: 0 2em 0 0
+        +fade-right-on-load
+
+    .project-image
+      flex: 1
+      justify-content: center
+      background-size: contain
+      background-repeat: no-repeat
+      background-position: center
+      margin-bottom: 0.5em
+      padding-top: 1em
+
+    .info-section
+      flex: 1
+
+  .project-details
+    padding-top: 1em
+
     h2
       text-align: left
 
-    &.dashboards .image-panel
+    &.meals-up
+      .journey
+        margin: 1.8em 0 2.2em
+
+      // .image-section
+
+
+    &.dashboards .image-section
       .wireframes
         background-image: url("/images/dashboard/wireframes.png")
 
@@ -182,7 +225,7 @@
       .journey-section
         background-image: url("/images/dashboard/journey-mock-up.png")
 
-    &.wedding .image-panel
+    &.wedding .image-section
       .screenshots
         background-image: url("/images/wedding/wedding-wireframes.png")
 
@@ -227,137 +270,6 @@
 
             &:nth-of-type(3n) img
               margin-left: -60%
-
-    .panel
-      .info-section
-        flex: 1
-
-      &:first-of-type
-        margin-top: 5em
-
-        h2
-          margin-top: 0
-
-      &.odd, &.even
-        min-height: 300px
-
-      &.odd .image-panel
-        padding: 0 0 0 2em
-        +fade-left-on-load
-
-      &.even
-        margin: 4em 0
-        flex-direction: row-reverse
-
-        .image-panel
-          padding: 0 2em 0 0
-          +fade-right-on-load
-
-      .image-panel .project-image
-        flex: 1
-        justify-content: center
-        background-size: contain
-        background-repeat: no-repeat
-        background-position: center
-        margin-bottom: 0.5em
-
-// #projects .svg-test
-//   .project-journey
-//     .stage
-//       min-height: 30em
-//       display: flex
-//       margin: 1.5em 0
-//       padding: 2em 1em
-
-//       %journey-stage-marker
-//         position: absolute
-//         height: 30px
-//         width: 30px
-//         border-radius: 50%
-//         background-color: var--(highlight)
-//         border: 7px solid var(--color-bg)
-//         z-index: 2
-
-//         &:before
-//           content: ''
-//           position: absolute
-//           border-radius: 50%
-//           height: 34px
-//           width: 34px
-//           border: 2px solid var--(highlight)
-//           top: -9px
-//           left: -9px
-
-//       .info-section
-//         padding: 0 1em
-
-//       .image-panel .project-image
-//         flex: 1
-//         justify-content: center
-//         background-size: contain
-//         background-repeat: no-repeat
-//         background-position: center
-
-//     .stage.odd .journey-marker
-//       @extend %journey-stage-marker
-//       left: 3em
-
-//     .stage.even .journey-marker
-//       @extend %journey-stage-marker
-//       right: 3em
-
-//     .stage:first-of-type
-//       .project-image
-//         background-image: url("/images/test-image.png")
-
-//     .stage:nth-of-type(2)
-//       .project-image
-//         background-image: url("/images/test-image.png")
-
-//     .stage:nth-of-type(3)
-//       .project-image
-//         background-image: url("/images/test-image.png")
-
-//     .stage:last-of-type
-//       border-bottom-right-radius: 0
-//       border-bottom-left-radius: 0
-
-//       .project-image
-//         background-image: url("/images/test-image.png")
-
-//   .stage
-//     padding: 0
-
-//     &.odd, &.even
-//       padding: 0
-
-//   .panel
-//     flex: 1
-//     padding: 0 1em 1em
-
-//   .journey-lines
-//     position: absolute
-//     padding-top: 17px
-//     fill: none
-//     stroke-width: 1px
-//     stroke: var--(highlight)
-//     width: 100%
-//     height: 1000px
-
-//     path
-//       display: none
-
-//       &.draw-first
-//         display: block
-//         animation: dash 5s linear forwards
-
-//       &.draw
-//         display: block
-//         animation: dash 5s linear forwards
-
-//         @keyframes dash
-//           to
-//             stroke-dashoffset: 0
 
 #contact .nav-panel .contact
   color: var(--hover-highlight)
