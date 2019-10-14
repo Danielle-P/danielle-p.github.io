@@ -26,12 +26,13 @@ p
   +body-font-style
 
   a
+    font-weight: bold
     text-transform: none
 
 a
-  color: var(--highlight)
   text-transform: uppercase
   text-decoration: none
+  color: var(--highlight)
   +transition-ease(.2s)
 
   &:hover, &:active
@@ -88,6 +89,10 @@ button
     background: var(--hover-highlight)
     outline: 0
     +transition-ease
+
+// .text-highlight
+//   font-weight: bold
+//   color: var(--subheader-color)
 
 .js-loading-image *, .js-loading-image *:before, .js-loading-image *:after
   animation-play-state: paused !important
