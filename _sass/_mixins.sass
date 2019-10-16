@@ -25,7 +25,7 @@
   color: var(--text-color)
 
 =image-box-shadow
-  box-shadow: -10px 0px 7px -6px rgba(0,0,0,0.5)
+  box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.5)
 
 =transition-ease($speed: .25s, $timing-function: ease-in-out)
   transition: $speed $timing-function
@@ -41,14 +41,21 @@
   animation: translateY-fade-scale $speed $delay cubic-bezier(0.42, 0.0, 1.0, 1.0)
   animation-fill-mode: forwards
 
-=fade-left-on-load($speed: 1s)
-  animation: slide-in-left $speed
+=image-slide-in-right($delay: 0)
+  animation: image-slide-right 1s
+  animation-delay: $delay
   animation-fill-mode: forwards
 
-=fade-right-on-load($speed: 1s)
-  animation: slide-in-right $speed
+=image-slide-in-left($delay: 0)
+  animation: image-slide-left 1s
+  animation-delay: $delay
   animation-fill-mode: forwards
 
 =slide-down($delay: 0s, $duration: .4s)
   animation: slide-down $duration $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
   animation-fill-mode: forwards
+
+=default-image-grid($columns: auto, $rows: auto, $gap: 0)
+  grid-template-columns: repeat($columns, 1fr)
+  grid-template-rows: $rows
+  grid-gap: $gap

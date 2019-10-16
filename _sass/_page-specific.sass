@@ -62,30 +62,41 @@
     border-bottom: 1px dotted var(--hover-highlight)
 
   .panel
-    justify-content: center
+    display: flex
 
     .portfolio-images
+      display: flex
       max-width: 65%
       padding: 2em
       perspective: 1000px
 
-  .selectable-image
-    &:first-of-type img
-      z-index: 1
+      .selectable-image
+        flex: 1
 
-    &:nth-of-type(2)
-      z-index: 2
-      margin-left: -4em
+        &:focus
+          border-bottom: none
 
-    &:last-of-type
-      z-index: 3
-      margin-left: -4em
+        img
+          width: 100%
+          +image-box-shadow
+          +transform($transform: rotateY(30deg))
 
-    img
-      +transition-ease
+        &:first-of-type img
+          z-index: 1
 
-      &:hover
-        +transform (translateY(-0.4em) scale(1.03) rotateY(30deg))
+        &:nth-of-type(2)
+          z-index: 2
+          margin-left: -4em
+
+        &:last-of-type
+          z-index: 3
+          margin-left: -4em
+
+        img
+          +transition-ease
+
+          &:hover
+            +transform (translateY(-0.4em) scale(1.03) rotateY(30deg))
 
 #projects
   .nav-panel .portfolio
@@ -175,32 +186,15 @@
     h2:first-of-type
       margin-top: 0
 
-    &:nth-of-type(odd), &:nth-of-type(even)
-      //min-height: 300px
-
-    &:nth-of-type(odd) .image-section
-      padding: 0 0 0 2em
-      +fade-left-on-load
+    .info-section
+      padding: 0 2em 0 0
 
     &:nth-of-type(even)
       margin: 2em 0
       flex-direction: row-reverse
 
-      .image-section
-        padding: 0 2em 0 0
-        +fade-right-on-load
-
-    .project-image
-      flex: 1
-      justify-content: center
-      background-size: contain
-      background-repeat: no-repeat
-      background-position: center
-      margin-bottom: 0.5em
-      padding-top: 1em
-
-    .info-section
-      flex: 1
+      .info-section
+        padding: 0 0 0 2em
 
   .project-details
     padding-top: 1em
@@ -212,65 +206,30 @@
       .journey
         margin: 1.8em 0 2.2em
 
-      .image-section
+        .marker
+          &:after
+            width: 0
 
+          &.visible:after
+            width: 100%
 
-    &.dashboards .image-section
-      .wireframes
-        background-image: url("/images/dashboard/wireframes.png")
-
-      .tile-demo
-        background-image: url("/images/dashboard/tile-row.png")
-
-      .journey-section
-        background-image: url("/images/dashboard/journey-mock-up.png")
+        .journey-section:last-of-type
+          .marker.visible:last-of-type:after
+            display: none
 
     &.wedding .image-section
-      .screenshots
-        background-image: url("/images/wedding/wedding-wireframes.png")
+      &.initial-designs .project-image
+        img
+          max-height: 15em
 
-      &.initial-designs
-        flex-direction: column
+        &:nth-of-type(2) img
+          box-shadow: none
+          border-radius: 0
+
+      &.end-designs
         max-width: 50%
-        perspective: 1000px
 
-        .image-row
-          display: flex
-          flex-direction: row
-          margin-bottom: 0.5em
-
-          .project-image
-            flex: none
-            width: auto
-            max-width: 50%
-
-            img
-              max-width: 100%
-              height: 15em
-              transform: rotateY(30deg)
-              perspective: 1000px
-              border-radius: 10%
-              +image-box-shadow
-
-          &:nth-of-type(2n) .project-image
-
-            &:nth-of-type(2n) img
-              margin-left: -50%
-
-            &:nth-of-type(3n) img
-              margin-left: -100%
-
-            &:nth-of-type(4n) img
-              margin-left: -150%
-
-          &:first-of-type .project-image
-            &:nth-of-type(2n) img
-              margin-left: -64%
-              box-shadow: none
-
-            &:nth-of-type(3n) img
-              margin-left: -60%
-
-#contact .nav-panel .contact
-  color: var(--hover-highlight)
-  border-bottom: 1px dotted var(--hover-highlight)
+#contact
+  .nav-panel .contact
+    color: var(--hover-highlight)
+    border-bottom: 1px dotted var(--hover-highlight)
