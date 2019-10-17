@@ -47,14 +47,11 @@
     color: var(--hover-highlight)
     border-bottom: 1px dotted var(--hover-highlight)
 
-  .page-content
-    padding: 4em 5em 1.8em
+  .journey
+    margin: 15% auto 1.5em
 
-    .timeline
-      margin: 15% auto 1.5em
-
-    .slide-down-panel
-      padding: 0 5em
+  .slide-down-panel
+    padding: 0 2em 1.8em 2em
 
 #portfolio
   .nav-panel .portfolio
@@ -202,20 +199,14 @@
     h2
       text-align: left
 
-    &.meals-up
-      .journey
-        margin: 1.8em 0 2.2em
+    &.meals-up .journey-with-stages
+      margin: 1em 0 2em
 
-        .marker
-          &:after
-            width: 0
+      .stage-name
+        flex: 2
 
-          &.visible:after
-            width: 100%
-
-        .journey-section:last-of-type
-          .marker.visible:last-of-type:after
-            display: none
+        &:nth-of-type(even)
+          flex: 6
 
     &.wedding .image-section
       &.initial-designs .project-image

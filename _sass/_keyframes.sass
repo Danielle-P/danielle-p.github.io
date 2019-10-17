@@ -1,3 +1,4 @@
+// Transform components on page load
 @keyframes fade-in-scale
   from
     opacity: 0
@@ -16,15 +17,6 @@
     opacity: 1
     transform: scale(1) translateY(0)
 
-@keyframes slide-down
-  from
-    opacity: 0
-    transform: translateY(-10px)
-
-  to
-    opacity: 1
-    transform: translateY(0)
-
 @keyframes image-slide-right
   from
     opacity: 0
@@ -42,3 +34,24 @@
   to
     opacity: 1
     transform: translateX(0) translateY(0)
+
+//Interactive components
+@keyframes slide-down
+  from
+    opacity: 0
+    transform: translateY(-10px)
+
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes journey-button-show
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+@keyframes journey-line-animation
+  100%
+    width: calc(100% - 2.6em)

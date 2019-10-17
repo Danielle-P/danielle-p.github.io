@@ -9,6 +9,7 @@ body[data-theme-animate]
 
 .page-content
   padding: 4em 10em 1.8em
+  min-height: calc(100% - 45px)
 
 h1
   +header-font-style
@@ -94,7 +95,7 @@ button
 //   color: var(--subheader-color)
 
 .js-loading-image *, .js-loading-image *:before, .js-loading-image *:after
-  animation-play-state: paused !important
+  animation-play-state: paused
 
 /** Navigation
   */
@@ -241,7 +242,7 @@ input:checked + .slider:before
 
 #theme-switch
   position: absolute
-  right: 0
+  left: 0
   margin: 0 2.2em 1.5em
 
 /**Grid
@@ -323,28 +324,26 @@ input:checked + .slider:before
         max-height: 22em
 
       &.two
-        +default-image-grid ($columns: 5)
+        +default-image-grid ($columns: 5, $rows: 3)
         .project-image
           grid-column: 1 / span 3
           grid-row: 1 / span 2
 
           &:nth-child(2)
             grid-column: 3 / span 3
-            grid-row: 2 / span 1
+            grid-row: 2 / span 2
 
       &.three
         +default-image-grid ($columns: 4, $gap: 10px)
         .project-image
-          grid-column: 1 / span 3
+          grid-column: 1 / span 2
           grid-row: 1 / span 2
 
           &:nth-child(1)
             grid-column: 1 / span 2
-            grid-row: 1 / span 2
 
           &:nth-child(2)
             grid-column: 3 / span 2
-            grid-row: 1 / span 2
 
           &:nth-child(3)
             grid-column: 2 / span 2
@@ -388,7 +387,9 @@ input:checked + .slider:before
         transform: rotateY(45deg)
 
         img
-          border-radius: 10%
+          border-radius: 15px//10%
+          border: 2px solid red
+          overflow: hidden
           +image-box-shadow
 
       //media queries to set to repeat(2, 1fr) for mobile
@@ -416,11 +417,10 @@ input:checked + .slider:before
     background-color: var(--subheader-color)
     opacity: var(--body-text-opacity)
 
-/** Timeline and Journey
+/** Journey
   */
-.timeline, .journey
+.journey
   display: flex
-  align-items: flex-start
 
   .marker
     position: relative
@@ -429,28 +429,39 @@ input:checked + .slider:before
     flex-direction: column
     align-items: center
     text-align: center
+    opacity: 0
 
     &:after
       content: ''
       position: absolute
-      width: 100%
+      width: 0
       height: 2px
       top: 1.65em
-      left: 50%
+      left: calc(50% + 1.3em)
       background: var(--highlight)
+
+    @for $n from 1 through 8
+      &.visible:nth-of-type(#{$n})
+        +journey-line-animation(#{($n - 1) * 0.75}s)
+
+        &:last-of-type::after
+          display: none
 
     .marker-label
       margin: 0.6em
       line-height: 1.3em
+      color: var(--subheader-color)
 
   .button-container, .stage-container
-    position: relative
-    text-align: center
     z-index: 1
 
     .button-toggle-panel, .journey-stage
       width: 5.2em
       height: 5.2em
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
       color: $white
       z-index: 2
 
@@ -460,54 +471,42 @@ input:checked + .slider:before
       &.active
         background: var(--hover-highlight)
 
-.timeline .marker:last-of-type, .journey .journey-section:last-of-type .marker:last-of-type
-  &:after
-    width: 0
-
-.journey
-  .journey-section
+.journey-with-stages
+  .journey-stage-titles
     display: flex
-    flex-direction: column
+    padding: 2em 0 1em
 
     .stage-name
-      padding-bottom: 1em
-      text-align: center
       text-transform: uppercase
       font-size: 0.8em
       color: var(--subheader-color)
+      text-align: center
 
-    .marker-section
-      display: flex
-      flex-direction: row
-
-      .marker:after
-        background: var(--subheader-color)
-        height: 1px
-
-      .stage-container .journey-stage
-        display: flex
-        align-items: center
-        justify-content: center
-        background: var(--color-bg)
-        border-radius: 50%
-        border: 1px dotted var(--subheader-color)
-        color: var(--subheader-color)
-        font-size: 0.65em
-
-      .marker-label
-        color: var(--subheader-color)
-        font-size: 0.9em
-
-    &:nth-of-type(even)
-      .stage-name
+      &:nth-of-type(even)
         color: var(--highlight)
 
-      .marker-section .marker:after
+  .journey
+    .marker
+      &::after
+        height: 1px
         background: var(--highlight)
 
-      .stage-container .journey-stage
-        border: 1px dotted var(--highlight)
-        color: var(--highlight)
+      &.stage-one
+        .journey-stage
+          border: 1px dotted var(--subheader-color)
+          color: var(--subheader-color)
+
+        &::after
+          background: var(--subheader-color)
+
+    .stage-container .journey-stage
+      background: var(--color-bg)
+      border: 1px dotted var(--highlight)
+      color: var(--highlight)
+      font-size: 0.65em
+
+    .marker-label
+      font-size: 0.9em
 
 .slide-down-panel
   display: none

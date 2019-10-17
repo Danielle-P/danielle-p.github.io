@@ -1,3 +1,5 @@
+/**Styles
+  */
 =header-font-style($font-size: 4em, $margin-bottom: 0.8em)
   opacity: var(--header-text-opacity)
   margin-bottom: $margin-bottom
@@ -27,6 +29,8 @@
 =image-box-shadow
   box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.5)
 
+/** Transitions and Animations
+  */
 =transition-ease($speed: .25s, $timing-function: ease-in-out)
   transition: $speed $timing-function
 
@@ -55,7 +59,19 @@
   animation: slide-down $duration $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
   animation-fill-mode: forwards
 
+/** Components
+  */
 =default-image-grid($columns: auto, $rows: auto, $gap: 0)
   grid-template-columns: repeat($columns, 1fr)
-  grid-template-rows: $rows
+  grid-template-rows: repeat($rows, 1fr)
   grid-gap: $gap
+
+=journey-line-animation($delay)
+  animation: journey-button-show 0.75s linear
+  animation-fill-mode: forwards
+  animation-delay: $delay
+
+  &::after
+    animation: journey-line-animation 0.75s
+    animation-fill-mode: forwards
+    animation-delay: $delay
