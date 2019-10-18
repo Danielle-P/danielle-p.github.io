@@ -1,4 +1,4 @@
-if (document.querySelector('#projects')) {
+if (document.querySelector('#projects .project-details.meals-up')) {
   var journeyTopPosition = document
     .querySelector('.journey')
     .getBoundingClientRect().top
