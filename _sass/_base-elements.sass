@@ -8,19 +8,19 @@ body[data-theme-animate]
   +transition-ease(1s)
 
 .page-content
-  padding: 4em 10em 1.8em
   min-height: calc(100% - 45px)
+  padding: 4em 10em 1.8em
 
 h1
   +header-font-style
 
 h2
-  +subheader-font-style
   margin-top: 1.8em
+  +subheader-font-style
 
 h3
-  +subheader-font-style($font-size: 1.2em)
   margin-top: 1.2em
+  +subheader-font-style($font-size: 1.2em)
 
 p
   +body-font-style
@@ -51,13 +51,13 @@ ul
   position: absolute
   margin-left: -0.7em
   content: '\2022'
-  font-size: 2em
   color: var(--highlight)
+  font-size: 2em
 
 button
   background: var(--highlight)
-  border: none
   border-radius: 50%
+  border: none
   cursor: pointer
 
   .button-label
@@ -67,10 +67,10 @@ button
     font-size: 0.8em
 
   &:after
-    display: block
-    position: absolute
     width: 100%
     height: 100%
+    display: block
+    position: absolute
     top: 0
     left: 0
     content: ""
@@ -89,10 +89,6 @@ button
     background: var(--hover-highlight)
     outline: 0
     +transition-ease
-
-// .text-highlight
-//   font-weight: bold
-//   color: var(--subheader-color)
 
 .js-loading-image *, .js-loading-image *:before, .js-loading-image *:after
   animation-play-state: paused
@@ -152,9 +148,9 @@ button
     +transform($transform: rotate(-45deg))
 
   &.open #icon-bottom
-    left: 7.5%
-    top: 9px
     width: 85%
+    top: 9px
+    left: 7.5%
     +transform($transform: rotate(90deg))
 
 .nav-panel
@@ -173,11 +169,11 @@ button
   .home
     width: 5.8em
     height: 5.8em
-    border-radius: 50%
     background: url('/../images/profile-photo.jpg') no-repeat
     background-size: contain
     -webkit-filter: sepia(.6)
     filter: sepia(.6)
+    border-radius: 50%
     border: 0.2em solid var(--highlight)
 
   ul
@@ -185,10 +181,10 @@ button
     display: flex
     flex-direction: row
     justify-content: space-evenly
-    padding: 0 5em 0 2em
     margin: 0
-    font-size: 1.1em
+    padding: 0 5em 0 2em
     color: var(--highlight)
+    font-size: 1.1em
     opacity: 1
 
 .nav-panel.show
@@ -198,15 +194,15 @@ button
 /**Toggle
   */
 .toggle-switch
-  position: relative
-  display: inline-block
   width: 45px
   height: 25px
+  position: relative
+  display: inline-block
 
 .switch input
-  opacity: 0
   width: 0
   height: 0
+  opacity: 0
 
 .slider
   position: absolute
@@ -221,9 +217,9 @@ button
   +transition-ease
 
 .slider:before
-  position: absolute
-  height: 17px
   width: 17px
+  height: 17px
+  position: absolute
   left: 4px
   bottom: 4px
   border-radius: 34px
@@ -256,19 +252,19 @@ input:checked + .slider:before
     text-align: center
 
     .ellipse
+      width: 6em
+      height: 6em
       display: flex
       align-items: center
       justify-content: center
-      width: 6em
-      height: 6em
       margin: 2em auto 1.2em
       padding: 0
       border-radius: 50%
       border: 1px dotted var(--subheader-color)
 
       i
-        font-size: 2.5em
         color: var(--subheader-color)
+        font-size: 2.5em
 
     h4
       +subheader-font-style($font-size: 1.1em)
@@ -309,8 +305,8 @@ input:checked + .slider:before
     padding: 0 0 0 2em
 
     .project-image img
-      opacity: 0
       max-width: 100%
+      opacity: 0
 
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
@@ -361,8 +357,6 @@ input:checked + .slider:before
             grid-column: 2 / span 2
             grid-row: 2 / span 2
 
-      // &.four
-      //   +default-image-grid ($columns: 2, $gap: 0.6em)
       &.four
         +default-image-grid ($columns: 2, $rows: 3, $gap: 0.6em)
         .project-image
@@ -416,7 +410,7 @@ input:checked + .slider:before
         transform: rotateY(45deg)
 
         img
-          border-radius: 1em//10%
+          border-radius: 1em
           overflow: hidden
           +image-box-shadow
 
@@ -433,13 +427,13 @@ input:checked + .slider:before
 /** Divider
   */
 .ellipses-divider
-  text-align: center
   margin-top: 2.2em
+  text-align: center
 
   span
-    display: inline-block
     width: 5px
     height: 5px
+    display: inline-block
     margin: 3px
     border-radius: 50%
     background-color: var(--subheader-color)
@@ -451,8 +445,8 @@ input:checked + .slider:before
   display: flex
 
   .marker
-    position: relative
     display: flex
+    position: relative
     flex: 1
     flex-direction: column
     align-items: center
@@ -460,13 +454,13 @@ input:checked + .slider:before
     opacity: 0
 
     &:after
-      content: ''
-      position: absolute
       width: 0
       height: 2px
+      position: absolute
       top: 1.65em
       left: calc(50% + 1.3em)
       background: var(--highlight)
+      content: ''
 
     @for $n from 1 through 8
       &.visible:nth-of-type(#{$n})
@@ -510,10 +504,10 @@ input:checked + .slider:before
     padding: 2em 0 1em
 
     .stage-name
-      text-transform: uppercase
-      font-size: 0.8em
       color: var(--subheader-color)
       text-align: center
+      text-transform: uppercase
+      font-size: 0.8em
 
       &:nth-of-type(even)
         color: var(--highlight)
@@ -543,6 +537,7 @@ input:checked + .slider:before
 
 .slide-down-panel
   display: none
+  padding: 1.3em 2em 1.8em 1.4em
 
   &.show
     display: block
@@ -552,41 +547,19 @@ input:checked + .slider:before
 
       h2
         margin: 0.2em
-        text-align: center
+        color: var(--hover-highlight)
         font-size: 0.9em
         font-weight: 600
-        color: var(--hover-highlight)
         +slide-down
 
       h3
-        opacity: 0
         margin: 0
-        text-align: center
+        opacity: 0
         +slide-down($delay: .2s)
 
     .slide-in
       opacity: 0
 
-      &:first-child
-        +slide-down($delay: .4s)
-
-      &:nth-child(2)
-        +slide-down($delay: .5s)
-
-      &:nth-child(3)
-        +slide-down($delay: .6s)
-
-      &:nth-child(4)
-        +slide-down($delay: .7s)
-
-      &:nth-child(5)
-        +slide-down($delay: .8s)
-
-      &:nth-child(6)
-        +slide-down($delay: .9s)
-
-      &:nth-child(7)
-        +slide-down($delay: 1s)
-
-      &:nth-child(8)
-        +slide-down($delay: 1.1s)
+      @for $n from 1 through 10
+        &.slide-in:nth-child(#{$n})
+          +slide-down(#{($n * 0.2) + 0.2}s)
