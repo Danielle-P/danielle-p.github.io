@@ -111,47 +111,47 @@ button
     &.show
       display: block
 
-.nav-icon
-  width: 56%
-  height: 1em
-  margin: 0.2em auto 1.2em
-  +transform($transform: rotate(0deg))
+  .nav-icon
+    width: 56%
+    height: 1em
+    margin: 0.2em auto 1.2em
+    +transform($transform: rotate(0deg))
 
-  span
-    width: 100%
-    height: 2px
-    display: block
-    position: absolute
-    background: $white
-    border-radius: 10px
-    +transition-ease(0.25s)
+    span
+      width: 100%
+      height: 2px
+      display: block
+      position: absolute
+      background: $white
+      border-radius: 10px
+      +transition-ease(0.25s)
 
-  #icon-top
-    top: 3px
+    #icon-top
+      top: 3px
 
-  #icon-middle
-    top: 10px
+    #icon-middle
+      top: 10px
 
-  #icon-bottom
-    top: 17px
+    #icon-bottom
+      top: 17px
 
-  &.open #icon-top
-    width: 64%
-    top: 3px
-    left: 39%
-    +transform($transform: rotate(45deg))
+    &.open #icon-top
+      width: 64%
+      top: 3px
+      left: 39%
+      +transform($transform: rotate(45deg))
 
-  &.open #icon-middle
-    width: 64%
-    top: 3px
-    left: -3%
-    +transform($transform: rotate(-45deg))
+    &.open #icon-middle
+      width: 64%
+      top: 3px
+      left: -3%
+      +transform($transform: rotate(-45deg))
 
-  &.open #icon-bottom
-    width: 85%
-    top: 9px
-    left: 7.5%
-    +transform($transform: rotate(90deg))
+    &.open #icon-bottom
+      width: 85%
+      top: 9px
+      left: 7.5%
+      +transform($transform: rotate(90deg))
 
 .nav-panel
   width: 100%
@@ -243,47 +243,44 @@ input:checked + .slider:before
 
 /**Grid
   */
-.grid-container
+.skills-grid
   display: grid
-  grid-template-columns: 1fr 1fr 1fr
+  grid-template-columns: repeat(3, 1fr)
+  text-align: center
 
-  .grid-item
-    grid-row-start: 1
-    text-align: center
+  .item-1
+    grid-column-start: 1
 
-    .ellipse
-      width: 6em
-      height: 6em
-      display: flex
-      align-items: center
-      justify-content: center
-      margin: 2em auto 1.2em
-      padding: 0
-      border-radius: 50%
-      border: 1px dotted var(--subheader-color)
+  .item-2
+    grid-column-start: 2
 
-      i
-        color: var(--subheader-color)
-        font-size: 2.5em
+  .item-3
+    grid-column-start: 3
 
-    h4
-      +subheader-font-style($font-size: 1.1em)
+  .ellipse
+    width: 6em
+    height: 6em
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 2em auto 1.2em
+    padding: 0
+    border-radius: 50%
+    border: 1px dotted var(--subheader-color)
 
-    ul
-      margin-top: 0.25em
-      padding: 0
+    i
+      color: var(--subheader-color)
+      font-size: 2.5em
 
-      li:before
-        content: ''
+  h4
+    +subheader-font-style($font-size: 1.1em)
 
-    &.item-1
-      grid-column-start: 1
+  ul
+    margin-top: 0.25em
+    padding: 0
 
-    &.item-2
-      grid-column-start: 2
-
-    &.item-3
-      grid-column-start: 3
+    li:before
+      content: ''
 
 /** Panels
  */
