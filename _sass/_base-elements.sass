@@ -15,7 +15,6 @@ h1
   +header-font-style
 
 h2
-  margin-top: 1.8em
   +subheader-font-style
 
 h3
@@ -164,7 +163,7 @@ button
   background: rgba(17,40,72,.99)
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
-  z-index: 1
+  z-index: 2
 
   .home
     width: 5.8em
@@ -288,15 +287,16 @@ input:checked + .slider:before
   display: flex
   justify-content: center
 
-  h2:first-of-type
-    margin-top: 0
-
   .info-section
     flex: 1
     align-self: center
 
-  &:first-of-type .info-section
-    align-self: flex-start
+  &:first-of-type
+    .info-section
+      align-self: flex-start
+
+    .image-section
+      margin-top: 1.8em
 
   .image-section
     padding: 0 0 0 2em
@@ -424,7 +424,7 @@ input:checked + .slider:before
 /** Divider
   */
 .ellipses-divider
-  margin-top: 2.2em
+  margin: 2em auto
   text-align: center
 
   span

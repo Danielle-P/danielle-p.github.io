@@ -22,7 +22,6 @@
 
     h1:first-of-type
       padding: 0 2em
-      margin-bottom: 0
 
   .nav-icon.open
     margin: 0.9em 1em 1em 1.25em
@@ -90,24 +89,56 @@
 
   .page-content h1:first-of-type
     text-align: left
-    padding: 0 2em 0 0
+    padding: 0.1em 2em 0 0
 
   .nav-panel.show
     width: auto
 
-  #projects .portfolio-links
-    display: flex
-    position: relative
+  #projects
+    h1:first-of-type
+      padding-right: 0
 
-    .toggle-display-links.show
+    .portfolio-links
       display: flex
+      position: relative
+      align-items: flex-end
+      padding: 0.8em 0 2em
 
-    .toggle-display-links
-      display: flex
-
-      .project-link
+      .button-container
         width: auto
-        flex-direction: column
+        height: 3em
+
+        .back
+          height: 100%
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          align-items: center
+          padding: 0
+          background: var(--color-bg)
+          color: var(--highlight)
+
+          i::before
+            content: '\ea5c'
+            font-size: 1.2em
+
+          span
+            font-size: 0.95em
+
+      .toggle-display-links.show
+        display: flex
+
+      .toggle-display-links
+        width: auto
+        display: flex
+        padding: 0
+
+        .project-link
+          flex-direction: column
+          margin: 0 !important
+
+          .button-label
+            padding: 1em 0 0 0
 
 
   .panel
@@ -147,10 +178,16 @@
     align-items: center
 
     .portfolio-images
-      margin: 6em auto
+      margin: 4em auto
       padding: 0
 
-  #projects
-    .project-details.wedding .image-section.end-designs
+  #projects .project-details.wedding .image-section
+    &.initial-designs
+      padding: 1em 0 1em 3em
+
+      .project-image:nth-of-type(2) img
+        max-height: 11em
+
+    &.end-designs
       max-width: 100%
 
