@@ -1,40 +1,43 @@
 #landing
   display: flex
   flex-direction: column
-  align-items: center
-  justify-content: center
+  justify-content: space-evenly
+  align-content: center
 
-  h1, h2
-    display: flex
-    margin-bottom: 0.6em
-    +fade-on-load(2s)
-
-  h2
-    font-size: 1.6em
-
-  li
-    align-self: center
+  .title-panel
     text-align: center
-    font-size: 1.2em
-    padding: 0 0.5em
 
-  .profile-photo
-    width: 9.4em
-    height: 9.4em
-    margin: 4.2em 2em 2.2em
-    border-radius: 50%
-    border: 3px solid var(--highlight)
-    +fade-on-load(2s)
+    .profile-photo
+      max-width: 9.4em
+      max-height: 9.4em
+      margin: 0 0 3em
+      border-radius: 50%
+      border: 3px solid var(--highlight)
+      +fade-on-load(2s)
+
+    h1, h2
+      margin-bottom: 0.6em
+      +fade-on-load(2s)
+
+    h2
+      font-size: 1.6em
 
   .landing-nav
     width: 100%
     display: flex
-    padding: 10em 10em 3em
-    justify-content: space-between
+    justify-content: space-evenly
+    margin-top: 3em
+    padding-left: 0
     font-size: 1.1em
     font-weight: 600
     opacity: 0
     +translate-scale-on-load(1.5s)
+
+    li
+      align-self: center
+      text-align: center
+      font-size: 1.2em
+      padding: 0 0.5em
 
 #about .nav-panel .about
   border-bottom: 1px dotted var(--hover-highlight)
@@ -60,10 +63,10 @@
       max-width: 65%
       display: flex
       padding: 2em
-      perspective: 1000px
 
       .selectable-image
         flex: 1
+        perspective: 1000px
 
         &:focus
           border-bottom: none
@@ -103,17 +106,17 @@
 
     .button-container
       .back, button:after
-        width: 5.8em
-        height: 5.8em
+        width: 4em
+        height: 4em
         color: $white
 
       .back
         span
           text-transform: uppercase
-          font-size: 0.8em
+          font-size: 0.5em
 
         i
-          font-size: 2em
+          font-size: 1.3em
 
     .toggle-display-links
       width: 100%
@@ -133,10 +136,10 @@
         opacity: 0
 
         button
-          width: 3em
-          height: 3em
+          width: 2em
+          height: 2em
 
-          &:after
+          &::after
             display: none
 
         .button-label
