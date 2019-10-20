@@ -5,9 +5,6 @@
   .page-content
     padding: 4em 5em 1.8em
 
-  #landing .landing-nav
-    padding: 10em 2em 3em
-
   #portfolio .panel .portfolio-images
     max-width: 80%
 
@@ -18,19 +15,21 @@
 
 @media (max-width: $breakpoint-tablet)
   .page-content
-    padding: 2.5em 2em 1.8em
+    padding: 4.5em 2em 1.8em
 
     h1:first-of-type
-      padding: 0 2em
+      padding: 0 1em 0 0
 
   .nav-icon.open
-    margin: 0.9em 1em 1em 1.25em
+    margin: 0.7em 0 0.7em 0.85em
     transform: rotate(90deg)
 
   .nav-panel
     width: 0
     height: 100%
-    display: block
+    display: flex
+    flex-direction: column
+    align-items: flex-start
     position: fixed
     top: 0
     right: -7.6em
@@ -41,6 +40,9 @@
     ul
       flex-direction: column
       align-items: flex-end
+      align-self: flex-end
+      justify-content: flex-start
+      margin-left: 2em
       padding: 4em 0 0 0
 
       li
@@ -48,7 +50,8 @@
         white-space: nowrap
 
     &.show
-      width: 40%
+      width: auto
+      display: flex
       right: 0
 
   .journey
@@ -75,34 +78,41 @@
 
   #landing
     padding: 3em 2em 2em 2em
+    justify-content: space-around
+
+    .profile-photo
+      max-width: 6em
+      max-height: 6em
 
     .landing-nav
-      padding: 3em 0 2em
       flex-direction: column
 
-    li
-      padding: 0.8em
+      li
+        padding: 0.5em 0
 
 @media (max-width: $breakpoint-mobile)
+  .nav-button
+    margin: 1em
+
+  .nav-panel
+    padding: 1em
+
   h1
-    +header-font-style($font-size: 3em)
+    +header-font-style($font-size: 2.8em)
 
-  .page-content h1:first-of-type
-    text-align: left
-    padding: 0.1em 2em 0 0
+  .page-content
+    padding: 5.5em 1em 1.8em
 
-  .nav-panel.show
-    width: auto
+    h1:first-of-type
+      padding: 0
 
   #projects
     h1:first-of-type
-      padding-right: 0
+      padding-top: 1em
 
     .portfolio-links
       display: flex
-      position: relative
       align-items: flex-end
-      padding: 0.8em 0 2em
 
       .button-container
         width: auto
@@ -110,20 +120,22 @@
 
         .back
           height: 100%
+          width: auto
           display: flex
           flex-direction: column
           justify-content: space-between
           align-items: center
-          padding: 0
+          padding: 0.1em 0 0 0
           background: var(--color-bg)
           color: var(--highlight)
+          border-radius: 0
 
           i::before
             content: '\ea5c'
             font-size: 1.2em
 
           span
-            font-size: 0.95em
+            font-size: 0.6em
 
       .toggle-display-links.show
         display: flex
