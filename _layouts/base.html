@@ -27,8 +27,15 @@
   <!-- <script defer src="/scripts/line-draw.js"></script> -->
 </head>
 
+
 <body id="{{ page.id }}" data-theme="light">
+
+  {% if page.portfolio-nav %}
+  {% include {{ page.portfolio-nav }} %}
+  {% endif %}
+
   {{ content }}
+
 </body>
 
 </html>

@@ -133,49 +133,29 @@
         align-items: center
         margin: 0.8em 0
         padding-left: 0.5em
+        color: var(--subheader-color)
         opacity: 0
-
-        button
-          width: 2em
-          height: 2em
-
-          &::after
-            display: none
 
         .button-label
           padding-left: 0.4em
           font-size: 0.65em
 
         &:hover
-          button, .button-label
+          svg, .button-label
             opacity: 0.8
+            transition: opacity ease-in-out .4s
 
       .meals-up
         @extend %project-link
-        color: #f97878
         +slide-down ($duration: .2s)
-
-        button
-          background: url("/images/meals-up-logo.svg") no-repeat center 0px
-          background-size: cover
 
       .dashboards
         @extend %project-link
-        color: #07a1d7
         +slide-down ($duration: .2s, $delay: .1s)
-
-        button
-          background: url("/images/dashboard-icon.svg") no-repeat center 0px
-          background-size: cover
 
       .wedding
         @extend %project-link
-        color: #eec232
         +slide-down ($duration: .2s, $delay: .2s)
-
-        button
-          background: url("/images/wedding-icon.svg") no-repeat center 0px
-          background-size: cover
 
   .panel:nth-of-type(even)
     flex-direction: row-reverse

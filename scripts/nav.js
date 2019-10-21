@@ -6,8 +6,8 @@
   var navButton = getElement('nav-button')
   var navPanel = getElement('nav-panel')
   var menuIcon = getElement('nav-icon')
-  var iconMenuLabel = getElement('button-label')
-  var iconHideLabel = getElement('hide-label')
+  var iconMenuLabel = document.querySelector('.nav-button .button-label')
+  var iconHideLabel = document.querySelector('.nav-button .hide-label')
   var pageContent = getElement('page-content')
   var portfolioLinks = getElement('portfolio-links')
 
