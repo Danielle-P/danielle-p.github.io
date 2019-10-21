@@ -3,23 +3,16 @@
     padding: 0 3em 0 0
 
   .page-content
-    padding: 4em 5em 1.8em
+    padding: 3em 5em 1.8em
 
   #portfolio .panel .portfolio-images
-    max-width: 80%
+    max-width: 90%
 
   #projects
     .portfolio-links
-      left: 2em
       z-index: 1
 
 @media (max-width: $breakpoint-tablet)
-  .page-content
-    padding: 4.5em 2em 1.8em
-
-    h1:first-of-type
-      padding: 0 1em 0 0
-
   .nav-icon.open
     margin: 0.7em 0 0.7em 0.85em
     transform: rotate(90deg)
@@ -54,6 +47,15 @@
       display: flex
       right: 0
 
+  #theme-switch
+    padding: 0 0 2em 2em
+
+  .page-content
+    padding: 4.5em 2em 1.8em
+
+    h1:first-of-type
+      padding: 0 1em
+
   .journey
     flex-direction: column
     align-items: flex-start
@@ -77,10 +79,11 @@
       flex-direction: column
 
   #landing
-    padding: 3em 2em 2em 2em
-    justify-content: space-around
+    height: calc(100vh + 3em)
+    padding: 2em
+    justify-content: space-evenly
 
-    .profile-photo
+    .title-panel .profile-photo
       max-width: 6em
       max-height: 6em
 
@@ -89,30 +92,48 @@
 
       li
         padding: 0.5em 0
+        font-size: 1.1em
 
 @media (max-width: $breakpoint-mobile)
+  h1
+    +header-font-style($font-size: 2.8em)
+
+  p, a, ul, li, h4
+    font-size: 1.1em
+
+  p
+    line-height: 1.5em
+
   .nav-button
     margin: 1em
+
+    .nav-icon
+      width: 62%
 
   .nav-panel
     padding: 1em
 
-  h1
-    +header-font-style($font-size: 2.8em)
+  #theme-switch
+    padding: 0 0 2em 1em
 
   .page-content
-    padding: 5.5em 1em 1.8em
+    padding: 2.5em 1em 1.8em
 
     h1:first-of-type
-      padding: 0
+      padding: 0 1.8em 0 0
+      text-align: left
+
+  .skills-grid  h4
+    +subheader-font-style($font-size: 1.3em)
 
   #projects
-    h1:first-of-type
-      padding-top: 1em
+    .page-content
+      padding-top: 6.5em
 
     .portfolio-links
       display: flex
       align-items: flex-end
+      top: 1.4em
 
       .button-container
         width: auto
@@ -152,12 +173,11 @@
           .button-label
             padding: 1em 0 0 0
 
-
   .panel
     flex-direction: column
 
     .image-section
-      padding: 1em 2em
+      padding: 0.2em 0.5em 1em
 
       &.default-image-layout.three
         grid-template-columns: repeat(3, 1fr)
