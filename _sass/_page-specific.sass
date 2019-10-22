@@ -12,7 +12,7 @@
       max-height: 9.4em
       margin: 0 0 3em
       border-radius: 50%
-      border: 0.2em solid var(--highlight)
+      border: 3px solid var(--highlight)
       +fade-on-load(2s)
 
     h1, h2
@@ -105,7 +105,7 @@
     left: 2.2em
 
     .button-container
-      .back, button::after
+      .back, button:after
         width: 4em
         height: 4em
         color: $white
@@ -125,6 +125,7 @@
 
       &.show
         display: block
+        opacity: 1
 
       %project-link
         width: 100%
@@ -139,9 +140,6 @@
         .button-label
           padding-left: 0.4em
           font-size: 0.65em
-
-        &:focus
-          border-bottom: none
 
         &:hover
           svg, .button-label
@@ -214,5 +212,3 @@
 
     h2
       margin: 1em auto
-      a
-        opacity: 1
