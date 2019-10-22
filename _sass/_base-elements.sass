@@ -315,6 +315,9 @@ input:checked + .slider::before
       max-width: 100%
       opacity: 0
 
+      &.lazy
+        animation-play-state: paused !important
+
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
         +image-slide-in-left(#{$n * 0.25}s)
