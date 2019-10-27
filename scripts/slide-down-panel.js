@@ -22,6 +22,9 @@
       slideDownPanels.forEach(panel => {
         if (panel.classList.contains(buttonId)) {
           panel.classList.toggle('show')
+          if (window.innerHeight < 740) {
+            panel.scrollIntoView({behavior: 'smooth'})
+          }
         } else {
           panel.classList.remove('show')
         }
