@@ -7,7 +7,7 @@ body
 body[data-theme-animate]
   +transition-ease(1s)
 
-.page-content
+main
   min-height: calc(100% - 45px)
   padding: 4em 10em 1.8em
   overflow-x: hidden
@@ -50,7 +50,7 @@ ul
   li
     padding-bottom: 0.4em
 
-.page-content ul li::before
+main ul li::before
   position: absolute
   margin-left: -0.7em
   content: '\2022'
@@ -58,7 +58,7 @@ ul
   font-size: 2.1em
   line-height: 0.6em
 
-button
+button, .back-btn
   background: var(--highlight)
   border-radius: 50%
   border: none
@@ -180,7 +180,7 @@ button
     border-radius: 50%
     border: 0.1em solid var(--highlight)
 
-  ul
+  .nav-links
     display: flex
     flex-grow: 1
     -webkit-flex-grow: 1
@@ -192,10 +192,10 @@ button
     font-size: 1.1em
     opacity: 1
 
-    li
+    a
       display: flex
       align-items: center
-      padding: 0 0.5em
+      margin: 0 0.5em
       text-align: center
 
 .nav-panel.show
@@ -306,9 +306,6 @@ input:checked + .slider::before
   &:first-of-type
     .info-section
       align-self: flex-start
-
-    .image-section
-      margin-top: 1.8em
 
   .image-section
     padding: 0 0 0 2em
@@ -435,6 +432,9 @@ input:checked + .slider::before
 
       &.four
         grid-template-columns: repeat(5, 1fr)
+
+section.panel:first-of-type .image-section
+  margin-top: 1.8em
 
 /** Divider
   */

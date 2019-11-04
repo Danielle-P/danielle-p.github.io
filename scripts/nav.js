@@ -43,7 +43,7 @@
 
   if (portfolioLinks) {
     var portfolioBackButton = document.querySelector(
-      '.portfolio-links button.back'
+      '.portfolio-links .back-btn'
     )
     var portfolioToggleLinks = getElement('toggle-display-links')
 

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>Danielle Parkinson</title>
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans|Quattrocento:400,700" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700%7CQuattrocento:400,700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="/assets/fonts/icofont/icofont.min.css" />
   <link rel="stylesheet" type="text/css" href="/assets/main.css" />
 
   {% if page.preloads %}
   {% for url in page.preloads %}
-  <link rel="prefetch" href="{{ url }}" as="image" />
+  <link rel="prefetch" href="{{ url }}" />
   {% endfor %}
   {% endif %}
 

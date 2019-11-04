@@ -2,7 +2,7 @@
   .nav-panel ul
     padding: 0 3em 0 0
 
-  .page-content
+  main
     padding: 3em 5em 1.8em
 
   #portfolio .panel .portfolio-images
@@ -30,7 +30,7 @@
     transition: 0.5s
     overflow: hidden
 
-    ul
+    .nav-links
       flex-direction: column
       align-items: flex-end
       align-self: flex-end
@@ -38,8 +38,8 @@
       margin-left: 2em
       padding: 4em 0 0 0
 
-      li
-        padding: 1em 0
+      a
+        margin: 1em 0
         white-space: nowrap
 
     &.show
@@ -50,7 +50,7 @@
   #theme-switch
     padding: 0 0 2em 2em
 
-  .page-content
+  main
     padding: 4.5em 2em 1.8em
 
     h1:first-of-type
@@ -68,9 +68,9 @@
     .landing-nav
       flex-direction: column
 
-      li
-        padding: 0.5em 0
-        font-size: 1.1em
+      a
+        margin: 0.5em 0
+        font-size: 1.2em
 
   #projects .project-details.wedding .image-section.initial-designs
     .project-image:nth-child(2) img
@@ -80,11 +80,14 @@
   h1
     +header-font-style($font-size: 2.8em)
 
-  p, a, ul, li, h4
+  h4, p, a, ul
     font-size: 1.1em
 
   p
     line-height: 1.5em
+
+  li
+    font-size: 1em
 
   .nav-button
     margin: 1em
@@ -92,10 +95,14 @@
   .nav-panel
     padding: 1em
 
+    .home
+      min-width: 3.6em
+      min-height: 3.6em
+
   #theme-switch
     padding: 0 0 2em 1em
 
-  .page-content
+  main
     padding: 2.5em 1em 1.8em
 
     h1:first-of-type
@@ -165,7 +172,7 @@
 
 
   #projects
-    .page-content
+    main
       padding-top: 6.5em
 
     .portfolio-links
@@ -176,29 +183,23 @@
 
       .button-container
         width: auto
-        height: 3em
+        height: 3.3em
 
-        .back
+        .back-btn
           height: 100%
           width: auto
-          display: flex
-          flex-direction: column
           justify-content: space-between
-          align-items: center
           padding: 0.1em 0 0 0
           background: var(--color-bg)
           color: var(--highlight)
-          border-radius: 0
+          box-shadow: none
 
           i::before
             content: '\ea5c'
             font-size: 1.2em
 
           span
-            font-size: 0.6em
-
-      .toggle-display-links.show
-        display: flex
+            font-size: 0.67em
 
       .toggle-display-links
         width: auto
@@ -207,7 +208,7 @@
 
         .project-link
           flex-direction: column
-          margin: 0 !important
+          margin: 0
 
           .button-label
             padding: 1em 0 0 0
