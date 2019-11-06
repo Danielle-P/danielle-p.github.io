@@ -3,7 +3,7 @@
     return Array.from(document.getElementsByClassName(className))
   }
 
-  var buttonTogglePanels = getElement('button-toggle-panel')
+  var buttonTogglePanels = getElement('toggle-panel')
   var slideDownPanels = getElement('slide-down-panel')
 
   buttonTogglePanels.forEach(buttonTogglePanel => {

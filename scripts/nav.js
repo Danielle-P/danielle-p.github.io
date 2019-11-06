@@ -3,11 +3,11 @@
     return document.getElementsByClassName(className)[0]
   }
 
-  var navButton = getElement('nav-button')
+  var navButton = getElement('btn-menu')
   var navPanel = getElement('nav-panel')
-  var menuIcon = getElement('nav-icon')
-  var iconMenuLabel = document.querySelector('.nav-button .button-label')
-  var iconHideLabel = document.querySelector('.nav-button .hide-label')
+  var menuIcon = getElement('icon-container')
+  var iconMenuLabel = document.querySelector('.btn-menu .label')
+  var iconHideLabel = document.querySelector('.btn-menu .hide')
   var pageContent = getElement('page-content')
   var portfolioLinks = getElement('portfolio-links')
 
@@ -16,13 +16,13 @@
       if (navPanel.classList.contains('show')) {
         navPanel.classList.remove('show')
         menuIcon.classList.remove('open')
-        iconMenuLabel.classList.add('show')
-        iconHideLabel.classList.remove('show')
+        iconMenuLabel.classList.add('visible')
+        iconHideLabel.classList.remove('visible')
       } else {
         navPanel.classList.add('show')
         menuIcon.classList.add('open')
-        iconMenuLabel.classList.remove('show')
-        iconHideLabel.classList.add('show')
+        iconMenuLabel.classList.remove('visible')
+        iconHideLabel.classList.add('visible')
       }
     })
   } else {
@@ -33,8 +33,8 @@
       if (navPanel.classList.contains('show')) {
         navPanel.classList.remove('show')
         menuIcon.classList.remove('open')
-        iconMenuLabel.classList.add('show')
-        iconHideLabel.classList.remove('show')
+        iconMenuLabel.classList.add('visible')
+        iconHideLabel.classList.remove('visible')
       } else {
       }
     })
@@ -47,12 +47,14 @@
     )
     var portfolioToggleLinks = getElement('toggle-display-links')
 
-    portfolioBackButton.addEventListener('mouseover', function() {
-      portfolioToggleLinks.classList.add('show')
-    })
+    if (window.innerWidth > 600) {
+      portfolioBackButton.addEventListener('mouseover', function() {
+        portfolioToggleLinks.classList.add('show')
+      })
 
-    portfolioLinks.addEventListener('mouseleave', function() {
-      portfolioToggleLinks.classList.remove('show')
-    })
+      portfolioLinks.addEventListener('mouseleave', function() {
+        portfolioToggleLinks.classList.remove('show')
+      })
+    }
   }
 })()

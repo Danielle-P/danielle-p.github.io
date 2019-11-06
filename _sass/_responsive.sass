@@ -13,8 +13,8 @@
       z-index: 1
 
 @media (max-width: $breakpoint-tablet)
-  .nav-icon.open
-    margin: 0.5em auto
+  .icon-container.open
+    //margin: 0.2em auto
     transform: rotate(90deg)
 
   .nav-panel
@@ -89,7 +89,7 @@
   li
     font-size: 1em
 
-  .nav-button
+  .btn-menu
     margin: 1em
 
   .nav-panel
@@ -116,7 +116,7 @@
     .marker
       flex-direction: row
       align-items: flex-start
-      margin: 1em
+      margin: 1em 0
 
       &::after
         display: none
@@ -130,6 +130,7 @@
 
     .journey-stage-titles
       flex-direction: column
+      margin-right: 1em
 
   .slide-down-panel
     padding: 1.3em 0
@@ -181,25 +182,24 @@
       top: 1.4em
       left: 1em
 
-      .button-container
+      .back-btn
         width: auto
         height: 3.3em
+        justify-content: space-between
+        padding: 0.1em 0 0 0
+        background: var(--color-bg)
+        color: var(--highlight)
+        box-shadow: none
 
-        .back-btn
-          height: 100%
-          width: auto
-          justify-content: space-between
-          padding: 0.1em 0 0 0
-          background: var(--color-bg)
-          color: var(--highlight)
-          box-shadow: none
+        i::before
+          content: '\ea5c'
+          font-size: 1.2em
 
-          i::before
-            content: '\ea5c'
-            font-size: 1.2em
+        span
+          font-size: 0.67em
 
-          span
-            font-size: 0.67em
+        &:hover
+          color: var(--hover-highlight)
 
       .toggle-display-links
         width: auto
