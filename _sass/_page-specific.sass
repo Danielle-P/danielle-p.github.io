@@ -119,16 +119,10 @@
 
     .toggle-display-links
       width: 100%
-      display: none
       padding: 0 0 0.4em 0.4em
 
-      &.show
-        display: block
-        --body-text-opacity: 1
-        opacity: 1
-
-        a:focus
-          border-bottom: none
+      a:focus
+        border-bottom: none
 
       %project-link
         width: 100%
@@ -141,11 +135,15 @@
         opacity: 0
 
         .button-label
+          display: none
           padding-left: 0.4em
           font-size: 0.65em
 
-        &:hover
-          svg, .button-label
+        &:hover, &:focus
+          .button-label
+            display: block
+
+          svg
             opacity: 0.8
             transition: opacity ease-in-out .4s
 
