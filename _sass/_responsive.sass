@@ -1,4 +1,7 @@
 @media (max-width: $breakpoint-desktop)
+  .btn-menu
+    margin: 1.8em 0.8em
+
   .nav-panel ul
     padding: 0 3em 0 0
 
@@ -10,9 +13,13 @@
 
   #projects
     .portfolio-links
+      left: 0.6em
       z-index: 1
 
 @media (max-width: $breakpoint-tablet)
+  .btn-menu
+    margin: 1em
+
   .icon-container.open
     transform: rotate(90deg)
 
@@ -71,9 +78,51 @@
         margin: 0.5em 0
         font-size: 1.2em
 
-  #projects .project-details.wedding .image-section.initial-designs
-    .project-image:nth-child(2) img
-      max-height: 12em
+  #projects
+    .portfolio-links
+      display: flex
+      align-items: flex-end
+      top: 1.4em
+      left: 1em
+
+      .back-btn
+        width: auto
+        height: 3.3em
+        justify-content: space-between
+        padding: 0.1em 0 0 0
+        background: var(--color-bg)
+        color: var(--highlight)
+        box-shadow: none
+
+        i::before
+          content: '\ea5c'
+          font-size: 1.2em
+
+        span
+          font-size: 0.67em
+
+        &:hover
+          color: var(--hover-highlight)
+
+      .toggle-display-links
+        width: auto
+        display: flex
+        padding: 0
+
+        .project-link
+          flex-direction: column
+          margin: 0
+
+          .button-label
+            display: block
+            padding: 1em 0 0 0
+
+    .project-details
+      padding-top: 6.5em
+
+      &.wedding .image-section.initial-designs
+        .project-image:nth-child(2) img
+          max-height: 12em
 
 @media (max-width: $breakpoint-mobile)
   h1
@@ -87,9 +136,6 @@
 
   li
     font-size: 1em
-
-  .btn-menu
-    margin: 1em
 
   .nav-panel
     padding: 1em
@@ -174,43 +220,6 @@
   #projects
     main
       padding-top: 6.5em
-
-    .portfolio-links
-      display: flex
-      align-items: flex-end
-      top: 1.4em
-      left: 1em
-
-      .back-btn
-        width: auto
-        height: 3.3em
-        justify-content: space-between
-        padding: 0.1em 0 0 0
-        background: var(--color-bg)
-        color: var(--highlight)
-        box-shadow: none
-
-        i::before
-          content: '\ea5c'
-          font-size: 1.2em
-
-        span
-          font-size: 0.67em
-
-        &:hover
-          color: var(--hover-highlight)
-
-      .toggle-display-links
-        width: auto
-        display: flex
-        padding: 0
-
-        .project-link
-          flex-direction: column
-          margin: 0
-
-          .button-label
-            padding: 1em 0 0 0
 
     .panel:nth-of-type(even)
       flex-direction: column

@@ -40,21 +40,4 @@
     })
   } else {
   }
-
-  if (portfolioLinks) {
-    var portfolioBackButton = document.querySelector(
-      '.portfolio-links .back-btn'
-    )
-    var portfolioToggleLinks = getElement('toggle-display-links')
-
-    if (window.innerWidth > 600) {
-      portfolioBackButton.addEventListener('mouseover', function() {
-        portfolioToggleLinks.classList.add('show')
-      })
-
-      portfolioLinks.addEventListener('mouseleave', function() {
-        portfolioToggleLinks.classList.remove('show')
-      })
-    }
-  }
 })()
