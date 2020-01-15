@@ -26,9 +26,9 @@ p
   +body-font-style
 
   a
-    font-weight: bold
     text-transform: none
-
+    border-bottom: 1px dotted var(--highlight)
+    color: var(--highlight)
 a
   text-transform: uppercase
   text-decoration: none
@@ -115,7 +115,7 @@ main ul li::before
   .label, .hide
     display: none
     position: absolute
-    bottom: 1em
+    bottom: 1.1em
 
     &.visible
       display: block
@@ -182,7 +182,7 @@ main ul li::before
     -webkit-filter: sepia(.6)
     filter: sepia(.6)
     border-radius: 50%
-    border: 0.1em solid var(--highlight)
+    border: 1.2px solid var(--highlight)
 
   .nav-links
     display: flex
@@ -412,7 +412,7 @@ input:checked + .slider::before
             grid-row: 2 / span 1
 
     &.perspective
-      perspective: 1000px
+      perspective: 1800px
 
       @for $n from 1 through 4
         .project-image:nth-child(#{$n})
