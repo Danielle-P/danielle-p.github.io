@@ -93,12 +93,12 @@ main ul li::before
     border-radius: 50%
     background-color: $white
     opacity: 0
-    +transform($transform: scale(0.2))
+    transform: scale(0.2)
     +transition-ease(0.3s)
 
   &:hover::after
     opacity: 0.2
-    +transform($transform: scale(1))
+    transform: scale(1)
 
   &:focus
     background: var(--hover-highlight)
@@ -114,6 +114,8 @@ main ul li::before
 
   .label, .hide
     display: none
+    position: absolute
+    bottom: 1em
 
     &.visible
       display: block
@@ -145,19 +147,13 @@ main ul li::before
     &.open
       span
         &:first-of-type
-          width: 70%
-          left: 38%
-          +transform($transform: rotate(40deg))
+          transform: rotate(40deg)
 
         &:nth-of-type(2)
-          width: 100%
-          +transform($transform: rotate(90deg))
+          transform: rotate(90deg)
 
         &:nth-of-type(3)
-          width: 70%
-          top: 25%
-          left: -10%
-          +transform($transform: rotate(-40deg))
+          transform: rotate(-40deg)
 
 /** Navigation
   */
@@ -249,7 +245,7 @@ input:checked + .slider::before
   padding-left: 1px
   content: '\ef9e'
   color: var(--color-bg)
-  +transform($transform: translateX(18px))
+  transform: translateX(18px)
 
 #theme-switch
   position: absolute

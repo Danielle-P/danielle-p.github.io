@@ -76,7 +76,7 @@
         img
           width: 100%
           +image-box-shadow
-          +transform($transform: rotateY(30deg))
+          transform: rotateY(30deg)
 
         &:first-of-type img
           z-index: 1
@@ -93,7 +93,7 @@
           +transition-ease
 
           &:hover
-            +transform (translateY(-0.4em) scale(1.03) rotateY(30deg))
+            transform: translateY(-0.4em) scale(1.03) rotateY(30deg)
 
 #projects
   .nav-panel .portfolio
