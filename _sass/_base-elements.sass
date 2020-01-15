@@ -134,38 +134,30 @@ main ul li::before
       display: block
       top: 0
       left: 0
-      border-radius: 5px
+      border-radius: 3px
       background: $white
       +transition-ease(.25s)
       transform-origin: center left
 
       &:nth-of-type(2)
-        top: 7px
+        transform: translateY(7px)
 
       &:nth-of-type(3)
+        transform: translateY(14px)
         transform-origin: center right
-        top: 14px
 
     &.open
       transform: translateY(-8px)
 
       span
         &:first-of-type
-          width: 15px
-          left: 12px
-          transform: rotate(40deg)
+          transform: translateX(12px) rotate(40deg) scaleX(0.625)
 
         &:nth-of-type(2)
-          left: 12px
-          top: -1px
-          transform: rotate(90deg)
+          transform: translate(12px, -1px) rotate(90deg)
 
         &:nth-of-type(3)
-          width: 15px
-          top: 0
-          left: auto
-          right: 12px
-          transform: rotate(-40deg)
+          transform: translateX(-12px) rotate(-40deg) scaleX(0.625)
 
 /** Navigation
   */
