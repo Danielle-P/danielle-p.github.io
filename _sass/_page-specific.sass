@@ -62,7 +62,7 @@
     display: flex
 
     .portfolio-images
-      max-width: 65%
+      max-width: 75%
       display: flex
       padding: 2em
 
@@ -86,8 +86,12 @@
           z-index: 2
           margin-left: -4em
 
-        &:last-of-type
+        &:nth-of-type(3)
           z-index: 3
+          margin-left: -4em
+
+        &:last-of-type
+          z-index: 4
           margin-left: -4em
 
         img
@@ -156,9 +160,13 @@
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .1s)
 
-      .wedding
+      .dashboard-examples
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .2s)
+
+      .wedding
+        @extend %project-link
+        +slide-down ($duration: .2s, $delay: .3s)
 
   .panel:nth-of-type(even)
     flex-direction: row-reverse
@@ -170,6 +178,9 @@
 
     h2
       text-align: left
+
+    &.dashboard-examples .image-section.perspective
+      max-width: 65%
 
     &.meals-up
       .user-story
