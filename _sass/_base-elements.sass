@@ -356,10 +356,11 @@ input:checked + .slider::before
         .project-image
           padding: 0 1em
 
-      &.mobile.five
+      &.five
         +default-image-grid ($columns: 5, $rows: 1)
-        img
-          max-height: 18em
+
+      &.mobile img
+        max-height: 18em
 
     &.default-image-layout
       +default-image-grid
