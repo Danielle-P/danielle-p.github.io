@@ -179,8 +179,29 @@
     h2
       text-align: left
 
-    &.dashboard-design .image-section.perspective
-      max-width: 65%
+    &.dashboard-design
+      h2
+        text-align: center
+
+      .panel
+        margin: 2em 0
+
+        &:first-of-type
+          .info-section
+            padding: 2em
+            flex: 2
+
+          .image-section
+            flex: 3
+
+            .project-image:last-of-type img
+              max-height: 20em
+
+      .image-section
+        padding: 0 0 1.5em 0
+
+        &:not(.wireframes) img
+          border-radius: .5em
 
     &.meals-up
       .user-story

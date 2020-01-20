@@ -88,7 +88,7 @@
       .back-btn
         width: auto
         height: 3.3em
-        justify-content: space-between
+        justify-content: flex-start
         padding: 0.1em 0 0 0
         background: var(--color-bg)
         color: var(--highlight)
@@ -116,9 +116,14 @@
           .button-label
             display: block
             padding: 1em 0 0 0
+            text-align: center
 
     .project-details
       padding-top: 6.5em
+
+      &.dashboard-design .panel .image-section.image-grid
+        grid-template-columns: 1fr
+
 
       &.wedding .image-section.initial-designs
         .project-image:nth-child(2) img
