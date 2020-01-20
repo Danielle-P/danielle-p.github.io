@@ -338,6 +338,29 @@ input:checked + .slider::before
     align-items: center
     display: grid
 
+    &.image-grid
+      align-items: flex-start
+
+      &.two
+        +default-image-grid ($columns: 2, $rows: 1)
+
+      &.three
+        +default-image-grid ($columns: 3, $rows: 1)
+        align-items: center
+
+        .project-image
+          padding: 0 1em
+
+      &.four
+        +default-image-grid ($columns: 4, $rows: 1)
+        .project-image
+          padding: 0 1em
+
+      &.mobile.five
+        +default-image-grid ($columns: 5, $rows: 1)
+        img
+          max-height: 18em
+
     &.default-image-layout
       +default-image-grid
 

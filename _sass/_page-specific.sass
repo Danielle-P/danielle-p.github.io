@@ -62,7 +62,7 @@
     display: flex
 
     .portfolio-images
-      max-width: 65%
+      max-width: 75%
       display: flex
       padding: 2em
 
@@ -86,8 +86,12 @@
           z-index: 2
           margin-left: -4em
 
-        &:last-of-type
+        &:nth-of-type(3)
           z-index: 3
+          margin-left: -4em
+
+        &:last-of-type
+          z-index: 4
           margin-left: -4em
 
         img
@@ -148,17 +152,21 @@
             opacity: 0.8
             transition: opacity ease-in-out .4s
 
-      .meals-up
+      .dashboard-design
         @extend %project-link
         +slide-down ($duration: .2s)
 
-      .dashboards
+      .meals-up
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .1s)
 
-      .wedding
+      .dashboard-study
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .2s)
+
+      .wedding
+        @extend %project-link
+        +slide-down ($duration: .2s, $delay: .3s)
 
   .panel:nth-of-type(even)
     flex-direction: row-reverse
@@ -170,6 +178,30 @@
 
     h2
       text-align: left
+
+    &.dashboard-design
+      h2
+        text-align: center
+
+      .panel
+        margin: 2em 0
+
+        &:first-of-type
+          .info-section
+            padding: 2em
+            flex: 2
+
+          .image-section
+            flex: 3
+
+            .project-image:last-of-type img
+              max-height: 20em
+
+      .image-section
+        padding: 0 0 1.5em 0
+
+        &:not(.wireframes) img
+          border-radius: .5em
 
     &.meals-up
       .user-story
