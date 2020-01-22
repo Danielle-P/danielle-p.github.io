@@ -323,14 +323,14 @@ input:checked + .slider::before
 
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
-        +image-slide-in-left(#{$n * 0.25}s)
+        +image-slide-in-left(#{$n * 0.2}s)
 
   &:nth-of-type(even) .image-section
     padding: 0 2em 0 0
 
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
-        +image-slide-in-right(#{$n * 0.25}s)
+        +image-slide-in-right(#{$n * 0.2}s)
 
   .image-section
     flex: 1

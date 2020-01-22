@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   var lazyImageSections = Array.from(
-    document.querySelectorAll('.image-section, .image-intersect')
+    document.querySelectorAll('.image-intersect')
   )
 
   if ('IntersectionObserver' in window) {

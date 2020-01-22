@@ -250,13 +250,17 @@
       .image-section
         padding: 1em 2em
 
-    .project-details.wedding .image-section
-      &.initial-designs
-        padding: 1em 0 1em 3em
+    .project-details
+      &.dashboard-design .panel:first-of-type .info-section
+        padding: 0
 
-        .project-image:nth-child(2) img
-          max-height: 11em
+      &.wedding .image-section
+        &.initial-designs
+          padding: 1em 0 1em 3em
 
-      &.end-designs
-        max-width: 100%
+          .project-image:nth-child(2) img
+            max-height: 11em
+
+        &.end-designs
+          max-width: 100%
 
