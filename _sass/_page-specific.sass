@@ -66,9 +66,19 @@
       display: flex
       padding: 2em
 
+
       .selectable-image
         flex: 1
         perspective: 1000px
+
+        .hover-label
+          display: none
+          text-align: center
+          font-size: 0.75em
+          color: var(--hover-highlight)
+
+        &:hover .hover-label
+          display: block
 
         &:focus
           border-bottom: none
@@ -79,26 +89,40 @@
           +image-box-shadow
           transform: rotateY(30deg)
 
-        &:first-of-type img
-          z-index: 1
+        &:first-of-type
+          img
+            z-index: 1
+
+          .hover-label
+            transform: translate(-1.45em, 0.85em) scale(1.03) rotateY(30deg)
 
         &:nth-of-type(2)
           z-index: 2
           margin-left: -4em
 
+          .hover-label
+            transform: translate(-1.7em, 0.8em) scale(1.03) rotateY(30deg)
+
         &:nth-of-type(3)
           z-index: 3
           margin-left: -4em
 
+          .hover-label
+            transform: translate(-0.5em, 0.6em) scale(1.03) rotateY(30deg)
+
         &:last-of-type
           z-index: 4
           margin-left: -4em
+
+          .hover-label
+            transform: translate(0, 0.6em) scale(1.03) rotateY(30deg)
 
         img
           +transition-ease
 
           &:hover
             transform: translateY(-0.4em) scale(1.03) rotateY(30deg)
+
 
 #projects
   .nav-panel .portfolio
