@@ -66,7 +66,7 @@
     h1:first-of-type
       padding: 0 1em
 
-  #landing
+  #landing .landing-content
     height: calc(100vh + 3em)
     justify-content: space-evenly
     padding: 2em
@@ -80,7 +80,6 @@
 
       a
         margin: 0.5em 0
-        font-size: 1.2em
 
   #projects
     .portfolio-links
@@ -213,6 +212,22 @@
 
           &:nth-of-type(3)
             grid-column-start: 2
+
+  #landing .landing-content
+    .title-panel
+      h1
+        font-size: 2.6em
+
+      .profile-photo
+        max-width: 5em
+        max-height: 5em
+
+      .key-skills .skill
+        padding: 0.4em 0.5em
+
+    .landing-nav
+      margin: 3em 0
+      font-size: 1em
 
   #about .skills-grid
     grid-template-columns: repeat(1, 1fr)
