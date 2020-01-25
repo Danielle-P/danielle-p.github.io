@@ -77,52 +77,38 @@
 
     .landing-nav
       flex-direction: column
+      align-items: center
 
       a
         margin: 0.5em 0
 
   #projects
     .portfolio-links
-      display: flex
-      align-items: flex-end
-      top: 1.4em
-      left: 1em
+      top: 6em
 
-      .back-btn
-        width: auto
-        height: 3.3em
-        justify-content: flex-start
+      .btn-animate.back-btn
+        position: absolute
+        top: -4.8em
         padding: 0.1em 0 0 0
         background: var(--color-bg)
         color: var(--highlight)
         box-shadow: none
+        font-size: 1.1em
 
-        i::before
-          content: '\ea5c'
-          font-size: 1.2em
+        i
+          top: 0.6em
 
-        span
-          font-size: 0.67em
-
-        &:hover
-          color: var(--hover-highlight)
+          &::before
+            content: '\ea5c'
 
       .toggle-display-links
-        width: auto
-        display: flex
-        padding: 0
-
-        .project-link
-          flex-direction: column
-          margin: 0
-
-          .button-label
-            display: block
-            padding: 1em 0 0 0
-            text-align: center
+        display: none
 
     .project-details
-      padding-top: 6.5em
+      padding-top: 6em
+
+      h1
+        padding-bottom: 0
 
       &.dashboard-design .panel .image-section.image-grid
         grid-template-columns: 1fr
@@ -158,7 +144,7 @@
     padding: 0 0 2em 1em
 
   main
-    padding: 2.5em 1em 1.8em
+    padding: 2.6em 1em 1.8em
 
     h1:first-of-type
       padding: 0 1.8em 0 0
@@ -219,13 +205,17 @@
     .title-panel
       h1
         font-size: 2.6em
+        margin: 0 0.4em 0.5em
+
+      h2
+        font-size: 1.2em
 
       .profile-photo
         max-width: 5em
         max-height: 5em
 
       .key-skills .skill
-        padding: 0.4em 0.3em
+        flex: 1
 
     .landing-nav
       margin: 3em 0
@@ -254,11 +244,11 @@
         opacity: 1
 
   #projects
-    .portfolio-links
-      top: 6em
-
     main.project-details
-      padding-top: 11.5em
+      padding-top: 6.6em
+
+      h1:first-of-type
+        padding: 0
 
     .panel:nth-of-type(even)
       flex-direction: column

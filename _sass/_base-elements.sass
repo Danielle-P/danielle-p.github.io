@@ -78,9 +78,17 @@ main ul li::before
   font-size: 1em
   color: $white
 
-  .label
-    text-transform: uppercase
+  .label, .hide
+    display: none
+    position: absolute
+    bottom: 1.1em
+    font-family: $header-font
     font-size: 0.6em
+    font-weight: 500
+    text-transform: uppercase
+
+    &.visible
+      display: block
 
   &::after
     width: 100%
@@ -111,14 +119,6 @@ main ul li::before
   margin: 1.8em 2.2em
   z-index: 5
   box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
-
-  .label, .hide
-    display: none
-    position: absolute
-    bottom: 1.1em
-
-    &.visible
-      display: block
 
   .icon-container
     transform: translateY(-4px)
@@ -151,13 +151,13 @@ main ul li::before
 
       span
         &:first-of-type
-          transform: translateX(12px) rotate(40deg) scaleX(0.625)
+          transform: translateX(12px) rotate(40deg) scaleX(0.55)
 
         &:nth-of-type(2)
-          transform: translate(12px, -1px) rotate(90deg)
+          transform: translate(12px, -1px) rotate(90deg) scaleX(0.88)
 
         &:nth-of-type(3)
-          transform: translateX(-12px) rotate(-40deg) scaleX(0.625)
+          transform: translateX(-12px) rotate(-40deg) scaleX(0.55)
 
 /** Navigation
   */
@@ -192,8 +192,7 @@ main ul li::before
     justify-content: space-evenly
     margin: 0
     padding: 0 5em 0 2em
-    color: var(--highlight)
-    font-size: 1.1em
+    +nav-font-style
     opacity: 1
 
     a
