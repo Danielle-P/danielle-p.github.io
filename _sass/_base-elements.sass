@@ -24,6 +24,7 @@ h3
 
 p
   +body-font-style
+
   a
     text-transform: none
     border-bottom: 1px dotted var(--highlight)
@@ -254,6 +255,35 @@ input:checked + .slider::before
   position: absolute
   left: 0
   padding: 0 0 2.2em 2.2em
+
+/**Back to Top
+  */
+#scroll-top-link
+  position: fixed
+  bottom: 2.2em
+  right: 2.2em
+  line-height: 0.5
+  opacity: 0
+  pointer-events: none
+  transform: translateY(2em)
+  +transition-ease
+
+  a
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: $header-font
+
+  i
+    font-size: 2em
+
+  span
+    font-size: 0.85em
+
+  &.visible
+    opacity: 1
+    pointer-events: initial
+    transform: translateY(0)
 
 /**Grid
   */
