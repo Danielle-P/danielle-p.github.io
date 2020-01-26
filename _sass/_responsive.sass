@@ -68,21 +68,25 @@
     right: 1em
 
     a
+      height: 27px
       flex-direction: row
       justify-content: center
-      padding: 0.15em 1em 0 0.5em
+      padding: 0 1em 0 0.5em
       background-color: var(--highlight)
       border-radius: 2em
+      line-height: 1
       color: $white
       cursor: pointer
-      opacity: 0.9
       box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
 
       i
         font-size: 1.5em
 
       span
-        font-size: 0.9em
+        font-size: 0.8em
+
+    &.visible
+      opacity: 0.95
 
   main
     padding: 4.5em 2em 1.8em
