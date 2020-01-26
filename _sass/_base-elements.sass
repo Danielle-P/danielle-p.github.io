@@ -255,6 +255,33 @@ input:checked + .slider::before
   left: 0
   padding: 0 0 2.2em 2.2em
 
+/**Back to Top
+  */
+#scroll-top-link
+  display: none
+  position: fixed
+  bottom: 2.2em
+  right: 2.2em
+  line-height: 0.5
+
+  a
+    display: flex
+    flex-direction: column
+    align-items: center
+    cursor: pointer
+    opacity: 0
+
+  i
+    font-size: 2em
+
+  span
+    font-size: 0.85em
+
+  &.visible
+    display: block
+    a
+      opacity: 1
+
 /**Grid
   */
 .skills-grid
