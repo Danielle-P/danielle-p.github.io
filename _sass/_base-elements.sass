@@ -371,22 +371,22 @@ input:checked + .slider::before
     &.image-grid
       align-items: flex-start
 
-      &.two
+      &.two-col
         +default-image-grid ($columns: 2, $rows: 1)
 
-      &.three
+      &.three-col
         +default-image-grid ($columns: 3, $rows: 1)
         align-items: center
 
         .project-image
           padding: 0 1em
 
-      &.four
+      &.four-col
         +default-image-grid ($columns: 4, $rows: 1)
         .project-image
           padding: 0 1em
 
-      &.five
+      &.five-col
         +default-image-grid ($columns: 5, $rows: 1)
 
       &.mobile img
@@ -395,10 +395,10 @@ input:checked + .slider::before
     &.default-image-layout
       +default-image-grid
 
-      &.one img
+      &.one-img img
         max-height: 22em
 
-      &.two
+      &.two-img
         +default-image-grid ($columns: 5, $rows: 3)
         .project-image
           grid-column: 1 / span 3
@@ -408,7 +408,7 @@ input:checked + .slider::before
             grid-column: 3 / span 3
             grid-row: 2 / span 2
 
-      &.three
+      &.three-img
         +default-image-grid ($columns: 4, $gap: 0.6em)
         .project-image
           grid-column: 1 / span 2
@@ -424,7 +424,7 @@ input:checked + .slider::before
             grid-column: 2 / span 2
             grid-row: 2 / span 2
 
-      &.four
+      &.four-img
         +default-image-grid ($columns: 2, $rows: 3, $gap: 0.6em)
         .project-image
           grid-column: 1 / span 1
@@ -442,7 +442,7 @@ input:checked + .slider::before
             grid-column: 4 / span 1
             grid-row: 2 / span 2
 
-      &.five
+      &.five-img
         +default-image-grid ($columns: 4, $gap: 0.6em)
         .project-image
           grid-column: 1 / span 2
@@ -482,13 +482,13 @@ input:checked + .slider::before
           +image-box-shadow
 
       //media queries to set to repeat(2, 1fr) for mobile
-      &.two
+      &.two-img
         grid-template-columns: repeat(3, 1fr)
 
-      &.three
+      &.three-img
         grid-template-columns: repeat(4, 1fr)
 
-      &.four
+      &.four-img
         grid-template-columns: repeat(5, 1fr)
 
 section.panel:first-of-type .image-section
