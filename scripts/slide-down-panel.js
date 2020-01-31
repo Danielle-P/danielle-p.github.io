@@ -1,10 +1,10 @@
 ;(function() {
-  function getElement(className) {
+  function getElements(className) {
     return Array.from(document.getElementsByClassName(className))
   }
 
-  var buttonTogglePanels = getElement('toggle-panel')
-  var slideDownPanels = getElement('slide-down-panel')
+  var buttonTogglePanels = getElements('toggle-panel')
+  var slideDownPanels = getElements('slide-down-panel')
 
   buttonTogglePanels.forEach(buttonTogglePanel => {
     buttonTogglePanel.addEventListener('click', function() {
