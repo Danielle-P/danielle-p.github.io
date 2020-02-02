@@ -219,7 +219,6 @@
               opacity: 0
               +transition-ease($speed: .3s)
 
-
         &:hover, &:focus
           .button-label
             width: 10.5em
@@ -237,6 +236,7 @@
 
         .button-label
           background-color: #eaf7f6
+
           span
             top: 0.7em
 
@@ -287,14 +287,17 @@
           .image-section
             flex: 3
 
-            // .project-image:last-of-type img
-            //   max-height: 20em
-
       .image-section
         padding: 0 0 1.5em 0
 
         &:not(.wireframes) img
           border-radius: .5em
+
+      .reports-design .image-section.four-col.mobile
+        padding: 0 1em
+
+        img
+          max-height: 26em
 
     &.meals-up
       .user-story
