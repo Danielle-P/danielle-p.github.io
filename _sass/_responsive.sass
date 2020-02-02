@@ -141,6 +141,9 @@
       &.dashboard-design .panel .image-section.image-grid
         grid-template-columns: 1fr
 
+        &.four-col.mobile, &.five-col.mobile
+          grid-template-columns: repeat(2, 1fr)
+
         .project-image
           padding-bottom: 1em
 
@@ -216,7 +219,7 @@
     .image-section
       padding: 0.2em 0.5em 1em
 
-      &.default-image-layout.three
+      &.default-image-layout.three-img
         grid-template-columns: repeat(3, 1fr)
 
         .project-image
@@ -229,6 +232,13 @@
 
           &:nth-of-type(3)
             grid-column-start: 2
+
+  .tabs-container
+    flex-direction: column
+
+    .tab
+      margin: 0 0 0.2em 0
+      font-size: 0.9em
 
   #landing .landing-content
     padding: 0.5em
@@ -286,7 +296,7 @@
       margin: 1em 0
 
       .image-section
-        padding: 1em 2em
+        padding: 1em 0
 
     .project-details
       &.dashboard-design .panel:first-of-type .info-section

@@ -9,7 +9,6 @@
   var iconMenuLabel = document.querySelector('.btn-menu .label')
   var iconHideLabel = document.querySelector('.btn-menu .hide')
   var pageContent = getElement('page-content')
-  var portfolioLinks = getElement('portfolio-links')
 
   if (navButton) {
     navButton.addEventListener('click', function() {
