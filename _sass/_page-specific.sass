@@ -287,6 +287,41 @@
           .image-section
             flex: 3
 
+      .tabs-container .tab
+        %tab-bg
+          width: 100%
+          height: 6em
+          display: flex
+          justify-content: center
+          align-items: center
+          padding: 0 1em
+
+          h2
+            font-size: 1.25em
+            color: $white
+
+        &#airline-design .tab-bg
+          @extend %tab-bg
+          background-color: #19445d
+
+        &#banking-design .tab-bg
+          @extend %tab-bg
+          background-color: #4b758e
+
+        &#reports-design .tab-bg
+          @extend %tab-bg
+          background-color: #3b536d
+
+      .tab-section .slide-down-panel
+        &.airline-design .tab-heading
+          color: #5d7c8d
+
+        &.banking-design .tab-heading
+          color: #809eaf
+
+        &.reports-design .tab-heading
+          color: #758798
+
       .image-section
         padding: 0 0 1.5em 0
 
