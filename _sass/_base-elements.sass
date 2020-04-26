@@ -487,7 +487,6 @@ input:checked + .slider::before
           overflow: hidden
           +image-box-shadow
 
-      //media queries to set to repeat(2, 1fr) for mobile
       &.two-img
         grid-template-columns: repeat(3, 1fr)
 
@@ -549,6 +548,11 @@ section.panel:first-of-type .image-section
       margin: 0.6em
       line-height: 1.3em
       color:  var(--subheader-color)
+
+      h4
+        margin-top: 0.2em
+        text-align: center
+        +body-font-style
 
   .btn-timeline
     z-index: 2
