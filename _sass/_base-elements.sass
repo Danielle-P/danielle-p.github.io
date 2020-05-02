@@ -3,6 +3,7 @@ body
   color: var(--text-color)
   font-family: $body-font
   font-size: 16px
+  font-kerning: normal
 
 body[data-theme-animate]
   +transition-ease(1s)
@@ -24,7 +25,7 @@ h3
 
 h4
   margin-top: 1.2em
-  +subheader-font-style($font-size: 1em)
+  +subheader-font-style($font-size: 1.1em)
   text-align: left
 
 p
@@ -50,7 +51,7 @@ a
 
 ul
   +body-font-style($padding: 0)
-  margin: 0.8em 0 0.65em
+  margin: 0.8em 0
   padding-left: 1.4em
 
   li
@@ -77,7 +78,7 @@ main ul li::before
   justify-content: center
   align-items: center
   position: relative
-  background: var(--highlight)
+  background: var(--button)
   border-radius: 50%
   border: none
   cursor: pointer
@@ -175,7 +176,7 @@ main ul li::before
   top: calc(-7.6em - 20px)
   align-items: center
   padding: 0 2.2em
-  background: rgba(17,40,72,.99)
+  background: #172940
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 4
@@ -185,10 +186,8 @@ main ul li::before
     min-height: 4em
     background: url('/../images/profile-photo.jpg') no-repeat
     background-size: contain
-    -webkit-filter: sepia(.6)
-    filter: sepia(.6)
     border-radius: 50%
-    border: 1.2px solid var(--highlight)
+    border: 1.2px dotted var(--button)
 
   .nav-links
     display: flex
@@ -206,6 +205,10 @@ main ul li::before
       align-items: center
       margin: 0 0.5em
       text-align: center
+      color: var(--button)
+
+      &:hover
+        color: var(--hover-highlight)
 
 .nav-panel.show
   position: fixed
@@ -231,7 +234,7 @@ main ul li::before
   right: 0
   bottom: 0
   cursor: pointer
-  background-color: var(--highlight)
+  background-color: var(--button)
   border-radius: 34px
   font-family: IcoFont
   +transition-ease
@@ -248,7 +251,7 @@ main ul li::before
   +transition-ease
 
 input:checked + .slider
-  background-color: var(--highlight)
+  background-color: var(--button)
 
 input:checked + .slider::before
   padding-left: 1px
@@ -534,7 +537,7 @@ section.panel:first-of-type .image-section
       position: absolute
       top: 1.98em
       left: calc(50% + 1.3em)
-      background: var(--highlight)
+      background: var(--button)
       content: ''
 
     @for $n from 1 through 8
@@ -586,7 +589,7 @@ section.panel:first-of-type .image-section
       &::after
         top: 1.78em
         height: 1px
-        background: var(--highlight)
+        background: var(--button)
 
       &.stage-one
         .journey-stage
@@ -607,7 +610,7 @@ section.panel:first-of-type .image-section
         justify-content: center
         border-radius: 50%
         background: var(--color-bg)
-        border: 1px dotted var(--highlight)
+        border: 1px dotted var(--button)
         color: var(--highlight)
 
         i

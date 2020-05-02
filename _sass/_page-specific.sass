@@ -1,6 +1,6 @@
 #landing, #employment, #portfolio, #cv, #contact
   &[data-theme="light"]
-    background: linear-gradient(180deg,  var(--color-bg) 30%, rgba(242, 163, 86, 0.2)) fixed
+    background: linear-gradient(180deg,  var(--color-bg) 30%, rgba(242, 163, 86, 0.1)) fixed
 
 #landing
   .landing-content
@@ -19,12 +19,11 @@
         max-height: 7em
         margin: 0 0 2em
         border-radius: 50%
-        border: 2px solid var(--highlight)
-        +fade-on-load(1s)
+        +fade-on-load()
 
       h1, h2
         margin-bottom: 0.4em
-        +fade-on-load(1s)
+        +fade-on-load()
 
       h1
         font-weight: 400
@@ -150,6 +149,10 @@
   &[data-theme="dark"] .portfolio-links .project-link
     --body-text-opacity: 1
 
+    svg
+      border: .5px solid var(--text-color)
+      border-radius: 50%
+
     .button-label
       color: var(--color-bg) !important
 
@@ -200,6 +203,7 @@
           right: auto
           border-radius: 3em
           font-size: 0.65em
+          background-color: #e9ebf0
           overflow: hidden
           +transition-ease($speed: .3s)
 
@@ -234,32 +238,20 @@
         @extend %project-link
         +slide-down ($duration: .2s)
 
-        .button-label
-          background-color: #eaf7f6
-
-          span
-            top: 0.7em
+        .button-label span
+          top: 0.7em
 
       .meals-up
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .1s)
 
-        .button-label
-          background-color: #fcf3f3
-
       .dashboard-study
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .2s)
 
-        .button-label
-          background-color: #f1fafe
-
       .wedding
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .3s)
-
-        .button-label
-          background-color: #eef7f6
 
   .panel:nth-of-type(even)
     flex-direction: row-reverse
@@ -377,14 +369,18 @@
       &.end-designs
         max-width: 60%
 
-#cv .panel
-  flex-direction: column
-  align-items: center
-  padding-top: 2em
+#cv
+  .nav-panel .cv
+    border-bottom: 1px dotted var(--hover-highlight)
+    color: var(--hover-highlight)
+  .panel
+    flex-direction: column
+    align-items: center
+    padding-top: 2em
 
-  .cv-container
-    width: 800px
-    margin-top: 2.2em
+    .cv-container
+      width: 800px
+      margin-top: 2.2em
 
 #contact
   .nav-panel .contact
