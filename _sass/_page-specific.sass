@@ -27,10 +27,12 @@
 
       h1
         font-weight: 400
+        font-size: 2.8em
 
       h2
         font-size: 1.3em
         font-weight: 200
+        color: var(--text-color)
 
       .key-skills
         display: flex
@@ -85,7 +87,7 @@
     .portfolio-images
       max-width: 82%
       display: flex
-      padding: 2em
+      padding: 3.5em 2em 0 2em
 
       .selectable-image
         flex: 1
@@ -93,8 +95,8 @@
 
         .hover-label
           display: block
-          text-align: center
-          font-size: 0.85em
+          +header-font-style()
+          font-size: 0.8em
           color: var(--subheader-color)
           opacity: 0
           +transition-ease($speed: .4s)
@@ -204,6 +206,7 @@
           right: auto
           border-radius: 3em
           font-size: 0.65em
+          text-align: left
           background-color: #e9ebf0
           overflow: hidden
           +transition-ease($speed: .3s)
@@ -214,7 +217,7 @@
             align-self: center
             width: 9em
             left: auto
-            right: 0
+            right: 0.3em
             opacity: 0
             +transition-ease($speed: .3s)
 
@@ -226,7 +229,7 @@
 
         &:hover, &:focus
           .button-label
-            width: 10.5em
+            width: 11em
 
             > span
               display: block
