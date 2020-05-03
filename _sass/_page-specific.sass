@@ -63,12 +63,12 @@
         border-bottom-color: var(--hover-highlight)
 
 #about .nav-panel .about
-  border-bottom: 1px dotted var(--hover-highlight)
+  border-bottom-color: var(--hover-highlight)
   color: var(--hover-highlight)
 
 #employment
   .nav-panel .employment
-    border-bottom: 1px dotted var(--hover-highlight)
+    border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
   .journey
@@ -76,7 +76,7 @@
 
 #portfolio
   .nav-panel .portfolio
-    border-bottom: 1px dotted var(--hover-highlight)
+    border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
   .panel
@@ -143,7 +143,7 @@
 
 #projects
   .nav-panel .portfolio
-    border-bottom: 1px dotted var(--hover-highlight)
+    border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
   &[data-theme="dark"] .portfolio-links .project-link
@@ -198,6 +198,7 @@
         .button-label
           width: 32px
           height: 32px
+          display: flex
           position: absolute
           left: 8px
           right: auto
@@ -210,8 +211,8 @@
           > span
             display: block
             position: absolute
+            align-self: center
             width: 9em
-            top: 1.15em
             left: auto
             right: 0
             opacity: 0
@@ -237,9 +238,6 @@
       .dashboard-design
         @extend %project-link
         +slide-down ($duration: .2s)
-
-        .button-label span
-          top: 0.7em
 
       .meals-up
         @extend %project-link
@@ -371,7 +369,7 @@
 
 #cv
   .nav-panel .cv
-    border-bottom: 1px dotted var(--hover-highlight)
+    border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
   .panel
@@ -389,7 +387,7 @@
 
 #contact
   .nav-panel .contact
-    border-bottom: 1px dotted var(--hover-highlight)
+    border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
   .contact-details

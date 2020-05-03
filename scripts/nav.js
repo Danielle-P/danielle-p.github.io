@@ -1,4 +1,4 @@
-;(function() {
+;(function () {
   function getElement(className) {
     return document.getElementsByClassName(className)[0]
   }
@@ -11,7 +11,7 @@
   var pageContent = getElement('page-content')
 
   if (navButton) {
-    navButton.addEventListener('click', function() {
+    navButton.addEventListener('click', function () {
       if (navPanel.classList.contains('show')) {
         navPanel.classList.remove('show')
         menuIcon.classList.remove('open')
@@ -24,19 +24,17 @@
         iconHideLabel.classList.add('visible')
       }
     })
-  } else {
-  }
 
-  if (pageContent) {
-    pageContent.addEventListener('click', function() {
-      if (navPanel.classList.contains('show')) {
-        navPanel.classList.remove('show')
-        menuIcon.classList.remove('open')
-        iconMenuLabel.classList.add('visible')
-        iconHideLabel.classList.remove('visible')
-      } else {
-      }
-    })
+    if (pageContent) {
+      pageContent.addEventListener('click', function () {
+        if (navPanel.classList.contains('show')) {
+          navPanel.classList.remove('show')
+          menuIcon.classList.remove('open')
+          iconMenuLabel.classList.add('visible')
+          iconHideLabel.classList.remove('visible')
+        }
+      })
+    }
   } else {
   }
 })()
