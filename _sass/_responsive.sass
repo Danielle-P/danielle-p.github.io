@@ -166,6 +166,7 @@
     +header-font-style($font-size: 2.8em)
 
   h4, p, a, ul, li
+    font-size: 1.1em
     line-height: 1.7
 
   .nav-panel
@@ -323,8 +324,15 @@
     h1
       padding-left: 0.5em
 
-    .panel .cv-container
-      width: 320px
+    .panel
+      .open-cv
+        display: block
 
-      embed
-        height: 450px
+      .download-cv
+        display: none
+
+      .cv-container
+        width: 320px
+
+        embed
+          height: 450px
