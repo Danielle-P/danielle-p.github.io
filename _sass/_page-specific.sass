@@ -1,4 +1,4 @@
-#landing, #employment, #projects, #resume, #contact
+#landing, #employment, #projects-landing, #resume, #contact
   &[data-theme="light"]
     background: linear-gradient(180deg,  var(--color-bg) 30%, rgba(242, 163, 86, 0.1)) fixed
 
@@ -76,10 +76,13 @@
   .journey
     margin: 15% auto 1.5em
 
-#projects
+#projects-landing
   .nav-panel .projects
     border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
+
+  main
+    min-height: 100%
 
   .panel
     display: flex
@@ -398,13 +401,21 @@
     color: var(--hover-highlight)
 
   .contact-details
-    margin-top: 6em
+    height: calc(100vh - 318px)
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    padding-bottom: 2em
+    text-align: center
 
-    h2
-      margin: 1em auto
+    .contact-method
+      i
+        font-size: 2em
 
-      svg g
-        fill: var(--highlight)
+      p
+        color: var(--highlight)
 
-      a:hover svg g
-        fill: var(--hover-highlight)
+      &:hover p
+        color: var(--hover-highlight)
+

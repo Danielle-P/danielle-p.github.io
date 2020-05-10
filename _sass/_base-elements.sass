@@ -9,7 +9,7 @@ body[data-theme-animate]
   +transition-ease(1s)
 
 main
-  min-height: calc(100% - 45px)
+  min-height: calc(100vh - 160px)
   padding: 3.4em 10em 1.8em
   overflow-x: hidden
 
@@ -68,7 +68,7 @@ main ul li::before
 .js-loading-image *, .js-loading-image *:before, .js-loading-image *:after
   animation-play-state: paused !important
 
-/** Button Styles
+/**Button Styles
   */
 .btn-animate
   width: 4em
@@ -166,7 +166,7 @@ main ul li::before
         &:nth-of-type(3)
           transform: translateX(-12px) rotate(-40deg) scaleX(0.55)
 
-/** Navigation
+/**Navigation
   */
 .nav-panel
   width: 100%
@@ -187,7 +187,7 @@ main ul li::before
     background: url('/../images/profile-photo.jpg') no-repeat
     background-size: contain
     border-radius: 50%
-    border: 1.2px dotted var(--button)
+    border: none
 
   .nav-links
     display: flex
@@ -214,6 +214,32 @@ main ul li::before
 .nav-panel.show
   position: fixed
   top: 0
+
+/**Footer
+  */
+footer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  margin-top: 2em
+  padding: 2.5em 10em
+  background-color: var(--footer-bg)
+
+  #theme-switch
+    padding-bottom: 0
+
+  .footer-text
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+  .footer-links
+    display: flex
+    align-items: center
+
+    a
+      padding: 0 0.8em
+      font-size: 1.1em
 
 /**Toggle
   */
@@ -269,7 +295,7 @@ input:checked + .slider::before
   */
 #scroll-top-link
   position: fixed
-  bottom: 2.2em
+  bottom: 2.8em
   right: 2.2em
   line-height: 0.5
   opacity: 0
