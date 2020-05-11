@@ -179,11 +179,16 @@
     +header-font-style($font-size: 2.8em)
 
   h4, p, a, ul, li
-    //font-size: 1.05em
+    font-size: 1.05em
     line-height: 1.75
 
-  .nav-panel
-    padding: 1em
+  footer
+    padding: 2em 1em 1.1em
+    text-align: center
+    font-size: 1em
+
+    .footer-text
+      margin: 0 3.9em
 
   #theme-switch
     padding: 0 0 2em 1em
@@ -198,9 +203,6 @@
       padding: 0 1.8em 0 0
       text-align: left
 
-  footer
-    padding: 2em 1em 1.1em
-    text-align: center
 
     #theme-switch
       margin-top: 2.7em
@@ -355,7 +357,8 @@
 
   #contact .contact-details
     height: 100%
-    flex-direction: column
+    flex-wrap: wrap
+    padding-top: 3em
 
     .contact-method
-      padding: 1em 0
+      padding: 1em
