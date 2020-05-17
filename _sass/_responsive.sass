@@ -214,25 +214,36 @@
 
   .journey
     flex-direction: column
-    align-items: flex-start
 
     .marker
       flex-direction: row
-      align-items: flex-start
       margin: 1em 0
 
       &::after
-        display: none
+        width: 2px
+        height: 0
+        top: 2.2em
+        left: 2em
+
+      @for $n from 1 through 8
+        &.visible:nth-of-type(#{$n})
+          +journey-line-animation-mobile(#{($n - 1) * 0.6}s)
 
       .marker-label
         padding-left: 1em
         margin: 0.2em 0
 
-        h4
+        h2 i
+          display: inline-block
+
+        h2, h4
           text-align: left
 
   .journey-with-stages
     display: flex
+
+    .marker::after
+      left: 1.8em
 
     .journey-stage-titles
       flex-direction: column

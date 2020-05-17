@@ -72,12 +72,22 @@
   grid-template-rows: repeat($rows, 1fr)
   grid-gap: $gap
 
-=journey-line-animation($delay)
+=journey-line-animation-desktop($delay)
   animation: journey-button-show 0.5s linear
   animation-delay: $delay
   animation-fill-mode: forwards
 
   &::after
-    animation: journey-line-animation 0.75s
+    animation: journey-line-animation-desktop 0.75s
+    animation-delay: $delay
+    animation-fill-mode: forwards
+
+=journey-line-animation-mobile($delay)
+  animation: journey-button-show 0.5s linear
+  animation-delay: $delay
+  animation-fill-mode: forwards
+
+  &::after
+    animation: journey-line-animation-mobile 0.75s
     animation-delay: $delay
     animation-fill-mode: forwards
