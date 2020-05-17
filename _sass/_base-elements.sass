@@ -49,6 +49,29 @@ a
     outline-color: var(--color-bg)
     border-bottom: 1px dotted var(--hover-highlight)
 
+blockquote
+  padding: 1.3em 1.5em 1em
+  background: var(--pale-text-bg)
+  border-left: 0.4em solid rgba(116, 135, 158, 0.3)
+  border-radius: 2px
+  quotes: "\201C""\201D""\2018""\2019"
+
+  &::before
+    color: rgba(116, 135, 158, 0.3)
+    content: open-quote
+    font-size: 4em
+    line-height: 0.1em
+    margin-right: 0.25em
+    vertical-align: -0.4em
+
+  p:first-of-type
+    display: inline
+
+  a
+    display: block
+    padding: 1em 0 0.3em 0
+    text-transform: none
+
 ul
   +body-font-style($padding: 0)
   margin: 0.8em 0
@@ -223,7 +246,7 @@ footer
   justify-content: center
   margin-top: 2em
   padding: 2.5em 10em
-  background-color: var(--footer-bg)
+  background-color: var(--pale-text-bg)
 
   #theme-switch
     padding-bottom: 0
@@ -700,6 +723,9 @@ section.panel:first-of-type .image-section
     margin-right: .2em
     cursor: pointer
     +transition-ease ($speed: .3s)
+
+    .tab-bg
+      border-radius: 2px
 
     &:last-child
       margin-right: 0

@@ -206,7 +206,7 @@
           left: 8px
           right: auto
           border-radius: 3em
-          font-size: 0.65em
+          font-size: 0.6em
           text-align: left
           background-color: #e9ebf0
           overflow: hidden
@@ -216,7 +216,7 @@
             display: block
             position: absolute
             align-self: center
-            width: 9em
+            width: 10em
             left: auto
             right: 0.3em
             color: #647992
@@ -225,13 +225,13 @@
 
             > span
               display: block
-              padding-left: 2em
+              padding-left: 3.2em
               opacity: 0
               +transition-ease($speed: .3s)
 
         &:hover, &:focus
           .button-label
-            width: 11em
+            width: 11.2em
 
             > span
               display: block
@@ -336,6 +336,15 @@
           max-height: 26em
 
     &.meals-up
+      .panel:first-of-type
+        margin: 4em 0 3.5em
+
+        .image-section
+          padding-left: 0
+
+        .info-section
+          align-self: center
+
       .user-story
         padding-top: 2em
 
