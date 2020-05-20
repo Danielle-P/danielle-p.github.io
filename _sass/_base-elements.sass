@@ -13,6 +13,12 @@ main
   padding: 3.4em 10em 1.8em
   overflow-x: hidden
 
+  ::selection,
+    background: #fbeada
+
+  ::-moz-selection
+    background: #fbeada
+
 h1
   +header-font-style
 
@@ -50,11 +56,11 @@ a
     border-bottom: 1px dotted var(--hover-highlight)
 
 blockquote
-  padding: 1.3em 1.5em 1em
-  background: var(--pale-text-bg)
-  border-left: 0.4em solid rgba(116, 135, 158, 0.3)
-  border-radius: 2px
   quotes: "\201C""\201D""\2018""\2019"
+
+  &.intro-text-callout
+    padding: 1.3em 1.5em 1em
+    border-left: 0.4em solid rgba(116, 135, 158, 0.3)
 
   &::before
     color: rgba(116, 135, 158, 0.3)
@@ -400,6 +406,21 @@ input:checked + .slider::before
     flex: 1
     align-self: center
 
+    .team-details
+      +body-font-style
+
+      .team-members
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        font-size: 0.8em
+
+        span
+          margin: 0 0.8em 0.8em 0
+          padding: 0 0.4em
+          border-radius: 2px
+          background: rgba(116, 135, 158, 0.2)
+
   &:first-of-type
     .info-section
       align-self: flex-start
@@ -459,6 +480,9 @@ input:checked + .slider::before
     &.default-image-layout
       +default-image-grid
 
+      .project-image img
+        box-shadow: -9px 5px 7px -6px rgba(0, 0, 0, 0.2)
+
       &.one-img img
         max-height: 22em
 
@@ -493,6 +517,9 @@ input:checked + .slider::before
         .project-image
           grid-column: 1 / span 1
           grid-row: 1 / span 2
+
+          &:nth-child(1) img
+            box-shadow: -10px 2px 7px -6px rgba(0, 0, 0, 0.5)
 
           &:nth-child(2)
             grid-column: 2 / span 1
@@ -556,6 +583,15 @@ input:checked + .slider::before
 
 section.panel:first-of-type .image-section
   margin-top: 1.8em
+
+.intro-text-callout
+  padding: 0.7em 1.5em
+  background: var(--pale-text-bg)
+  border-radius: 2px
+
+  h4
+    margin: 1em 0 0.5em
+    font-weight: bolder
 
 /** Divider
   */
@@ -724,6 +760,9 @@ section.panel:first-of-type .image-section
     cursor: pointer
     +transition-ease ($speed: .3s)
 
+    &.selected
+      cursor: default
+
     .tab-bg
       border-radius: 2px
 
@@ -738,4 +777,4 @@ section.panel:first-of-type .image-section
     margin: .7em 0 1.2em
 
   .slide-down-panel
-    padding: 1.3em 0 0
+    padding: 0.8em 0 0
