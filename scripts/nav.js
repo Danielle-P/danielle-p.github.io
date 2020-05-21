@@ -8,7 +8,7 @@
   var menuIcon = getElement('icon-container')
   var iconMenuLabel = document.querySelector('.btn-menu .label')
   var iconHideLabel = document.querySelector('.btn-menu .hide')
-  var pageContent = getElement('page-content')
+  var mainContent = document.getElementsByTagName('main')[0]
 
   if (navButton) {
     navButton.addEventListener('click', function () {
@@ -25,8 +25,8 @@
       }
     })
 
-    if (pageContent) {
-      pageContent.addEventListener('click', function () {
+    if (mainContent) {
+      mainContent.addEventListener('click', function () {
         if (navPanel.classList.contains('show')) {
           navPanel.classList.remove('show')
           menuIcon.classList.remove('open')
@@ -35,6 +35,5 @@
         }
       })
     }
-  } else {
   }
 })()

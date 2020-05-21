@@ -420,7 +420,7 @@ input:checked + .slider::before
 
         span
           margin: 0 0.8em 0.8em 0
-          padding: 0 0.4em
+          padding: 0.1em 0.6em
           border-radius: 2px
           background: rgba(116, 135, 158, 0.2)
 
@@ -568,7 +568,7 @@ input:checked + .slider::before
           grid-row: 1
 
       .project-image
-        transform: rotateY(45deg)
+        transform: rotateY(32deg)
 
         img
           border-radius: 1em
@@ -639,17 +639,29 @@ section.panel:first-of-type .image-section
     cursor: pointer
     +transition-ease ($speed: .3s)
 
-    &.selected
-      cursor: default
-
     .tab-bg
+      width: 100%
+      height: 4.2em
+      display: flex
+      justify-content: center
+      align-items: center
+      padding: 0 2em
       border-radius: 2px
+      background-color: #3b536d
+      +subheader-font-style
+      font-size: 1.1em
+      color: $white
 
     &:last-child
       margin-right: 0
 
-    &:hover, &:focus, &.selected
-      opacity: 0.7
+    &.selected .tab-bg
+      background-color: transparent
+      cursor: default
+
+    &:hover, &:focus
+      .tab-bg
+        opacity: 0.7
 
 .tab-section
   .tab-heading
@@ -789,7 +801,7 @@ section.panel:first-of-type .image-section
 
   .full-width-panel-highlight
     margin-bottom: 3em
-    padding: 3em 0
+    padding: 3em 0 4em
 
   &.show
     display: block
