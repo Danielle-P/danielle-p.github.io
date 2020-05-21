@@ -9,8 +9,8 @@ body[data-theme-animate]
   +transition-ease(1s)
 
 main
+  padding: 3.4em 0 1.8em
   min-height: calc(100vh - 160px)
-  padding: 3.4em 10em 1.8em
   overflow-x: hidden
 
   ::selection,
@@ -18,6 +18,9 @@ main
 
   ::-moz-selection
     background: #fbeada
+
+.page-content-width
+  +page-content-width
 
 h1
   +header-font-style
@@ -593,6 +596,68 @@ section.panel:first-of-type .image-section
     margin: 1em 0 0.5em
     font-weight: bolder
 
+/*Tabs
+  **/
+.full-width-panel-highlight
+  background: #243447
+
+  h4
+    color: $light-subheader-color
+    opacity: 0.8
+
+  p, .team-members
+    color: $light-text-color
+    opacity: 0.8
+
+  .page-content-width
+    +page-content-width(5em)
+
+  .intro-text-callout
+    background: rgba(255, 255, 255, 0.05)
+
+.tab-section-heading
+  display: flex
+  flex-direction: column
+  text-align: center
+  margin-bottom: 1.7em
+
+  h2
+    +header-font-style
+    margin-bottom: 0
+    font-size: 1.3em
+  i
+    font-size: 2.2em
+
+.tabs-container
+  display: flex
+
+  .tab
+    display: flex
+    flex: 1
+    position: relative
+    margin-right: .2em
+    cursor: pointer
+    +transition-ease ($speed: .3s)
+
+    &.selected
+      cursor: default
+
+    .tab-bg
+      border-radius: 2px
+
+    &:last-child
+      margin-right: 0
+
+    &:hover, &:focus, &.selected
+      opacity: 0.7
+
+.tab-section
+  .tab-heading
+    margin: .7em 0 1.2em
+
+  .slide-down-panel
+    padding: 0
+
 /** Divider
   */
 .ellipses-divider
@@ -722,6 +787,10 @@ section.panel:first-of-type .image-section
   display: none
   padding: 1.3em 2em 1.8em 1.4em
 
+  .full-width-panel-highlight
+    margin-bottom: 3em
+    padding: 3em 0
+
   &.show
     display: block
 
@@ -745,36 +814,3 @@ section.panel:first-of-type .image-section
       @for $n from 1 through 10
         &.slide-in:nth-child(#{$n})
           +slide-down(#{($n * 0.2) + 0.2}s)
-
-/*Tabs
-  **/
-.tabs-container
-  display: flex
-  margin-bottom: 1em
-
-  .tab
-    display: flex
-    flex: 1
-    position: relative
-    margin-right: .2em
-    cursor: pointer
-    +transition-ease ($speed: .3s)
-
-    &.selected
-      cursor: default
-
-    .tab-bg
-      border-radius: 2px
-
-    &:last-child
-      margin-right: 0
-
-    &:hover, &:focus, &.selected
-      opacity: 0.7
-
-.tab-section
-  .tab-heading
-    margin: .7em 0 1.2em
-
-  .slide-down-panel
-    padding: 0.8em 0 0

@@ -1,4 +1,10 @@
 @media (max-width: $breakpoint-desktop)
+  main
+    padding-top: 3em
+
+  .page-content-width
+    +page-content-width(5em)
+
   .btn-menu
     margin: 1.8em 0.8em
 
@@ -7,9 +13,6 @@
 
   #scroll-top-link
     right: 2em
-
-  main
-    padding: 3em 5em 1.8em
 
   #projects .panel .project-images
     padding: 2em 0 0
@@ -20,6 +23,15 @@
       z-index: 1
 
 @media (max-width: $breakpoint-tablet)
+  main
+    padding-top: 4.5em
+
+    h1:first-of-type
+      padding: 0 1em
+
+  .page-content-width
+    +page-content-width(2em)
+
   .btn-menu
     margin: 1em
 
@@ -87,12 +99,6 @@
 
     &.visible
       opacity: 0.95
-
-  main
-    padding: 4.5em 2em 1.8em
-
-    h1:first-of-type
-      padding: 0 1em
 
   footer
     padding: 2em
@@ -175,12 +181,32 @@
         height: 843px
 
 @media (max-width: $breakpoint-mobile)
+  .page-content-width
+    +page-content-width(1em)
+
+  main
+    padding-top: 1.6em
+
+    ul li::before
+      line-height: 1.5
+
+    h1:first-of-type
+      padding: 0 1.8em 0 0
+      text-align: left
+
   h1
     +header-font-style($font-size: 2.8em)
 
   h4, p, a, ul
     font-size: 1.05em
     line-height: 1.75
+
+  #theme-switch
+    margin-top: 2.7em
+    padding: 0 0 2em 1em
+
+  #scroll-top-link
+    right: 1em
 
   footer
     padding: 2em 1em 1.1em
@@ -192,25 +218,6 @@
 
       .separator
         display: none
-
-  #theme-switch
-    padding: 0 0 2em 1em
-
-  #scroll-top-link
-    right: 1em
-
-  main
-    padding: 2.6em 1em 1.8em
-
-    ul li::before
-      line-height: 1.5
-
-    h1:first-of-type
-      padding: 0 1.8em 0 0
-      text-align: left
-
-    #theme-switch
-      margin-top: 2.7em
 
   .journey
     flex-direction: column
