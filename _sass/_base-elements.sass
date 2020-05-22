@@ -632,36 +632,37 @@ section.panel:first-of-type .image-section
   display: flex
 
   .tab
+    height: 4.2em
     display: flex
     flex: 1
-    position: relative
+    justify-content: center
+    align-items: center
     margin-right: .2em
-    cursor: pointer
-    +transition-ease ($speed: .3s)
+    border-radius: 2px
 
-    .tab-bg
+    a
       width: 100%
-      height: 4.2em
+      height: 100%
       display: flex
-      justify-content: center
       align-items: center
+      justify-content: center
       padding: 0 2em
-      border-radius: 2px
       background-color: #3b536d
       +subheader-font-style
       font-size: 1.1em
       color: $white
+      cursor: pointer
+      +transition-ease ($speed: .3s)
 
     &:last-child
       margin-right: 0
 
-    &.selected .tab-bg
+    &.selected a
       background-color: transparent
       cursor: default
 
     &:hover, &:focus
-      .tab-bg
-        opacity: 0.7
+      opacity: 0.7
 
 .tab-section
   .tab-heading
@@ -669,6 +670,10 @@ section.panel:first-of-type .image-section
 
   .slide-down-panel
     padding: 0
+
+  .next-tab
+    float: right
+    cursor: default
 
 /** Divider
   */
@@ -795,7 +800,7 @@ section.panel:first-of-type .image-section
     .marker-label
       font-size: 0.9em
 
-.slide-down-panel
+.slide-down-panel, .tab-panel
   display: none
   padding: 1.3em 2em 1.8em 1.4em
 

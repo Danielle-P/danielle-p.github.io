@@ -45,21 +45,21 @@ lazy-animations: true
 
   <div class="full-width-panel-highlight">
     <div class="tabs-container">
-      <a class="tab selected" id="airline-design">
-        <div class="tab-bg">Airline Insights Dashboard</div>
-      </a>
-      <a class="tab" id="reports-design">
-        <div class="tab-bg">Reporting Product Component</div>
-      </a>
-      <a class="tab" id="banking-design">
-        <div class="tab-bg">Banking Insights Dashboard</div>
-      </a>
+      <div class="tab selected">
+        <a class="airline">Airline Insights Dashboard</a>
+      </div>
+      <div class="tab">
+        <a class="reports">Reporting Product Component</a>
+      </div>
+      <div class="tab">
+        <a class="banking">Banking Insights Dashboard</a>
+      </div>
     </div>
   </div>
 
   <div class="tab-section">
 
-    <div class="slide-down-panel airline-design show">
+    <div class="slide-down-panel airline show" id="airline-design">
 
       <div class="full-width-panel-highlight">
         <div class="page-content-width">
@@ -231,11 +231,14 @@ lazy-animations: true
             </div>
           </div>
         </div>
-        <a class="next-tab">See next project <i class="icofont-dotted-right"></i></a>
+
+        <a class="next-tab" id="reports" href="#reports-design">See next project <i
+            class="icofont-dotted-right"></i></a>
+
       </div>
     </div>
 
-    <div class="slide-down-panel reports-design">
+    <div class="slide-down-panel reports" id="reports-design">
 
       <div class="full-width-panel-highlight">
         <div class="page-content-width">
@@ -362,10 +365,13 @@ lazy-animations: true
           </div>
         </div>
 
+        <a class="next-tab" id="banking" href="#banking-design">See next project <i
+            class="icofont-dotted-right"></i></a>
+
       </div>
     </div>
 
-    <div class="slide-down-panel banking-design">
+    <div class="slide-down-panel banking" id="banking-design">
 
       <div class="full-width-panel-highlight">
         <div class="page-content-width">
@@ -455,8 +461,13 @@ lazy-animations: true
             </div>
           </div>
         </div>
+
+        <a class="next-tab" id="airline" href="#airline-design">See next project <i
+            class="icofont-dotted-right"></i></a>
+
       </div>
     </div>
+
   </div>
 
 </main>
