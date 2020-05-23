@@ -8,56 +8,56 @@ lazy-animations: true
 <main class="page-content-width project-details wedding">
   <h1>Website Case Study</h1>
 
-  <section>
-    <div class="panel">
-      <div class="info-section">
-        <h2>The Brief</h2>
-        <p>To build a user-friendly wedding website with the following requirements:</p>
-        <ul>
-          <li>Functionality for guests to RSVP</li>
-          <li>Ability to add to a Spotify playlist</li>
-          <li>Pages detailing timings and other useful wedding information</li>
-          <li>A gallery page including functionality for guests to upload photos</li>
-        </ul>
-
-        <h2>The Design</h2>
-        <p>I began by identifying the content required and splitting it into logical
-          categories, which became the basis for the pages. I identified the main purpose of the website to be the RSVP
-          functionality
-          and
-          the
-          couple also mentioned they were keen for guests to add to their Spotify playlist, so these two sections
-          became
-          my
-          starting point.</p>
+  <section class="panel two-column">
+    <div class="image-section perspective three-img">
+      <div class="project-image image-intersect">
+        <img class="lazy" src="/images/wedding/end-result-3.jpg" alt="Travel and Accommodation page" />
       </div>
-      <div class="image-section default-image-layout three-img">
-        <div class="project-image image-intersect">
-          <img class="lazy" src="/images/wedding/end-result-3.jpg" alt="Travel and Accommodation page" />
-        </div>
-        <div class="project-image image-intersect">
-          <img class="lazy" src="/images/wedding/end-result-4.jpg" alt="On The Day page" />
-        </div>
-        <div class="project-image image-intersect">
-          <img class="lazy" src="/images/wedding/end-result-1.jpg" alt="Wedding homepage" />
-        </div>
+      <div class="project-image image-intersect">
+        <img class="lazy" src="/images/wedding/end-result-4.jpg" alt="On The Day page" />
+      </div>
+      <div class="project-image image-intersect">
+        <img class="lazy" src="/images/wedding/end-result-1.jpg" alt="Wedding homepage" />
       </div>
     </div>
 
+    <div class="info-section intro-text-callout">
+      <h2>The Brief</h2>
+      <p>To build a user-friendly wedding website with the following requirements:</p>
+      <ul>
+        <li>Functionality for guests to RSVP</li>
+        <li>Ability to add to a Spotify playlist</li>
+        <li>Pages detailing timings and other useful wedding information</li>
+        <li>A gallery page including functionality for guests to upload photos</li>
+      </ul>
+      <p>My main aim when designing and building the site was to make it accessible and intuitive, particularly given
+        the likely
+        varying ages and technical abilities of the users.</p>
+    </div>
+  </section>
+
+  <section>
     <div class="panel">
-      <div class="info-section">
-        <p>As most of the guests would be receiving the wedding invitation
-          by
-          email,
-          which would include a link to the website, it was likely that most guests would view the
-          website
-          primarily on mobile devices. I therefore designed the site mobile-first.</p>
-        <p>As the couple had already chosen a template for an invitation, I began by creating a simple colour palette
-          using
-          the
-          image on the invitation as a starting point.</p>
-      </div>
-      <div class="image-section perspective four-img initial-designs">
+      <h2>The Design</h2>
+      <p>I began by identifying the content required and splitting it into logical
+        categories, which became the basis for the pages. I identified the main purpose of the website to be the RSVP
+        functionality
+        and
+        the
+        couple also mentioned they were keen for guests to add to their Spotify playlist, so these two sections
+        became
+        my
+        starting point.</p>
+      <p>As most of the guests would be receiving the wedding invitation
+        by
+        email,
+        which would include a link to the website, it was likely that most guests would view the
+        website
+        primarily on mobile devices. I therefore designed the site mobile-first.</p>
+    </div>
+
+    <div class="panel two-column">
+      <div class="image-section perspective three-img initial-designs">
         <div class="project-image image-intersect">
           <img class="lazy" src="/images/wedding/design-process-1.jpg" alt="Wedding invitation" />
         </div>
@@ -65,19 +65,24 @@ lazy-animations: true
           <img class="lazy" src="/images/wedding/design-process-2.png" alt="Draft colour scheme" />
         </div>
         <div class="project-image image-intersect">
-          <img class="lazy" src="/images/wedding/design-process-3.jpg" alt="Draft homepage" />
+          <img class="lazy" src="/images/wedding/design-process-4.jpg" alt="Homepage" />
         </div>
       </div>
-    </div>
-
-    <div class="panel">
       <div class="info-section">
+        <p>As the couple had already chosen a template for an invitation, I began by creating a simple colour palette
+          using
+          the
+          image on the invitation as a starting point.</p>
         <p>Whilst the initial colour palette was WCAG compliant, once I had begun building the page it became
           clear
           that
           the colours in my design were not bold enough when viewed on mobile devices. I therefore increased the colour
           contrasts to make the text clearer and the design look bolder and cleaner.</p>
+      </div>
+    </div>
 
+    <div class="panel">
+      <div class="info-section">
         <p>As the site was to be relatively light content-wise, I decided to add a background image to the header of
           each page
           to
@@ -94,27 +99,22 @@ lazy-animations: true
   </section>
 
   <section class="panel">
-    <div class="info-section">
-      <h2>The Build and Functionality</h2>
-      <p>My main aim when building the site was to make it accessible and intuitive, particularly given the likely
-        varying
-        ages
-        and technical abilities of the users. My main focus was again on the RSVP form, this being the primary
-        reason
-        for
-        users to visit the site.</p>
-      <p>As many of the guests would be RSVP-ing on behalf of their partners or families as well as themselves, I
-        included a
-        dropdown box to allow users to select how many guests they were RSVP-ing for. Selecting an option from the
-        dropdown
-        box would then show an extra section of the form for each guest. Including the vegetarian and dietary
-        requirements
-        checkboxes for each guest individually meant the database would have clear dietary information per guest.
-      </p>
-      <p>As the website design was relatively simple with only 4 pages, I used standard HTML, LESS and JavaScript.
-        For
-        the RSVP form, I used React.</p>
-    </div>
+    <h2>The Build and Functionality</h2>
+    <p>My main focus was again on the RSVP form, this being the primary
+      reason
+      for
+      users to visit the site.</p>
+    <p>As many of the guests would be RSVP-ing on behalf of their partners or families as well as themselves, I
+      included a
+      dropdown box to allow users to select how many guests they were RSVP-ing for. Selecting an option from the
+      dropdown
+      box would then show an extra section of the form for each guest. Including the vegetarian and dietary
+      requirements
+      checkboxes for each guest individually meant the database would have clear dietary information per guest.
+    </p>
+    <p>As the website design was relatively simple with only 4 pages, I used standard HTML, LESS and JavaScript.
+      For
+      the RSVP form, I used React.</p>
   </section>
 
   <div class="panel">

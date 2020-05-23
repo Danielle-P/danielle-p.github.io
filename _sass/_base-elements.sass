@@ -60,10 +60,8 @@ a
 
 blockquote
   quotes: "\201C""\201D""\2018""\2019"
+  font-size: 0.9em
 
-  &.intro-text-callout
-    padding: 1.3em 1.5em 1em
-    border-left: 0.4em solid rgba(116, 135, 158, 0.3)
 
   &::before
     color: rgba(116, 135, 158, 0.3)
@@ -155,7 +153,7 @@ main ul li::before
 .btn-menu
   position: fixed
   right: 0
-  margin: 1.8em 2.2em
+  margin: 1.5em 1.8em
   z-index: 5
   box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
 
@@ -202,13 +200,13 @@ main ul li::before
   */
 .nav-panel
   width: 100%
-  height: 7.6em
+  height: 7.55em
   display: flex
   position: absolute
-  top: calc(-7.6em - 20px)
+  top: calc(-7.55em - 20px)
   align-items: center
   padding: 0 2.2em
-  background: #172940
+  background: #2e3642
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 4
@@ -402,11 +400,14 @@ input:checked + .slider::before
 /** Panels
  */
 .panel
-  display: flex
-  justify-content: center
+  display: grid
+  margin-bottom: 1.6em
+
+  &.two-column
+    grid-template-columns: repeat(2, 1fr)
+    grid-column-gap: 3em
 
   .info-section
-    flex: 1
     align-self: center
 
     .team-details
@@ -424,12 +425,8 @@ input:checked + .slider::before
           border-radius: 2px
           background: rgba(116, 135, 158, 0.2)
 
-  &:first-of-type
-    .info-section
-      align-self: flex-start
-
   .image-section
-    padding: 0 0 0 2em
+    justify-self: center
 
     .project-image img
       max-width: 100%
@@ -441,9 +438,6 @@ input:checked + .slider::before
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
         +image-slide-in-left(#{$n * 0.1}s)
-
-  &:nth-of-type(even) .image-section
-    padding: 0 2em 0 0
 
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
@@ -584,17 +578,19 @@ input:checked + .slider::before
       &.four-img
         grid-template-columns: repeat(5, 1fr)
 
-section.panel:first-of-type .image-section
-  margin-top: 1.8em
-
 .intro-text-callout
-  padding: 0.7em 1.5em
+  align-self: center
+  padding: 1.3em 1.5em 1em
   background: var(--pale-text-bg)
+  border-left: 0.3em solid rgba(116, 135, 158, 0.3)
   border-radius: 2px
 
   h4
     margin: 1em 0 0.5em
     font-weight: bolder
+
+  .image-section .project-image img
+    max-height: 500px
 
 /*Tabs
   **/
@@ -609,11 +605,10 @@ section.panel:first-of-type .image-section
     color: $light-text-color
     opacity: 0.8
 
-  .page-content-width
-    +page-content-width(5em)
-
   .intro-text-callout
+    margin: 1.4em 5em 2.5em
     background: rgba(255, 255, 255, 0.05)
+    border-left: none
 
 .tab-section-heading
   display: flex
@@ -674,6 +669,7 @@ section.panel:first-of-type .image-section
   .next-tab
     float: right
     cursor: default
+    margin-right: 2.8em
 
 /** Divider
   */
@@ -806,7 +802,7 @@ section.panel:first-of-type .image-section
 
   .full-width-panel-highlight
     margin-bottom: 3em
-    padding: 3em 0 4em
+    padding: 3em 0
 
   &.show
     display: block
