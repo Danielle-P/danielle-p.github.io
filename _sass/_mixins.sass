@@ -1,6 +1,6 @@
 /**Styles
   */
-=page-content-width($padding: 12em)
+=page-content-width($padding: 16em)
   padding-left: $padding
   padding-right: $padding
 
@@ -9,6 +9,7 @@
   color: var(--text-color)
   font-family: $header-font
   font-size: $font-size
+  font-weight: 100
   text-align: center
   opacity: var(--header-text-opacity)
 
@@ -22,9 +23,9 @@
   letter-spacing: 0.01em
   opacity: var(--header-text-opacity)
 
-=body-font-style($font-size: 1em, $padding: 0.6em)
+=body-font-style($font-size: 1em, $padding: 0.8em)
   padding: $padding 0
-  line-height: 1.6
+  line-height: 1.9 //1.6
   color: var(--text-color)
   font-family: $body-font
   font-size: $font-size
@@ -75,7 +76,7 @@
 
 /** Components
   */
-=default-image-grid($columns: 1, $rows: 1, $gap: 0)
+=default-image-grid($columns: 1, $rows: 1, $gap: 1em)
   grid-template-columns: repeat($columns, 1fr)
   grid-template-rows: repeat($rows, 1fr)
   grid-gap: $gap
