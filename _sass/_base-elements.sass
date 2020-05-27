@@ -404,6 +404,9 @@ input:checked + .slider::before
 
 /** Panels
  */
+.image-intersect img.lazy
+  animation-play-state: paused !important
+
 .panel
   display: grid
   margin-bottom: 1.6em
@@ -439,9 +442,6 @@ input:checked + .slider::before
     .project-image img
       max-width: 100%
       opacity: 0
-
-      &.lazy
-        animation-play-state: paused !important
 
     @for $n from 1 through 8
       .project-image:nth-of-type(#{$n}) img
