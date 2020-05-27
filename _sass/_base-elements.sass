@@ -30,11 +30,11 @@ h2
 
 h3
   margin-top: 1.2em
-  +subheader-font-style($font-size: 1.2em)
+  +subheader-font-style($font-size: 1.2rem)
 
 h4
   margin-top: 1.2em
-  +subheader-font-style($font-size: 1.1em)
+  +subheader-font-style($font-size: 1.1rem)
   text-align: left
 
 p
@@ -61,12 +61,11 @@ a
 blockquote
   border-left: 0.3em solid $border-color
   quotes: "\201C""\201D""\2018""\2019"
-  font-size: 0.9em
 
   &::before
     color: rgba(116, 135, 158, 0.3)
     content: open-quote
-    font-size: 4em
+    font-size: 4rem
     line-height: 0.1em
     margin-right: 0.25em
     vertical-align: -0.4em
@@ -79,24 +78,27 @@ blockquote
     padding: 1em 0 0.3em 0
     text-transform: none
 
+  p, a, li
+    font-size: 0.9rem
+
 ul
   +body-font-style($padding: 0)
   margin: 0.8em 0
-  padding-left: 2.6em //1.6em
+  padding-left: 2.6em
 
   li
     padding-bottom: 0.4em
 
 main ul li::before
   position: absolute
-  margin-left: -1.3em //-0.9em
+  margin-left: -1.5em
   content: '\2022'
   color: var(--highlight)
   font-size: 21px
-  line-height: 1.3 //1.2
+  line-height: 1.3
 
 .note
-  font-size: 0.7em
+  font-size: 0.7rem
   opacity: 0.5
 
 .js-loading-image *, .js-loading-image *:before, .js-loading-image *:after
@@ -274,7 +276,7 @@ footer
 
     a
       padding: 0 0.8em
-      font-size: 1.1em
+      font-size: 1.1rem
       color: var(--text-color)
 
       &:hover
@@ -349,10 +351,10 @@ input:checked + .slider::before
     font-family: $header-font
 
   i
-    font-size: 2em
+    font-size: 2rem
 
   span
-    font-size: 0.85em
+    font-size: 0.85rem
     user-select: none
 
   &.visible
@@ -366,15 +368,6 @@ input:checked + .slider::before
   display: grid
   grid-template-columns: repeat(3, 1fr)
   text-align: center
-
-  .item-1
-    grid-column-start: 1
-
-  .item-2
-    grid-column-start: 2
-
-  .item-3
-    grid-column-start: 3
 
   .ellipse
     width: 6em
@@ -392,7 +385,7 @@ input:checked + .slider::before
       font-size: 2.5em
 
   h4
-    +subheader-font-style($font-size: 1.1em)
+    +subheader-font-style($font-size: 1.1rem)
 
   ul
     margin-top: 0.25em
@@ -424,7 +417,7 @@ input:checked + .slider::before
         display: flex
         flex-direction: row
         flex-wrap: wrap
-        font-size: 0.8em
+        font-size: 0.8rem
 
         span
           margin: 0 0.8em 0.8em 0
@@ -600,12 +593,15 @@ input:checked + .slider::before
   grid-template-columns: repeat(4, 1fr)
   grid-gap: 1.5em
   margin: 3em 0 2.5em
-  font-size: 0.88em
 
   h4
     text-transform: uppercase
     font-weight: 500
+    font-size: 0.92rem
     text-align: center
+
+  h5, p
+    font-size: 0.88rem
 
   h5
     margin-top: 0.8em
@@ -637,12 +633,13 @@ input:checked + .slider::before
   display: flex
   justify-content: center
   margin: 0 0 1.25em
-  font-size: 0.8em
 
   .tools
     padding: 0.1em 0.6em
-    border-radius: 2px
     background: $content-background
+    border-radius: 2px
+    text-align: center
+    font-size: 0.8rem
 
 /*Tabs
   **/
@@ -662,6 +659,7 @@ input:checked + .slider::before
 
 .screenshots-section
   +page-content-width(3em)
+  padding-bottom: 2em
 
 .tab-section-heading
   display: flex
@@ -672,15 +670,15 @@ input:checked + .slider::before
   h2
     +header-font-style
     margin-bottom: 0
-    font-size: 1.3em
+    font-size: 1.3rem
   i
-    font-size: 2.2em
+    font-size: 2.2rem
 
 .tabs-container
   display: flex
 
   .tab
-    height: 4.2em
+    min-height: 4.2em
     display: flex
     flex: 1
     justify-content: center
@@ -691,14 +689,14 @@ input:checked + .slider::before
 
     a
       width: 100%
-      height: 100%
+      min-height: 4.2em
       display: flex
       align-items: center
       justify-content: center
       padding: 0 2em
       background-color: var(--tabs)
       +subheader-font-style
-      font-size: 1.1em
+      font-size: 1.1rem
       color: $white
       cursor: pointer
 
@@ -777,7 +775,7 @@ input:checked + .slider::before
 
       h2
         color: var(--highlight)
-        font-size: 0.9em
+        font-size: 0.9rem
 
         i
           display: none
@@ -785,7 +783,7 @@ input:checked + .slider::before
       h4
         margin: 0.2em auto 0.6em
         text-align: center
-        +body-font-style(0.9em)
+        +body-font-style(0.9rem)
         line-height: 1.3
         padding: 0
 
@@ -810,7 +808,7 @@ input:checked + .slider::before
       color: var(--subheader-color)
       text-align: center
       text-transform: uppercase
-      font-size: 0.8em
+      font-size: 0.8rem
 
       &:nth-of-type(even)
         color: var(--highlight)
@@ -848,7 +846,7 @@ input:checked + .slider::before
           font-size: 1.8em
 
     .marker-label
-      font-size: 0.9em
+      font-size: 0.9rem
 
 .slide-down-panel, .tab-panel
   display: none
@@ -867,7 +865,7 @@ input:checked + .slider::before
       h2
         margin: 0.2em
         color: var(--highlight)
-        font-size: 0.9em
+        font-size: 0.9rem
         +slide-down
 
       h3
