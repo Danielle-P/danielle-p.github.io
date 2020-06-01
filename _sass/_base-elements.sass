@@ -411,7 +411,7 @@ input:checked + .slider::before
     box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
 
 .skills-grid
-  grid-template-columns: repeat(3, 1fr)
+  +standard-content-grid(3)
   grid-gap: 2.5em
 
   .item
@@ -442,7 +442,7 @@ input:checked + .slider::before
         font-size: 1.5em
 
 .user-stories
-  grid-template-columns: repeat(4, 1fr)
+  +standard-content-grid()
   grid-gap: 1.5em
 
   .user-group
@@ -450,7 +450,7 @@ input:checked + .slider::before
     grid-template-rows: 2fr 1fr
 
 .testimonials-grid
-  grid-template-columns: repeat(2, 1fr)
+  +standard-content-grid(2)
   grid-gap: 1.8em
   margin-top: 1em
 
@@ -538,8 +538,11 @@ input:checked + .slider::before
       &.five-col
         +default-image-grid ($columns: 5, $rows: 1)
 
-      &.mobile img
-        max-height: 20em
+      &.mobile
+        grid-gap: 2em
+
+        img
+          max-height: 26em
 
     &.default-image-layout
       +default-image-grid

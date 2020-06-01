@@ -295,11 +295,12 @@
       .image-section:not(.wireframes) img
         border-radius: .5em
 
-      .reports .image-section.four-col.mobile
-        padding: 0 1em
+      .reports
+        .user-stories
+          +standard-content-grid(3)
 
-        img
-          max-height: 26em
+        .image-section.four-col.mobile
+          //padding: 0 1em
 
     &.meals-up
       .user-story

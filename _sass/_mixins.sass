@@ -45,7 +45,7 @@
     color: var(--hover-highlight)
 
 =image-box-shadow
-  box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.5)
+  box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.26)
 
 /** Transitions and Animations
   */
@@ -76,6 +76,9 @@
 
 /** Components
   */
+=standard-content-grid($columns: 4)
+  grid-template-columns: repeat($columns, 1fr)
+
 =default-image-grid($columns: 1, $rows: 1, $gap: 1em)
   grid-template-columns: repeat($columns, 1fr)
   grid-template-rows: repeat($rows, 1fr)
