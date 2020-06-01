@@ -60,6 +60,9 @@
   .user-stories
     grid-template-columns: repeat(2, 1fr)
 
+  .skills-grid.extra-padding
+    padding: 0
+
   #projects
     .panel .project-images
       padding: 2em 0 0
@@ -155,6 +158,9 @@
       .footer-links
         padding-top: 0.5em
 
+  .skills-grid
+    grid-template-columns: 1fr
+
   #landing .landing-content
     height: calc(100vh + 3em)
     justify-content: space-evenly
@@ -246,7 +252,6 @@
       text-align: left
 
   h4, p, a, ul
-    //font-size: 1.05rem
     line-height: 1.75
 
   #theme-switch
@@ -355,9 +360,6 @@
 
     .landing-nav
       margin: 3em 0
-
-  #about .skills-grid
-    grid-template-columns: repeat(1, 1fr)
 
   #projects-landing .panel
     align-items: center

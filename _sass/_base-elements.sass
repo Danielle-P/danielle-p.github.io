@@ -370,37 +370,84 @@ input:checked + .slider::before
     pointer-events: initial
     transform: translateY(0)
 
-/**Grid
+/**Grids
   */
-.skills-grid
+
+.skills-grid, .user-stories
   display: grid
-  grid-template-columns: repeat(3, 1fr)
-  text-align: center
-
-  .ellipse
-    width: 6em
-    height: 6em
-    display: flex
-    align-items: center
-    justify-content: center
-    margin: 2em auto 1.2em
-    padding: 0
-    border-radius: 50%
-    border: 1px dotted var(--subheader-color)
-
-    i
-      color: var(--subheader-color)
-      font-size: 2.5em
+  margin: 3em 0 2.5em
 
   h4
-    +subheader-font-style($font-size: 1.1rem)
+    text-transform: uppercase
+    font-weight: 500
+    font-size: 0.92rem
+    text-align: center
 
-  ul
-    margin-top: 0.25em
-    padding: 0
+  h5, p
+    font-size: 0.88rem
 
-    li::before
-      content: ''
+  h5
+    margin-top: 0.8em
+    color: var(--subheader-color)
+    font-weight: 500
+
+  p
+    margin: 0.8em 0
+    padding: 0 0 0 0.4em
+    line-height: 1.3
+    border-left: 3px solid $border-color
+
+  .row:last-of-type
+    h5
+      color: #f1b883
+
+    p
+      border-left: 3px solid #f9e2cd
+
+  .user-group, .item
+    padding: 0 1em 0.6em
+    border-radius: 4px
+    background: var(--pale-text-bg)
+    box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
+
+.skills-grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-gap: 2.5em
+
+  .item
+    display: grid
+    padding: 1.5em 2em
+
+    h4
+      margin: 0.8em 0 0.4em
+
+    p
+      align-self: center
+      padding: 0.15em 0 0.15em 0.4em
+
+    .ellipse
+      width: 3em
+      height: 3em
+      display: flex
+      justify-self: center
+      align-self: center
+      align-items: center
+      justify-content: center
+      padding: 0
+      border-radius: 50%
+      border: 1px dotted var(--subheader-color)
+
+      i
+        color: var(--subheader-color)
+        font-size: 1.5em
+
+.user-stories
+  grid-template-columns: repeat(4, 1fr)
+  grid-gap: 1.5em
+
+  .user-group
+    display: grid
+    grid-template-rows: 2fr 1fr
 
 /** Panels
  */
@@ -595,45 +642,6 @@ input:checked + .slider::before
 
   .image-section .project-image img
     max-height: 500px
-
-.user-stories
-  display: grid
-  grid-template-columns: repeat(4, 1fr)
-  grid-gap: 1.5em
-  margin: 3em 0 2.5em
-
-  h4
-    text-transform: uppercase
-    font-weight: 500
-    font-size: 0.92rem
-    text-align: center
-
-  h5, p
-    font-size: 0.88rem
-
-  h5
-    margin-top: 0.8em
-    color: var(--subheader-color)
-    font-weight: 500
-
-  p
-    margin: 0.8em 0
-    padding: 0 0 0 0.4em
-    line-height: 1.3
-    border-left: 3px solid $border-color
-
-  .row:last-of-type
-    h5
-      color: #f1b883
-    p
-      border-left: 3px solid #f9e2cd
-
-  .user-group
-    display: grid
-    grid-template-rows: 2fr 1fr
-    padding: 0 1em 0.6em
-    border-radius: 4px
-    background: var(--pale-text-bg)
 
 /*Captions
   **/
