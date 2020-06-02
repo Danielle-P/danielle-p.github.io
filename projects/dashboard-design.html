@@ -113,7 +113,7 @@ lazy-animations: true
             customer satisfaction scores against their targets, analyse customer experience data and prioritise
             actions
             accordingly.</p>
-          <p>We identified that the site would be primarily intended for several different user groups, including Head
+          <p>We identified that the site would primarily be intended for several different user groups, including Head
             Office staff reporting to the leadership team, staff managing ground operations teams and cabin crew
             managers.</p>
         </div>
@@ -209,15 +209,18 @@ lazy-animations: true
           <p class="tools">Tools: Balsamiq / Sketch / InVision</p>
         </figcaption>
         <div class="page-content-width">
-          <p>Using the user stories, I tailored pages to each user group with simple score-based views for the cabin
+          <p>Using the user stories, I tailored pages to each user group with simple score-based views for the
+            cabin/in-flight
             and
             on-the-ground users who needed to be able to quickly identify their performance against their targets
             whilst
             they were on the move, including how their scores compared with other teams and performance of their
-            individual team members. The Head Office and management level views were more complex, showing more
+            individual team members.</p>
+          <p>The Head Office and management level scores page designs were more complex, showing more
             detailed
             analytics and including the functionality for those users to see a high level overview with the option to
-            drill down further into the data, for example by filtering the results, and to create and save reports.
+            drill down further into the data by clicking on links to view trended data, or clicking directly on
+            metrics to view further data.
           </p>
           <p>Around half of users in the user groups we identified would be accessing the site only on mobile devices
             as
@@ -227,7 +230,7 @@ lazy-animations: true
         </div>
 
         <div class="panel screenshots-section">
-          <h4>Mobile Wireframes</h4>
+          <h4>Mobile Wireframes: Sign-in Flow</h4>
           <div class="image-section image-grid mobile five-col">
             <div class="project-image image-intersect">
               <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/signup-mockup-mobile.jpg"
@@ -253,7 +256,7 @@ lazy-animations: true
         </div>
 
         <div class="panel screenshots-section">
-          <h4>Desktop Wireframes</h4>
+          <h4>Lo-Fi Desktop Wireframes: Homepage and Scorecard Pages</h4>
           <div class="image-section image-grid wireframes four-col">
             <div class="project-image image-intersect">
               <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/login-mockup.png"
@@ -314,6 +317,29 @@ lazy-animations: true
           data and insight teams during the build phase when building data visualisations.</p>
       </div>
 
+      <div class="full-width-panel-highlight">
+        <div class="panel page-content-width">
+          <h3>Reflections</h3>
+          <p>The design phase for this project was very lengthy due to there being a number of different sets of
+            pages, each of which we received user feedback on. As a result it became quite difficult to manage the
+            feedback in InVision, the prototyping tool we were using, as there were a number of different users adding
+            comments to the pages relevant to them on the prototype. I gained good experience on this project
+            in managing that user feedback, with the key learning points being to set a hard deadline for receiving the
+            feedback
+            and
+            to
+            collate the feedback before acting on any of it. This makes the process much more manageable in terms of
+            both
+            reviewing the feedback efficiently in one session and identifying common themes in order to prioritise if
+            and how
+            feedback points should
+            be actioned.</p>
+          <p>In terms of the project output, the client has seen a large increase in the number of users logging
+            on to their dashboard to monitor their scores compared to the number of logins on their previous dashboard.
+            User feedback since launch has been very positive, with the dashboard extended to a number of additional
+            user groups who requested similar designs and functionality to the existing pages.</p>
+        </div>
+      </div>
       <a class="next-tab" id="reports" href="#reports-design">See next project <i class="icofont-dotted-right"></i></a>
     </div>
 
@@ -433,6 +459,7 @@ lazy-animations: true
           </div>
         </div>
         <div class="image-section">
+          <h4>User Flow</h4>
           <div class="project-image image-intersect extra-padding">
             <img class="lazy" data-src="/images/dashboard-design/reporting-component/user-flow.png"
               alt="Reporting page user flow" />
@@ -441,32 +468,84 @@ lazy-animations: true
       </div>
 
       <div class="full-width-panel-highlight">
-        <h3>Ideation and Design Phases</h3>
-        <figcaption class="image-caption">
-          <p class="tools">Tools: Balsamiq / Sketch / InVision</p>
-        </figcaption>
-        <div class="page-content-width">
-          <p>In the re-design, I moved towards a more visual, tile-based approach where users would be able to
-            see
-            a
-            thumbnail of
-            the previously saved report so they would not have to rely on remembering the name of the report to find
-            it
-            again. I also incorporated slide-out panels into the design to allow users to easily filter and search for
-            reports.</p>
-          <p>
-            As the user flow for the reporting component is quite complex, I simplified the options available to the
-            user
-            by
-            designing each report tile to be interactive, with a list of options (edit, view, share etc.) available on
-            hover.</p>
-          <p>My main aim with this re-design was to make the reporting page less overwhelming for the user, more
-            intuitive
-            and visually appealing. Showing only 6 reports at a time encourages the user to filter the reports by tags
-            and
-            keywords to find what they need, rather than scrolling through what was previously a large grid of report
-            names.
-          </p>
+        <div class="panel">
+          <h3>Ideation and Design Phases</h3>
+          <figcaption class="image-caption">
+            <p class="tools">Tools: Balsamiq / Sketch / InVision</p>
+          </figcaption>
+          <div class="page-content-width">
+            <p>In the re-design, I moved towards a more visual, tile-based approach where users would be able to
+              see
+              a
+              thumbnail of
+              the previously saved report so they would not have to rely on remembering the name of the report to find
+              it
+              again. I also incorporated slide-out panels into the design to allow users to easily filter and search for
+              reports and I added tag functionality to allow users to tag reports so that they could view selections of
+              reports on similar metrics.</p>
+            <p>
+              As the user flow for the reporting component is quite complex, I simplified the options available to the
+              user
+              by
+              designing each report tile to be interactive, with a list of options (edit, view, share etc.) available on
+              hover.</p>
+            <p>My main aim with this re-design was to make the reporting page less overwhelming for the user, more
+              intuitive
+              and visually appealing. Showing only 6 reports at a time encourages the user to filter the reports by tags
+              and
+              keywords to find what they need, rather than scrolling through what was previously a large grid of report
+              names.
+            </p>
+          </div>
+          <h4>Addressing User Pain Points</h4>
+          <div class="user-stories pain-points extra-padding">
+            <div class="user-group">
+              <div class="row">
+                <h4>Pain Point: Finding Reports</h4>
+                <p>Finding previously created reports in order to view up-to-date data for
+                  a selection of metrics</p>
+              </div>
+              <div class="row">
+                <h5>Solutions</h5>
+                <p>Add tag functionality to allow users to create tags, add tags to reports and filter reports by tag
+                </p>
+                <p>Include slide-out panel with filter and search functionality</p>
+                <p>Option to sort reports by date created</p>
+              </div>
+            </div>
+            <div class="user-group">
+              <div class="row">
+                <h4>Pain Point: Viewing & Downloading</h4>
+                <p>Having filtered to find a report, viewing report information to make sure it is the correct report
+                  before
+                  downloading</p>
+              </div>
+              <div class="row">
+                <h5>Solutions</h5>
+                <p>Include a report information slide-down panel on each report thumbnail detailing date last edited,
+                  number
+                  of charts and if the report has been shared</p>
+                <p>Include a 'quick download' option to allow users to download a report from the thumbnail view,
+                  without
+                  needing to open the report itself first</p>
+              </div>
+            </div>
+            <div class="user-group">
+              <div class="row">
+                <h4>Pain Point: Sharing Reports</h4>
+                <p>Sharing reports, and selections of reports, with other users.</p>
+                <p>Viewing and editing reports that have been shared with them.</p>
+              </div>
+              <div class="row">
+                <h5>Solutions</h5>
+                <p>Include a slide-out panel to share a report from the main reports page</p>
+                <p>Include multi-select functionality to share reports with mutiple users at once</p>
+                <p>Add option to share multiple reports by tag</p>
+                <p>Automatically tag reports shared with a user as "shared with you" so that the user can filter by
+                  shared reports only</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -558,7 +637,32 @@ lazy-animations: true
           the front-end for
           the reporting feature using HTML, LESS and JavaScript.</p>
       </div>
-
+      <div class="full-width-panel-highlight">
+        <div class="panel page-content-width">
+          <h3>Reflections</h3>
+          <p>The main challenge on this project was to improve the visual design of the component without this being at
+            the
+            expense of hiding away functionality and available options. We knew from feedback that the
+            users found the previous
+            grid-based design difficult to filter and that it was overwhelming to be faced with a grid of named reports
+            when trying to find a specific one (especially as this relied on the user naming their reports in
+            a logical and consistent way). One of my main considerations when re-designing the component was to make
+            sure that it was intuitive - there was already a lot of functionality on one page (e.g.
+            the options to filter, share, export, tag, view, edit, rename and delete reports) and I didn't want to
+            re-design
+            the component to look less overwhelming and more visually appealing, but lose visibility of the
+            functionality - it was important that the user was still able to easily see all of the options available.
+          </p>
+          <p>Through creating a thorough prototype, which covered all aspects and functionality of the reporting
+            component, I was able to be confident that my designs covered all parts of the user flow and that each part
+            was
+            designed in a way that made the available functionality obvious. As I took a component-based approach to
+            designing the reporting component, the solution I found to the problem of needing to show a lot of options
+            on one page was through slide-out panels containing, for example the filtering and tagging functionality.
+            The slide-out panels were a constant throughout every page within the reporting component, meaning that the
+            user experience was consistent and predictable.</p>
+        </div>
+      </div>
       <a class="next-tab" id="banking" href="#banking-design">See next project <i class="icofont-dotted-right"></i></a>
     </div>
 
