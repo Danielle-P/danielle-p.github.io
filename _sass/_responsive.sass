@@ -70,6 +70,11 @@
     .project-links
       left: 0.6em
 
+    .project-details
+      &.dashboard-design .reports
+        .panel.screenshots-section, .user-stories.extra-padding
+          padding: 0
+
 @media (max-width: $breakpoint-tablet)
   main
     padding-top: 4.5em
@@ -250,6 +255,7 @@
     h1:first-of-type
       padding: 0 1.8em 0 0
       text-align: left
+      font-size: 2.5rem
 
   h4, p, a, ul
     line-height: 1.75
@@ -297,6 +303,15 @@
       .marker-label
         padding-left: 1em
         margin: 0.2em 0
+
+        &:first-of-type
+          order: 2
+
+          h4
+            display: block
+
+        &:last-of-type
+          display: none
 
         h2 i
           display: inline-block
@@ -402,8 +417,12 @@
         padding: 1em 0
 
     .project-details
-      &.dashboard-design .panel:first-of-type .info-section
-        padding: 0
+      &.dashboard-design
+        .panel:first-of-type .info-section
+          padding: 0
+
+        .reports .user-stories
+          grid-template-columns: 1fr
 
       &.wedding .image-section
         &.initial-designs
@@ -414,6 +433,7 @@
 
         &.end-designs
           max-width: 100%
+
 
   #resume main
     h1

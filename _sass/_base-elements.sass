@@ -372,7 +372,6 @@ input:checked + .slider::before
 
 /**Grids
   */
-
 .skills-grid, .user-stories, .testimonials-grid
   display: grid
   margin: 3em 0 2.5em
@@ -423,6 +422,7 @@ input:checked + .slider::before
 
     p
       align-self: center
+      margin: 0.4em 0
       padding: 0.15em 0 0.15em 0.4em
 
     .ellipse
@@ -441,6 +441,8 @@ input:checked + .slider::before
         color: var(--subheader-color)
         font-size: 1.5em
 
+/**Page Elements
+  */
 .user-stories
   +standard-content-grid()
   grid-gap: 1.5em
@@ -468,6 +470,46 @@ input:checked + .slider::before
     &:first-of-type
       grid-column: 1 / 3
 
+.ellipses-divider
+  margin: 2em auto
+  text-align: center
+
+  span
+    width: 5px
+    height: 5px
+    display: inline-block
+    margin: 3px
+    border-radius: 50%
+    background-color: var(--subheader-color)
+    opacity: var(--body-text-opacity)
+
+.team-details
+  +body-font-style
+
+  .team-members
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    font-size: 0.8rem
+
+    span
+      margin: 0 0.4em 0.8em
+      padding: 0.1em 0.6em
+      border-radius: 2px
+      background: $content-background
+
+.image-caption
+  display: flex
+  justify-content: center
+  margin: 0 0 1.25em
+
+  .tools
+    padding: 0.1em 0.6em
+    background: $content-background
+    border-radius: 2px
+    text-align: center
+    font-size: 0.8rem
+
 /** Panels
  */
 .image-intersect img.lazy
@@ -486,21 +528,6 @@ input:checked + .slider::before
 
   .info-section
     align-self: center
-
-    .team-details
-      +body-font-style
-
-      .team-members
-        display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        font-size: 0.8rem
-
-        span
-          margin: 0 0.8em 0.8em 0
-          padding: 0.1em 0.6em
-          border-radius: 2px
-          background: $content-background
 
   .image-section
     justify-self: center
@@ -665,20 +692,6 @@ input:checked + .slider::before
   .image-section .project-image img
     max-height: 500px
 
-/*Captions
-  **/
-.image-caption
-  display: flex
-  justify-content: center
-  margin: 0 0 1.25em
-
-  .tools
-    padding: 0.1em 0.6em
-    background: $content-background
-    border-radius: 2px
-    text-align: center
-    font-size: 0.8rem
-
 /*Tabs
   **/
 .full-width-panel-highlight
@@ -761,21 +774,6 @@ input:checked + .slider::before
     cursor: default
     margin-right: 2.8em
 
-/** Divider
-  */
-.ellipses-divider
-  margin: 2em auto
-  text-align: center
-
-  span
-    width: 5px
-    height: 5px
-    display: inline-block
-    margin: 3px
-    border-radius: 50%
-    background-color: var(--subheader-color)
-    opacity: var(--body-text-opacity)
-
 /** Journey
   */
 .journey
@@ -794,7 +792,7 @@ input:checked + .slider::before
       width: 0
       height: 2px
       position: absolute
-      top: 1.98em
+      top: 4.5em
       left: calc(50% + 1.3em)
       background: var(--button)
       content: ''
@@ -808,8 +806,11 @@ input:checked + .slider::before
 
     .marker-label
       margin: 0.6em
-      color:  var(--subheader-color)
       cursor: pointer
+
+      &:first-of-type h4
+        display: none
+        color: var(--highlight)
 
       h2
         color: var(--highlight)
@@ -822,6 +823,7 @@ input:checked + .slider::before
         margin: 0.2em auto 0.6em
         text-align: center
         +body-font-style(0.9rem)
+        color: var(--subheader-color)
         line-height: 1.3
         padding: 0
 
@@ -898,7 +900,7 @@ input:checked + .slider::before
     display: block
 
     .panel-heading
-      margin-bottom: 1.7em
+      margin: 2em 0 0
 
       h2
         margin: 0.2em
@@ -906,10 +908,15 @@ input:checked + .slider::before
         font-size: 0.9rem
         +slide-down
 
-      h3
+      h3, .team-details
         margin: 0
         opacity: 0
+
+      h3
         +slide-down($delay: .2s)
+
+      .team-details
+        +slide-down($delay: .4s)
 
     .slide-in
       opacity: 0
