@@ -76,10 +76,9 @@
     .project-links
       left: 0.6em
 
-    .project-details
-      &.dashboard-design .reports
-        .panel.screenshots-section, .user-stories.extra-padding
-          padding: 0
+    .project-details.dashboard-design
+      .panel.screenshots-section, .user-stories.extra-padding
+        padding: 0 0.5em
 
 @media (max-width: $breakpoint-tablet)
   main
@@ -166,6 +165,9 @@
       .footer-links
         justify-content: center
         padding-top: 1em
+
+  .extra-padding, .panel .extra-padding, .screenshots-section
+    +page-content-width(1em)
 
   .skills-grid
     grid-template-columns: 1fr
@@ -275,6 +277,9 @@
   h4, p, a, ul
     line-height: 1.75
 
+  .hidden-mobile-label
+    display: inline-block
+
   #scroll-top-link
     right: 1em
 
@@ -285,7 +290,7 @@
       display: none
 
   .extra-padding, .panel .extra-padding, .screenshots-section
-    +page-content-width(0)
+    +page-content-width(0.6em)
 
   .user-stories, .user-task-map
     grid-template-columns: 1fr
@@ -322,9 +327,6 @@
 
         &:last-of-type
           display: none
-
-        h2 i
-          display: inline-block
 
         h2, h4
           text-align: left
@@ -392,7 +394,7 @@
     .project-images
       flex-direction: column-reverse
       max-width: 100%
-      margin: 4em auto
+      margin: 0
       padding: 0
 
       .selectable-image
@@ -416,17 +418,22 @@
     main.project-details
       padding-top: 6.6em
 
-    .panel:nth-of-type(even)
-      flex-direction: column
-      margin: 1em 0
-
-      .image-section
-        padding: 1em 0
-
-    .project-details
       &.dashboard-design
-        .panel:first-of-type .info-section
-          padding: 0
+        section:first-of-type
+          margin-top: 0
+
+        .tab-section .slide-down-panel
+          .screenshots-section
+            padding-bottom: 0
+
+          .intro-text-callout
+            padding: 0 1em
+
+            .image-section
+              padding: 0 0.2em 0.5em
+
+              .project-image
+                padding: 0
 
         .reports .user-stories
           grid-template-columns: 1fr
@@ -441,6 +448,8 @@
         &.end-designs
           max-width: 100%
 
+  #employment .team-members
+    justify-content: center
 
   #resume main
     h1
