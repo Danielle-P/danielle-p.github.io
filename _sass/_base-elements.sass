@@ -212,7 +212,7 @@ main ul li::before
   top: calc(-7.55em - 20px)
   align-items: center
   padding: 0 2.2em
-  background: #2e3642
+  background: #3b4554
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 4
@@ -241,11 +241,11 @@ main ul li::before
       align-items: center
       margin: 0 0.5em
       text-align: center
-      color: var(--button)
+      color: var(--hover-highlight)
       border-bottom: 1px dotted transparent
 
       &:hover
-        color: var(--hover-highlight)
+        color: var(--button)
 
 .nav-panel.show
   position: fixed
@@ -375,7 +375,7 @@ input:checked + .slider::before
 
 /**Grids
   */
-.skills-grid, .user-stories, .testimonials-grid
+.skills-grid, .user-stories, .user-task-map, .testimonials-grid
   display: grid
   margin: 2em 0 2.5em
 
@@ -457,6 +457,35 @@ input:checked + .slider::before
 
     .user-group
       grid-template-rows: 45% auto
+
+.user-task-map
+  grid-template-columns: auto 1fr 1fr 1fr
+  grid-gap: 1.6em
+
+  .headings-col, .user-story-col
+    display: grid
+    grid-template-rows: 25% 75%
+
+    .user-story .item
+      background: #fdf5ed
+
+    .item
+      margin: 1em 0
+      padding: 0.8em
+      line-height: 1.3
+      font-size: 0.9rem
+
+      h5
+        margin-top: 0
+
+  .headings-col .heading
+    margin-top: 1.8em
+    +subheader-font-style(0.9rem)
+    font-weight: bold
+    text-transform: uppercase
+
+    &:first-of-type
+      color: #f1b883
 
 .testimonials-grid
   +standard-content-grid(2)

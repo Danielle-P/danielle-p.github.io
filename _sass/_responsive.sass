@@ -66,7 +66,7 @@
   .user-stories
     grid-template-columns: repeat(2, 1fr)
 
-  .skills-grid.extra-padding
+  .skills-grid.extra-padding, .user-task-map.extra-padding
     padding: 0
 
   #projects
@@ -287,8 +287,11 @@
   .extra-padding, .panel .extra-padding, .screenshots-section
     +page-content-width(0)
 
-  .user-stories
+  .user-stories, .user-task-map
     grid-template-columns: 1fr
+
+  .user-task-map .headings-col
+    display: none
 
   .journey
     flex-direction: column
