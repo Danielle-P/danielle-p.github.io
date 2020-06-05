@@ -51,6 +51,9 @@
   #scroll-top-link
     right: 2em
 
+  .screenshots-section .image-section img
+    max-height: 70vh
+
   .image-section img
     max-height: 50vh
 
@@ -172,6 +175,10 @@
   .skills-grid
     grid-template-columns: 1fr
 
+  .panel .image-section.image-grid
+    &.two-col, &.three-col, &.four-col
+      grid-template-columns: 1fr
+
   #landing .landing-content
     height: calc(100vh + 3em)
     justify-content: space-evenly
@@ -223,10 +230,8 @@
       h1
         padding-bottom: 0
 
-      &.dashboard-design .panel .image-section.image-grid
-        grid-template-columns: 1fr
-
-        &.mobile img
+      .panel .image-section.image-grid
+        .mobile img
           max-height: 50vh
 
         &.four-col.mobile, &.five-col.mobile
@@ -234,6 +239,13 @@
 
         .project-image
           padding-bottom: 1em
+
+      &.dashboard-design .panel .image-section.image-grid
+        &.mobile img
+          max-height: 50vh
+
+      &.meals-up .two-column.set-col-sizes
+        grid-template-columns: 1fr
 
       &.wedding .image-section.initial-designs
         .project-image:nth-child(2) img
@@ -324,9 +336,6 @@
 
           h4
             display: block
-
-        &:last-of-type
-          display: none
 
         h2, h4
           text-align: left
@@ -448,8 +457,12 @@
         &.end-designs
           max-width: 100%
 
-  #employment .team-members
-    justify-content: center
+  #employment
+    .journey .marker .marker-label:last-of-type
+      display: none
+
+    .team-members
+      justify-content: center
 
   #resume main
     h1

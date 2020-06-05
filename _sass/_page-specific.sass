@@ -287,14 +287,21 @@
           .project-image
             padding: 2em 0
 
-      .image-section:not(.wireframes) img
-        border-radius: .5em
-
       .reports
         .user-stories
           +standard-content-grid(3)
 
     &.meals-up
+      section:first-of-type
+        grid-column-gap: 0.8em
+
+      .screenshots-section
+        padding: 0
+
+        h4
+          margin-bottom: 1em
+          text-align: center
+
       .user-story
         .journey-with-stages
           margin: 0.8em 0 2em
@@ -308,9 +315,9 @@
             &:nth-of-type(even)
               flex: 6
 
-      .image-section.default-image-layout .project-image img
-        border-radius: 0.5em
-        overflow: hidden
+      .two-column.set-col-sizes
+        grid-template-columns: 45.5% 51.5%
+        grid-column-gap: 3%
 
     &.wedding
       .intro-text-callout

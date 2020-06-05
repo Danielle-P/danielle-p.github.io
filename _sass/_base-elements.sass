@@ -75,7 +75,6 @@ blockquote
 
   a
     display: block
-    padding: 1em 0 0.3em 0
     text-transform: none
 
   p, a, li
@@ -607,6 +606,12 @@ input:checked + .slider::before
       &.five-col
         +default-image-grid ($columns: 5, $rows: 1)
 
+      img
+        border-radius: 0.5em
+
+      &.wireframes img
+        border-radius: 0
+
       &.mobile
         grid-gap: 2em
 
@@ -618,6 +623,7 @@ input:checked + .slider::before
 
       .project-image img
         box-shadow: -9px 5px 7px -6px rgba(0, 0, 0, 0.2)
+        border-radius: 0.5em
 
       &.one-img img
         max-height: 22em
@@ -715,7 +721,7 @@ input:checked + .slider::before
   border-radius: 2px
 
   h4
-    margin: 1em 0 0.5em
+    margin: 0 0 0.5em
     font-weight: bolder
 
   &.info-section p
