@@ -1,6 +1,6 @@
 @media (min-width: $large-desktop)
 
-  #landing, #about, #projects-landing, #employment, #resume, #contact
+  #landing, #about, #projects-landing, #resume, #contact
     main
       +page-content-width(8em)
 
@@ -255,21 +255,15 @@
     padding-left: 0
     padding-right: 0
 
-    .panel .resume-container
-      width: 596px
-
-      embed
-        height: 843px
-
 @media (max-width: $breakpoint-mobile)
   .page-content-width
     +page-content-width(1em)
 
-  #landing, #about, #projects-landing, #resume
+  #landing, #about, #projects-landing
     main
       padding: 4.2em 0.8em 0.5em
 
-  #employment, #contact
+  #resume, #contact
     main
       padding: 4.2em 1.8em 0.5em
 
@@ -457,17 +451,7 @@
         &.end-designs
           max-width: 100%
 
-  #employment
-    .journey .marker .marker-label:last-of-type
-      display: none
-
-    .team-members
-      justify-content: center
-
-  #resume main
-    h1
-      padding-left: 0.5em
-
+  #resume
     .panel
       .open-resume
         display: block
@@ -475,11 +459,11 @@
       .download-resume
         display: none
 
-      .resume-container
-        width: 320px
+    .journey .marker .marker-label:last-of-type
+      display: none
 
-        embed
-          height: 450px
+    .team-members
+      justify-content: center
 
   #contact .contact-details
     height: 100%

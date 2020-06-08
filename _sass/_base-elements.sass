@@ -538,17 +538,20 @@ input:checked + .slider::before
       border-radius: 2px
       background: $content-background
 
-.image-caption
+.caption-container
   display: flex
   justify-content: center
   margin: 0 0 1.25em
 
-  .tools
+  .caption-item
     padding: 0.1em 0.6em
     background: $content-background
     border-radius: 2px
     text-align: center
     font-size: 0.8rem
+
+  &.heading .caption-item
+    margin: 0 0.4em
 
 /** Panels
  */
@@ -862,6 +865,16 @@ input:checked + .slider::before
         line-height: 1.3
         padding: 0
 
+    &.active
+      .btn-timeline
+        background: var(--color-bg)
+        border: 2px solid var(--highlight)
+        color: var(--highlight)
+
+      .marker-label h4
+        opacity: 1
+        color: var(--highlight)
+
   .btn-timeline
     z-index: 2
 
@@ -870,9 +883,6 @@ input:checked + .slider::before
 
     &:hover
       color: $white
-
-    &.active
-      background: var(--hover-highlight)
 
 .journey-with-stages
   .journey-stage-titles
@@ -931,21 +941,29 @@ input:checked + .slider::before
     margin-bottom: 2.2em
     padding: 3em 0
 
+.slide-down-panel
+  .panel-heading
+    margin: 2em 0 0
+
+    h2
+      margin: 0.2em
+      color: var(--highlight)
+      font-size: 0.9rem
+      opacity: 0
+
+    h3, .team-details
+      margin: 0
+      opacity: 0
+
+  .slide-in
+    opacity: 0
+
   &.show
     display: block
 
     .panel-heading
-      margin: 2em 0 0
-
       h2
-        margin: 0.2em
-        color: var(--highlight)
-        font-size: 0.9rem
         +slide-down
-
-      h3, .team-details
-        margin: 0
-        opacity: 0
 
       h3
         +slide-down($delay: .2s)
@@ -953,9 +971,25 @@ input:checked + .slider::before
       .team-details
         +slide-down($delay: .4s)
 
-    .slide-in
+    &:not(.initial) .slide-in
       opacity: 0
 
       @for $n from 1 through 10
         &.slide-in:nth-child(#{$n})
           +slide-down(#{($n * 0.2) + 0.2}s)
+
+    &.initial
+      display: block
+
+      .panel-heading
+        h2
+          +slide-down(2.4s)
+
+        h3
+          +slide-down(2.6s)
+
+        .team-details
+          +slide-down(2.8s)
+
+      .slide-in
+        +slide-down(3s)
