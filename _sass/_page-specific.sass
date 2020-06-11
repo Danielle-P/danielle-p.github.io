@@ -95,9 +95,6 @@
 
         .hover-label
           display: block
-          +header-font-style()
-          font-size: 0.5rem
-          font-weight: bolder
           line-height: 1
           color: var(--subheader-color)
           opacity: 0
@@ -108,12 +105,13 @@
             height: 4em
             display: flex
             flex-direction: column
-            justify-content: center
+            justify-content: space-around
 
           p
             padding: 0 0 0.4em 0
             line-height: 1
-            font-size: 0.8rem
+            +subheader-font-style(0.8rem, 0)
+            font-weight: bold
 
           .project-type
             text-transform: none
