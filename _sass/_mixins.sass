@@ -44,6 +44,24 @@
     border-bottom-color: var(--hover-highlight)
     color: var(--hover-highlight)
 
+=sub-nav-current-page ($page-name)
+  .project-links .toggle-display-links
+    .#{$page-name}
+      cursor: default
+
+      svg
+        opacity: 0.5
+
+      .button-label
+        width: 11.2em
+
+        > span
+          display: block
+          opacity: 1
+
+          > span
+            opacity: 1
+
 =image-box-shadow
   box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.26)
 

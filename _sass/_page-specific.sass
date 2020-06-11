@@ -33,6 +33,7 @@
         margin: 1.4em 0 2em
         border-radius: 50%
         +fade-on-load()
+
       h1
         font-weight: 400
 
@@ -90,41 +91,45 @@
 
       .selectable-image
         flex: 1
-        perspective: 1200px
+        perspective: 1400px
 
         .hover-label
           display: block
           +header-font-style()
-          font-size: 0.8rem
-          font-weight: bold
+          font-size: 0.5rem
+          font-weight: bolder
           line-height: 1
           color: var(--subheader-color)
           opacity: 0
           +transition-ease($speed: .4s)
+          transform: translateY(1em) rotateY(30deg)
 
-        &:first-of-type .hover-label
-          transform: translate(-1.45em, 0.95em) rotateY(30deg)
+          .caption-item
+            height: 4em
+            display: flex
+            flex-direction: column
+            justify-content: center
+
+          p
+            padding: 0 0 0.4em 0
+            line-height: 1
+            font-size: 0.8rem
+
+          .project-type
+            text-transform: none
+            font-weight: normal
 
         &:nth-of-type(2)
           z-index: 1
           margin-left: -4em
 
-          .hover-label
-            transform: translate(-1em, 0.9em) rotateY(30deg)
-
         &:nth-of-type(3)
           z-index: 2
           margin-left: -4em
 
-          .hover-label
-            transform: translate(-0.5em, 0.7em) rotateY(30deg)
-
         &:last-of-type
           z-index: 3
           margin-left: -4em
-
-          .hover-label
-            transform: translate(0, 0.7em) rotateY(30deg)
 
         img
           width: 100%
@@ -259,6 +264,18 @@
         @extend %project-link
         +slide-down ($duration: .2s, $delay: .3s)
 
+  .meals-up-link
+    +sub-nav-current-page(meals-up)
+
+  .dashboard-design-link
+    +sub-nav-current-page(dashboard-design)
+
+  .dashboard-study-link
+    +sub-nav-current-page(dashboard-study)
+
+  .wedding-link
+    +sub-nav-current-page(wedding)
+
   .project-details
     h2
       text-align: left
@@ -355,13 +372,24 @@
 
 #contact
   .contact-details
-    height: calc(100vh - 318px)
-    display: flex
-    flex-direction: row
-    justify-content: space-around
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 4em
+    margin-top: 15%
+
+  .contact-section
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto auto
     align-items: center
-    padding-bottom: 2em
     text-align: center
+    padding-bottom: 2em
+    background: var(--pale-text-bg)
+
+
+    h3
+      grid-column: 1 / span 2
+      margin-bottom: 2em
 
     .contact-method
       i

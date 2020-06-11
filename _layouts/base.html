@@ -39,6 +39,7 @@
   <script defer src="/scripts/timeline-animation.js"></script>
   {% if page.lazy-animations %}
   <script defer src="/scripts/lazy-image-animate.js"></script>
+  <script defer src="/scripts/image-modal.js"></script>
   {% endif %}
 </head>
 
@@ -46,7 +47,9 @@
 <body id="{{ page.id }}" data-theme="light">
 
   {% if page.projects-nav %}
-  {% include {{ page.projects-nav }} %}
+  <div class="{{ page.project-nav-class }}">
+    {% include {{ page.projects-nav }} %}
+  </div>
   {% endif %}
 
   {{ content }}
