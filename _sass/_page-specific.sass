@@ -16,50 +16,81 @@
 
 #landing
   .landing-content
-    height: calc(100vh - 2em)
+    min-height: 100vh
     display: flex
     flex-direction: column
-    justify-content: space-around
+    justify-content: space-between
     align-content: center
 
     .title-panel
       display: flex
+      flex: 2
       flex-direction: column
-      align-items: center
+      padding-bottom: 2em
 
-      .profile-photo
-        max-width: 7em
-        max-height: 7em
-        margin: 1.4em 0 2em
-        border-radius: 50%
-        +fade-on-load()
+      .header
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin: 5% 0
 
-      h1
-        font-weight: 400
+        .profile-photo
+          max-width: 6.5em
+          max-height: 6.5em
+          margin: 1.2em 0 1.8em
+          border-radius: 50%
+          +fade-on-load()
 
-      h1, h2
-        margin-bottom: 0.4em
-        +fade-on-load()
+        h1
+          font-weight: 400
 
-      h2
-        font-size: 1.35rem
-        font-weight: 200
-        color: var(--text-color)
+        h1, h2
+          margin-bottom: 0.2em
+          +fade-on-load()
+
+        h2
+          font-size: 1.3rem
+          font-weight: 100
+          color: var(--subheader-color)
 
       .key-skills
         display: flex
+        flex-direction: column
         align-items: center
-        margin-top: 3em
-        +subheader-font-style($font-size: 0.85rem)
         opacity: 0
         +translate-scale-on-load(.6s)
 
-        .skill
-          padding: 0.4em 1.2em
+        .skills-list
+          display: flex
+          align-items: center
+          margin-top: 2em
+          +subheader-font-style($font-size: 0.85rem)
+          opacity: 0
+          +translate-scale-on-load(.6s)
+
+          .skill
+            padding: 0.4em 1.2em
+            font-size: 0.8rem
+            opacity: 0.7
+
+          span
+            width: 5px
+            height: 5px
+            background: #f1b883
+            border-radius: 50%
+            opacity: 0.5
+
+        p
+          padding: 0 6em 1.5em
+          +subheader-font-style($font-size: 0.9rem)
+          font-weight: 400
 
   .landing-nav
     display: flex
+    flex: 1
     justify-content: space-evenly
+    align-items: center
+    margin-bottom: 6%
     +nav-font-style(1.15rem, 500)
     opacity: 0
     +translate-scale-on-load(.6s, .2s)
