@@ -1,6 +1,7 @@
 ---
 layout: base
 id: landing
+lazy-animations: true
 preloads:
 - /images/wedding-project.jpg
 - /images/dashboard-project.jpg
@@ -8,6 +9,13 @@ preloads:
 - /images/dashboard-designs.jpg
 ---
 <div class="landing-content">
+  <nav class="landing-nav">
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/resume">Resume</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
   <header class="title-panel">
     <div class="header">
       <img class="profile-photo" src="/images/profile-photo.jpg" alt="Profile photo" />
@@ -28,19 +36,49 @@ preloads:
       </div>
     </div>
   </header>
-
-  <nav class="landing-nav">
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/resume">Resume</a>
-    <a href="/contact">Get in Touch</a>
-  </nav>
-
+  <a class="icofont-dotted-down" id="down-to-feature"></a>
 </div>
+
+<section class="full-width-panel-highlight" id="featured">
+  <h2>Selected Case Studies</h2>
+  <div class="panel two-column intro-text-callout">
+    <div class="feature-case-study">
+      <div class="feature-image dashboard"></div>
+      <div class="info-section">
+        <h3>Dashboard Design</h3>
+        <p>Designed a 'voice of the customer' dashboard</p>
+        <div class="skills-list">
+          <p>UX/UI design</p>
+          <span>/</span>
+          <p>Front-end development</p>
+        </div>
+        <a href="/projects/dashboard-design.html">View Case Study</a>
+      </div>
+    </div>
+    <div class="feature-case-study">
+      <div class="feature-image mealsup"></div>
+      <div class="info-section">
+        <h3>MealsUp iOS App</h3>
+        <p>Co-founded and designed a meal planning iOS App</p>
+        <div class="skills-list">
+          <p>Product Design</p>
+          <span>/</span>
+          <p>UX/UI design</p>
+        </div>
+        <a href="/projects/mealsup.html">View Case Study</a>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 <div id="theme-switch">
   <label class="toggle-switch">
     <input type="checkbox" id="theme-toggle">
     <span class="slider"></span>
   </label>
+</div>
+
+<div id="scroll-top-link">
+  <a><i class="icofont-dotted-up"></i><span>Top</span></a>
 </div>

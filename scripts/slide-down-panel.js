@@ -5,6 +5,8 @@
 
   var buttonTogglePanels = getElements('toggle-panel')
   var slideDownPanels = getElements('slide-down-panel')
+  var landingDownButton = document.getElementById('down-to-feature')
+  var landingSlideDown = document.getElementById('featured')
 
   buttonTogglePanels.forEach((buttonTogglePanel) => {
     buttonTogglePanel.addEventListener('click', function () {
@@ -32,4 +34,12 @@
       })
     })
   })
+
+  if (landingDownButton) {
+    landingDownButton.addEventListener('click', function () {
+      if (window.innerHeight < 720) {
+        landingSlideDown.scrollIntoView({behavior: 'smooth', block: 'end'})
+      }
+    })
+  }
 })()
