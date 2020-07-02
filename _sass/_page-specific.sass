@@ -70,47 +70,35 @@
         h1
           font-size: 2.7rem
           font-weight: 400
-
-        h1, h2
           margin-bottom: 0.2em
           +fade-on-load()
 
-        h2
-          font-size: 1.2rem
-          font-weight: 100
-          color: var(--subheader-color)
+        .skills-list
+          display: flex
+          align-items: center
+          margin-top: 1.8em
+          +subheader-font-style($font-size: 0.85rem)
+          opacity: 0
+          +translate-scale-on-load(.4s)
 
-    .key-skills
-      display: flex
-      flex-direction: column
-      align-items: center
-      opacity: 0
-      +translate-scale-on-load(.6s)
+          .skill
+            padding: 0.4em 1.2em
+            font-size: 0.8rem
+            opacity: 0.7
 
-      .skills-list
-        display: flex
-        align-items: center
-        margin-top: 2em
-        +subheader-font-style($font-size: 0.85rem)
-        opacity: 0
-        +translate-scale-on-load(.6s)
+          span
+            width: 5px
+            height: 5px
+            background: #f1b883
+            border-radius: 50%
+            opacity: 0.5
 
-        .skill
-          padding: 0.4em 1.2em
-          font-size: 0.8rem
-          opacity: 0.7
-
-        span
-          width: 5px
-          height: 5px
-          background: #f1b883
-          border-radius: 50%
-          opacity: 0.5
-
-      p
-        padding: 0 10em 1.8em
+      .page-content-width p
+        padding: 1em 10em 1.8em
         +subheader-font-style($font-size: 0.9rem)
         font-weight: 400
+        opacity: 0
+        +translate-scale-on-load(.6s)
 
     #down-to-feature
       justify-self: flex-end
