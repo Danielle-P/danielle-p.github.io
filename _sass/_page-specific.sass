@@ -117,73 +117,17 @@
   .journey
     margin: 15% auto 1.5em
 
-#projects-landing
-  main
-    min-height: 100%
+#projects-landing .full-width-panel-highlight
+  margin: 0
 
-  .panel
-    .project-images
-      max-width: 65%
-      display: flex
-      margin-top: 2.5em
+  &:first-of-type
+    background-color: transparent
 
-      .selectable-image
-        flex: 1
-        perspective: 1400px
+  .intro-text-callout
+    margin: 0.5em 5em
 
-        .hover-label
-          display: block
-          line-height: 1
-          color: var(--subheader-color)
-          opacity: 0
-          +transition-ease($speed: .4s)
-          transform: translateY(1em) rotateY(30deg)
-
-          .caption-item
-            height: 4em
-            display: flex
-            flex-direction: column
-            justify-content: space-around
-
-          p
-            padding: 0 0 0.4em 0
-            line-height: 1
-            +subheader-font-style(0.8rem, 0)
-            font-weight: bold
-
-          .project-type
-            text-transform: none
-            font-weight: normal
-
-        &:nth-of-type(2)
-          z-index: 1
-          margin-left: -4em
-
-        &:nth-of-type(3)
-          z-index: 2
-          margin-left: -4em
-
-        &:last-of-type
-          z-index: 3
-          margin-left: -4em
-
-        img
-          width: 100%
-          height: auto
-          border-radius: 0.3em
-          +image-box-shadow
-          transform: rotateY(30deg)
-          +transition-ease
-
-        &:hover
-          .hover-label
-            opacity: 0.7
-
-          img
-            transform: translateY(-0.4em) scale(1.03) rotateY(30deg)
-
-        &:focus
-          border-bottom: none
+  .feature-case-study
+    margin: 0
 
 #projects
   &[data-theme="dark"] .project-links
