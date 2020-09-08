@@ -138,7 +138,7 @@
 
   #scroll-top-link
     bottom: 1.2em
-    right: 1em
+    right: 1.5em
 
     a
       height: 27px
@@ -154,6 +154,9 @@
 
       i
         font-size: 1.5rem
+
+    span
+      -webkit-text-fill-color: $white
 
     &.visible
       opacity: 0.95
@@ -210,12 +213,6 @@
 
       .feature-case-study
         margin-bottom: 1.6em
-
-  #projects-landing .panel .project-images
-    max-width: 85%
-
-    img
-      max-height: none
 
   #projects
     .project-links
@@ -301,9 +298,6 @@
 
   .hidden-mobile-label
     display: inline-block
-
-  #scroll-top-link
-    right: 1em
 
   footer
     padding: 2em 1em 1.1em
@@ -394,6 +388,10 @@
           &:nth-of-type(3)
             grid-column-start: 2
 
+    &.two-column.two-row
+      padding: 3em 0
+      grid-gap: 1.5em
+
   .tabs-container
     flex-direction: column
 
@@ -432,38 +430,20 @@
             font-size: 0.75rem
             padding: 0 0.4em
 
-    #featured .feature-case-study
+  #featured, #projects-landing
+    .feature-case-study
       grid-template-columns: 1fr
+
+      .info-section, .skills-list, .project-type
+        justify-content: center
+        text-align: center
+
+        h3, p
+          text-align: center
 
       .feature-image
         width: 100%
         height: 94px
-
-  #projects-landing .panel
-    align-items: center
-
-    .project-images
-      flex-direction: column-reverse
-      max-width: 100%
-      margin: 0
-      padding: 0
-
-      .selectable-image
-        display: flex
-        flex-direction: column-reverse
-        perspective: none
-
-        &:first-of-type, &:nth-of-type(2), &:nth-of-type(3), &:last-of-type
-          margin: 0 0.8em
-
-          .hover-label, img
-            perspective: none
-            transform: rotateY(0deg)
-
-          .hover-label
-            margin: 2.5em auto 1em
-            font-size: 1.1rem
-            opacity: 1
 
   #projects
     main.project-details

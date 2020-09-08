@@ -635,6 +635,11 @@ input:checked + .slider::before
     grid-template-columns: repeat(2, 1fr)
     grid-column-gap: 3em
 
+    &.two-row
+      padding: 3em 6em
+      grid-template-rows: repeat(2, 1fr)
+      grid-gap: 3em
+
   .info-section
     align-self: center
 
@@ -862,13 +867,13 @@ input:checked + .slider::before
         background: var(--highlight)
         color: $white
         font-size: 0.8rem
-        +transition-ease(.2s)
+        +transition-ease(.3s)
 
         &:hover
-          -webkit-background-clip: border-box
+          -webkit-background-clip: border-box !important
           background-clip: border-box
           border-bottom: none
-          -webkit-text-fill-color: $white
+          -webkit-text-fill-color: $white !important
 
       .skills-list
         display: flex
