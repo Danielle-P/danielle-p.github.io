@@ -3,11 +3,12 @@ $light-text-color: #e1e5e9
 $light-subheader-color: #b8cbe2
 $border-color: rgba(116, 135, 158, 0.3)
 $content-background: rgba(116, 135, 158, 0.2)
+$hover-highlight-base: #fac88e
 
 \:root
   --color-bg: #fbfcfe
   --highlight: #f4b271
-  --hover-highlight: #fac88e
+  --hover-highlight: lighten($hover-highlight-base, 4%)
   --button: #f4b271
   --tabs: #74879e
   --panel-coloured-background: #f4f6f9
@@ -19,9 +20,9 @@ $content-background: rgba(116, 135, 158, 0.2)
 
 [data-theme="dark"]
   --color-bg: #1d232a
-  --highlight: #f8ae59
-  --hover-highlight: #fac88e
-  --button: #f4b271
+  --highlight: #ffbf75
+  --hover-highlight: lighten($hover-highlight-base, 3%)
+  --button: #ffbf75
   --tabs: #3b536d
   --panel-coloured-background: #{rgba(36, 52, 71, 0.4)}
   --pale-text-bg: #2e3642
