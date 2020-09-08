@@ -49,14 +49,20 @@ a
   text-transform: uppercase
   text-decoration: none
   color: var(--highlight)
-  +transition-ease(.2s)
-
-  &:hover, &:active
-    color: var(--hover-highlight)
+  +transition-ease(.3s)
 
   &:focus
-    outline-color: var(--color-bg)
-    border-bottom: 1px dotted var(--hover-highlight)
+    outline: 1px dotted var(--highlight)
+
+  &:hover
+    outline: 0
+
+  &:not(.btn-animate):not(.project-link):not(.home):not([class^="tab-link"]):not(.contact-method)
+    &:hover, &:active
+      background: -webkit-linear-gradient(45deg, var(--hover-highlight), var(--highlight))
+      -webkit-background-clip: text
+      background-clip: text
+      -webkit-text-fill-color: transparent
 
 blockquote
   border-left: 0.3em solid $border-color
@@ -154,9 +160,7 @@ main ul li::before
     transform: scale(1)
 
   &:focus
-    background: var(--hover-highlight)
     outline: 0
-    +transition-ease
 
 .btn-menu
   position: fixed
@@ -243,11 +247,8 @@ main ul li::before
       align-items: center
       margin: 0 0.5em
       text-align: center
-      color: var(--hover-highlight)
+      color: var(--highlight)
       border-bottom: 1px dotted transparent
-
-      &:hover
-        color: var(--button)
 
 .nav-panel.show
   position: fixed
@@ -371,6 +372,10 @@ input:checked + .slider::before
   span
     font-size: 0.85rem
     user-select: none
+    -webkit-text-fill-color: var(--highlight)
+
+    &:hover
+      -webkit-text-fill-color: var(--hover-highlight)
 
   &.visible
     opacity: 1
@@ -630,6 +635,11 @@ input:checked + .slider::before
     grid-template-columns: repeat(2, 1fr)
     grid-column-gap: 3em
 
+    &.two-row
+      padding: 3em 6em
+      grid-template-rows: repeat(2, 1fr)
+      grid-gap: 3em
+
   .info-section
     align-self: center
 
@@ -854,13 +864,16 @@ input:checked + .slider::before
         margin-top: 1em
         padding: 0.6em 1em
         border-radius: 2px
-        background-color: var(--highlight)
+        background: var(--highlight)
         color: $white
         font-size: 0.8rem
+        +transition-ease(.3s)
 
         &:hover
-          background-color: var(--hover-highlight)
+          -webkit-background-clip: border-box !important
+          background-clip: border-box
           border-bottom: none
+          -webkit-text-fill-color: $white !important
 
       .skills-list
         display: flex
