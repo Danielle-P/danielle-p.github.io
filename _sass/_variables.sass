@@ -3,12 +3,12 @@ $light-text-color: #e1e5e9
 $light-subheader-color: #b8cbe2
 $border-color: rgba(116, 135, 158, 0.3)
 $content-background: rgba(116, 135, 158, 0.2)
-$hover-highlight-base: #fac88e
+$hover-highlight-base: lighten(#fac88e, 3%)
 
 \:root
   --color-bg: #fbfcfe
   --highlight: #f4b271
-  --hover-highlight: lighten($hover-highlight-base, 4%)
+  --hover-highlight: $hover-highlight-base
   --button: #f4b271
   --tabs: #74879e
   --panel-coloured-background: #f4f6f9
@@ -21,7 +21,7 @@ $hover-highlight-base: #fac88e
 [data-theme="dark"]
   --color-bg: #1d232a
   --highlight: #ffbf75
-  --hover-highlight: lighten($hover-highlight-base, 3%)
+  --hover-highlight: $hover-highlight-base
   --button: #ffbf75
   --tabs: #3b536d
   --panel-coloured-background: #{rgba(36, 52, 71, 0.4)}
