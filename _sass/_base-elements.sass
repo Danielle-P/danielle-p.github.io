@@ -54,14 +54,8 @@ a
   &:focus
     outline: 1px dotted var(--highlight)
 
-  &:not(.btn-animate):not(.project-link):not(.home):not([class^="tab-link"]):not(.contact-method)
-    &:hover, &:active
-      outline: 0
-      background: linear-gradient(45deg, var(--hover-highlight), var(--highlight))
-      -webkit-background-clip: text
-      background-clip: text
-      -webkit-text-fill-color: var(--hover-highlight)
-      text-fill-color: transparent
+  &:hover, &:active
+    background: var(--hover-highlight)
 
 blockquote
   border-left: 0.3em solid $border-color
@@ -871,11 +865,7 @@ input:checked + .slider::before
         +transition-ease(.3s)
 
         &:hover
-          -webkit-background-clip: border-box !important
-          background-clip: border-box
-          border-bottom: none
-          -webkit-text-fill-color: $white !important
-          text-fill-color: $white !important
+          background: var(--hover-highlight)
 
       .skills-list
         display: flex
