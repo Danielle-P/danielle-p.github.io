@@ -1,5 +1,6 @@
 body
   background-color: var(--color-bg)
+  color: var(--text-color)
   font-family: $body-font
   font-size: 15px
   font-kerning: normal
@@ -34,15 +35,19 @@ h3
 h4
   margin-top: 1.2em
   +subheader-font-style($font-size: 1.1rem)
+  text-align: left
 
 p
   +body-font-style
 
   a
+    text-transform: none
     border-bottom: 1px dotted var(--highlight)
     color: var(--highlight)
 
 a
+  text-transform: uppercase
+  text-decoration: none
   color: var(--highlight)
   +transition-ease(.3s)
 
@@ -69,6 +74,7 @@ blockquote
 
   a
     display: block
+    text-transform: none
 
   p, a, li
     font-size: 0.9rem
@@ -123,6 +129,7 @@ main ul li::before
     font-family: $header-font
     font-size: 0.6em
     font-weight: 500
+    text-transform: uppercase
 
     &.visible
       display: block
@@ -231,6 +238,7 @@ main ul li::before
     a
       display: flex
       align-items: center
+      text-align: center
       margin: 0 0.5em
       color: var(--highlight)
       border-bottom: 1px dotted transparent
@@ -248,11 +256,11 @@ footer
   justify-content: center
   margin-top: 2em
   padding: 2.5em 0
+  background-color: var(--pale-text-bg)
 
   #theme-switch
     position: absolute
     left: 2.2em
-    bottom: em
 
   .page-content-width
     display: flex
@@ -267,6 +275,7 @@ footer
     p, a
       padding: 0 0 0.25em
       font-size: 0.9rem
+      text-transform: none
 
     a
       padding-bottom: 0.3rem
@@ -279,6 +288,7 @@ footer
     a
       padding: 0 0.8em
       font-size: 1.1rem
+      color: var(--text-color)
       opacity: 0.7
 
       &:hover
@@ -412,6 +422,7 @@ input:checked + .slider::before
   display: flex
   justify-content: center
   align-items: center
+  background: var(--subheader-text)
   border-radius: 50%
   cursor: pointer
 
@@ -425,11 +436,14 @@ input:checked + .slider::before
   margin: 2em 0 2.5em
 
   h4
+    text-transform: uppercase
     font-weight: 500
     font-size: 0.92rem
+    text-align: center
 
   h5, p
     font-size: 0.88rem
+    background: var(--pale-text-bg)
 
   h5
     margin-top: 0.8em
@@ -524,6 +538,7 @@ input:checked + .slider::before
     margin-top: 1.8em
     +subheader-font-style(0.9rem)
     font-weight: bold
+    text-transform: uppercase
 
     &:first-of-type
       color: #f1b883
@@ -542,6 +557,7 @@ input:checked + .slider::before
 
     p
       border-left: none
+      text-align: center
 
     &:first-of-type
       grid-column: 1 / 3
@@ -550,6 +566,7 @@ input:checked + .slider::before
   */
 .ellipses-divider
   margin: 2em auto
+  text-align: center
 
   span
     width: 5px
@@ -558,10 +575,12 @@ input:checked + .slider::before
     margin: 3px
     border-radius: 50%
     background-color: var(--subheader-color)
+    opacity: var(--body-text-opacity)
 
 .team-details
   h3
     +subheader-font-style($font-size: 1rem)
+    text-align: left
 
   .team-members
     +body-font-style
@@ -569,6 +588,7 @@ input:checked + .slider::before
     flex-direction: row
     flex-wrap: wrap
     font-size: 0.8rem
+    text-align: center
 
     span
       margin: 0 0.7em 0.8em 0
@@ -761,9 +781,11 @@ input:checked + .slider::before
       &.four-img
         grid-template-columns: repeat(5, 1fr)
 
-  align-self: center
-  padding: 1.3em 1.5em 1em
-  border-radius: 2px
+  .intro-text-callout
+    align-self: center
+    padding: 1.3em 1.5em 1em
+    background: var(--pale-text-bg)
+    border-radius: 2px
 
   h4
     margin: 0 0 0.5em
@@ -780,7 +802,9 @@ input:checked + .slider::before
 
   h2
     padding-top: 2em
+    text-transform: uppercase
 
+  .intro-text-callout
     background: transparent
 
   .feature-case-study
@@ -819,11 +843,13 @@ input:checked + .slider::before
       h3
         margin-bottom: 0.5em
         font-size: 1.2rem
+        text-align: left
 
       p
         padding-top: 0.6em
         line-height: 1.2
         font-size: 0.9rem
+        text-align: left
 
       a
         display: inline-block
@@ -870,6 +896,7 @@ input:checked + .slider::before
   ul
     margin-top: 0
 
+  .intro-text-callout
     margin: 1.4em 5em 2.5em
     background: rgba(255, 255, 255, 0.05)
     border-left: none
@@ -881,6 +908,7 @@ input:checked + .slider::before
 .tab-section-heading
   display: flex
   flex-direction: column
+  text-align: center
   margin-bottom: 1.7em
 
   h2
@@ -986,6 +1014,7 @@ input:checked + .slider::before
         color: var(--subheader-color)
         line-height: 1.3
         padding: 0
+        text-align: center
 
     &.active
       .btn-timeline
@@ -1014,6 +1043,8 @@ input:checked + .slider::before
     .stage-name
       color: var(--subheader-color)
       font-size: 0.8rem
+      text-align: center
+      text-transform: uppercase
 
       &:nth-of-type(even)
         color: var(--highlight)
