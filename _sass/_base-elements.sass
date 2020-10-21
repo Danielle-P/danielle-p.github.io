@@ -55,7 +55,7 @@ a
     outline: 1px dotted var(--highlight)
 
   &:hover, &:active
-    background: var(--hover-highlight)
+    color: var(--hover-highlight)
 
 blockquote
   border-left: 0.3em solid $border-color
@@ -243,6 +243,9 @@ main ul li::before
       color: var(--highlight)
       border-bottom: 1px dotted transparent
 
+      &:hover, &:active
+        color: var(--hover-highlight)
+
 .nav-panel.show
   position: fixed
   top: 0
@@ -352,6 +355,10 @@ input:checked + .slider::before
   +transition-ease
   z-index: 1
 
+  &:hover
+    a, span
+      color: var(--hover-highlight)
+
   a
     display: flex
     flex-direction: column
@@ -365,9 +372,6 @@ input:checked + .slider::before
     font-size: 0.85rem
     user-select: none
     color: var(--highlight)
-
-    &:hover
-      color: var(--hover-highlight)
 
   &.visible
     opacity: 1
