@@ -33,19 +33,22 @@
     })
   })
 
+
   nextTabLinks.forEach((link) => {
+
     link.addEventListener('click', (event) => {
-      const nextTabId = event.currentTarget.id
+      const nextTabId = 'tab-link-' + event.currentTarget.id
 
       tabsList.forEach((tab) => {
         const nextTabContent = tab.querySelector('a')
 
         if (nextTabContent.classList.contains(nextTabId)) {
-          const nextTabName = nextTabContent.parentNode.classList
+          const nextTabParent = nextTabContent.parentNode.classList
+          const nextTabName =  nextTabContent.classList
 
           switchToSelectedTab({
-            selectedTabClassList: nextTabName,
-            tabContentClassList: nextTabContent.classList,
+            selectedTabClassList: nextTabParent,
+            tabContentClassList: nextTabName,
           })
         }
       })
