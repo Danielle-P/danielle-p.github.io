@@ -37,9 +37,7 @@
 
   if (landingDownButton) {
     landingDownButton.addEventListener('click', function () {
-      if (window.innerHeight < 720) {
         landingSlideDown.scrollIntoView({behavior: 'smooth', block: 'end'})
-      }
     })
   }
 })()
