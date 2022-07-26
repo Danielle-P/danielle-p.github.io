@@ -49,7 +49,7 @@ a
   text-transform: uppercase
   text-decoration: none
   color: var(--highlight)
-  +transition-ease(.3s)
+  +transition-ease
 
   &:focus
     outline: 1px dotted var(--highlight)
@@ -928,41 +928,32 @@ input:checked + .slider::before
     font-size: 2.2rem
 
 .tabs-container
-  display: flex
+  padding-bottom: 2em
+  border-bottom: 1px solid var(--panel-coloured-background)
 
-  .tab
-    min-height: 4.2em
+  .page-content-width
     display: flex
-    flex: 1
-    justify-content: center
-    align-items: center
-    margin-right: .2em
-    border-radius: 2px
-    +transition-ease ($speed: .3s)
 
-    a
-      width: 100%
-      min-height: 4.2em
-      display: flex
-      align-items: center
+    .tab
+      flex: 1
       justify-content: center
-      padding: 0 2em
-      background-color: var(--tabs)
-      +subheader-font-style
-      font-size: 1.1rem
-      color: $white
-      cursor: pointer
+      align-items: center
 
-    &:last-child
-      margin-right: 0
+      a
+        +body-font-style(1rem, 0em)
+        font-weight: 600
+        text-transform: none
+        cursor: pointer
 
-    &.selected a
-      background-color: transparent
-      color: var(--subheader-color)
-      cursor: default
+      &.selected
+        cursor: default
 
-    &:hover, &:focus
-      opacity: 0.7
+        a
+          color: var(--highlight)
+          border-bottom: 2px dotted var(--highlight)
+
+      &:hover a, &:focus a
+        border-bottom: 2px dotted var(--highlight)
 
 .tab-section
   .tab-heading
