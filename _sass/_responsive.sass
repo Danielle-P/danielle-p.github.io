@@ -72,8 +72,9 @@
   .skills-grid.extra-padding, .user-task-map.extra-padding
     padding: 0
 
-  #landing #featured .panel.two-column
-    grid-template-columns: 1fr 1fr
+  #landing .landing-content .title-panel .header p.about-summary
+    max-width: 100%
+    padding: 1em 2em
 
   #projects
     .panel .project-images
@@ -192,7 +193,7 @@
 
       .landing-nav
         justify-content: space-around
-        margin: 1em 0
+        margin: 1em 3em
 
         a
           margin: 0.5em 0
@@ -208,12 +209,6 @@
 
         .skill p
           padding: 0 0 1.5em 0
-
-    #featured .panel.two-column
-      grid-template-columns: 1fr
-
-      .feature-case-study
-        margin-bottom: 1.6em
 
   #projects
     .project-links
@@ -403,33 +398,23 @@
     .landing-content
       padding: 0.5em
 
+      .landing-nav a
+        font-size: 0.75rem
+
       .title-panel
-        h1
-          margin: 0 0.4em 0.5em
+        .header
+          h1
+            margin: 0 0.4em 0.5em
 
-        .profile-photo
-          max-width: 5em
-          max-height: 5em
+          .profile-photo
+            max-width: 5em
+            max-height: 5em
 
-        .page-content-width
-          padding: 0 0.5em
+          p.about-summary
+            padding: 2em 0.5em 0
 
-          p
-            padding: 2em 0 0 0
-
-        .skills-list
-          margin-top: 3em
-          padding: 1em 0.8em
-          border: 1px solid var(--pale-text-bg)
-          border-left-color: transparent
-          border-right-color: transparent
-
-          span
-            display: none
-
-          .skill
-            font-size: 0.75rem
-            padding: 0 0.4em
+        .page-content-width .skills-list
+          display: none
 
   #featured, #projects-landing
     .feature-case-study

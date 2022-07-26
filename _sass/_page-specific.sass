@@ -17,13 +17,13 @@
 #landing
   .landing-nav
     display: flex
-    justify-content: flex-end
+    justify-content: center
     align-items: center
     margin: 3em 3em 0
-    +nav-font-style(1.05rem, 600)
+    +nav-font-style(1rem, 800)
 
     a
-      margin: 0 1.2em
+      margin: 0 1.8em
       border-bottom: 1px dotted transparent
       opacity: 0
       +slide-down($delay: 0.8s)
@@ -68,9 +68,24 @@
           +fade-on-load()
 
         h1
-          font-size: 2.7rem
+          font-size: 2.6rem
+          font-weight: 800
           margin-bottom: 0.2em
           +fade-on-load()
+
+        p
+          max-width: 65%
+          padding: 1em 10em 1.8em
+          +subheader-font-style($font-size: 0.9rem)
+          font-weight: 800
+          text-transform: none
+          letter-spacing: 0
+          opacity: 0
+          +translate-scale-on-load(.4s)
+
+      .page-content-width
+        display: flex
+        justify-content: center
 
         .skills-list
           display: flex
@@ -78,11 +93,13 @@
           margin-top: 1.8em
           +subheader-font-style($font-size: 0.85rem)
           opacity: 0
-          +translate-scale-on-load(.4s)
+          +translate-scale-on-load(.6s)
 
           .skill
             padding: 0.4em 1.2em
             font-size: 0.8rem
+            text-transform: none
+            letter-spacing: 0
             opacity: 0.7
 
           span
@@ -91,16 +108,6 @@
             background: #f1b883
             border-radius: 50%
             opacity: 0.5
-
-      .page-content-width p
-        padding: 1em 10em 1.8em
-        +subheader-font-style($font-size: 0.9rem)
-        font-weight: 400
-        letter-spacing: 0
-        text-transform: none
-        opacity: 0
-        +translate-scale-on-load(.6s)
-
 
     #down-to-feature
       justify-self: flex-end

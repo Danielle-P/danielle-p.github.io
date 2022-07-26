@@ -212,7 +212,7 @@ main ul li::before
   top: calc(-7.55em - 20px)
   align-items: center
   padding: 0 2.2em
-  background: #3b4554
+  background: var(--text-color)
   box-shadow: 0 3px 20px rgba(0,0,0,.4)
   +transition-ease(.3s)
   z-index: 4
@@ -241,11 +241,11 @@ main ul li::before
       align-items: center
       text-align: center
       margin: 0 0.5em
-      color: var(--highlight)
       border-bottom: 1px dotted transparent
+      color: var(--hover-highlight)
 
       &:hover, &:active
-        color: var(--hover-highlight)
+        border-bottom: 1px dotted var(--hover-highlight)
 
 .nav-panel.show
   position: fixed
