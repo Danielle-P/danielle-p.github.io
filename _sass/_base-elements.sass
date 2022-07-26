@@ -30,11 +30,10 @@ h2
 
 h3
   margin-top: 1.2em
-  +subheader-font-style($font-size: 0.9rem)
+  +subheader-font-style
 
 h4
-  margin-top: 1.2em
-  +subheader-font-style($font-size: 0.9rem)
+  +subheader-font-style
   text-align: left
 
 p
@@ -202,10 +201,6 @@ main ul li::before
         &:nth-of-type(3)
           transform: translateX(-12px) rotate(-40deg) scaleX(0.55)
 
-.project-links
-  position: absolute
-  margin: 4.2em 1.8em
-
 /**Navigation
   */
 .nav-panel
@@ -254,6 +249,21 @@ main ul li::before
 .nav-panel.show
   position: fixed
   top: 0
+
+.project-links
+  position: absolute
+  margin: 2em 1.8em
+
+.next-project
+  display: flex
+  flex-direction: column
+  float: right
+  margin: 1.2em 2.8em 0 0
+
+  span:nth-of-type(2)
+    font-size: 0.7rem
+    text-transform: none
+    padding-top: 0.2rem
 
 /**Footer
   */
@@ -755,7 +765,7 @@ input:checked + .slider::before
             grid-row: 2 / span 1
 
     &.perspective
-      perspective: 1800px
+      perspective: 2200px
 
       @for $n from 1 through 4
         .project-image:nth-child(#{$n})
@@ -786,14 +796,13 @@ input:checked + .slider::before
     border-radius: 2px
 
   h4
-    margin: 0 0 0.5em
     font-weight: bolder
 
   &.info-section p
     padding: 0 0 0.8em 0
 
     .image-section .project-image img
-      max-height: 500px
+      max-height: 450px
 
 .case-study-tiles
 
@@ -853,7 +862,6 @@ input:checked + .slider::before
       padding: 1.6em 0.7em 1.8em
 
       h4
-        margin-bottom: 0.5em
         font-size: 0.9rem
         text-align: left
 
@@ -905,8 +913,7 @@ input:checked + .slider::before
     font-size: 2.2rem
 
 .tabs-container
-  padding-bottom: 2em
-  border-bottom: 1px solid var(--panel-coloured-background)
+  margin-bottom: 2.5em
 
   .page-content-width
     display: flex
@@ -938,10 +945,6 @@ input:checked + .slider::before
 
   .slide-down-panel
     padding: 0
-
-  .next-tab
-    float: right
-    margin: 1.2em 2.8em 0 0
 
 /** Journey
   */
@@ -1080,10 +1083,16 @@ input:checked + .slider::before
       font-size: 0.8rem
       opacity: 0
 
-    h3, .team-details
+    h3
       margin: 0
       opacity: 0
       font-weight: bolder
+
+    .timeline
+      display: flex
+      justify-content: center
+      margin: 1em 0 1.2em
+      opacity: 0
 
   .slide-in
     opacity: 0
@@ -1098,7 +1107,7 @@ input:checked + .slider::before
       h3
         +slide-down($delay: .2s)
 
-      .team-details
+      .timeline
         +slide-down($delay: .4s)
 
     &:not(.initial) .slide-in
@@ -1118,7 +1127,7 @@ input:checked + .slider::before
         h3
           +slide-down(2.6s)
 
-        .team-details
+        .timeline
           +slide-down(2.8s)
 
       .slide-in

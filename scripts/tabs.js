@@ -20,7 +20,7 @@
   }
 
   const tabsList = getElements('tab')
-  const nextTabLinks = getElements('next-tab')
+  const nextTabLinks = getElements('next-project')
 
   tabsList.forEach((tab) => {
     tab.addEventListener('click', (event) => {
