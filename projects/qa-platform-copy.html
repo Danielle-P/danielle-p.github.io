@@ -121,11 +121,43 @@ lazy-animations: true
 
       <div class="full-width-panel-highlight">
         <div class="panel">
-          <h3>User Flow</h3>
-          <div class="image-section extra-padding">
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/user-flow.png"
-                alt="Dashboard user flow" />
+          <h3>Challenges</h3>
+          <div class="page-content-width">
+            <p>We knew that with the current design, which did not contain any triaging functionality or formal triaging flow, was resulting in customers spending up to 4 times as long triaging their results as they would like. We also knew what the main pain points were around triaging bugs and we had a good understanding of the context of QAs and developers, and understood the risks and negative consequences of a bad triaging flow. In light of this, with the product manager and lead engineer we looked at our current platform and workshopped:</p>
+            <ul>
+              <li>What might be the simplest way to introduce a triaging workflow so that we can speed up the triaging time?</li>
+              <li>Can we achieve this using the existing page view?</li>
+              <li>Can we create an intuitive and easy-to-use triaging flow within the current technical constraints?</li>
+            </ul>
+            <p>After brainstorming, we decided that an accept/reject button for each bug would be a quick way to solve the customers' problems - it would allow them to hide rejected bugs, communicate the triage status of bugs to others in their teams and be a great first step towards enabling better bug triaging.</p>
+            <p>This was a change that could be made reasonably quickly in the code, however we were concerned that it would cause problems if we introduced it within the existing design. The existing design showed the issues in an expandable accordion view. Adding the option to accept/reject bugs within this already information-heavy view would cause various problems which might actually slow down the triaging process and be detrimental to the user experience:</p>
+            <ul>
+              <li>adding more to the existing view would make it feel overcrowded and may be too overwhelming for the user</li>
+              <li>depending on where the buttons were placed, the user might not even notice these buttons</li>
+              <li>adding the buttons at the most-prominent top level for each bug would mean we would have to sacrifice showing other information which should take priority</li>
+              <li>we would have limited options to add to or experiment with the triaging feature (such as adding further useful information) due to constraints within the existing page layout</li>
+            </ul>
+            <p>After mocking up some potential solutions, we realised it would be better to change the structure of the page to allow us to better solve the problem for the customer. The options we had within the existing page did not effectively solve the customers problem, so we decided to move away from the accordion view and link to each bug separately, so each bug would be shown on it's own page. The next step was to scope out this work with the engineers so that we could gain an understanding of how much more work this would be to implement.</p>
+          </div>
+          <div class="panel screenshots-section">
+            <h4>Initial designs to explore the solution within our existing page structure</h4>
+            <div class="image-section image-grid wireframes four-col">
+              <div class="project-image image-intersect">
+                <img class="lazy" data-src="/images/qa-platform/design-1--tabs.jpg"
+                  alt="Mockup showing accepted issues in a different tab" />
+              </div>
+              <div class="project-image image-intersect">
+                <img class="lazy" data-src="/images/qa-platform/design-1--tabs-accepted.jpg"
+                  alt="Mockup showing an accepted issues"/>
+              </div>
+              <div class="project-image image-intersect">
+                <img class="lazy" data-src="/images/qa-platform/design-2--inline.jpg"
+                  alt="Mockup showing inline accept/reject buttons" />
+              </div>
+              <div class="project-image image-intersect">
+                <img class="lazy" data-src="/images/qa-platform/design-3--new-page.jpg"
+                  alt="Mockup showing triage process in separate page" />
+              </div>
             </div>
           </div>
         </div>
