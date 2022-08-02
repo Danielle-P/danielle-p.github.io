@@ -170,38 +170,35 @@ lazy-animations: true
           <span class="tag-label">Figma</span>
         </figcaption>
         <div class="page-content-width">
-          <p>Using the user stories, I tailored pages to each user group with simple score-based views for the
-            cabin/in-flight
-            and
-            on-the-ground users who needed to be able to quickly identify their performance against their targets
-            whilst
-            they were on the move, including how their scores compared with other teams and performance of their
-            individual team members.</p>
-          <p>The Head Office and management level scores page designs were more complex, showing more
-            detailed
-            analytics and including the functionality for those users to see a high level overview with the option to
-            drill down further into the data by clicking on links to view trended data, or clicking directly on
-            metrics to view further data.
-          </p>
-          <p>Around half of users in the user groups we identified would be accessing the site only on mobile devices
-            as
-            they were not office-based. I created mockups and wireframes for both mobile and desktop depending on the
-            user group I was designing for, and sought and acted upon feedback from the relevant stakeholders before
+          <p>After fully defining the problem and working through the technical constraints with the engineers, we defined the requirements for the first iteration of the triage flow as:</p>
+          <ul>
+            <li>the bugs list should be filterable in some way so that users can avoid seeing the 'noise' of rejected bugs, making it easier for them to focus only on the valid bugs</li>
+            <li>the layout will be restructured so that each bug is shown on an individual page</li>
+            <li>accept/reject buttons need to be highly visible, easy to click, and it needs to be clear to users what these terms mean</li>
+            <li>ideally, there would be a way to allow users to easily navigate to the next bug in the list to speed up the triage flow</li>
+            <li>the reason for rejecting a bug should be shown in the UI. We can use the data we have to find out the most common reasons a bug is not valid</li>
+          </ul>
+          <p>We also had the following constraints:</p>
+          <ul>
+            <li>where possible we should use components within the existing design system</li>
+            <li>layout changes for the bug information should be kept to a minimum to keep the migration of bugs to a separate page simple to implement</li>
+            <li>allowing the user to navigate back to a previous issue is out of scope due to complexity</li>
+          </ul>
         </div>
 
         <div class="panel screenshots-section">
-          <h4>Mobile Wireframes: Sign-in Flow</h4>
-          <div class="image-section image-grid mobile five-col">
+          <h4>Initial sketches of the solution</h4>
+          <div class="image-section image-grid wireframe four-col">
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/signup-mockup-mobile.jpg"
+              <img class="lazy" data-src="/images/qa-platform/sketch-1.png"
                 alt="Mockup for sign up page" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/login-mockup-mobile.jpg"
+              <img class="lazy" data-src="/images/qa-platform/sketch-2.png"
                 alt="Mockup for login page" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/login-mockup-incorrect.jpg"
+              <img class="lazy" data-src="/images/qa-platform/sketch-3.png"
                 alt="Mockup for incorrect password page" />
             </div>
             <div class="project-image image-intersect">
@@ -219,20 +216,16 @@ lazy-animations: true
           <h4>Low Fidelity Desktop Wireframes: Homepage and Scorecard Pages</h4>
           <div class="image-section image-grid wireframes four-col">
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/login-mockup.png"
-                alt="Mockup for login page" />
+              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/login-mockup.png"/>
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/homepage-mockup.png"
-                alt="Mockup for homepage" />
+              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/homepage-mockup.png" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/scores-mockup.png"
-                alt="Mockup for scores page" />
+              <img class="lazy" data-src="/images/qa-platform/sketch-4.png" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/kpis-mockup.png"
-                alt="Mockup for KPIs page" />
+              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/kpis-mockup.png"/>
             </div>
           </div>
         </div>
@@ -241,16 +234,16 @@ lazy-animations: true
           <h4>Final Designs</h4>
           <div class="image-section image-grid three-col">
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/homepage-full-size.jpg"
-                alt="Homepage design" />
+              <img class="lazy" data-src="/images/qa-platform/final--popup.jpg"
+                alt="Final design showing accept/reject buttons" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/scores-page.jpg"
-                alt="Scores page design" />
+              <img class="lazy" data-src="/images/qa-platform/final--accepted.jpg"
+                alt="Final design for accepted bug" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/kpis-page.jpg"
-                alt="KPIs page design" />
+              <img class="lazy" data-src="/images/qa-platform/final--rejected.jpg"
+                alt="Final design for rejected bug" />
             </div>
           </div>
         </div>
@@ -258,50 +251,42 @@ lazy-animations: true
 
       <div class="full-width-panel-highlight">
         <div class="panel page-content-width">
-          <h3>Style Guide</h3>
-          <div class="image-section">
+          <h3>Data</h3>
+          <p>We monitored the adoption and usage of the triaging feature over the following month and found the following:</p>
+          <ul>
+            <li>70.9% of all tests included at least some bug triaging</li>
+            <li>Customers who launched the most tests had the highest adoption rates</li>
+            <li>Most rejected bugs were for the reasons 'as designed' and 'duplicate'</li>
+            <li>No customers were using the 'next issue' button</li>
+          </ul>
+          <!-- <div class="image-section">
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/dashboard-design/airline-dashboard/colours-fonts.jpg"
+              <img class="lazy" data-src="/images/qa-platform/data.jpg"
                 alt="Colour and Font design" />
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
-      <div class="panel page-content-width">
-        <h3>Build Phase</h3>
-        <figcaption class="caption-container">
-          <span class="tag-label">HTML</span>
-          <span class="tag-label">Bootstrap</span>
-          <span class="tag-label">LESS</span>
-          <span class="tag-label">jQuery</span>
-          <span class="tag-label">Highcharts Library</span>
-          <span class="tag-label">C#</span>
-        </figcaption>
-        <p>I built the front-end of the site in two week sprints following Agile workflows. I co-ordinated with the
-          data and insight teams during the build phase when building data visualisations.</p>
-      </div>
-
-      <div class="full-width-panel-highlight">
+      <div class="panel">
         <div class="panel page-content-width">
-          <h3>Reflections</h3>
-          <p>The design phase for this project was very lengthy due to there being a number of different sets of
-            pages, each of which we received user feedback on. As a result it became quite difficult to manage the
-            comments to the pages relevant to them on the prototype. I gained good experience on this project
-            in managing that user feedback, with the key learning points being to set a hard deadline for receiving the
-            feedback
-            and
-            to
-            collate the feedback before acting on any of it. This makes the process much more manageable in terms of
-            both
-            reviewing the feedback efficiently in one session and identifying common themes in order to prioritise if
-            and how
-            feedback points should
-            be actioned.</p>
-          <p>In terms of the project output, the client has seen a large increase in the number of users logging
-            on to their dashboard to monitor their scores compared to the number of logins on their previous dashboard.
-            User feedback since launch has been very positive, with the dashboard extended to a number of additional
-            user groups who requested similar designs and functionality to the existing pages.</p>
+          <h3>Reflections and Further Changes</h3>
+          <p>The data and feedback from our customers showed that some improvements could be made to the triage flow to make the triage process even quicker and easier, and to further increase adoption rates:</p>
+          <ul>
+            <li>accept and reject buttons could still be more obvious (this came from customer feedback and also from viewing HotJar recordings</li>
+            <li>make the 'next issue' button more prominent</li>
+            <li>layout improvements to create better visual hierarchy</li>
+            <li>show how many issues remain in the 'not triaged' lists</li>
+            <li>incorporate a 'previous issue' button</li>
+            <li>we could improve adoption rate by disabling the export button unless an issue is accepted</li>
+          </ul>
+          <p>I updated the design to address some of the above points. As this was a recent project, I have not yet been able to monitor the impact of the new design as we do not yet have enough customer data.</p>
+          <div class="image-section extra-padding">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/qa-platform/future-iteration-example.png"
+                alt="Iteration 2 of the design" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
