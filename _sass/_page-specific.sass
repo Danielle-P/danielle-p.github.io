@@ -181,8 +181,11 @@
           .project-image
             padding: 2em 0
 
-      .tab-link-reports .user-stories
+      .tab-link-reports .user-stories, .tab-link-qa .user-stories
         +standard-content-grid(3)
+
+      .tab-link-qa .user-stories .user-group
+        grid-template-rows: 1fr
 
     &.meals-up
       section:first-of-type
