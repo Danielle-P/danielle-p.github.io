@@ -254,16 +254,30 @@ main ul li::before
   position: absolute
   margin: 2em 1.8em
 
-.next-project
+.next-previous-projects
+  position: fixed
+  bottom: 0
   display: flex
-  flex-direction: column
-  float: right
-  margin: 1.2em 2.8em 0 0
+  justify-content: space-between
+  width: 100%
+  padding: 1em 2em
+  background-color: var(--color-bg)
 
-  span:nth-of-type(2)
-    font-size: 0.7rem
-    text-transform: none
-    padding-top: 0.2rem
+  .next, .previous
+    display: flex
+
+    a
+      display: flex
+      flex-direction: row
+
+      div
+        display: flex
+        flex-direction: column
+
+        span:nth-of-type(2)
+          font-size: 0.7rem
+          text-transform: none
+          padding-top: 0.2rem
 
 /**Footer
   */
