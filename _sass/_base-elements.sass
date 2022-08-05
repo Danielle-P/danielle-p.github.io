@@ -201,6 +201,20 @@ main ul li::before
         &:nth-of-type(3)
           transform: translateX(-12px) rotate(-40deg) scaleX(0.55)
 
+.btn-ghost
+  text-align: center
+  padding: 0.6em 1em 0.5em
+  border: 2px solid var(--secondary-accent)
+  background: var(--color-bg)
+  color: var(--secondary-accent)
+  font-size: 0.8rem
+  letter-spacing: 0.12em
+  +transition-ease(.3s)
+
+  &:hover
+    color: var(--secondary-accent)
+    opacity: 0.7
+
 /**Navigation
   */
 .nav-panel
@@ -302,7 +316,6 @@ footer
   .footer-info
     display: flex
     flex-direction: column
-    opacity: 0.7
 
     p, a
       padding: 0 0 0.25em
@@ -321,16 +334,15 @@ footer
       padding: 0 0.8em
       font-size: 1.1rem
       color: var(--body)
-      opacity: 0.7
 
       &:hover
-        color: var(--primary-accent)
+        opacity: 0.8
 
 /**Toggle
   */
 .toggle-switch
-  width: 45px
-  height: 25px
+  width: 52px
+  height: 28px
   position: relative
   display: inline-block
 
@@ -346,30 +358,34 @@ footer
   right: 0
   bottom: 0
   cursor: pointer
-  background-color: var(--primary-accent)
+  background-color: #cdd5dd
   border-radius: 34px
+  border: 1px solid #cdd5dd
   font-family: IcoFont
   +transition-ease
 
 .slider::before
-  width: 17px
-  height: 17px
+  width: 26px
+  height: 26px
   position: absolute
-  left: 4px
-  bottom: 4px
-  border-radius: 34px
+  left: 0px
+  bottom: 0px
+  padding: 5px
+  background: $white
+  border-radius: 50%
   content: '\ee81'
-  color: var(--color-bg)
+  color: var(--primary-accent)
   +transition-ease
 
 input:checked + .slider
-  background-color: var(--primary-accent)
+  background-color: var(--secondary-accent)
+  border: 1px solid var(--secondary-accent)
 
 input:checked + .slider::before
-  padding-left: 1px
+  padding-left: 6px
   content: '\ef9e'
   color: var(--color-bg)
-  transform: translateX(18px)
+  transform: translateX(23px)
 
 /**Back to Top
   */
