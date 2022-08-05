@@ -9,7 +9,7 @@ body[data-theme-animate]
   +transition-ease(1s)
 
 main
-  padding: 3.4em 0 1.8em
+  padding: 3.4em 0 4em
   min-height: calc(100vh - 160px)
   overflow-x: hidden
 
@@ -265,7 +265,11 @@ main ul li::before
 
 .project-links
   position: absolute
-  margin: 2em 1.8em
+  margin: 1.8em
+
+  .btn-ghost
+    padding: 0
+    border: none
 
 .next-previous-projects
   position: fixed
@@ -275,6 +279,11 @@ main ul li::before
   width: 100%
   padding: 1em 2em
   background-color: var(--color-bg)
+  +transition-ease(.3s)
+
+  &:hover a
+    color: var(--secondary-accent)
+    opacity: 0.7
 
   .next, .previous
     display: flex
@@ -282,6 +291,9 @@ main ul li::before
     a
       display: flex
       flex-direction: row
+      font-size: 0.8rem
+      letter-spacing: 0.12em
+      color: var(--secondary-accent)
 
       div
         display: flex
@@ -291,6 +303,8 @@ main ul li::before
           font-size: 0.7rem
           text-transform: none
           padding-top: 0.2rem
+          letter-spacing: 0
+
 
 /**Footer
   */
