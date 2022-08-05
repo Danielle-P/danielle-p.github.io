@@ -38,7 +38,7 @@
         +slide-down($delay: 1.1s)
 
       &:hover
-        border-bottom-color: var(--hover-highlight)
+        border-bottom-color: var(--hover-primary-accent)
 
   .landing-content
     min-height: 100vh
@@ -245,9 +245,9 @@
       text-align: center
       margin-top: 1em
       padding: 0.6em 1em 0.5em
-      border-radius: 2px
-      background: var(--highlight)
-      color: $white
+      border: 2px solid var(--secondary-accent)
+      background: var(--color-bg)
+      color: var(--secondary-accent)
       font-size: 0.8rem
       letter-spacing: 0.12em
       +transition-ease(.3s)
@@ -292,8 +292,8 @@
 
       p
         font-size: 0.8rem
-        color: var(--highlight)
+        color: var(--primary-accent)
 
       &:hover i, p
-        color: var(--hover-highlight)
+        color: var(--hover-primary-accent)
 
