@@ -9,334 +9,93 @@ lazy-animations: true
 <main class="project-details adventure-app">
   <h1>adventure.gen app</h1>
   <figcaption class="caption-container heading">
-    <span class="tag-label"><i class="icofont-presentation"></i>&nbsp;Work Project</span>
-    <span class="tag-label"><i class="icofont-company"></i>&nbsp;Product Design, UX Research</span>
+    <span class="tag-label"><i class="icofont-presentation"></i>&nbsp;Side Project</span>
+    <span class="tag-label"><i class="icofont-company"></i>&nbsp;App Design, UI Design</span>
   </figcaption>
 
-  <section class="panel intro-text-callout page-content-width">
-    <p>I am currently a product designer at Global App Testing, a start-up which offers crowd-sourced QA
-      testing. My role over the past year and a half here has been extremely varied as I have worked in a
-      cross-functional
-      team to design and build a new
-      SaaS platform from scratch, which has now been taken to market. The platform allows customers to test their apps
-      on demand by launching tests themselves from our UI
-      to our crowd of QA testers. Customers then receive results within the
-      platform, which they can export to their bug-tracking tools.</p>
-    <p>My role in this project has included working closely with
-      the product
-      manager
-      to conduct research in order to better
-      understand and analyse user pain points and problems, using this research data to create an MVP and then iterating
-      on the MVP based on the results of experiments and
-      feedback to the point where we have a saleable product.</p>
-    <p>Here is a case study of one of the post-MVP projects I have worked on recently.</p>
-  </section>
+  <!-- <section class="panel intro-text-callout page-content-width">
+    <p>My most recent side project was to create the design for a narrative adventure game app, which uses AI to
+      generate an
+      illustrated narrative based on user inputs (the idea was based on "choose your own adventure" books). The game is
+      currently available on the App Store, and I am working
+      with the developer to iterate on the design and game features based on feedback.</p>
+  </section> -->
 
   <div class="tab-section">
 
-    <div class="tab-link-qa slide-down-panel show">
+    <div class="slide-down-panel show">
 
       <div class="full-width-panel-highlight">
         <div class="panel two-column intro-text-callout">
-          <div class="image-section overlap two-img">
+          <div class="image-section overlap three-img end-screenshots">
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/issues-reported--new-issues.png" alt="New issues reported"
-                alt="Test results page" />
+              <img class="lazy" data-src="/images/adventure-gen/choose-adventure-1.png" alt="Choose your adventure" />
             </div>
             <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/future-iteration-example.png" />
+              <img class="lazy" data-src="/images/adventure-gen/adventure-screen-2.png" />
+            </div>
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/adventure-gen/adventure-screen-3.png" />
             </div>
           </div>
           <div class="info-section">
-            <h4>Context</h4>
-            <p>After the creation of the MVP, we heard from customers that one of the pain points experienced in the QA
-              process was the time it takes customers to triage issues (bugs) found within their apps. We knew this
-              was
-              an
-              important
-              problem area
-              to focus on because our research showed QA teams were often under-resourced and experienced a lot of time
-              pressure, so this pain point exacerbated wider problems in QA.</p>
-            <p>Our hypothesis was that making it quicker and easier for QA teams to triage issues found by our testers
-              would help our
-              customers to process and fix
-              those issues, and therefore allow for quicker releases.</p>
-            <h4>The Team</h4>
-            <div class="team-members">
-              <span class="tag-label">1 Product Designer</span>
-              <span class="tag-label">1 Product Manager</span>
-              <span class="tag-label">1 Tech Lead</span>
-              <span class="tag-label">3 Engineers</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="page-content-width">
-          <h4>Project Objective & My Role</h4>
-          <p>The objective of the project was to facilitate an effective triage process by implementing a simple issue
-            workflow to:
-          <ul>
-            <li>Enable an easy and quick triage flow within our platform</li>
-            <li>Hide rejected issues from the main issues view</li>
-            <li>Make the triaging process highly visible to help team communication</li>
-          </ul>
-          </p>
-          <p>We also wanted to track the issue acceptance rate to monitor both the issue reporting quality and the
-            adoption
-            of the triaging functionality.</p>
-          <p>My role was to lead the design of this project. I worked with the Product Manager in the discovery phase
-            from the beginning, speaking to customers to ascertain the most important pain points in their triaging
-            process.
-            I collaborated with the Product Manager and Tech Lead to design the first iteration of the solution, which
-            included workshopping ideas and creating concept
-            mock-ups through to clickable prototypes. I
-            tested wireframes and prototypes with customers before finalising the designs. Having monitored the data and
-            usage of the feature, I then identified improvements that could be made in the second iteration of the
-            design.
-          </p>
-        </div>
-      </div>
-
-      <div class="panel">
-        <div class="page-content-width">
-          <h3>Main Customer Pain Points</h3>
-          <figcaption class="caption-container">
-            <span class="tag-label">Customer Research</span>
-            <span class="tag-label">Interviews</span>
-            <span class="tag-label">HotJar</span>
-          </figcaption>
-          <p>After interviewing customers, target customers and non-customers in the QA space, we identified a number of
-            pain points around results triaging issues.</p>
-        </div>
-        <div class="user-stories page-content-width">
-          <div class="user-group">
-            <div class="row">
-              <h4>Triaging issues is time-consuming</h4>
-              <p>Currently it takes 30-60 mins to triage results</p>
-              <p>We want to reduce our triaging time to less than 15 mins</p>
-              <p>Invalid issues mean we spend a lot of time triaging results</p>
-              <p>High reliance on exploratory testing means we have a lot of issues</p>
-              <p>We want to free up our testers' time so that they can focus on more impactful activities</p>
-            </div>
-          </div>
-          <div class="user-group">
-            <div class="row">
-              <h4>Triaging can be a bottleneck to release</h4>
-              <p>Triage overhead can be high</p>
-              <p>The faster issues can be triaged, the faster developers can fix things</p>
-              <p>We have to triage the issues and then prioritise them, which can cause a delay in fixing issues</p>
-              <p>We don't want to send issues to developers unless we know they are valid issues</p>
-            </div>
-          </div>
-          <div class="user-group">
-            <div class="row">
-              <h4>Communication during triaging is difficult</h4>
-              <p>Someone coming to look at the issues list doesn't know which issues have already been rejected</p>
-              <p>We always have to put notes on our triage lists</p>
-              <p>We want to be able to mark a issue as 'already triaged'</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="full-width-panel-highlight">
-        <div class="panel">
-          <h3>Challenges</h3>
-          <div class="page-content-width">
-            <p>The way we were showing issues found by testers to our customers did not
-              include any
-              triaging functionality. We knew the result of this was that customers were spending up to 4 times as long
-              triaging their
-              results as they would like.
-              We also knew what the main pain points were around triaging issues and we had a good understanding of the
-              context and understood the risks and negative consequences of a bad
-              triaging flow.
-              In light of this, the Product Manager and Tech Lead and I workshopped: </p>
+            <h4>Project & Idea</h4>
+            <p>My most recent side project was to create the design for a narrative adventure game app, which uses AI to
+              generate an
+              illustrated narrative based on user inputs (the idea was based on "choose your own adventure" books). The
+              game is
+              currently available on the App Store, and I am working
+              with the developer to iterate on the design and game features based on feedback.</p>
+            <p>My priorities when creating these designs were:</p>
             <ul>
-              <li>What might be the simplest way to introduce a triaging workflow so that we can speed up the triaging
-                time?</li>
-              <li>Can we achieve this using the existing issues page view?</li>
-              <li>Can we create an intuitive and easy-to-use triaging flow within the current technical constraints?
-              </li>
+              <li><em>simplicity:</em> we wanted the UI to be really simple so as not to distract from the story, and to
+                allow for a more immersive experience.</li>
+              <li><em>flexibility:</em> the UI had to be really flexible, to accommodate different imagery. We decided
+                on 7 adventure themes to start with, from desert to space. I designed a subtle UI for each theme.</li>
             </ul>
-            <p>After a couple of rounds of brainstorming and voting on ideas, we decided that an accept/reject button
-              for each issue would be a quick way to solve
-              the customers' problems - it would allow them to hide rejected issues, communicate the triage status of
-              issues
-              to others in their team and be a first step towards enabling better issue triaging.</p>
-            <p>This was a change that could be made reasonably quickly in the code, however we were concerned that it
-              would cause problems if we introduced it within the existing design, which showed the issues
-              in an expandable accordion view. Adding the option to accept/reject issues within this already
-              information-heavy view would cause various problems which might actually slow down the triaging process
-              and be detrimental to the user experience.</p>
-            <p>After exploring some potential solutions within the existing view, we realised it would be better to
-              change the structure of the
-              page to allow us to better solve the problem for the customer. The options we had within the existing page
-              did not effectively solve the customers problem, so we decided to move away from the accordion view and
-              show each issue in its own page. The next step was to scope
-              out
-              this work with the full engineering team so that we could gain an understanding of how much more work this
-              would be to
-              implement.</p>
-          </div>
-          <div class="panel screenshots-section">
-            <h4>Initial designs to explore the solution within our existing page structure</h4>
-            <div class="image-section image-grid wireframes four-col">
-              <div class="project-image image-intersect">
-                <img class="lazy" data-src="/images/qa-platform/design-1--tabs.jpg"
-                  alt="Mockup showing accepted issues in a different tab" />
-              </div>
-              <div class="project-image image-intersect">
-                <img class="lazy" data-src="/images/qa-platform/design-1--tabs-accepted.jpg"
-                  alt="Mockup showing an accepted issues" />
-              </div>
-              <div class="project-image image-intersect">
-                <img class="lazy" data-src="/images/qa-platform/design-2--inline.jpg"
-                  alt="Mockup showing inline accept/reject buttons" />
-              </div>
-              <div class="project-image image-intersect">
-                <img class="lazy" data-src="/images/qa-platform/design-3--new-page.jpg"
-                  alt="Mockup showing triage process in separate page" />
-              </div>
-            </div>
-          </div>
-          <div class="panel screenshots-section">
-            <h4>Exploring changes to page structures</h4>
-            <div class="image-section image-grid wireframes">
-              <div class="project-image image-intersect">
-                <img class="lazy" data-src="/images/qa-platform/solutions-options.jpg"
-                  alt="Miro board showing possible solutions to the challenge" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
-      <div class="panel">
-        <h3>Design Phase</h3>
+      <div class="panel screenshots-section">
+        <h3>Example screenshots from the game</h3>
         <figcaption class="caption-container">
-          <span class="tag-label">Sketching</span>
-          <span class="tag-label">Figma</span>
+          <span class="tag-label">UI Design</span>
+          <span class="tag-label">App Design</span>
         </figcaption>
-        <div class="page-content-width">
-          <p>After fully defining the problem and working through the technical constraints with the engineers, we
-            defined the requirements for the first iteration of the triage flow as:</p>
-          <ul>
-            <li>The layout will be restructured so that each issue is shown on an individual page</li>
-            <li>The issues list should be filterable so that users can avoid seeing the 'noise' of rejected
-              issues, making it easier for them to focus only on the valid issues</li>
-            <li>Accept/reject buttons need to be highly visible, easy to click, and it needs to be clear to users what
-              these terms mean - we need to test this with users</li>
-            <li>Ideally, users could easily navigate to the next issue in the list within an individual issue view to
-              speed
-              up
-              the triage flow</li>
-            <li>The reason for rejecting a issue should be shown in the UI. We can use the data we have on tag usage to
-              find out the
-              most common reasons a issue is not valid</li>
-          </ul>
-          <p>We also had the following constraints:</p>
-          <ul>
-            <li>Use components within the existing design system to help speed up implementation</li>
-            <li>Layout changes for the issue information should be kept to a minimum to keep the migration of issues to
-              a
-              separate page simple to implement</li>
-            <li>Allowing the user to navigate back to a previous issue is out of scope due to complexity</li>
-          </ul>
-        </div>
-
-        <div class="panel screenshots-section">
-          <h4>Initial sketches of the solution</h4>
-          <div class="image-section image-grid wireframe four-col">
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/sketch-1.png" />
-            </div>
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/sketch-2.png" />
-            </div>
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/sketch-3.png" />
-            </div>
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/sketch-4.png" />
-            </div>
+        <div class="image-section image-grid mobile five-col">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/adventure-gen/choose-adventure-1.png" />
           </div>
-        </div>
-
-        <div class="panel screenshots-section">
-          <h4>Final Designs</h4>
-          <div class="image-section image-grid three-col">
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/final--popup.jpg"
-                alt="Final design showing accept/reject buttons" />
-            </div>
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/final--accepted.jpg"
-                alt="Final design for accepted issue" />
-            </div>
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/final--rejected.jpg"
-                alt="Final design for rejected issue" />
-            </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/adventure-gen/adventure-screen-5.png" />
+          </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/adventure-gen/adventure-screen-2.png" />
+          </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/adventure-gen/adventure-screen-4.png" />
+          </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/adventure-gen/adventure-screen-6.png" />
           </div>
         </div>
       </div>
 
-      <div class="full-width-panel-highlight">
-        <div class="panel page-content-width">
-          <h3>Data</h3>
-          <p>We monitored the adoption and usage of the triaging feature over the following month and found the
-            following:</p>
-          <ul>
-            <li>70.9% of all tests run included at least some issue triaging</li>
-            <li>Customers who launched the most tests had the highest adoption rates</li>
-            <li>Most rejected issues were for the reasons 'as designed' and 'duplicate'</li>
-            <li>No customers were using the 'next issue' button</li>
-          </ul>
-          <!-- <div class="image-section">
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/data.jpg" alt="Colour and Font design" />
-            </div>
-          </div> -->
-        </div>
+      <div class="panel screenshots-section">
+        <h3>More coming soon as we iterate on the game</h3>
       </div>
 
-      <div class="panel">
-        <div class="panel page-content-width">
-          <h3>Reflections & Further Iterations</h3>
-          <p>The data and feedback from our customers showed that some improvements could be made to the triage flow to
-            make the triage process even quicker and easier, and to further increase adoption rates:</p>
-          <ul>
-            <li>Accept and reject buttons could still be more obvious (this came from customer feedback and also from
-              viewing HotJar recordings)</li>
-            <li>The 'next issue' button needs to be more prominent</li>
-            <li>Layout improvements would create better visual hierarchy</li>
-            <li>Showing number of issues remaining in the 'not triaged' lists would help users understand how far
-              through the triaging process they are</li>
-            <li>Disabling the export button unless an issue is accepted may improve adoption rate and prevent exports of
-              rejected issues in error</li>
-          </ul>
-          <p>Here is my updated design which addresses some of the above points. As this was a recent project, I have
-            not yet been
-            able to monitor the impact of the new design as we do not currently have enough customer data.</p>
-          <div class="image-section extra-padding">
-            <div class="project-image image-intersect">
-              <img class="lazy" data-src="/images/qa-platform/future-iteration-example.png"
-                alt="Iteration 2 of the design" />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="next-previous-projects">
     <div class="previous">
       <a href="/projects/dashboard-design.html">
+        <i class="icofont-dotted-left"></i>
         <div><span>Previous project </span>
           <span>KPMG Dashboards</span>
         </div>
-        <i class="icofont-dotted-right"></i>
       </a>
     </div>
     <div class="next">
