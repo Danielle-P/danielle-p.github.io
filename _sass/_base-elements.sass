@@ -869,6 +869,13 @@ input:checked + .slider::before
     border-radius: $border-radius
     box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
 
+    &.disabled
+      opacity: 0.5
+      cursor: not-allowed
+
+      &:hover
+        box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
+
     &:hover, &:focus, &:active
       box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.3)
       border: none
