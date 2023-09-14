@@ -212,8 +212,6 @@
           padding: 0 0 1.5em 0
 
   #projects
-    .project-links
-      top: 6em
 
     .project-details
       padding-top: 6em
@@ -263,8 +261,18 @@
 
 
   #projects-landing, #projects
-    h1:first-of-type
-      padding-left: 16px
+    .project-links
+      margin: 2.4em 1em 0
+
+    .next-previous-projects
+      padding: 1em
+
+      .previous, .next
+        a
+          align-items: center
+
+          span:nth-of-type(2)
+            display: none
 
   main
     ul li::before
