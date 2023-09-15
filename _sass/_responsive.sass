@@ -45,9 +45,6 @@
   .nav-panel ul
     padding: 0 3em 0 0
 
-  footer #theme-switch
-    left: 1.2em
-
   #scroll-top-link
     right: 2em
 
@@ -159,20 +156,6 @@
 
     &.visible
       opacity: 0.95
-
-  footer
-    text-align: center
-
-    #theme-switch
-      left: 1em
-      bottom: 1.2em
-
-    .page-content-width
-      flex-direction: column
-
-      .footer-links
-        justify-content: center
-        padding-top: 1em
 
   .extra-padding, .panel .extra-padding, .screenshots-section
     +page-content-width(1em)
@@ -290,10 +273,28 @@
     display: inline-block
 
   footer
-    padding: 2em 1em 1.1em
+    flex-direction: column
+    padding: 1em 1em 3em 1em
 
-    .separator
-      display: none
+    .theme-copyright
+      flex-direction: column
+
+    .footer-info
+      padding: 1em 0
+
+      i
+        display: none
+
+      p, a
+        font-size: 0.8em
+
+  #landing footer
+    flex-direction: row
+    padding: 1em
+
+    .theme-copyright
+      flex-direction: row
+      align-items: center
 
   .extra-padding, .panel .extra-padding, .screenshots-section
     +page-content-width(0.6em)

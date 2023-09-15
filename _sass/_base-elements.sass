@@ -314,33 +314,30 @@ button
   */
 footer
   display: flex
-  position: relative
-  flex-direction: column
-  justify-content: center
+  flex-direction: row
+  align-content: center
   margin-top: 2em
-  padding: 2.5em 0
+  padding: 2.5em 6em 2.5em 2em
   background-color: var(--pale-text-bg)
 
-  #theme-switch
-    position: absolute
-    left: 2.2em
-
-  .page-content-width
+  .theme-copyright
     display: flex
-    justify-content: space-between
+    flex-direction: row
     flex: auto
 
   .footer-info
     display: flex
-    flex-direction: column
+    flex-direction: row
+    align-items: center
+    padding-left: 1em
 
     p, a
-      padding: 0 0 0.25em
+      padding: 0 0.8em
       font-size: 0.9rem
       text-transform: none
 
     a
-      padding-bottom: 0.3rem
+      border-left: 2px solid $border-color
 
   .footer-links
     display: flex

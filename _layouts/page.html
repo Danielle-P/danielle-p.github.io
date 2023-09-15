@@ -16,9 +16,9 @@ layout: base
   <div class="nav-panel">
     <a class="home" href="/index"></a>
     <div class="nav-links">
+      <a class="about" href="/about">About</a>
       <a class="projects" href="/projects">Projects</a>
       <a class="resume" href="/resume">Employment & CV</a>
-      <a class="about" href="/about">About</a>
       <a class="contact" href="/contact">Contact</a>
     </div>
   </div>
@@ -32,26 +32,28 @@ layout: base
 </div>
 
 <footer>
-  <div id="theme-switch">
-    <label class="toggle-switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-  </div>
-  <div class="page-content-width">
+  <div class="theme-copyright">
+    <div id="theme-switch">
+      <label class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
     <div class="footer-info">
-      <p>&copy; {{ "now" | date: "%Y" }} Danielle&nbsp;Parkinson <span class="separator"></span></p>
-      <a href="https://github.com/Danielle-P/danielle-p.github.io" target="_blank">View site source code on
-        GitHub</a>
-
+      <p>&copy; {{ "now" | date: "%Y" }} Made by Danielle <span class="separator"></span></p>
+      <a href="https://github.com/Danielle-P/danielle-p.github.io" target="_blank"><i class="fab fa-github"></i>
+        Source
+        code</a>
     </div>
-    <div class="footer-links">
-      <a href="mailto:dparkinson2@hotmail.co.uk" target="_blank"><i class="far fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/parkinsondanielle/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.behance.net/danielleparkinson" target="_blank"><i class="fab fa-behance"></i></a>
-      <a href="https://github.com/Danielle-P" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:dparkinson2@hotmail.co.uk" target="_blank"><i class="far fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/parkinsondanielle/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://codepen.io/DanielleParkinson" target="_blank">
+      <i class="fab fa-codepen"></i></a>
+    <a href="https://github.com/Danielle-P" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.behance.net/danielleparkinson" target="_blank"><i class="fab fa-behance"></i></a>
   </div>
 </footer>

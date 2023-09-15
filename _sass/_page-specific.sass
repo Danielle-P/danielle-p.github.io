@@ -52,7 +52,7 @@
       flex: 2
       flex-direction: column
       justify-content: center
-      padding-bottom: 2em
+      padding-bottom: 4em
 
       .header
         display: flex
@@ -109,22 +109,23 @@
             border-radius: 50%
             opacity: 0.5
 
-    #down-to-feature
-      justify-self: flex-end
-      align-self: center
-      margin-bottom: 1.5em
-      font-size: 2.8em
-      opacity: 0
-      +translate-scale-on-load(.7s)
-      cursor: pointer
-
-  #theme-switch
+  footer
     position: fixed
-    bottom: 1.5em
-    left: 1.5em
+    bottom: 0
+    left: 0
+    width: 100%
+    background: none
+    padding: 0 2.5em 2em
 
-  .journey
-    margin: 15% auto 1.5em
+    #theme-switch
+      flex: 1
+
+    .footer-info
+      opacity: 0
+      +translate-scale-on-load(.8s)
+
+      p
+        opacity: 0.7
 
 #projects-landing .full-width-panel-highlight
   margin: 0
