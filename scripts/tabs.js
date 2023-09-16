@@ -49,6 +49,7 @@
           switchToSelectedTab({
             selectedTabClassList: nextTabParent,
             tabContentClassList: nextTabName,
+
           })
         }
       })
