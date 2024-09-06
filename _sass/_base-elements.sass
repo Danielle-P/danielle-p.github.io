@@ -9,7 +9,7 @@ body[data-theme-animate]
   +transition-ease(1s)
 
 main
-  padding: 4em 0 4em
+  padding: 8em 0 4em
   min-height: calc(100vh - 160px)
   //overflow-x: hidden
 
@@ -44,7 +44,7 @@ p
     color: var(--primary-accent)
 
 a
-  text-transform: uppercase
+  //text-transform: uppercase
   text-decoration: none
   color: var(--primary-accent)
   +transition-ease
@@ -113,8 +113,8 @@ button
     outline: none
 
 .btn-animate
-  width: 4em
-  height: 4em
+  width: 3em
+  height: 3em
   display: flex
   flex-direction: column
   justify-content: center
@@ -134,7 +134,7 @@ button
     font-family: $header-font
     font-size: 0.6em
     font-weight: 500
-    text-transform: uppercase
+    //text-transform: uppercase
 
     &.visible
       display: block
@@ -160,9 +160,9 @@ button
 .btn-menu
   position: fixed
   right: 0
-  margin: 1.5em 1.8em
+  //margin: 1.5em 1.8em
   z-index: 5
-  box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
+  //box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
 
   .icon-container
     transform: translateY(-4px)
@@ -222,14 +222,15 @@ button
   */
 .nav-panel
   width: 100%
-  height: 7.55em
+  height: 5em
   display: flex
   position: absolute
-  top: calc(-7.55em - 20px)
-  align-items: center
-  padding: 0 2.2em
-  background: var(--nav-panel)
-  box-shadow: 0 3px 20px rgba(0,0,0,.4)
+  top: 0
+  align-items: flex-center
+  padding: 1em 2.2em
+  //background: var(--nav-panel)
+  //box-shadow: 0 3px 20px rgba(0,0,0,.4)
+  border-bottom: 1px solid var(--nav-panel)
   +transition-ease(.3s)
   z-index: 4
 
@@ -246,7 +247,7 @@ button
     flex-grow: 1
     -webkit-flex-grow: 1
     flex-direction: row
-    justify-content: space-evenly
+    justify-content: flex-end
     margin: 0
     padding: 0 4em 0 0
     +nav-font-style
@@ -256,16 +257,16 @@ button
       display: flex
       align-items: center
       text-align: center
-      margin: 0 0.5em
+      margin: 0 1em
       border-bottom: 1px dotted transparent
       color: var(--hover-primary-accent)
 
       &:hover, &:active
         border-bottom: 1px dotted var(--hover-primary-accent)
 
-.nav-panel.show
+.nav-panel.hide
   position: fixed
-  top: 0
+  top: calc(-5em - 20px)
 
 .project-links
   position: absolute
@@ -305,7 +306,7 @@ button
 
         span:nth-of-type(2)
           font-size: 0.7rem
-          text-transform: none
+          //text-transform: none
           padding-top: 0.2rem
           letter-spacing: 0
 
@@ -504,7 +505,7 @@ input:checked + .slider::before
   margin: 2em 0 2.5em
 
   h4
-    text-transform: uppercase
+    //text-transform: uppercase
     font-weight: 500
     font-size: 0.92rem
     text-align: center
@@ -606,7 +607,7 @@ input:checked + .slider::before
     margin-top: 1.8em
     +subheader-font-style(0.9rem)
     font-weight: bold
-    text-transform: uppercase
+    //text-transform: uppercase
 
     &:first-of-type
       color: #f1b883
@@ -857,7 +858,7 @@ input:checked + .slider::before
 
   h2
     padding-top: 2em
-    text-transform: uppercase
+    //text-transform: uppercase
 
   .intro-text-callout
     background: transparent
@@ -1112,7 +1113,7 @@ input:checked + .slider::before
       color: var(--secondary-accent)
       font-size: 0.8rem
       text-align: center
-      text-transform: uppercase
+      //text-transform: uppercase
 
       &:nth-of-type(even)
         color: var(--primary-accent)
