@@ -34,6 +34,8 @@ h3
 h4
   +subheader-font-style($margin: 1.3em 0 0.5em)
   text-align: left
+  color: red
+  //get rid of h4
 
 p
   +body-font-style
@@ -90,9 +92,9 @@ main ul li::before
   position: absolute
   margin-left: -1.5em
   content: '\2022'
-  color: var(--secondary-accent)
-  font-size: 18px
-  line-height: 1.5
+  color: var(--primary-accent)
+  font-size: 0.9rem
+  line-height: 1.4
 
 .note
   font-size: 0.7rem
@@ -159,6 +161,8 @@ button
     transform: scale(1)
 
 .btn-menu
+  width: 2em
+  height: 2em
   position: fixed
   right: 0
   margin: 1em 1em 1em 0
@@ -167,14 +171,14 @@ button
 
   .icon-container
     transform: translateY(-1px)
-    width: 24px
-    height: 17px
+    width: 20px
+    height: 13px
     position: relative
     +transition-ease(.25s)
 
     span
       width: 100%
-      height: 3px
+      height: 2px
       position: absolute
       display: block
       top: 0
@@ -185,24 +189,24 @@ button
       transform-origin: center left
 
       &:nth-of-type(2)
-        transform: translateY(7px)
+        transform: translateY(6px)
 
       &:nth-of-type(3)
-        transform: translateY(14px)
+        transform: translateY(12px)
         transform-origin: center right
 
     &.open
-      transform: translateY(-4px)
+      transform: translateY(-3px)
 
       span
         &:first-of-type
-          transform: translateX(12px) rotate(40deg) scaleX(0.55)
+          transform: translateX(10px) rotate(40deg) scaleX(0.55)
 
         &:nth-of-type(2)
-          transform: translate(12px, -1px) rotate(90deg) scaleX(0.88)
+          transform: translate(10px, -1px) rotate(90deg) scaleX(0.88)
 
         &:nth-of-type(3)
-          transform: translateX(-12px) rotate(-40deg) scaleX(0.55)
+          transform: translateX(-10px) rotate(-40deg) scaleX(0.55)
 
 .btn-ghost
   text-align: center
@@ -223,18 +227,19 @@ button
   */
 .nav-panel
   width: 100%
-  height: 5em
+  height: 4em
   display: flex
   position: absolute
   top: 0
-  padding: 1em 2.2em
+  align-items: center
+  padding: 0 2.2em
   border-bottom: 1px solid var(--secondary-accent)
   +transition-ease(.3s)
   z-index: 4
 
   .home
-    min-width: 3em
-    min-height: 3em
+    width: 2.2em
+    height: 2.2em
     background: url('/../images/profile-photo-updated.jpg') no-repeat
     background-size: contain
     border-radius: 50%
@@ -256,11 +261,12 @@ button
       align-items: center
       text-align: center
       margin: 0 1em
+      color: var(--body)
       border-bottom: 1px dotted transparent
-      color: var(--primary-accent)
 
       &:hover, &:active
-        border-bottom: 1px dotted var(--hover-primary-accent)
+        color: var(--hover-primary-accent)
+        //border-bottom: 1px dotted var(--hover-primary-accent)
 
 .nav-panel.hide
   position: fixed
@@ -315,7 +321,7 @@ footer
   flex-direction: row
   align-content: center
   margin-top: 2em
-  padding: 2.5em 6em 2.5em 2em
+  padding: 2em 6em 2em 2em
   background-color: var(--pale-text-bg)
 
   .theme-copyright
@@ -331,7 +337,7 @@ footer
 
     p, a
       padding: 0 0.8em
-      font-size: 0.9rem
+      font-size: 0.8rem
       text-transform: none
 
     a
@@ -344,8 +350,7 @@ footer
 
     a
       padding: 0 0.8em
-      font-size: 1.1rem
-      color: var(--body)
+      font-size: 0.8rem
 
       &:hover
         opacity: 0.8
@@ -353,8 +358,8 @@ footer
 /**Toggle
   */
 .toggle-switch
-  width: 52px
-  height: 28px
+  width: 48px
+  height: 24px
   position: relative
   display: inline-block
 
@@ -377,14 +382,15 @@ footer
   +transition-ease
 
 .slider::before
-  width: 26px
-  height: 26px
+  width: 22px
+  height: 22px
   position: absolute
   left: 0px
   bottom: 0px
-  padding: 5px
+  padding: 4px
   background: $white
   border-radius: 50%
+  font-size: 14px
   content: '\ee81'
   color: var(--primary-accent)
   +transition-ease
@@ -394,11 +400,10 @@ input:checked + .slider
   border: 1px solid var(--secondary-accent)
 
 input:checked + .slider::before
-  padding-left: 7px
-  font-size: 14px
   content: '\ef9e'
+  padding-left: 4px
   color: var(--color-bg)
-  transform: translateX(23px)
+  transform: translateX(24px)
 
 /**Back to Top
   */
@@ -406,7 +411,8 @@ input:checked + .slider::before
   position: fixed
   bottom: 2.8em
   right: 2.2em
-  line-height: 0.5
+  line-height: 0.4
+  font-size: 0.8em
   opacity: 0
   pointer-events: none
   transform: translateY(2em)
@@ -424,10 +430,10 @@ input:checked + .slider::before
     font-family: $header-font
 
   i
-    font-size: 2rem
+    font-size: 2em
 
   span
-    font-size: 0.85rem
+    font-size: 0.85em
     user-select: none
     color: var(--primary-accent)
 
@@ -476,8 +482,8 @@ input:checked + .slider::before
       opacity: 1
 
 .modal-close
-  width: 2.5em
-  height: 2.5em
+  width: 2em
+  height: 2em
   position: absolute
   top: 5vh
   right: calc(50% - 1.5em)
@@ -489,7 +495,7 @@ input:checked + .slider::before
   cursor: pointer
 
   &.btn-animate
-    background: var(--panel-coloured-background)
+    background: var(--panel-background)
     color: var(--body)
 
   i
@@ -501,11 +507,10 @@ input:checked + .slider::before
   display: grid
   margin: 2em 0 2.5em
 
-  h4
-    //text-transform: uppercase
-    font-weight: 500
-    font-size: 0.92rem
-    text-align: center
+  // h4
+  //   font-weight: 500
+  //   font-size: 0.9rem
+  //   text-align: center
 
   h5, p
     font-size: 0.88rem
@@ -518,7 +523,7 @@ input:checked + .slider::before
     margin: 0.8em 0
     padding: 0 0 0 0.4em
     line-height: 1.3
-    border-left: 3px solid $border-color
+    border-left: 3px solid var(--hover-primary-accent)
 
   .row:last-of-type
     h5
@@ -563,7 +568,7 @@ input:checked + .slider::before
       border: 1px dotted $border-color
 
       i
-        color: var(--secondary-accent)
+        color: var(--primary-accent)
         font-size: 1.5em
 
 .user-stories
@@ -865,22 +870,19 @@ input:checked + .slider::before
     grid-template-columns: 1fr 1fr
     grid-column-gap: 1em
     border-radius: $border-radius
-    background-color: var(--panel-coloured-background)
-    box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
+    background-color: var(--panel-background)
+    +card-box-shadow
 
     &.disabled
       opacity: 0.5
       cursor: not-allowed
-
-      &:hover
-        box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
 
     &:focus, &:focus-visible
       box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
       outline: none
 
     &:hover, &:active
-      box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.3)
+      +card-box-shadow(0.2)
       border: none
 
 
@@ -933,8 +935,7 @@ input:checked + .slider::before
     .info-section
       padding: 1.6em 0.7em 1.8em
 
-      h4
-        font-size: 0.9rem
+      h3
         text-align: left
 
       p
@@ -943,6 +944,7 @@ input:checked + .slider::before
         font-size: 0.9rem
         text-transform: none
         text-align: left
+        color: var(--body)
 
       .project-type
         display: flex
@@ -954,7 +956,7 @@ input:checked + .slider::before
 /*Tabs
   **/
 .full-width-panel-highlight
-  background: var(--panel-coloured-background)
+  background: var(--panel-background)
 
   &:first-of-type
     margin-top: 4em
