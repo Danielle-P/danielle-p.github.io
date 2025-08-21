@@ -2,7 +2,7 @@ body
   background-color: var(--color-bg)
   color: var(--body)
   font-family: $body-font
-  font-size: 16px
+  font-size: 14px
   font-kerning: normal
 
 body[data-theme-animate]
@@ -30,12 +30,6 @@ h2
 
 h3
   +subheader-font-style
-
-h4
-  +subheader-font-style($margin: 1.3em 0 0.5em)
-  text-align: left
-  color: red
-  //get rid of h4
 
 p
   +body-font-style
@@ -65,7 +59,7 @@ blockquote
   &::before
     color: rgba(116, 135, 158, 0.3)
     content: open-quote
-    font-size: 4rem
+    font-size: 4em
     line-height: 0.1em
     margin-right: 0.25em
     vertical-align: -0.4em
@@ -78,7 +72,7 @@ blockquote
     border-bottom: 1px dotted var(--primary-accent)
 
   p, a, li
-    font-size: 0.9rem
+    font-size: 0.9em
 
 ul
   +body-font-style($padding: 0)
@@ -93,11 +87,11 @@ main ul li::before
   margin-left: -1.5em
   content: '\2022'
   color: var(--primary-accent)
-  font-size: 0.9rem
+  font-size: 0.9em
   line-height: 1.4
 
 .note
-  font-size: 0.7rem
+  font-size: 0.7em
   opacity: 0.5
 
 .hidden-mobile-label
@@ -211,17 +205,15 @@ button
 .btn-ghost
   text-align: center
   padding: 0.6em 1em 0.5em
-  border: 2px solid var(--secondary-accent)
-  border-radius: $border-radius
-  background: var(--color-bg)
-  color: var(--secondary-accent)
-  font-size: 0.8rem
-  letter-spacing: 0.12em
+  border: 1px solid var(--primary-accent)
+  border-radius: $border-radius-small
+  color: var(--primary-accent)
+  font-size: 0.9em
   +transition-ease(.3s)
 
   &:hover
-    color: var(--secondary-accent)
-    opacity: 0.7
+    color: var(--hover-primary-accent)
+    border-color: var(--hover-primary-accent)
 
 /**Navigation
   */
@@ -300,7 +292,7 @@ button
     a
       display: flex
       flex-direction: row
-      font-size: 0.8rem
+      font-size: 0.8em
       letter-spacing: 0.12em
       color: var(--secondary-accent)
 
@@ -309,8 +301,8 @@ button
         flex-direction: column
 
         span:nth-of-type(2)
-          font-size: 0.7rem
-          padding-top: 0.2rem
+          font-size: 0.7em
+          padding-top: 0.2em
           letter-spacing: 0
 
 
@@ -337,7 +329,7 @@ footer
 
     p, a
       padding: 0 0.8em
-      font-size: 0.8rem
+      font-size: 0.8em
       text-transform: none
 
     a
@@ -350,7 +342,7 @@ footer
 
     a
       padding: 0 0.8em
-      font-size: 0.8rem
+      font-size: 0.8em
 
       &:hover
         opacity: 0.8
@@ -499,7 +491,7 @@ input:checked + .slider::before
     color: var(--body)
 
   i
-    font-size: 1.5rem
+    font-size: 1.5em
 
 /**Grids
   */
@@ -509,11 +501,11 @@ input:checked + .slider::before
 
   // h4
   //   font-weight: 500
-  //   font-size: 0.9rem
+  //   font-size: 0.9em
   //   text-align: center
 
   h5, p
-    font-size: 0.88rem
+    font-size: 0.88em
 
   h5
     margin-top: 0.8em
@@ -600,14 +592,14 @@ input:checked + .slider::before
       margin: 1em 0
       padding: 0.8em
       line-height: 1.3
-      font-size: 0.9rem
+      font-size: 0.9em
 
       h5
         margin-top: 0
 
   .headings-col .heading
     margin-top: 1.8em
-    +subheader-font-style(0.9rem)
+    +subheader-font-style(0.9em)
     font-weight: bold
     //text-transform: uppercase
 
@@ -661,11 +653,11 @@ input:checked + .slider::before
 .tag-label
   margin: 0 0.5em 0 0
   padding: 0.4em 0.7em
-  background: $content-background
-  border-radius: $border-radius
+  background: var(--secondary-accent)
+  border-radius: $border-radius-small
   line-height: 1.3
-  font-size: 0.7rem
-  font-weight: 600
+  font-size: 0.7em
+  font-weight: 500
   text-transform: none
   color: var(--body)
 
@@ -941,7 +933,7 @@ input:checked + .slider::before
       p
         padding-top: 0.6em
         line-height: 1.2
-        font-size: 0.9rem
+        font-size: 0.9em
         text-transform: none
         text-align: left
         color: var(--body)
@@ -949,7 +941,7 @@ input:checked + .slider::before
       .project-type
         display: flex
         padding: 0em 0 0.9em
-        font-size: 0.75rem
+        font-size: 0.75em
         line-height: 1
         opacity: 0.5
 
@@ -985,9 +977,9 @@ input:checked + .slider::before
   h2
     +header-font-style
     margin-bottom: 0
-    font-size: 1.3rem
+    font-size: 1.3em
   i
-    font-size: 2.2rem
+    font-size: 2.2em
 
 .tabs-container
   margin-bottom: 2.5em
@@ -1001,7 +993,7 @@ input:checked + .slider::before
       align-items: center
 
       a
-        +body-font-style(1rem, 0em)
+        +body-font-style(1em, 0em)
         font-weight: 600
         text-transform: none
         cursor: pointer
@@ -1046,9 +1038,9 @@ input:checked + .slider::before
 
     &::after
       width: 0
-      height: 2px
+      height: 1px
       position: absolute
-      top: 4.5em
+      top: 4em
       left: calc(50% + 1.3em)
       background: var(--secondary-accent)
       content: ''
@@ -1069,13 +1061,13 @@ input:checked + .slider::before
         color: var(--secondary-accent)
 
       h2
-        color: var(--secondary-accent)
-        font-size: 0.9rem
+        color: var(--body-accent)
+        font-size: 0.8em
         margin-bottom: 0.4em
 
       h4
         margin: 0.2em auto 0.6em
-        +body-font-style(0.8rem)
+        +body-font-style(0.8em)
         line-height: 2.2
         padding: 0
         text-align: center
@@ -1088,8 +1080,8 @@ input:checked + .slider::before
     &.active
       .btn-timeline
         background: var(--color-bg)
-        border: 2px solid var(--secondary-accent)
-        color: var(--secondary-accent)
+        border: 1px solid var(--secondary-accent)
+        color: var(--primary-accent)
 
       .marker-label h4
         opacity: 1
@@ -1098,10 +1090,7 @@ input:checked + .slider::before
     z-index: 2
 
     i
-      font-size: 2em
-
-    &:hover
-      color: $white
+      font-size: 1.5em
 
 .journey-with-stages
   .journey-stage-titles
@@ -1109,10 +1098,9 @@ input:checked + .slider::before
     padding: 2em 0 1em
 
     .stage-name
-      color: var(--secondary-accent)
-      font-size: 0.8rem
+      color: var(--body)
+      font-size: 0.8em
       text-align: center
-      //text-transform: uppercase
 
       &:nth-of-type(even)
         color: var(--primary-accent)
@@ -1148,10 +1136,10 @@ input:checked + .slider::before
         color: var(--primary-accent)
 
         i
-          font-size: 1.8em
+          font-size: 1.5em
 
     .marker-label
-      font-size: 0.9rem
+      font-size: 0.9em
 
       h4
         line-height: 1.2em
@@ -1170,14 +1158,13 @@ input:checked + .slider::before
 
     h2
       margin: 0.2em
-      color: var(--secondary-accent)
-      font-size: 0.8rem
+      font-size: 0.8em
       opacity: 0
 
     h3
       margin: 0
       opacity: 0
-      font-weight: bolder
+      color: var(--body)
 
     .timeline
       display: flex

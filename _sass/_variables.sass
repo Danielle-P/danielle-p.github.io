@@ -2,21 +2,20 @@ $white: #fff
 $light-text-color: #e1e5e9
 $border-color: rgba(116, 135, 158, 0.3)
 $border-radius: 8px
+$border-radius-small: 4px
 $content-background: rgba(116, 135, 158, 0.2)
 
 \:root
-  --color-bg: #fbfcfe
-  --panel-background: #f4f6f9
+
+  --color-bg: #fefcfb
+  --panel-background: #{rgba(46, 66, 86, 0.03)}
   --pale-text-bg: #{rgba(46, 66, 86, 0.03)}
-  --primary-accent: #87aba0
-  //--primary-accent: #93b4a9
+  --primary-accent: #649083
   --hover-primary-accent: #a1bdb4
   --secondary-accent: #{rgba(244, 240, 232, 1)}
-  --body: #1c160c
-  // #2c4a59
-  --body-accent:#{rgba(161, 130, 73, 1)}
+  --body: #292522
+  --body-accent:#{rgba(232, 106, 110, 0.7)}
   --header-text-opacity: 0.95
-
 
   //pale grey/beige button: #f4f0e8
   //dark beige: #a18249
@@ -34,14 +33,24 @@ $content-background: rgba(116, 135, 158, 0.2)
   // --header-text-opacity: 0.95
 
 [data-theme="dark"]
-  --color-bg: #21262b
-  --panel-background: #1d222a
+  --color-bg: #2b3949
+  --panel-background: #f4f6f9
   --pale-text-bg: #2e3642
-  --primary-accent: #ff9333
+  --primary-accent: #bdb388
   --hover-primary-accent: #f7b789
-  --secondary-accent: #{rgba(116, 135, 158, 1)}
-  --body: #edf0f2
+  --secondary-accent: #e86a6e
+  --body: #f9f9f9
+  --body-accent: #{rgba(237, 117, 118, 1)}
   --header-text-opacity: 0.9
+
+  // --color-bg: #21262b
+  // --panel-background: #1d222a
+  // --pale-text-bg: #2e3642
+  // --primary-accent: #ff9333
+  // --hover-primary-accent: #f7b789
+  // --secondary-accent: #{rgba(116, 135, 158, 1)}
+  // --body: #edf0f2
+  // --header-text-opacity: 0.9
 
 $header-font: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif
 $body-font: 'Plus Jakarta Sans', 'Helvetica Neue', sans-serif
