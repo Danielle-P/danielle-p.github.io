@@ -1,7 +1,3 @@
-#landing, #projects-landing, #resume, #contact
-  &[data-theme="light"]
-    background: linear-gradient(-145deg, rgba(242, 163, 86, 0.1), var(--color-bg) 30%) fixed
-
 #about
   +nav-current-page(about)
 
@@ -10,9 +6,6 @@
 
 #resume
   +nav-current-page(resume)
-
-#contact
-  +nav-current-page(contact)
 
 #landing
   .landing-nav .nav-panel
@@ -31,6 +24,9 @@
 
       &:nth-of-type(4)
         +slide-down($delay: 1.2s)
+    
+    &:hover
+      opacity: 0.8
 
   .landing-content
     height: calc(100vh - 64px)
@@ -120,7 +116,8 @@
         +card-box-shadow
 
         &:hover
-          +card-box-shadow($opacity: 0.4)
+          +card-box-shadow($opacity: 1)
+          opacity: 0.4
 
         .feature-image
           width: 100%
@@ -312,16 +309,13 @@
     display: flex
     justify-content: center
 
-#contact
-  .contact-details
     display: grid
-    grid-template-columns: 1fr 1fr
+    gri-template-columns: 1fr 1fr
     grid-column-gap: 4em
     margin-top: 15%
 
-  .contact-section
     display: flex
-    flex-direction: column
+    flex-irection: column
     align-items: center
     text-align: center
     padding: 2em
@@ -331,17 +325,14 @@
     h2
       margin: 2em 0
 
-  .contact-links
     width: 100%
-    display: flex
+    disply: flex
     justify-content: space-around
 
     a
       color: var(--body)
 
-    .contact-method
       padding: 1.2em 0 1em
-
       &:hover
         opacity: 0.8
 

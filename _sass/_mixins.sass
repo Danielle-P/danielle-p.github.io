@@ -6,27 +6,25 @@
 
 =header-font-style($font-size: 2.8em, $margin-bottom: 0.8em)
   margin-bottom: $margin-bottom
-  color: var(--body)
   font-family: $header-font
   font-size: $font-size
   font-weight: 500
   text-align: center
-  opacity: var(--header-text-opacity)
+  +text-gradient
 
-=subheader-font-style($font-size: 1em, $margin: 0.5em, $opacity: 0.9)
+=subheader-font-style($font-size: 1em, $margin: 0.5em)
   margin: $margin 0
   line-height: 1.4
   font-family: $header-font
   font-size: $font-size
   font-weight: 400
   text-align: center
-  opacity: var(--header-text-opacity)
-  color: var(--body-accent)
+  +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
 
 =body-font-style($font-size: 1em, $padding: 1.2em)
   padding: 0 0 $padding 0
   line-height: 1.6
-  color: var(--body)
+  +light-dark-color(color, $text-primary-light, $text-primary-dark)
   font-family: $body-font
   font-size: $font-size
   font-weight: 400
@@ -39,7 +37,7 @@
 
 =nav-current-page ($page-name)
   .nav-panel .#{$page-name}
-    color: var(--primary-accent)
+    +light-dark-color(color, $accent-light, $accent-dark)
 
 =sub-nav-current-page ($page-name)
   .project-links .toggle-display-links
