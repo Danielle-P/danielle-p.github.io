@@ -3,7 +3,6 @@ layout: base
 ---
 
 <nav>
-
   <button class="btn-animate btn-menu hide">
     <span class="icon-container open">
       <span></span>
@@ -32,12 +31,10 @@ layout: base
 
 <footer>
   <div class="theme-copyright">
-    <div id="theme-switch">
-      <label class="toggle-switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </div>
+    <label class="toggle-switch">
+      <input type="checkbox" class="theme-toggle-switch" />
+      <span class="slider"></span>
+    </label>
     <div class="footer-info">
       <p>&copy; {{ "now" | date: "%Y" }} Made by Danielle <span class="separator"></span></p>
       <span><a href="https://github.com/Danielle-P/danielle-p.github.io" target="_blank"><i class="fab fa-github"></i>
@@ -51,5 +48,6 @@ layout: base
         <i class="fab fa-codepen"></i></a>
       <a href="https://www.behance.net/danielleparkinson" target="_blank"><i class="fab fa-behance"></i></a>
     </div>
+  </div>
   </div>
 </footer>

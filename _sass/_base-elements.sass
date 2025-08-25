@@ -1,5 +1,14 @@
+html[data-theme="dark"]
+  color-scheme: dark
+
+html[data-theme="light"]
+  color-scheme: light
+
 body
+  color: var(--text-color)
   +background-gradient
+  
+body
   font-family: $body-font
   font-size: 16px
   font-kerning: normal
@@ -255,9 +264,9 @@ button
       +light-dark-color(color, $text-primary-light, $text-primary-dark)
       border-bottom: 1px dotted transparent
 
-      &:hover, &:active
-        color: $white
-        //border-bottom: 1px dotted var(--hover-primary-accent)
+      // &:hover, &:active
+      //   color: $white
+      //   //border-bottom: 1px dotted var(--hover-primary-accent)
 
 .nav-panel.hide
   position: fixed
@@ -347,14 +356,13 @@ footer
         opacity: 0.8
 
 /**Toggle
-  */
 .toggle-switch
   width: 48px
   height: 24px
   position: relative
   display: inline-block
 
-.switch input
+input
   width: 0
   height: 0
   opacity: 0
@@ -372,29 +380,29 @@ footer
   font-family: IcoFont
   +transition-ease
 
-.slider::before
-  width: 22px
-  height: 22px
-  position: absolute
-  left: 0px
-  bottom: 0px
-  padding: 4px
-  background: $white
-  border-radius: 50%
-  font-size: 14px
-  content: '\ef9e'
-  +light-dark-color(color, $accent-light, $accent-dark)
-  +transition-ease
+  &::before
+    width: 22px
+    height: 22px
+    position: absolute
+    left: 0px
+    bottom: 0px
+    padding: 4px
+    background: $white
+    border-radius: 50%
+    font-size: 14px
+    content: '\ee81' // moon icon
+    +light-dark-color(color, $accent-light, $accent-dark)
+    +transition-ease
 
 input:checked + .slider
-  +light-dark-color(background-color, $accent-light, $accent-dark)
-  border: 1px solid var(--panel-background)
+    +light-dark-color(background-color, $accent-light, $accent-dark)
+    border: 1px solid var(--panel-background)
 
-input:checked + .slider::before
-  content: '\ee81'
-  padding-left: 4px
-  color: var(--color-bg)
-  transform: translateX(24px)
+    &::before
+      content: '\ef9e' // sun icon
+      padding-left: 4px
+      color: var(--color-bg)
+      transform: translateX(24px)
 
 /**Back to Top
   */
