@@ -1,3 +1,92 @@
+// Landing page background animation
+// @keyframes landing-gradient-shift-light
+//   0%, 100%
+//     background: radial-gradient(circle at 20% 80%, rgba(120,119,198,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255,119,198,0.15) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(120,198,198,0.2) 0%, transparent 50%), linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)
+//   20%
+//     background: radial-gradient(circle at 40% 60%, rgba(120,119,198,0.32) 0%, transparent 50%), radial-gradient(circle at 60% 40%, rgba(255,119,198,0.17) 0%, transparent 50%), radial-gradient(circle at 60% 60%, rgba(120,198,198,0.22) 0%, transparent 50%), linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.07) 100%)
+//   40%
+//     background: radial-gradient(circle at 60% 30%, rgba(120,119,198,0.34) 0%, transparent 50%), radial-gradient(circle at 30% 70%, rgba(255,119,198,0.19) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(120,198,198,0.24) 0%, transparent 50%), linear-gradient(135deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.08) 100%)
+//   60%
+//     background: radial-gradient(circle at 70% 90%, rgba(120,119,198,0.28) 0%, transparent 50%), radial-gradient(circle at 10% 40%, rgba(255,119,198,0.22) 0%, transparent 50%), radial-gradient(circle at 90% 10%, rgba(120,198,198,0.18) 0%, transparent 50%), linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 100%)
+//   80%
+//     background: radial-gradient(circle at 30% 70%, rgba(120,119,198,0.30) 0%, transparent 50%), radial-gradient(circle at 70% 30%, rgba(255,119,198,0.16) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(120,198,198,0.21) 0%, transparent 50%), linear-gradient(135deg, rgba(255,255,255,0.11) 0%, rgba(255,255,255,0.05) 100%)
+
+// @keyframes landing-gradient-shift-dark
+
+@keyframes landing-gradient-shift-light
+  0%, 100%
+    --g1-x: 20%
+    --g1-y: 80%
+    --g2-x: 80%
+    --g2-y: 20%
+    --g3-x: 40%
+    --g3-y: 40%
+  20%
+    --g1-x: 40%
+    --g1-y: 60%
+    --g2-x: 60%
+    --g2-y: 40%
+    --g3-x: 60%
+    --g3-y: 60%
+  40%
+    --g1-x: 60%
+    --g1-y: 30%
+    --g2-x: 30%
+    --g2-y: 70%
+    --g3-x: 80%
+    --g3-y: 60%
+  60%
+    --g1-x: 70%
+    --g1-y: 90%
+    --g2-x: 10%
+    --g2-y: 40%
+    --g3-x: 90%
+    --g3-y: 10%
+  80%
+    --g1-x: 30%
+    --g1-y: 70%
+    --g2-x: 70%
+    --g2-y: 30%
+    --g3-x: 20%
+    --g3-y: 80%
+
+@keyframes landing-gradient-shift-dark
+  0%, 100%
+    --g1-x: 20%
+    --g1-y: 80%
+    --g2-x: 80%
+    --g2-y: 20%
+    --g3-x: 40%
+    --g3-y: 40%
+  20%
+    --g1-x: 40%
+    --g1-y: 60%
+    --g2-x: 60%
+    --g2-y: 40%
+    --g3-x: 60%
+    --g3-y: 60%
+  40%
+    --g1-x: 60%
+    --g1-y: 30%
+    --g2-x: 30%
+    --g2-y: 70%
+    --g3-x: 80%
+    --g3-y: 60%
+  60%
+    --g1-x: 70%
+    --g1-y: 90%
+    --g2-x: 10%
+    --g2-y: 40%
+    --g3-x: 90%
+    --g3-y: 10%
+  80%
+    --g1-x: 30%
+    --g1-y: 70%
+    --g2-x: 70%
+    --g2-y: 30%
+    --g3-x: 20%
+    --g3-y: 80%
+
 // Transform components on page load
 @keyframes fade-in-scale
   from

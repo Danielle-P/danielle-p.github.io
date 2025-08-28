@@ -38,6 +38,9 @@
   <script defer src="/scripts/lazy-image-animate.js"></script>
   <script defer src="/scripts/image-modal.js"></script>
   {% endif %}
+  {% if page.background-animation %}
+  <script defer src="/scripts/landing-background-animation.js"></script>
+  {% endif %}
 </head>
 
 <body id="{{ page.id }}">

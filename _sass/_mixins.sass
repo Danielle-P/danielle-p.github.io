@@ -4,7 +4,7 @@
   padding-left: $padding
   padding-right: $padding
 
-=header-font-style($font-size: 2.8em, $margin-bottom: 0.8em)
+=header-font-style($font-size: 3em, $margin-bottom: 0.8em)
   margin-bottom: $margin-bottom
   font-family: $header-font
   font-size: $font-size
@@ -12,7 +12,7 @@
   text-align: center
   +text-gradient
 
-=subheader-font-style($font-size: 1em, $margin: 0.5em)
+=subheader-font-style($font-size: 1.2em, $margin: 0.5em)
   margin: $margin 0
   line-height: 1.4
   font-family: $header-font
@@ -29,7 +29,7 @@
   font-size: $font-size
   font-weight: 400
 
-=nav-font-style ($font-size: 0.9em, $font-weight: 500)
+=nav-font-style ($font-size: 1.1em, $font-weight: 500)
   font-family: $header-font
   font-size: $font-size
   font-weight: $font-weight
@@ -37,7 +37,9 @@
 
 =nav-current-page ($page-name)
   .nav-panel .#{$page-name}
-    +light-dark-color(color, $accent-light, $accent-dark)
+    +text-gradient
+    border-bottom: 1px dotted
+    +light-dark-color(border-color, $accent-light, $accent-dark)
 
 =sub-nav-current-page ($page-name)
   .project-links .toggle-display-links
@@ -58,10 +60,10 @@
             opacity: 1
 
 =image-box-shadow
-  box-shadow: -10px 2px 7px -6px rgba(0,0,0,0.26)
+  box-shadow: -10px 2px 7px -6px +light-dark-color(background, $surface-light, $surface-dark)
 
 =card-box-shadow($opacity: 0.1)
-  box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, $opacity)
+  box-shadow: 6px 5px 7px -6px +light-dark-color(background, $surface-light, $surface-dark, $opacity)
 
 
 /** Transitions and Animations

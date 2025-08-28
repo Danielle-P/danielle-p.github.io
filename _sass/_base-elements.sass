@@ -3,10 +3,22 @@ html[data-theme="dark"]
 
 html[data-theme="light"]
   color-scheme: light
+  
+body
+  font-family: $body-font
+  font-size: 16px
+  font-kerning: normal
+  background-attachment: fixed
+  +light-dark-color(color, $text-primary-light, $text-secondary-light)
+  +background-gradient
+
 
 body
   color: var(--text-color)
+  +light-dark-color(color, $text-primary-light, $text-secondary-light)
   +background-gradient
+  background-attachment: fixed
+  
   
 body
   font-family: $body-font
@@ -16,7 +28,7 @@ body
   main
     padding: 8em 0 4em
     min-height: calc(100vh - 160px)
-    //overflow-x: hidden
+    overflow-x: hidden
 
     ::selection,
       background: #fbeada
@@ -50,7 +62,6 @@ a
   +transition-ease
 
   &:focus, &:focus-visible
-    //box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
     outline: none
 
   &:hover, &:active
@@ -110,7 +121,6 @@ main ul li::before
   */
 button
   &:focus, &:focus-visible
-    box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
     outline: none
 
 .btn-animate
@@ -121,11 +131,11 @@ button
   justify-content: center
   align-items: center
   position: relative
-  +light-dark-color(background, $accent-light, $accent-dark)
   border-radius: 50%
   border: none
   cursor: pointer
   font-size: 1em
+  +light-dark-color(background, $accent-light, $accent-dark)
   +light-dark-color(color, $accent-light, $accent-dark)
 
 
@@ -252,7 +262,6 @@ button
     flex-direction: row
     justify-content: flex-end
     margin: 0
-    padding: 0 4em 0 0
     +nav-font-style
     opacity: 1
 
@@ -260,13 +269,15 @@ button
       display: flex
       align-items: center
       text-align: center
-      margin: 0 1em
+      margin: 0 1.6em
       +light-dark-color(color, $text-primary-light, $text-primary-dark)
       border-bottom: 1px dotted transparent
 
-      // &:hover, &:active
-      //   color: $white
-      //   //border-bottom: 1px dotted var(--hover-primary-accent)
+
+      &:hover, &:active
+        +text-gradient
+        border-bottom: 1px dotted
+        +light-dark-color(border-color, $accent-light, $accent-dark)
 
 .nav-panel.hide
   position: fixed
@@ -328,6 +339,7 @@ footer
     display: flex
     flex-direction: row
     flex: auto
+    justify-content: space-between
 
   .footer-info
     display: flex
@@ -374,10 +386,11 @@ input
   right: 0
   bottom: 0
   cursor: pointer
-  background-color: #cdd5dd
   border-radius: 34px
-  border: 1px solid #cdd5dd
   font-family: IcoFont
+  border: 1px solid
+  +light-dark-color(border-color, $surface-light, $surface-dark)
+  //+light-dark-color(background, $surface-light, $surface-dark)
   +transition-ease
 
   &::before
@@ -395,8 +408,9 @@ input
     +transition-ease
 
 input:checked + .slider
+    border: 1px solid
+    +light-dark-color(border-color, $accent-light, $accent-dark)
     +light-dark-color(background-color, $accent-light, $accent-dark)
-    border: 1px solid var(--panel-background)
 
     &::before
       content: '\ef9e' // sun icon
@@ -506,14 +520,6 @@ input:checked + .slider
   display: grid
   margin: 2em 0 2.5em
 
-  // h4
-  //   font-weight: 500
-  //   font-size: 0.9em
-  //   text-align: center
-
-  h5, p
-    font-size: 0.88em
-
   h5
     margin-top: 0.8em
     font-weight: 600
@@ -544,7 +550,7 @@ input:checked + .slider
   .item
     display: grid
     padding: 1.5em 2em
-    background: var(--pale-text-bg)
+    +light-dark-color(background, $surface-light, $surface-dark)
 
     h4
       margin: 0.8em 0 0.4em
@@ -660,7 +666,7 @@ input:checked + .slider
 .tag-label
   margin: 0 0.5em 0 0
   padding: 0.4em 0.7em
-  background: var(--panel-background)
+  +light-dark-color(background, $surface-light, $surface-dark)
   border-radius: $border-radius-small
   line-height: 1.3
   font-size: 12px
@@ -843,7 +849,7 @@ input:checked + .slider
   .intro-text-callout
     align-self: center
     padding: 1.3em 1.5em 1em
-    background: var(--pale-text-bg)
+    +light-dark-color(background, $surface-light, $surface-dark)
     border-radius: $border-radius
 
   h4
@@ -955,7 +961,8 @@ input:checked + .slider
 /*Tabs
   **/
 .full-width-panel-highlight
-  background: var(--panel-background)
+  +light-dark-color(background, $surface-light, $surface-dark)
+  opacity: 0.75
 
   &:first-of-type
     margin-top: 4em
@@ -1008,16 +1015,16 @@ input:checked + .slider
       &.selected
         cursor: default
 
-        a
-          +light-dark-color(color, $accent-light, $accent-dark)
-          border-bottom: 2px dotted var(--primary-accent)
+      //   a
+      //     +light-dark-color(color, $accent-light, $accent-dark)
+      //     border-bottom: 2px dotted var(--primary-accent)
 
-      &:hover a
-        border-bottom: 2px dotted var(--primary-accent)
+      // &:hover a
+      //   border-bottom: 2px dotted var(--primary-accent)
 
-      &:focus a, &:focus-visible a
-        box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
-        outline: none
+      // &:focus a, &:focus-visible a
+      //   box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
+      //   outline: none
 
 
 .tab-section
@@ -1041,7 +1048,8 @@ input:checked + .slider
     opacity: 0
 
     .btn-animate
-      background: var(--primary-accent)
+      +light-dark-color(background, $accent-light, $accent-dark)
+
 
     &::after
       width: 0
@@ -1049,7 +1057,7 @@ input:checked + .slider
       position: absolute
       top: 4em
       left: calc(50% + 1.3em)
-      background: var(--hover-primary-accent)
+      opacity: 0.5 //check this
       content: ''
 
     @for $n from 1 through 8
@@ -1087,7 +1095,8 @@ input:checked + .slider
     &.active
       .btn-timeline
         +light-dark-color(background, $text-primary-light, $text-primary-dark)
-        border: 1px solid var(--primary-accent)
+        border: 1px solid
+        +light-dark-color(border-color, $accent-light, $accent-dark)
         +light-dark-color(color, $accent-light, $accent-dark)
 
       .marker-label h4
@@ -1138,8 +1147,8 @@ input:checked + .slider
         align-items: center
         justify-content: center
         border-radius: 50%
-        background: var(--color-bg)
-        border: 1px dotted var(--primary-accent)
+        +light-dark-color(background, $surface-light, $surface-dark)
+        border: 1px dotted +light-dark-color(background, $accent-light, $accent-dark)
         +light-dark-color(color, $accent-light, $accent-dark)
 
         i
