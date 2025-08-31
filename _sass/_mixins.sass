@@ -1,8 +1,10 @@
 /**Styles
   */
-=page-content-width($padding: 15em)
+=page-content-width($padding: 0em)
+  max-width: 800px
   padding-left: $padding
   padding-right: $padding
+  margin: 0 auto
 
 =header-font-style($font-size: 3em, $margin-bottom: 0.8em)
   margin-bottom: $margin-bottom
@@ -24,10 +26,10 @@
 =body-font-style($font-size: 1em, $padding: 1.2em)
   padding: 0 0 $padding 0
   line-height: 1.6
-  +light-dark-color(color, $text-primary-light, $text-primary-dark)
   font-family: $body-font
   font-size: $font-size
   font-weight: 400
+  +light-dark-color(color, $text-primary-light, $text-primary-dark)
 
 =nav-font-style ($font-size: 1.1em, $font-weight: 500)
   font-family: $header-font
@@ -60,11 +62,22 @@
             opacity: 1
 
 =image-box-shadow
-  box-shadow: -10px 2px 7px -6px +light-dark-color(background, $surface-light, $surface-dark)
+  box-shadow: -10px 2px 7px -6px
+  box-shadow-color: +light-dark-color(background, $shadow-light, $shadow-dark)
 
+// =card-box-shadow($opacity: 0.1)
+//   box-shadow: 6px 5px 7px -6px +light-dark-color(color, $shadow-light, $shadow-dark, $opacity)
+//   //box-shadow: 6px 5px 7px -6px #{light-dark-color($shadow-light, $shadow-dark, $opacity)}
+//   //box-shadow: 0 2px 8px 0 #{light-dark-color(rgba(0,0,0,0.08), rgba(0,0,0,0.3))}
+
+//Not working for some reason
 =card-box-shadow($opacity: 0.1)
-  box-shadow: 6px 5px 7px -6px +light-dark-color(background, $surface-light, $surface-dark, $opacity)
+  $light-rgba: rgba(255, 255, 255, $opacity)
+  $dark-rgba: rgba(0, 0, 0, $opacity)
+  $light-shadow: 0 4px 8px 0 #{$light-rgba}
+  $dark-shadow: 0 4px 8px 0 #{$dark-rgba}
 
+  +light-dark-color(box-shadow, $light-shadow, $dark-shadow)
 
 /** Transitions and Animations
   */

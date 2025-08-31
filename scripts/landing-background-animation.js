@@ -5,9 +5,9 @@
   // Gradient color stops for light and dark themes
   const gradients = {
     light: [
-      { x: 20, y: 80, color: 'rgba(120,119,198,0.3)' },
-      { x: 80, y: 20, color: 'rgba(255,119,198,0.15)' },
-      { x: 40, y: 40, color: 'rgba(120,198,198,0.2)' }
+      { x: 20, y: 80, color: 'rgba(180,195,235,0.95)' },
+      { x: 80, y: 20, color: 'rgba(238,242,243,0.95)' },
+      { x: 40, y: 40, color: 'rgba(211,205,228,0.9)' }
     ],
     dark: [
       { x: 20, y: 80, color: 'rgba(60,60,120,0.3)' },
@@ -17,7 +17,7 @@
   };
 
   // Animation parameters
-  const duration = 24000; // ms
+  const duration = 20000; // ms
   let start = null;
 
   function lerp(a, b, t) {

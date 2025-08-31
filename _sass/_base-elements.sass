@@ -26,8 +26,9 @@ body
   font-kerning: normal
 
   main
-    padding: 8em 0 4em
     min-height: calc(100vh - 160px)
+    padding: 8em 0 4em
+    margin: 0 auto
     overflow-x: hidden
 
     ::selection,
@@ -36,7 +37,7 @@ body
     ::-moz-selection
       background: #fbeada
 
-.page-content-width
+.page-content
   +page-content-width
 
 h1
@@ -69,7 +70,8 @@ a
     opacity: 0.8 
 
 blockquote
-  border-left: 0.3em solid +light-dark-color(border-color, $border-light, $border-dark)
+  border-left: 0.3em solid
+  +light-dark-color(border-color, $border-light, $border-dark)
   quotes: "\201C""\201D""\2018""\2019"
 
   &::before
@@ -85,7 +87,7 @@ blockquote
 
   a
     text-transform: none
-    border-bottom: 1px dotted +light-dark-color(color, $accent-light, $accent-dark)
+    border-bottom: 1px dotted +light-dark-color(color, $border-light, $border-dark)
 
   p, a, li
     font-size: 0.9em
@@ -297,12 +299,10 @@ button
   display: flex
   justify-content: space-between
   width: 100%
-  padding: 1em 2em
-  //background-color: var(--color-bg)
+  padding: 1em 2em 1.5em
   +transition-ease(.3s)
 
   &:hover a
-    //+light-dark-color(color, $accent-light, $accent-dark)
     opacity: 0.7
 
   .next, .previous
@@ -310,19 +310,18 @@ button
 
     a
       display: flex
-      flex-direction: row
-      font-size: 0.8em
-      letter-spacing: 0.12em
-      +light-dark-color(color, $accent-light, $accent-dark)
+      flex-direction: column
+      font-size: 1em
 
       div
         display: flex
-        flex-direction: column
+        flex-direction: row
 
-        span:nth-of-type(2)
-          font-size: 0.7em
-          padding-top: 0.2em
-          letter-spacing: 0
+      span
+        font-size: 0.8em
+        padding-top: 0.5em
+        letter-spacing: 0
+        opacity: 0.8
 
 
 /**Footer
@@ -389,8 +388,7 @@ input
   border-radius: 34px
   font-family: IcoFont
   border: 1px solid
-  +light-dark-color(border-color, $surface-light, $surface-dark)
-  //+light-dark-color(background, $surface-light, $surface-dark)
+  +light-dark-color(border-color, $border-light, $border-dark)
   +transition-ease
 
   &::before
@@ -400,23 +398,24 @@ input
     left: 0px
     bottom: 0px
     padding: 4px
-    background: $white
     border-radius: 50%
     font-size: 14px
-    content: '\ee81' // moon icon
-    +light-dark-color(color, $accent-light, $accent-dark)
+    content: '\ee81' // sun icon
+    background: rgba(43, 100, 110, 0.1)
+    color: $accent-light  
     +transition-ease
 
 input:checked + .slider
     border: 1px solid
     +light-dark-color(border-color, $accent-light, $accent-dark)
-    +light-dark-color(background-color, $accent-light, $accent-dark)
+    background-color: $accent-dark
 
     &::before
-      content: '\ef9e' // sun icon
+      content: '\ef9e' // moon icon
       padding-left: 4px
-      color: var(--color-bg)
       transform: translateX(24px)
+      //color: $white
+      background: #dee5f1ff
 
 /**Back to Top
   */
@@ -425,7 +424,6 @@ input:checked + .slider
   bottom: 2.8em
   right: 2.2em
   line-height: 0.4
-  font-size: 0.8em
   opacity: 0
   pointer-events: none
   transform: translateY(2em)
@@ -508,7 +506,7 @@ input:checked + .slider
   cursor: pointer
 
   &.btn-animate
-    background: var(--panel-background)
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
     +light-dark-color(color, $text-primary-light, $text-primary-dark)
 
   i
@@ -528,7 +526,8 @@ input:checked + .slider
     margin: 0.8em 0
     padding: 0 0 0 0.4em
     line-height: 1.3
-    border-left: 3px solid +light-dark-color(border-color, $accent-light, $accent-dark)
+    border-left: 3px solid
+    +light-dark-color(border-color, $accent-light, $accent-dark)
 
   .row:last-of-type
     h5
@@ -543,38 +542,48 @@ input:checked + .slider
     background: var(--pale-text-bg)
     box-shadow: 6px 5px 7px -6px rgba(0, 0, 0, 0.1)
 
+
 .skills-grid
-  +standard-content-grid(3)
+  +standard-content-grid(2)
   grid-gap: 2.5em
+
+  // .ellipse
+  //     width: 3em
+  //     height: 3em
+  //     display: flex
+  //     justify-self: center
+  //     align-self: center
+  //     align-items: center
+  //     justify-content: center
+  //     padding: 0
+  //     border-radius: 50%
+  //     border: 1px dotted +light-dark-color(border-color, $border-light, $border-dark)
+
+  //     i
+  //       +light-dark-color(color, $accent-light, $accent-dark)
+  //       font-size: 1.5em
 
   .item
     display: grid
-    padding: 1.5em 2em
-    +light-dark-color(background, $surface-light, $surface-dark)
+    padding: 1.5em
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
 
     h4
-      margin: 0.8em 0 0.4em
+      margin-bottom: 0.4em
 
     p
       align-self: center
       margin: 0.4em 0
-      padding: 0.15em 0 0.15em 0.4em
-
-    .ellipse
-      width: 3em
-      height: 3em
-      display: flex
-      justify-self: center
-      align-self: center
-      align-items: center
-      justify-content: center
-      padding: 0
-      border-radius: 50%
-      border: 1px dotted +light-dark-color(border-color, $border-light, $border-dark)
-
-      i
+      padding: 0.15em 0 0.15em 0.8em
+      border-left: none
+      
+      &:before
+        position: absolute
+        margin-left: -0.5em
+        content: "•"
+        font-size: 1.8em
+        line-height: 0.7
         +light-dark-color(color, $accent-light, $accent-dark)
-        font-size: 1.5em
 
 .user-stories
   +standard-content-grid()
@@ -650,7 +659,7 @@ input:checked + .slider
     display: inline-block
     margin: 3px
     border-radius: 50%
-    background-color: +light-dark-color(background, $border-light, $border-dark)
+    background-color: +light-dark-color(background, +light-dark($border-light, $border-dark))
 
 .team-members
   display: flex
@@ -666,12 +675,13 @@ input:checked + .slider
 .tag-label
   margin: 0 0.5em 0 0
   padding: 0.4em 0.7em
-  +light-dark-color(background, $surface-light, $surface-dark)
   border-radius: $border-radius-small
   line-height: 1.3
-  font-size: 12px
+  font-size: 0.8em
   font-weight: 500
   text-transform: none
+  //background-opacity: 0.4
+  +light-dark-color(background, $surface-accent-light, $surface-accent-dark)
   +light-dark-color(color, $text-primary-light, $text-primary-dark)
 
 /** Panels
@@ -681,8 +691,10 @@ input:checked + .slider
 
 .panel
   display: grid
-  margin-bottom: 2.6em
+  width: 75%
+  margin: 0 auto 2.6em
 
+  //not needed?
   .extra-padding
     +page-content-width(4em)
 
@@ -691,7 +703,6 @@ input:checked + .slider
     grid-column-gap: 3em
 
     &.two-row
-      padding: 3em 6em
       grid-template-rows: repeat(2, 1fr)
       grid-gap: 3em
 
@@ -849,7 +860,7 @@ input:checked + .slider
   .intro-text-callout
     align-self: center
     padding: 1.3em 1.5em 1em
-    +light-dark-color(background, $surface-light, $surface-dark)
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
     border-radius: $border-radius
 
   h4
@@ -865,35 +876,34 @@ input:checked + .slider
 
   h2
     padding-top: 2em
-    //text-transform: uppercase
 
   .intro-text-callout
-    background: transparent
+    //background: transparent
 
   .feature-case-study
+    min-height: 200px
     display: grid
     grid-template-columns: 1fr 1fr
     grid-column-gap: 1em
     border-radius: $border-radius
-    +light-dark-color(background, $surface-light, $surface-dark)
-    +card-box-shadow
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+    +card-box-shadow($opacity: 1)
 
     &.disabled
       opacity: 0.5
       cursor: not-allowed
 
     &:focus, &:focus-visible
-      box-shadow: 0px 0 6px 0px var(--hover-primary-accent)
+      box-shadow: 0px 0 6px 0px
       outline: none
 
     &:hover, &:active
       +card-box-shadow(0.2)
       border: none
 
-
     .feature-image
       height: 100%
-      border-radius: 4px 0 0 4px
+      border-radius: $border-radius 0 0 $border-radius
 
       &.vaayu
         background: url('/images/vaayu/vaayu-home.jpg') no-repeat
@@ -938,31 +948,17 @@ input:checked + .slider
         background-position-y: top
 
     .info-section
-      padding: 1.6em 0.7em 1.8em
-
-      h3
-        text-align: left
+      padding: 2em 1.2em 1.8em 1em
 
       p
         padding-top: 0.6em
         line-height: 1.2
-        font-size: 0.9em
-        text-transform: none
-        text-align: left
         +light-dark-color(color, $text-primary-light, $text-primary-dark)
-
-      .project-type
-        display: flex
-        padding: 0em 0 0.9em
-        font-size: 0.75em
-        line-height: 1
-        opacity: 0.5
 
 /*Tabs
   **/
 .full-width-panel-highlight
-  +light-dark-color(background, $surface-light, $surface-dark)
-  opacity: 0.75
+  +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
 
   &:first-of-type
     margin-top: 4em
@@ -974,12 +970,11 @@ input:checked + .slider
     margin-top: 0
 
   .intro-text-callout
-    margin: 1.4em 5em 2.5em
+    margin: 0 auto
     background: rgba(255, 255, 255, 0.05)
     border-left: none
 
 .screenshots-section
-  +page-content-width(3em)
   padding-bottom: 2em
 
 .tab-section-heading
@@ -998,7 +993,7 @@ input:checked + .slider
 .tabs-container
   margin-bottom: 2.5em
 
-  .page-content-width
+  .page-content
     display: flex
 
     .tab
@@ -1147,7 +1142,7 @@ input:checked + .slider
         align-items: center
         justify-content: center
         border-radius: 50%
-        +light-dark-color(background, $surface-light, $surface-dark)
+        +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
         border: 1px dotted +light-dark-color(background, $accent-light, $accent-dark)
         +light-dark-color(color, $accent-light, $accent-dark)
 

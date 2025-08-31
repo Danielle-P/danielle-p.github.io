@@ -24,40 +24,35 @@
 
   .landing-content
     height: calc(100vh - 64px)
+    width: 100%
     display: flex
     flex-direction: column
-    justify-content: space-evenly
-    align-content: center
+    justify-content: space-between
 
     .title-panel
       display: flex
-      flex: 2
-      flex-direction: row
-      justify-content: center
-      align-items: center
-      padding: 6% 10% 0
+      align-items: flex-start
+      flex-direction: column
+      padding: 7% 10% 4%
+      margin-top: 10%
 
       .header
-        display: flex
-        flex: 2
-        flex-direction: column
-        align-items: flex-start
-
         h1
-          font-size: 2.6em
+          font-size: 2.8em
           font-weight: 600
-          margin-bottom: 0.2em
+          margin-bottom: 0.1em
           opacity: 0
           +translate-scale-on-load(.2s)
 
         p
-          +subheader-font-style($font-size: 0.9em)
-          font-weight: 600
+          +subheader-font-style($font-size: 1.2em)
+          font-weight: 400
           text-transform: none
           text-align: left
           letter-spacing: 0
           opacity: 0
           +translate-scale-on-load(.3s)
+        
 
       .sub-header
         display: flex
@@ -67,16 +62,19 @@
         opacity: 0
         +translate-scale-on-load(.6s)
 
+        .about-summary
+          font-size: 1.2em
+
         .skills-list
           display: flex
           align-items: center
           margin-top: 1.8em
-          +subheader-font-style($font-size: 0.85em)
+          +subheader-font-style($font-size: 1.2em)
           opacity: 0
           +translate-scale-on-load(.9s)
 
           .skill
-            font-size: 0.8em
+            font-size: 0.9em
             text-transform: none
             letter-spacing: 0
             opacity: 0.7
@@ -84,7 +82,7 @@
           span
             width: 5px
             height: 5px
-            background: #f1b883
+            +light-dark-color(background, $border-light, $border-dark)
             border-radius: 50%
             margin: 0 0.5em
             opacity: 0.5
@@ -94,7 +92,7 @@
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
       grid-column-gap: 1em
       padding: 0 10%
-      margin: 0 0 2% 0
+      margin: 0 0 2.5% 0
       opacity: 0
       +translate-scale-on-load(1.3s)
 
@@ -148,9 +146,6 @@
     background: none
     padding: 0 2.5em 2em
 
-    #theme-switch
-      flex: 1
-
     .footer-info
       opacity: 0
       +translate-scale-on-load(1s)
@@ -158,17 +153,17 @@
       p
         opacity: 0.7
 
-#projects-landing .full-width-panel-highlight
-  margin: 0
+// #projects-landing .full-width-panel-highlight
+//   margin: 0
 
-  &:first-of-type
-    background-color: transparent
+//   &:first-of-type
+//     background-color: transparent
 
-  .intro-text-callout
-    margin: 0.5em 5em
+//   .intro-text-callout
+//     margin: 0.5em 5em
 
-  .feature-case-study
-    margin: 0
+//   .feature-case-study
+//     margin: 0
 
 #projects
   #scroll-top-link
@@ -180,10 +175,7 @@
   .project-details
     h2
       text-align: left
-
-    section:first-of-type
-      margin: 4em 0 3em
-
+      
     &.dashboard-design
 
       section:first-of-type
