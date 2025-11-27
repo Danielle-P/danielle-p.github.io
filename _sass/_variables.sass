@@ -1,16 +1,17 @@
 $white: #fff
 $border-radius: 8px
 $border-radius-small: 4px
+$border-radius-large: 12px
 
 
 \:root
   color-scheme: light dark
 
 // Card/panel backgrounds
-$surface-opaque-light: rgba(255, 255, 255, 1)           
-$surface-accent-light: rgba(43, 100, 110, 0.3)           
-$surface-opaque-dark: rgba(45, 45, 45, 1)
-$surface-accent-dark: rgba(100, 181, 246, 0.4)
+$surface-opaque-light: rgba(255, 255, 255, 1)      
+$surface-accent-light: rgba(43, 100, 110, 0.1)           
+$surface-opaque-dark: rgba(39, 36, 41, 1)//rgba(31, 29, 32, 1)
+$surface-accent-dark: rgba(100, 181, 246, 0.3)
 
 // Text
 $text-primary-light: #2c3e50      
@@ -23,18 +24,16 @@ $text-secondary-dark: #b8bcc0
 $text-muted-light: #8a8a8a        
 $text-muted-dark: #888888         
 
-// For links/interactive elementsQ
-$accent-light: #2B646E//#4a90e2            
-$accent-dark: #64b5f6     //to update        
+// For links/interactive elements
+$accent-light: #2B646E          
+$accent-dark: #d7d4e8 // #91CAD4     //to update        
 
 // Card borders/dividers
 $border-light: rgba(116, 135, 158, 0.3)            
 $border-dark: rgba(116, 135, 158, 0.3)             
 
 //Box shadows
-$shadow-light: rgba(0, 0, 0, 0.08)
-$shadow-dark: rgba(0, 0, 0, 0.3)
-
+$shadow: rgba(0, 0, 0, 0.08)
   
 @function theme-color($light, $dark)
   @return light-dark(#{$light}, #{$dark})
@@ -43,13 +42,12 @@ $shadow-dark: rgba(0, 0, 0, 0.3)
   #{$property}: light-dark(#{$light-value}, #{$dark-value})
 
 =background-gradient
-  background: linear-gradient(to bottom, light-dark(#F5F6F8, #242323), light-dark(#E3E1EF, #302B3D))
+  background: linear-gradient(to bottom, light-dark(#F5F6F8, #110f15), light-dark(#E3E1EF, #302B3D))
   -webkit-background-clip: text
   background-clip: text
 
 =text-gradient 
-  //background: linear-gradient(to right, light-dark(#0D1E21, #2B646E), light-dark(#2B646E, #4A90E2))
-  background: linear-gradient(to right, light-dark(#0D1E21, #1a2f38), light-dark(#2B646E, #3a7a8a))
+  background: linear-gradient(to right, light-dark(#0D1E21, #ABC8DE), light-dark(#2B646E, #EEEEF1))
   -webkit-background-clip: text
   -webkit-text-fill-color: transparent
   background-clip: text // for Firefox
@@ -60,14 +58,5 @@ $body-font: 'Ancizar Sans', 'Helvetica Neue', sans-serif
 
 $large-desktop: 1440px
 $breakpoint-desktop: 1200px
-$breakpoint-tablet: 768px
+$breakpoint-tablet: 900px
 $breakpoint-mobile: 600px
-
-//Tailwind CSS: 640px, 768px, 1024px, 1280px, 1536px
-
-// Default: 1200px+ (Large desktop)
-// @media (max-width: 1199px) - Medium desktop/laptop
-// @media (max-width: 991px) - Tablet landscape
-// @media (max-width: 767px) - Tablet portrait
-// @media (max-width: 575px) - Mobile landscape
-// @media (max-width: 479px) - Mobile portrait

@@ -3,12 +3,12 @@
     Array.from(document.getElementsByClassName(className))
 
   function switchToSelectedTab({selectedTabClassList, tabContentClassList}) {
-    const slideDownPanels = getElements('slide-down-panel')
+    const tabContents = getElements('tab-content')
 
     if (!selectedTabClassList.contains('selected')) {
       document.querySelector('.tab.selected').classList.remove('selected')
 
-      slideDownPanels.forEach((panel) => {
+      tabContents.forEach((panel) => {
         if (panel.classList.contains(tabContentClassList)) {
           panel.classList.toggle('show')
         } else {

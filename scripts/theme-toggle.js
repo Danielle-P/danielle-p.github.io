@@ -6,9 +6,14 @@
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   }
 
-  function setTheme(theme) {
-    rootElement.setAttribute('data-theme', theme)
-    if (themeToggle) themeToggle.checked = theme === 'dark'
+  function getSavedTheme() {
+    return sessionStorage.getItem('theme');
+  }
+
+  function setTheme(theme, persist = true) {
+    rootElement.setAttribute('data-theme', theme);
+    if (themeToggle) themeToggle.checked = theme === 'dark';
+    if (persist) sessionStorage.setItem('theme', theme);
   }
 
   function showThemeToggle() {
@@ -16,9 +21,10 @@
   }
 
   function initTheme() {
-    let theme = getSystemTheme()
-    setTheme(theme)
-    showThemeToggle()
+    const savedTheme = getSavedTheme();
+    let theme = savedTheme || getSystemTheme();
+    setTheme(theme, !!savedTheme);
+    showThemeToggle();
   }
 
   if (themeToggle) {

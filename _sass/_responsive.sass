@@ -4,37 +4,39 @@
     main .page-content
       +page-content-width
 
-  main h1:first-of-type
-    margin-bottom: 2em
-
   .image-section img
-    max-height: 75vh
-
-  #projects
-    .user-stories
-      grid-gap: 3.5em
-
-    .extra-padding, .panel .extra-padding, .screenshots-section
-      +page-content-width(10em)
-
-  .slide-down-panel .full-width-panel-highlight
-    padding: 3em 3em 4em
+    max-height: 90vh
 
   #projects-landing .panel .project-images
-    max-width: 65%
+    max-width: 75%
 
     .selectable-image .hover-label
       font-size: 1em
 
 @media (max-width: $breakpoint-desktop)
-  .page-content
-    +page-content-width(5em)
 
-  .nav-panel ul
-    padding: 0 3em 0 0
+  .page-content, .panel, .landing-content, .slide-down-panel
+    width: 84%
+    max-width: 90%
+    margin: 0 auto
+    padding-left: 0
+    padding-right: 0
 
+  footer
+    padding-right: 2.8em
+  
   #scroll-top-link
-    right: 2em
+    position: fixed
+    bottom: 3.6em
+    right: 2.8em
+
+  .next-previous-projects
+    padding: 1em 2.5em 1.5em
+  
+  #landing .landing-content
+    width: 100%
+    max-width: 90%
+    margin: 0 auto
 
   .screenshots-section .image-section img
     max-height: 70vh
@@ -48,43 +50,19 @@
     .image-section
       margin-bottom: 2em
 
-  .full-width-panel-highlight .intro-text-callout
-    margin: 0
-
   .user-stories
     grid-template-columns: repeat(2, 1fr)
 
-  .skills-grid.extra-padding, .user-task-map.extra-padding
-    padding: 0
-
-  #landing .landing-content .title-panel .header p.about-summary
-    width: 60%
-    padding: 1em 2em
-
-  #projects
-    .panel .project-images
-      padding: 2em 0 0
-
-    .project-details.dashboard-design
-      .panel.screenshots-section, .user-stories.extra-padding
-        padding: 0 0.5em
+  #projects-landing .case-study-tiles .panel
+    grid-template-columns: repeat(2, 1fr)
+  
+  #projects .project-details .panel
+    margin: 0 auto 2em
 
 @media (max-width: $breakpoint-tablet)
-  main
-    padding-top: 4.5em
-
-    h1:first-of-type
-      padding: 0 1em
-
-  .page-content
-    +page-content-width(3em)
-
-  .panel
-    width: 100%
-    padding: 0 3em
-
   .btn-menu
     margin: 1em
+    display: flex
 
     .icon-container.open
       transform: translate(4px, -5px) rotate(90deg)
@@ -105,86 +83,146 @@
     padding: 1.8em 2em
     transition: 0.5s
     overflow: hidden
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
 
     .nav-links
+      width: 100%
       flex-direction: column
-      align-items: flex-end
+      align-items: flex-start
       align-self: flex-end
       justify-content: flex-start
-      margin: 0 1.2em 0 3em
-      padding: 4em 0 0 0
+      padding: 4em 0.5em
 
       a
         margin: 1em 0
         white-space: nowrap
 
     &.show
-      width: auto
+      width: 240px
       display: flex
       right: 0
 
   #scroll-top-link
-    bottom: 1.2em
-    right: 1.5em
+    bottom: 1.7em
+    right: 1.7em
 
     a
-      height: 27px
+      height: 32px
       flex-direction: row
       justify-content: center
-      padding: 0 1em 0 0.5em
-      background-color: var(--primary-accent)
+      padding: 0 0.8em 0 0.4em
+      +light-dark-color(background, $accent-light, $accent-dark)
       border-radius: 2em
-      line-height: 1
-      color: $white
       cursor: pointer
       box-shadow: 0px 0px 12px -5px rgba(0, 0, 0, 0.5)
 
+      i, span
+        color: $accent-light
+
+        &:hover
+          color: $accent-light
       i
         font-size: 1.5em
-        color: $white
-
-      span
-        color: $white
 
     &.visible
       opacity: 0.95
 
-  .extra-padding, .panel .extra-padding, .screenshots-section
-    +page-content-width(1em)
+  #resume .journey
+    max-width: 84%
+    flex-direction: column
+    margin: 0 auto 1em
 
-  .skills-grid
+    .marker
+      flex-direction: row
+
+      &.active .btn-timeline
+        opacity: 1
+
+      .btn-animate
+        margin: 1.5em 0.5em
+        min-width: 48px
+
+      &::after
+        width: 2px
+        height: 0
+        top: 2.2em
+        left: 2em
+
+      @for $n from 1 through 8
+        &.visible:nth-of-type(#{$n})
+          +journey-line-animation-mobile(#{($n - 1) * 0.6}s)
+      
+      .hidden-mobile-label
+        display: none
+
+      .marker-label
+        padding-left: 1em
+        margin: 0
+        line-height: 1
+      
+        &:last-of-type
+          display: none
+
+        &:first-of-type
+          order: 2
+
+          h4
+            display: block
+
+        h2, h4
+          margin: 0
+          text-align: left
+          font-size: 1em
+
+        h4
+          font-size: 1.2em
+          line-height: 0.8
+
+
+  #landing .landing-content
+
+    .title-panel
+      align-items: center
+      
+      .header p, .sub-header p
+        max-width: 80%
+        margin: 0 auto 1em
+        text-align: center
+
+        span
+          display: none
+    
+    .case-study-tiles 
+      grid-template-columns: repeat(4, 1fr)
+      margin-bottom: 16%
+
+      .feature-case-study
+        min-height: 160px
+
+        &:nth-of-type(5)
+          display: none
+
+      .more-projects
+        position: fixed
+        bottom: -50px
+        right: calc(50% - 20px)
+        padding: 0.6em 1.2em
+        border: 1px solid
+        +light-dark-color(border-color, $border-light, $border-dark)
+        border-radius: $border-radius-small
+
+        &:hover
+          +light-dark-color(color, $accent-light, $accent-dark)
+          +light-dark-color(border-color, $accent-light, $accent-dark)
+
+        i
+          display: none
+
+        span
+          opacity: 100%
+
+  #projects-landing .case-study-tiles .panel
     grid-template-columns: 1fr
-
-  .panel .image-section.image-grid
-    &.two-col, &.three-col, &.four-col
-      grid-template-columns: 1fr
-
-  #landing
-    .landing-content
-      padding: 2em
-
-      .landing-nav
-        justify-content: space-around
-        margin: 1em 0
-
-        a
-          margin: 0.5em 0
-          font-size: 0.9em
-
-      .title-panel
-        .header p.about-summary
-          width: 80%
-          padding: 1em 2em
-
-        .page-content p
-          padding: 3em 1em 0
-
-        .profile-photo
-          max-width: 6em
-          max-height: 6em
-
-        .skill p
-          padding: 0 0 1.5em 0
 
   #projects
 
@@ -215,87 +253,54 @@
         .project-image:nth-child(2) img
           max-height: 12em
 
-  #resume main
-    padding-left: 0
-    padding-right: 0
-
 @media (max-width: $breakpoint-mobile)
-  .page-content
-    +page-content-width(1.5em)
 
-  .panel
-    padding: 0 
+  body main
+    min-height: calc(100vh - 84px)
 
-  #landing, #about, #projects-landing
-    main
-      padding: 4.2em 0 0.5em
+    > h1, .caption-container
+      max-width: 84%
+      margin: 0.5em auto 1.2em
 
-  #landing .landing-nav a:last-of-type
-    display: none
-
-  #resume, #contact
-    main
-      padding: 4.2em 1.8em 0.5em
-
-      .journey .marker.visible.toggle-panel .tag-label
-        margin-left: 0.6em
-
-
-  #projects-landing, #projects
-    .project-links
-      margin: 2.4em 1em 0
-
-    .next-previous-projects
-      padding: 1em
-
-      .previous, .next
-        a
-          align-items: center
-
-          span:nth-of-type(2)
-            display: none
-
-  main
-    ul li::before
-      line-height: 1.5
-
-    h1:first-of-type
-      padding: 0 1.8em 0 0
-      text-align: left
-      font-size: 2.5em
-
-  h4, p, a, ul
-    line-height: 1.75
+  .page-content, .panel, .landing-content, .slide-down-panel 
+    max-width: 84%
 
   .hidden-mobile-label
     display: inline-block
 
   footer
-    flex-direction: column
-    padding: 1em 1em 3em 1em
-
-    .theme-copyright
-      flex-direction: column
-
-    .footer-info
-      padding: 1em 0
-
-      i
-        display: none
-
-      p, a
-        font-size: 0.8em
-
-  #landing footer
+    max-width: 84%
     flex-direction: row
-    padding: 1em
+    padding: 0
+    margin: 0 auto
 
     .theme-copyright
+      flex: none
       flex-direction: row
       align-items: center
 
-  .extra-padding, .panel .extra-padding, .screenshots-section
-    +page-content-width(0.6em)
+    .footer-info
+      flex-direction: row
+      padding-left: 0
+
+      p
+        font-size: 1em
+
+      span, .footer-links
+        display: none
+
+  .project-links
+    margin: 2.4em 1em 0
+
+  .next-previous-projects
+    padding: 1em
+
+    .previous, .next
+      a
+        align-items: center
+
+        span:nth-of-type(2)
+          display: none
 
   .user-stories, .user-task-map
     grid-template-columns: 1fr
@@ -308,7 +313,13 @@
 
     .marker
       flex-direction: row
-      margin: 1em 0
+
+      &.active .btn-timeline
+        opacity: 1
+
+      .btn-animate
+        margin: 1.5em 0.5em
+        min-width: 48px
 
       &::after
         width: 2px
@@ -319,10 +330,13 @@
       @for $n from 1 through 8
         &.visible:nth-of-type(#{$n})
           +journey-line-animation-mobile(#{($n - 1) * 0.6}s)
+      
+      .hidden-mobile-label
+        display: none
 
       .marker-label
         padding-left: 1em
-        margin: 0.2em 0
+        margin: 0
         line-height: 1
 
         &:first-of-type
@@ -332,7 +346,13 @@
             display: block
 
         h2, h4
+          margin: 0
           text-align: left
+          font-size: 1em
+
+        h4
+          font-size: 1.2em
+          line-height: 0.8
 
   .journey-with-stages
     display: flex
@@ -355,121 +375,133 @@
       transform: translate(0, 0)
       margin-top: 0
 
+    .modal-close
+      top: 1.5em
+      right: calc(50% - 16px)
+
   .slide-down-panel
-    padding: 1.3em 0
+    //padding: 1.3em 0
+
+  .full-width-panel-highlight
+    padding-top: 1.5em
+    margin-bottom: 2em
 
   .panel
     flex-direction: column
+    margin-bottom: 0.5em
 
     .image-section
-      padding: 0.2em 0.5em 1em
-
-      &.default-image-layout.three-img
-        grid-template-columns: repeat(3, 1fr)
-
-        .project-image
-          &:nth-of-type(1), &:nth-of-type(2), &:nth-of-type(3)
-            grid-column: span 1
-            grid-row: 1 / span 1
-
-          &:nth-of-type(2)
-            grid-column-start: 3
-
-          &:nth-of-type(3)
-            grid-column-start: 2
-
-    &.two-column.two-row
-      padding: 3em 0
-      grid-gap: 1.5em
-
-  .tabs-container
-    flex-direction: column
-
-    .tab
-      margin: 0 0 0.2em 0
+      padding: 0 0 2em 0
+      
+      &.overlap.three-img
+        padding-bottom: 0
 
   #landing
     .landing-content
-      padding: 0.5em
+      height: auto
+      max-width: 84%
+      align-items: center
 
-      .landing-nav a
-        font-size: 0.75em
+      .title-panel .sub-header p
+        margin: 0 auto
+        max-width: 100%
 
-      .title-panel
-        .header
-          h1
-            margin: 0 0.4em 0.5em
+      .case-study-tiles
+        width: 90%
+        grid-auto-flow: row
+        grid-template-columns: 1fr
+        grid-row-gap: 2em
+        align-self: center
+        align-items: center
+        justify-items: center
 
-          .profile-photo
-            max-width: 5em
-            max-height: 5em
+        a.feature-case-study
+          align-self: center
+          max-width: 380px
+          width: 100%
+          min-height: 210px
 
-          p.about-summary
-            width: 100%
-            padding: 2em 0.5em 0
+        .more-projects
+          position: relative
+          right: auto
+          bottom: auto
+          text-align: center
+          width: 100%
+          max-width: 380px
+    
+    footer
+      position: relative
 
-        .page-content .skills-list
-          display: none
+  #about, #projects-landing, #projects, #resume, #contact
+    main
+      padding: 18% 0 1%
+
+      .journey .marker.visible.toggle-panel .tag-label
+        margin-left: 0.6em
+  
+    .card-grid, .image-section.three-col, .image-section.four-col
+      grid-template-columns: 1fr
 
   #featured, #projects-landing
     .feature-case-study
       grid-template-columns: 1fr
 
-      .info-section, .skills-list, .project-type
+      .info-section, .project-type
         justify-content: center
         text-align: center
-
-        h3, p
-          text-align: center
+        padding: 1em 1em 2em
 
       .feature-image
-        width: 100%
-        height: 94px
+        height: 200px
 
   #projects
     main.project-details
       padding-top: 6.6em
+      
+      section:first-of-type
+        margin: 4em auto 2em
 
       &.dashboard-design
-        section:first-of-type
-          margin-top: 0
+        .full-width-panel-highlight:first-of-type
+          margin-top: -2.5em
 
-        .tab-section .slide-down-panel
-          .screenshots-section
-            padding-bottom: 0
+        .tabs-container
+          padding: 1.4em 1em 1em
 
-          .intro-text-callout
-            padding: 0 1em
+          .tab
+            line-height: 1.2
+            border-radius: $border-radius-small
 
-            .image-section
-              padding: 0 0.2em 0.5em
+            &.selected, &:hover
+              +light-dark-color(background-color, $accent-light, $accent-dark)
+              border-bottom: none
+              background: none
+              -webkit-background-clip: unset
+              background-clip: unset
+              -webkit-text-fill-color: unset
+              +light-dark-color(color, $text-primary-dark, $text-primary-dark)
 
-              .project-image
-                padding: 0
 
-        .tab-link-reports .user-stories
-          grid-template-columns: 1fr
+      &.meals-up .user-story .journey-with-stages br 
+        display: none
+        margin: 0.8em 0
+      
+      .testimonials-grid
+        row-gap: 1.2em
 
-      &.wedding .image-section
-        &.initial-designs
-          padding: 1em 0 1em 3em
+        .item:first-of-type
+          grid-column: 1
 
-          .project-image:nth-child(2) img
-            max-height: 11em
+  #resume main
+    h1
+      max-width: 84%
 
-        &.end-designs
-          max-width: 100%
-
-  #resume
     .panel
       .open-resume
         display: block
 
       .download-resume
         display: none
-
-    .journey .marker .marker-label:last-of-type
-      display: none
 
     .team-members
       justify-content: center

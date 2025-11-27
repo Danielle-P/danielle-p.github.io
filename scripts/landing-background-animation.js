@@ -1,7 +1,5 @@
 (function () {
-  const landing = document.getElementById('landing');
-  if (!landing) return;
-
+  const backgroundStyle = document.body;
   // Gradient color stops for light and dark themes
   const gradients = {
     light: [
@@ -17,7 +15,7 @@
   };
 
   // Animation parameters
-  const duration = 20000; // ms
+  const duration = 18000; // ms
   let start = null;
 
   function lerp(a, b, t) {
@@ -81,8 +79,8 @@
         ? 'linear-gradient(135deg, rgba(40,40,40,0.8) 0%, rgba(40,40,40,0.6) 100%)'
         : 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)');
 
-    landing.style.background = gradient;
-    landing.style.backgroundAttachment = 'fixed';
+    backgroundStyle.style.background = gradient;
+    backgroundStyle.style.backgroundAttachment = 'fixed';
 
     requestAnimationFrame(animateGradient);
   }

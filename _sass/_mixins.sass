@@ -1,12 +1,12 @@
 /**Styles
   */
-=page-content-width($padding: 0em)
-  max-width: 800px
+=page-content-width($max-width: 800px, $padding: 0em)
+  max-width: $max-width
   padding-left: $padding
   padding-right: $padding
   margin: 0 auto
 
-=header-font-style($font-size: 3em, $margin-bottom: 0.8em)
+=header-font-style($font-size: 3em, $margin-bottom: 1.4em)
   margin-bottom: $margin-bottom
   font-family: $header-font
   font-size: $font-size
@@ -20,7 +20,7 @@
   font-family: $header-font
   font-size: $font-size
   font-weight: 400
-  text-align: center
+  text-align: left
   +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
 
 =body-font-style($font-size: 1em, $padding: 1.2em)
@@ -43,44 +43,10 @@
     border-bottom: 1px dotted
     +light-dark-color(border-color, $accent-light, $accent-dark)
 
-=sub-nav-current-page ($page-name)
-  .project-links .toggle-display-links
-    .#{$page-name}
-      cursor: default
-
-      svg
-        opacity: 0.5
-
-      .button-label
-        width: 11.2em
-
-        > span
-          display: block
-          opacity: 1
-
-          > span
-            opacity: 1
-
 =image-box-shadow
-  box-shadow: -10px 2px 7px -6px
-  box-shadow-color: +light-dark-color(background, $shadow-light, $shadow-dark)
+  box-shadow: -10px 2px 7px -6px $shadow
 
-// =card-box-shadow($opacity: 0.1)
-//   box-shadow: 6px 5px 7px -6px +light-dark-color(color, $shadow-light, $shadow-dark, $opacity)
-//   //box-shadow: 6px 5px 7px -6px #{light-dark-color($shadow-light, $shadow-dark, $opacity)}
-//   //box-shadow: 0 2px 8px 0 #{light-dark-color(rgba(0,0,0,0.08), rgba(0,0,0,0.3))}
-
-//Not working for some reason
-=card-box-shadow($opacity: 0.1)
-  $light-rgba: rgba(255, 255, 255, $opacity)
-  $dark-rgba: rgba(0, 0, 0, $opacity)
-  $light-shadow: 0 4px 8px 0 #{$light-rgba}
-  $dark-shadow: 0 4px 8px 0 #{$dark-rgba}
-
-  +light-dark-color(box-shadow, $light-shadow, $dark-shadow)
-
-/** Transitions and Animations
-  */
+/** Transitions and Animations **/
 =transition-ease($speed: .2s, $timing-function: ease-in-out)
   transition: $speed $timing-function all
 
@@ -106,10 +72,34 @@
   animation: slide-down $duration $delay cubic-bezier(0.0, 0.0, 0.58, 1.0)
   animation-fill-mode: forwards
 
-/** Components
-  */
-=standard-content-grid($columns: 4)
-  grid-template-columns: repeat($columns, 1fr)
+=animated-gradient-border($border-width: 1px)
+  position: relative
+  border-radius: $border-radius
+  overflow: hidden  
+
+  &::before
+    content: ''
+    position: absolute
+    inset: 0
+    padding: $border-width
+    border-radius: inherit
+    background: linear-gradient(45deg, #6b9999, #e4e2ef, #2B646E)
+    background-size: 200% 200%
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+    mask-composite: xor
+    -webkit-mask-composite: xor
+    opacity: 0
+    transition: all 0.3s ease
+
+  &:hover::before
+    opacity: 1
+    animation: gradient-shift 2.2s ease infinite
+
+/** Components **/
+=standard-content-grid($columns: auto-fit, $min: 220px, $gap: 2em)
+  display: grid
+  grid-template-columns: repeat($columns, minmax(#{$min}, 1fr))
+  gap: $gap
 
 =default-image-grid($columns: 1, $rows: 1, $gap: 1em)
   grid-template-columns: repeat($columns, 1fr)

@@ -9,12 +9,14 @@
 
   if (navButton) {
     navButton.addEventListener('click', function () {
-      if (navPanel.classList.contains('hide')) {
-        navPanel.classList.remove('hide')
-        menuIcon.classList.add('open')
-      } else {
-        navPanel.classList.add('hide')
+      if (navButton.classList.contains('active')) {
         menuIcon.classList.remove('open')
+        navPanel.classList.remove('show')
+        navButton.classList.remove('active')
+      } else {
+        menuIcon.classList.add('open')
+        navPanel.classList.add('show')
+        navButton.classList.add('active')
       }
     })
 
