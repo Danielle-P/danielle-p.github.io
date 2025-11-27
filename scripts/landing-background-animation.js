@@ -8,9 +8,9 @@
       { x: 40, y: 40, color: 'rgba(211,205,228,0.9)' }
     ],
     dark: [
-      { x: 20, y: 80, color: 'rgba(60,60,120,0.3)' },
+      { x: 20, y: 80, color: 'rgba(60,60,120,0.2)' },
       { x: 80, y: 20, color: 'rgba(120,60,120,0.15)' },
-      { x: 40, y: 40, color: 'rgba(60,120,120,0.2)' }
+      { x: 40, y: 40, color: 'rgba(35, 36, 92, 0.1)'}
     ]
   };
 
@@ -76,7 +76,7 @@
       `radial-gradient(circle at ${stops[1].x}% ${stops[1].y}%, ${stops[1].color} 0%, transparent 50%),` +
       `radial-gradient(circle at ${stops[2].x}% ${stops[2].y}%, ${stops[2].color} 0%, transparent 50%),` +
       (theme === 'dark'
-        ? 'linear-gradient(135deg, rgba(40,40,40,0.8) 0%, rgba(40,40,40,0.6) 100%)'
+        ? 'linear-gradient(135deg, rgba(20, 20, 21, 0.8) 0%, rgba(20, 20, 21, 0.6) 100%)'
         : 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)');
 
     backgroundStyle.style.background = gradient;

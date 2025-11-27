@@ -344,7 +344,7 @@ footer
       text-transform: none
 
     a
-      border-left: 2px solid
+      border-left: 1px solid
       border-color: +light-dark-color(border-color, $border-light, $border-dark)
 
   .footer-links
@@ -413,7 +413,7 @@ input:checked + .slider
   */
 #scroll-top-link
   position: fixed
-  bottom: 2.3em
+  bottom: 4em
   right: 2.2em
   line-height: 0.4
   opacity: 0
@@ -713,9 +713,6 @@ input:checked + .slider
     &.default-image-layout
       +default-image-grid
 
-      // .project-image img
-      //   border-radius: $border-radius
-
       &.one-img img
         max-height: 22em
 
@@ -794,7 +791,6 @@ input:checked + .slider
 
 
         img
-          //border-radius: $border-radius
           overflow: hidden
           +image-box-shadow
 
@@ -820,18 +816,22 @@ input:checked + .slider
     padding: 0 0 0.8em 0
 
 .case-study-tiles
-  h2
-    padding-top: 2em
+  h4
+    padding-bottom: 0.5em
+    font-size: 1.1em
 
   .feature-case-study
     min-height: 200px
     display: grid
-    grid-column-gap: 1em
+    grid-column-gap: 1.5em
     grid-template-columns: 2fr 3fr
     position: relative
     border-radius: $border-radius
     +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
     +animated-gradient-border()
+
+    .info-section
+      padding-right: 1em
 
     &.disabled
       opacity: 0.5
@@ -1015,7 +1015,7 @@ input:checked + .slider
         +light-dark-color(background, $accent-light, $accent-dark)
         border: 1px solid
         +light-dark-color(border-color, $accent-light, $accent-dark)
-        color: $white
+        +light-dark-color(color, $white, $text-primary-light)
 
       .marker-label h4
         opacity: 1
