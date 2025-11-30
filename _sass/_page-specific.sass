@@ -131,9 +131,24 @@
 
     &.application-specific
 
+      .header
+        h1
+          +translate-scale-on-load(.2s)
+
+        h2
+          +translate-scale-on-load(.3s)
+
+      .sub-header
+        +translate-scale-on-load(.6s)
+
+      .case-study-tiles
+        +translate-scale-on-load(1.6s)
+
       .tag-label
+        opacity: 0
         margin: 0 auto 2em
         font-size: 0.9em
+        +translate-scale-on-load(1.3s)
 
         .highlight
           color: #2cbe3e
