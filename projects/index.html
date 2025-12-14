@@ -1,86 +1,84 @@
 ---
 layout: page
 id: projects-landing
-background-animation: true
+background-animation: false
 ---
 
 <main>
   <h1>Projects &amp; Roles</h1>
   <section class="case-study-tiles">
-    <div class="panel two-column two-row">
-      <a class="feature-case-study" href="/projects/knack.html">
+
+    <div class="filter-buttons">
+      <button class="filter-button active" data-filter="all">All</button>
+      <button class="filter-button" data-filter="work">Work Projects</button>
+      <button class="filter-button" data-filter="side">Side Projects</button>
+    </div>
+    <!--<div class="panel two-column two-row">-->
+    <div class="panel filter-panel masonry">
+      <a class="case-study knack" href="/projects/knack.html">
+        <div class="info-section">
+          <h2>Knack No-code Platform</h2>
+          <p>Designing a scalable no-code web application builder</p>
+        </div>
         <div class="feature-image knack"></div>
-        <div class="info-section">
-          <h4>Knack No-code Web Application</h4>
-          <p>Designing a no-code tool, including an AI-assisted builder, live app interface, scalable design systems
-          </p>
-          <span class="tag-label">Knack (Current Role)</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/vaayu.html">
+      <a class="case-study vaayu" href="/projects/vaayu.html">
+        <div class="info-section">
+          <h2>Vaayu CO2 Emissions Tools</h2>
+          <p>Designing dashboards to track CO2 emissions across product lifecycles</p>
+        </div>
         <div class="feature-image vaayu"></div>
-        <div class="info-section">
-          <h4>CO2 Emissions Tracking</h4>
-          <p>Designing dashboards and data visualisations to track emissions across product lifecycles</p>
-          <span class="tag-label">Vaayu</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/qa-platform.html">
+      <a class="case-study gat-design" href="/projects/qa-platform.html">
+        <div class="info-section">
+          <h2>QA SaaS Platform</h2>
+          <p>Designing a SaaS platform for crowdsourced QA testing</p>
+        </div>
         <div class="feature-image gat-design"></div>
-        <div class="info-section">
-          <h4>QA Testing SaaS Platform</h4>
-          <p>Designing a SaaS platform for crowd-sourced QA testing</p>
-          <span class="tag-label">Global App Testing</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/dashboard-design.html">
+      <a class="case-study dashboard" href="/projects/dashboard-design.html">
+        <div class="info-section">
+          <h2>KPMG Customer Voice Dashboards</h2>
+          <p>Designing and building customer experience dashboards to improve satisfaction metrics</p>
+        </div>
         <div class="feature-image dashboard"></div>
-        <div class="info-section">
-          <h4>KPMG Customer Voice Dashboards</h4>
-          <p>Designing and building customer-experience dashboards</p>
-          <span class="tag-label">KPMG</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/mealsup.html">
+      <a class="case-study mealsup" href="/projects/mealsup.html">
+        <div class="info-section">
+          <h2>MealsUp iOS App</h2>
+          <p>Co-creating an iOS app for meal planning</p>
+        </div>
         <div class="feature-image mealsup"></div>
-        <div class="info-section">
-          <h4>MealsUp iOS App</h4>
-          <p>Co-creating an iOS app for meal planning iOS app</p>
-          <span class="tag-label">Side Project</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/adventure-gen.html">
+      <a class="case-study adventure" href="/projects/adventure-gen.html">
+        <div class="info-section">
+          <h2>adventure.gen App</h2>
+          <p>Co-creating an interactive choose-your-own-adventure iOS game</p>
+        </div>
         <div class="feature-image adventure"></div>
-        <div class="info-section">
-          <h4>adventure.gen App</h4>
-          <p>Co-creating an AI-powered ‘choose your own adventure’ style game</p>
-          <span class="tag-label">Side Project</span>
-        </div>
       </a>
-      <a class="feature-case-study" href="/projects/dashboard-study.html">
+      <a class="case-study dashboard-case-study" href="/projects/dashboard-study.html">
+        <div class="info-section">
+          <h2>Insights Dashboard Case Study</h2>
+          <p>Visualizing customer insights data and retention metrics</p>
+        </div>
         <div class="feature-image dashboard-case-study"></div>
-        <div class="info-section">
-          <h4>Customer Insights Dashboard Case Study</h4>
-          <p>A customer insights dashboard to visualise customer satisfaction and retention</p>
-          <span class="tag-label">KPMG (Case Study)</span>
-        </div>
       </a>
-      <div class="feature-case-study disabled">
+      <a class="case-study other" href="/projects/other-projects.html">
+        <div class="info-section">
+          <h2>Other Creative Projects</h2>
+          <p>Some sketches and drawings</p>
+        </div>
+        <div class="feature-image other"></div>
+      </a>
+      <div class="case-study ux-course disabled">
+        <div class="info-section">
+          <h2>UX Diploma Coursework</h2>
+          <p>Coming Soon: UX Diploma Coursework</p>
+        </div>
         <div class="feature-image ux-course"></div>
-        <div class="info-section">
-          <h4>UX Diploma Coursework</h4>
-          <p>Coursework from my UX Design Diploma</p>
-          <span class="tag-label">Coming soon</span>
-        </div>
       </div>
-      <a class="feature-case-study" href="/projects/wedding.html">
-        <div class="feature-image wedding"></div>
-        <div class="info-section">
-          <h4>Responsive Website Case Study</h4>
-          <p>Building a responsive wedding website</p>
-          <span class="tag-label">Side Project</span>
-        </div>
-      </a>
+
     </div>
   </section>
 </main>

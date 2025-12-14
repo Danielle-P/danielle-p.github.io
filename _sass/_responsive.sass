@@ -52,9 +52,6 @@
 
   .user-stories
     grid-template-columns: repeat(2, 1fr)
-
-  #projects-landing .case-study-tiles .panel
-    grid-template-columns: repeat(2, 1fr)
   
   #projects .project-details .panel
     margin: 0 auto 2em
@@ -227,10 +224,29 @@
           opacity: 100%
 
   #projects-landing .case-study-tiles .panel
-    grid-template-columns: 1fr
+    grid-template-columns: repeat(2, 1fr)
+    gap: 1.4em
+    grid-auto-rows: auto
+
+    .case-study
+      grid-area: auto
+      width: 100%
+    
+    &#work 
+      .ux-course, .mealsup, .adventure, .other
+        display: none
+
+      .case-study
+        grid-area: auto
+
+    &#side
+      .knack, .gat-design, .vaayu, .dashboard, .dashboard-case-study
+        display: none
+
+      .case-study
+        grid-area: auto
 
   #projects
-
     .project-details
       padding-top: 6em
 
@@ -411,10 +427,10 @@
         max-width: 100%
 
       .case-study-tiles
-        width: 90%
+        width: 100%
         grid-auto-flow: row
         grid-template-columns: 1fr
-        grid-row-gap: 2em
+        grid-row-gap: 1em
         align-self: center
         align-items: center
         justify-items: center
@@ -446,17 +462,15 @@
     .card-grid, .image-section.three-col, .image-section.four-col
       grid-template-columns: 1fr
 
-  #featured, #projects-landing
-    .feature-case-study
+  #projects-landing .case-study-tiles
+    .masonry, .masonry#work, .masonry#side
       grid-template-columns: 1fr
+      gap: 1em
+      grid-auto-rows: auto
 
-      .info-section, .project-type
-        justify-content: center
-        text-align: center
-        padding: 1em 1em 2em
-
-      .feature-image
-        height: 200px
+      .case-study
+        grid-area: auto
+        width: 100%
 
   #projects
     main.project-details
@@ -526,3 +540,16 @@
 
       .contact-method
         padding: 1em
+
+
+
+// responsive adjustments
+@media (max-width: 700px)
+  .image-section.image-grid
+    column-width: 160px
+    column-gap: 0.9rem
+
+@media (max-width: 420px)
+  .image-section.image-grid
+    column-width: 100%
+    column-gap: 0.8rem

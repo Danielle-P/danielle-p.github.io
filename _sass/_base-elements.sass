@@ -3,40 +3,27 @@ html[data-theme="dark"]
 
 html[data-theme="light"]
   color-scheme: light
-  
+
 body
   font-family: $body-font
   font-size: 16px
   font-kerning: normal
-  background-attachment: fixed
-  +light-dark-color(color, $text-primary-light, $text-secondary-light)
-  +background-gradient
-
-
-body
-  color: var(--text-color)
   +light-dark-color(color, $text-primary-light, $text-secondary-light)
   +background-gradient
   background-attachment: fixed
-  
-  
-body
-  font-family: $body-font
-  font-size: 16px
-  font-kerning: normal
 
-  main
-    min-height: calc(100vh - 112px)
-    padding: 8em 0 0
-    margin: 0 auto
-    overflow-x: hidden
+main
+  min-height: calc(100vh - 112px)
+  padding: 8em 0 0
+  margin: 0 auto
+  overflow-x: hidden
 
-    ::selection,
-      +light-dark-color(background, $accent-dark, $accent-light)
-      +light-dark-color(color, $text-primary-light, $text-secondary-light)
+  ::selection,
+    +light-dark-color(background, $accent-dark, $accent-light)
+    +light-dark-color(color, $text-primary-light, $text-secondary-light)
 
-    ::-moz-selection
-      +light-dark-color(background, $accent-dark, $accent-light)
+  ::-moz-selection
+    +light-dark-color(background, $accent-dark, $accent-light)
 
 .page-content
   +page-content-width
@@ -56,7 +43,7 @@ p
 
   a
     text-transform: none
-    border-bottom: 1px dotted 
+    border-bottom: 1px dotted
     +light-dark-color(border-color, $accent-light, $accent-dark)
     +light-dark-color(color, $accent-light, $accent-dark)
 
@@ -69,7 +56,7 @@ a
 
   &:hover, &:active
     +light-dark-color(color, $accent-light, $accent-dark)
-    opacity: 0.8 
+    opacity: 0.8
     +transition-ease
 
 blockquote
@@ -111,7 +98,7 @@ main ul li::before
   animation-play-state: paused !important
 
 /**Button Styles
-  */
+ */
 button
   &:focus, &:focus-visible
     outline: none
@@ -130,7 +117,6 @@ button
   font-size: 1em
   +light-dark-color(background, $accent-light, $accent-dark)
   color: $white
-
 
   .label, .hide
     display: none
@@ -225,8 +211,69 @@ button
     +light-dark-color(color, $accent-light, $accent-dark)
     +light-dark-color(border-color, $accent-light, $accent-dark)
 
+/*Filters
+ **/
+.filter-buttons
+  display: flex
+  justify-content: center
+  gap: 0.5em
+  margin: 1.2em auto 3em
+
+  .filter-button
+    padding: 0.6em 1em
+    border: 1px solid transparent
+    background: transparent
+    font-size: 0.9em
+    cursor: pointer
+    border-radius: $border-radius
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+    +animated-gradient-border()
+
+    &.active
+      +light-dark-color(background, $accent-light, $accent-dark)
+      +light-dark-color(color, $white, $white)
+      border-color: transparent
+
+/*Tabs
+ **/
+.tab-section-heading
+  display: flex
+  flex-direction: column
+  text-align: center
+  margin-bottom: 1.7em
+  color: red
+
+  h2
+    +header-font-style
+    margin-bottom: 0
+    font-size: 1.3em
+  i
+    font-size: 2.2em
+
+.full-width-panel-highlight.tabs-container
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  text-align: center
+  padding-bottom: 2.5em
+
+  .tab
+    font-size: 1em
+    justify-content: center
+    cursor: pointer
+
+.tab-section
+  .tab-heading
+    margin: .7em 0 1.2em
+
+  .tab-content
+    display: none
+
+    &.show
+      display: block
+
 /**Navigation
-  */
+ */
 .nav-panel
   width: 100%
   height: 4em
@@ -234,48 +281,47 @@ button
   position: absolute
   top: 0
   align-items: center
-  padding: 1em 2.2em 0.5em 
+  padding: 1em 2.2em 0.5em
   +transition-ease(.3s)
   +image-box-shadow
   z-index: 4
 
-
 .nav-links, .tab
+  display: flex
+  flex-grow: 1
+  -webkit-flex-grow: 1
+  flex-direction: row
+  justify-content: flex-end
+  margin: 0
+  +nav-font-style
+  opacity: 1
+
+  a
     display: flex
-    flex-grow: 1
-    -webkit-flex-grow: 1
-    flex-direction: row
-    justify-content: flex-end
-    margin: 0
-    +nav-font-style
-    opacity: 1
+    align-items: center
+    text-align: center
+    margin: 0 1.6em
+    +light-dark-color(color, $text-primary-light, $text-primary-dark)
+    border-bottom: 1px dotted transparent
 
-    a
-      display: flex
-      align-items: center
-      text-align: center
-      margin: 0 1.6em
-      +light-dark-color(color, $text-primary-light, $text-primary-dark)
-      border-bottom: 1px dotted transparent
+    &:hover, &:active, &.selected
+      +text-gradient
+      border-bottom: 1px dotted
+      +light-dark-color(border-color, $accent-light, $accent-dark)
 
-      &:hover, &:active, &.selected
-        +text-gradient
-        border-bottom: 1px dotted
-        +light-dark-color(border-color, $accent-light, $accent-dark)
+    &.home
+      width: 24px
+      height: 24px
+      background: url('/../images/profile-photo-updated.jpg') no-repeat
+      background-size: contain
+      border-radius: 50%
+      border-bottom: none
+      margin-right: 0.5em
 
-      &.home
-        width: 24px
-        height: 24px
-        background: url('/../images/profile-photo-updated.jpg') no-repeat
-        background-size: contain
-        border-radius: 50%
-        border-bottom: none
-        margin-right: 0.5em
+      &:hover
+        +light-dark-color(color, none, none)
+        opacity: 0.8
 
-        &:hover
-          +light-dark-color(color, none, none)
-          opacity: 0.8
-    
     &.selected a
       +text-gradient
       border-bottom: 1px dotted
@@ -315,9 +361,8 @@ button
         letter-spacing: 0
         opacity: 0.8
 
-
 /**Footer
-  */
+ */
 footer
   height: 80px
   display: flex
@@ -395,22 +440,22 @@ input
     font-size: 14px
     content: '\ee81' // sun icon
     background: $white
-    color: $accent-light  
+    color: $accent-light
     +transition-ease
 
 input:checked + .slider
-    background-color: $accent-dark
-    border: 1px solid
-    +light-dark-color(border-color, $accent-light, $accent-dark)
+  background-color: $accent-dark
+  border: 1px solid
+  +light-dark-color(border-color, $accent-light, $accent-dark)
 
-    &::before
-      content: '\ef9e' // moon icon
-      padding-left: 4px
-      transform: translateX(24px)
-      background: $white
+  &::before
+    content: '\ef9e' // moon icon
+    padding-left: 4px
+    transform: translateX(24px)
+    background: $white
 
 /**Back to Top
-  */
+ */
 #scroll-top-link
   position: fixed
   bottom: 4em
@@ -446,7 +491,7 @@ input:checked + .slider
     transform: translateY(0)
 
 /**Modal
-  */
+ */
 #image-expand-modal
   width: 100%
   height: 100%
@@ -504,7 +549,7 @@ input:checked + .slider
     font-size: 1.5em
 
 /**Grids
-  */
+ */
 .card-grid, .user-stories, .user-task-map, .testimonials-grid
   display: grid
   margin: 2em 0 2.5em
@@ -545,7 +590,7 @@ input:checked + .slider
       margin: 0.4em 0
       padding: 0.15em 0 0 0.8em
       border-left: none
-      
+
       &:before
         position: absolute
         margin-left: -0.5em
@@ -613,8 +658,222 @@ input:checked + .slider
     &:first-of-type
       grid-column: 1 / 3
 
-/**Page Elements
-  */
+.panel .image-section.image-masonry-grid
+  column-width: 220px
+  column-gap: 1.2rem
+  display: block
+
+  .project-image
+    display: inline-block
+    width: 100%
+    margin: 0 0 1.2rem
+    break-inside: avoid
+    -webkit-column-break-inside: avoid
+    -moz-column-break-inside: avoid
+    vertical-align: top
+
+    img
+      display: block
+      width: 100%
+      height: auto
+      object-fit: cover
+      border-radius: $border-radius
+      +transition-ease
+
+/** Case Study Tiles / Masonry
+ */
+.case-study-tiles
+  h4
+    padding-bottom: 0.5em
+    font-size: 1.1em
+
+  .feature-case-study
+    min-height: 200px
+    display: grid
+    grid-column-gap: 1.5em
+    grid-template-columns: 2fr 3fr
+    position: relative
+    border-radius: $border-radius
+    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+    +animated-gradient-border()
+
+    .info-section
+      padding-right: 1em
+
+    &.disabled
+      opacity: 0.5
+      cursor: not-allowed
+
+    .feature-image
+      height: 100%
+      border-radius: $border-radius $border-radius 0 0
+
+  .feature-image
+    &.knack
+      background: url('/images/knack/page-editor.jpg') no-repeat
+      background-size: cover
+      background-position-y: top
+      background-position-x: left
+
+    &.vaayu
+      background: url('/images/vaayu/vaayu-home.jpg') no-repeat
+      background-size: cover
+      background-position-y: top
+      background-position-x: center
+
+    &.adventure
+      background: url('/images/adventure-gen/adventure-gen-composite.jpg') no-repeat
+      background-size: cover
+      background-position-y: top
+      background-position-x: left
+
+    &.gat-design
+      background: url('/images/qa-platform/future-iteration-example.png') no-repeat
+      background-size: cover
+      background-position-y: top
+      background-position-x: left
+
+    &.ux-course
+      background: url('/images/ux-course-journey-map.jpg') no-repeat center
+      background-size: cover
+      background-position-y: top
+
+    &.mealsup
+      background: url('/images/mealsup/mealsup-mockup-compilation.png') no-repeat center
+      background-size: cover
+
+    &.dashboard
+      background: url('/images/dashboard-design/airline-dashboard/scores-page.jpg') no-repeat
+      background-size: cover
+      background-position-y: top
+
+    &.dashboard-case-study
+      background: url('/images/dashboard-study/journey-mock-up.jpg') no-repeat center
+      background-size: cover
+      background-position-y: top
+
+    &.wedding
+      background: url('/images/wedding/design-process-4.jpg') no-repeat center
+      background-size: cover
+      background-position-y: top
+
+    &.other
+      background: url('/images/other/compilation.png') no-repeat left
+      background-size: cover
+      background-position-y: top
+
+.case-study-tiles .masonry
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(6, 1fr)
+  gap: 1.8em
+  max-height: 140vh
+
+  .case-study
+    display: flex
+    flex-direction: column
+    gap: 1em
+    padding: 1em 1.5em 1.5em
+    border-radius: $border-radius
+    will-change: transform, opacity
+    transition: transform .45s cubic-bezier(0.2,0.8,0.2,1), opacity .25s ease, filter .25s ease
+    backface-visibility: hidden
+    transform-origin: center center
+
+    .info-section
+      h2, p
+        +light-dark-color(color, $text-primary-dark, $text-primary-light)
+        text-align: center
+        padding-bottom: 0
+        margin: 0
+
+      p
+        opacity: 0.6
+        line-height: 1.3
+
+    .feature-image
+      border-radius: $border-radius
+      display: flex
+      flex: auto
+      min-height: 140px
+      //   background: url('/images/other/compilation.png') no-repeat center
+      //   background-size: cover
+      //   background-position-y: top
+    
+    //Masonry layout
+    &.knack
+      grid-area: 1 / 1 / span 3 / span 1
+      background: #585373
+
+    &.gat-design
+      grid-area: 4 / 1 / span 3 / span 1
+      background: #596f7f
+
+    &.ux-course
+      grid-area: 6 / 1 / span 1 / span 1
+      background: #47535e
+
+    &.vaayu
+      grid-area: 1 / 2 / span 2 / span 1
+      background: #345454
+
+    &.mealsup
+      grid-area: 3 / 2 / span 3 / span 1
+      background: #755774
+
+    &.adventure
+      grid-area: 6 / 2 / span 2 / span 1
+      background: #1f424b
+
+    &.dashboard
+      grid-area: 1 / 3 / span 3 / span 1
+      background: #32435e
+
+    &.dashboard-case-study
+      grid-area: 4 / 3 / span 3 / span 1
+      background: #844650
+
+    &.other
+      grid-area: 7 / 3 / span 1 / span 1
+      background: #47535e
+
+    &.ux-course
+      grid-area: 7 / 1 / span 1 / span 1
+      background: #47535e
+
+  &#work .case-study
+    &.knack
+      grid-area: 1 / 1 / span 4 / span 1
+
+    &.gat-design
+      grid-area: 3 / 2 / span 2 / span 1
+
+    &.dashboard-case-study
+      grid-area: 4 / 3 / span 1 / span 1
+
+    &.ux-course, &.mealsup, &.adventure, &.other
+      opacity: 0
+      height: 0
+
+  &#side .case-study    
+    &.knack, &.gat-design, &.vaayu, &.dashboard, &.dashboard-case-study
+      opacity: 0
+      height: 0
+
+    &.mealsup
+      grid-area: 1 / 1 / span 4 / span 1
+      
+    &.ux-course
+      grid-area: 3 / 3 / span 2 / span 1
+
+    &.adventure
+      grid-area: 1 / 2 / span 4 / span 1
+
+    &.other
+      grid-area: 1 / 3 / span 2 / span 1
+  
+/**Tags, Captions
+ */
 .team-members
   display: flex
   flex-direction: row
@@ -687,7 +946,7 @@ input:checked + .slider
 
     &.image-grid
       align-items: flex-start
-
+      
       &.two-col
         +default-image-grid ($columns: 2, $rows: 1)
 
@@ -789,7 +1048,6 @@ input:checked + .slider
           grid-column: $n / span 2
           grid-row: 1
 
-
         img
           overflow: hidden
           +image-box-shadow
@@ -815,80 +1073,6 @@ input:checked + .slider
   &.info-section p
     padding: 0 0 0.8em 0
 
-.case-study-tiles
-  h4
-    padding-bottom: 0.5em
-    font-size: 1.1em
-
-  .feature-case-study
-    min-height: 200px
-    display: grid
-    grid-column-gap: 1.5em
-    grid-template-columns: 2fr 3fr
-    position: relative
-    border-radius: $border-radius
-    +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
-    +animated-gradient-border()
-
-    .info-section
-      padding-right: 1em
-
-    &.disabled
-      opacity: 0.5
-      cursor: not-allowed
-
-    .feature-image
-      height: 100%
-      border-radius: $border-radius $border-radius 0 0
-
-      &.knack
-        background: url('/images/knack/page-editor.jpg') no-repeat
-        background-size: cover
-        background-position-y: top
-        background-position-x: left
-
-      &.vaayu
-        background: url('/images/vaayu/vaayu-home.jpg') no-repeat
-        background-size: cover
-        background-position-y: top
-        background-position-x: center
-
-      &.adventure
-        background: url('/images/adventure-gen/adventure-gen-composite.jpg') no-repeat
-        background-size: cover
-        background-position-y: top
-        background-position-x: left
-
-      &.gat-design
-        background: url('/images/GAT-results.jpg') no-repeat
-        background-size: cover
-        background-position-y: top
-        background-position-x: left
-
-      &.ux-course
-        background: url('/images/ux-course-journey-map.jpg') no-repeat center
-        background-size: cover
-        background-position-y: top
-
-      &.mealsup
-        background: url('/images/mealsup/mealsup-mockup-compilation-small.png') no-repeat center
-        background-size: cover
-
-      &.dashboard
-        background: url('/images/dashboard-design/airline-dashboard/scores-page.jpg') no-repeat
-        background-size: cover
-        background-position-y: top
-
-      &.dashboard-case-study
-        background: url('/images/dashboard-study/wireframe-stage3.jpg') no-repeat center
-        background-size: cover
-        background-position-y: -28px
-
-      &.wedding
-        background: url('/images/wedding/design-process-4.jpg') no-repeat center
-        background-size: cover
-        background-position-y: top
-
 .full-width-panel-highlight
   +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
   padding: 3em 0 0.5em 0
@@ -904,46 +1088,8 @@ input:checked + .slider
     margin: 0 auto 2em
     border-left: none
 
-/*Tabs
-  **/
-.tab-section-heading
-  display: flex
-  flex-direction: column
-  text-align: center
-  margin-bottom: 1.7em
-  color: red
-
-  h2
-    +header-font-style
-    margin-bottom: 0
-    font-size: 1.3em
-  i
-    font-size: 2.2em
-
-.full-width-panel-highlight.tabs-container
-  display: flex
-  flex-direction: row
-  justify-content: space-around
-  text-align: center
-  padding-bottom: 2.5em
-
-  .tab
-    font-size: 1em
-    justify-content: center
-    cursor: pointer
-
-.tab-section
-  .tab-heading
-    margin: .7em 0 1.2em
-  
-  .tab-content
-    display: none
-    
-    &.show
-      display: block
-
 /** Journey
-  */
+ */
 .journey
   display: flex
 
@@ -1079,7 +1225,6 @@ input:checked + .slider
     margin-bottom: 2.2em
     padding: 3em 0
 
-.slide-down-panel
   .panel-heading
     h3
       font-size: 0.8em
