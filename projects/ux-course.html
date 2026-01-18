@@ -23,13 +23,23 @@ lazy-animations: true
     </div>
 
     <div class="info-section">
-      <p>As part of my Professional Diploma in UX Design (UX Design Institute), I worked through a structured,
-        end-to-end process to
-        design a flight booking experience for a fictional airline, "Fly UX".</p>
-      <p>The project focused on applying
-        user-centred design methodology
-        rigorously: conducting usability research and creating empathy maps to designing detailed interaction flows
-        based on data.</p>
+      <p>As part of my Professional Diploma in UX Design at the UX Design Institute, I completed a comprehensive
+        research and design project
+        to design a flight booking flow from scratch for a fictional airline, "Fly UX".</p>
+      <p>The project focused on applying user-centered design methodology, from usability testing and empathy mapping to
+        designing interaction flows based on qualitative data analysis. This helped me to build a strong foundation in
+        evidence and research-based
+        design.</p>
+
+      <h3>Skills Demonstrated</h3>
+      <figcaption class="caption-container skills-list">
+        <span class="tag-label">User Research</span>
+        <span class="tag-label">Usability Testing</span>
+        <span class="tag-label">Competitor Analysis</span>
+        <span class="tag-label">Information Architecture Design</span>
+        <span class="tag-label">Wireframing</span>
+        <span class="tag-label">Interaction and UX Design</span>
+      </figcaption>
     </div>
   </section>
 
@@ -37,25 +47,32 @@ lazy-animations: true
     <div class="panel">
       <div class="info-section">
         <h2>Research & Analysis</h2>
-        <p>I conducted a series of research activities to inform my design process, including:</p>
-        <div class="user-stories">
-          <div class="user-group">
+        <p>As the first step in this projecct, I conducted a series of research activities to inform my design process,
+          including:</p>
+        <div class="card-grid">
+          <div class="item">
             <div class="row">
-              <h3>Competitive benchmarking</h3>
+              <h3>Competitor Analysis</h3>
               <p>Analysed flight booking flows from multiple airlines to understand common patterns</p>
               <p>Identified best practices and opportunities for improvement</p>
             </div>
           </div>
-
-          <div class="user-group">
+          <div class="item">
             <div class="row">
               <h3>Usability testing</h3>
-              <p>Led moderated usability tests with 2 users booking flights on competitor sites</p>
+              <p>Led moderated usability tests with users booking flights on competitor sites</p>
               <p>Observed where they struggled, what they expected, and where friction occurred</p>
             </div>
           </div>
-
-          <div class="user-group">
+          <div class="item">
+            <div class="row">
+              <h3>Empathy Map</h3>
+              <p>Created an empathy map from qualitative user data showing user goals.</p>
+              <p>Visualised behaviours, context, and pain
+                points at critical points across the journey.</p>
+            </div>
+          </div>
+          <div class="item">
             <div class="row">
               <h3>Affinity mapping</h3>
               <p>Grouped research findings into themes and patterns using affinity diagrams in Miro</p>
@@ -64,40 +81,233 @@ lazy-animations: true
                 usability issues and organised them by journey stage</p>
             </div>
           </div>
-
-          <div class="user-group">
-            <div class="row">
-              <h3>Empathy Map</h3>
-              <p>Collected qualitative data from user interviews and usability tests</p>
-              <p>Created an empathy map showing user goals, behaviours, context, and pain
-                points across the journey to visualise what users were thinking and feeling at critical moments.
-              </p>
-            </div>
-          </div>
-
         </div>
-        <p>The research revealed several recurring problems: users found fare comparison tables confusing, baggage
-          selection processes were unclear, and there was too much cognitive load at checkout. These insights became the
-          foundation for my design decisions.</p>
       </div>
     </div>
   </div>
 
-  <div class="panel two-column">
-    <div class="image-section image-intersect default-image-layout two-img">
-      <div class="project-image">
-        <img class="lazy" data-src="/images/ux-course/affinity-map-final.png" />
+  <!-- <div class="panel">
+    <h2>Key Findings</h2>
+    <p>The research revealed several recurring problems: baggage
+      selection processes were unclear, and there was too much cognitive load at checkout. These insights became the
+      focus of my designs and informed design decisions when defining the user flows and designing the UI later in the
+      project.</p>
+    <div class="card-grid">
+      <div class="item">
+        <div class="row">
+          <h5>Fare selection confusion</h5>
+          <p>Users struggled to understand what was included in different fare types and found fare comparison
+            tables confusing, often with hidden costs and options which eroded trust.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Create a clear, transparent comparison table with visual indicators for included features and no hidden
+            options.</p>
+        </div>
       </div>
-      <div class="project-image">
+
+      <div class="item">
+        <div class="row">
+          <h5>Hidden costs frustration</h5>
+          <p>Price increases at later stages (baggage, seat selection) caused frustration and abandonment. Users
+            wanted transparency upfront.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Introduce a persistent basket showing total price that updates in real-time.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h5>Complex baggage options</h5>
+          <p>Users found baggage selection overwhelming, with too many options presented in a dense table format.
+            Many
+            missed the option entirely or chose incorrectly.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Simplify table to clear radio button options with visual weight indicators</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h5>Progress uncertainty</h5>
+          <p>Users weren't sure how many steps remained in the booking process or whether they could go back and
+            change selections without losing progress.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Add a clear progress indicator showing all steps and current position. Keep the number of steps to a
+            minimum, and ensure they are grouped in a way that matches users' mental models.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-section image-grid wireframes two-col">
+      <div class="project-image image-intersect">
         <img class="lazy" data-src="/images/ux-course/journey-map.jpg" />
       </div>
+      <div class="project-image image-intersect">
+        <img class="lazy" data-src="/images/ux-course/affinity-map-final.png" />
+      </div>
     </div>
-    <div class="info-section">
-      <h2>Key Findings</h2>
-      <p>I conducted a series of research activities to inform my design process, including:</p>
+  </div> -->
+
+  <div class="panel">
+    <h2>Key Findings</h2>
+    <p>The research revealed several recurring problems. These insights became the
+      focus of my designs and informed design decisions when defining the user flows and designing the UI later in the
+      project.</p>
+    <div class="card-grid">
+      <div class="item">
+        <div class="row">
+          <h5>Fare selection confusion</h5>
+          <p>Users couldn't easily and confidently choose the fare type to match their requirements.</p>
+          <p>Unclear naming and descriptions of fares erode trust in the booking process.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Clear comparison table with visual indicators for what's included.</p>
+          <p>Transparent options with clear descriptions and pricing.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h5>Hidden costs frustration</h5>
+          <p>Users were surprised by price increases for baggage and seats, which caused abandonment or restarting
+            the process from scratch.</p>
+          <p>Users expected transparency.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Persistent basket showing real-time total price breakdown.</p>
+          <p>Improved information hierarchy for selections which incur additional costs.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h5>Complex baggage options</h5>
+          <p>Lack of clarity and flexibility around baggage selections especially for journeys with multiple passengers.
+          </p>
+          <p>Many users found it easy to make incorrect selections.</p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Simple stepper controls with clear weight limits and pricing. </p>
+          <p>Clear options around selections for multiple passengers or differing requirements per journey leg.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="row">
+          <h5>Progress uncertainty</h5>
+          <p>Users couldn't tell how many steps remained. </p>
+          <p>There was uncertainty and a lack of trust in the system re: whether it was possible to go back and edit
+            without losing progress.
+          </p>
+        </div>
+        <div class="row">
+          <h3>Design response</h3>
+          <p>Progress indicator showing all steps, current position, and completed stages (even when navigating back).
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-section image-grid wireframes two-col">
+      <div class="project-image image-intersect">
+        <img class="lazy" data-src="/images/ux-course/journey-map.jpg" />
+      </div>
+      <div class="project-image image-intersect">
+        <img class="lazy" data-src="/images/ux-course/affinity-map-final.png" />
+      </div>
     </div>
   </div>
 
+  <div class="full-width-panel-highlight">
+    <div class="panel">
+      <div class="info-section">
+        <h2>Design</h2>
+        <h3>Flow Diagram</h3>
+        <p>I started by mapping the entire user flow from search to confirmation, documenting decision points and
+          error states to identify potential points of friction and edge cases early.</p>
+      </div>
+      <div class="image-section">
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/ux-course/user-flow.png" />
+        </div>
+      </div>
+      <div class="info-section">
+        <h3>Wireframes & Testing</h3>
+        <p>I created low-fidelity wireframes focusing on the information hierarchy and tested them with users before
+          moving onto higher-fidelity designs. Based on user interviews, I prioritised clarity over minimalism, showing
+          all necessary
+          information upfront at key points rather than hiding it.</p>
+
+        <h3>Key Design Solutions</h3>
+        <ul>
+          <li>Real-time price transparency: a persistent basket that updates immediately as users make selections. The
+            total price is always visible and is broken down by category (flights, baggage, seats), so there are no
+            surprises at checkout. Transparent pricing throughout lets users make informed decisions and feel in
+            control.</li>
+          <li>Simplified fare comparison: a three-column comparison table with checkmarks showing what's included at
+            each tier. The visual hierarchy makes the most popular fare obvious while allowing easy comparison. Users
+            can scan quickly to understand fare differences without reading dense text, reducing cognitive load.</li>
+          <li>Clear progress indication: a stepped progress indicator showing all stages with the current step
+            highlighted and completed steps checked allows users to quickly see where they are and what's left.</li>
+          <li>Intuitive baggage selection: a simple per-passenger stepper instead of complex tables. Users can select
+            the number of bags with weight limits and costs shown clearly (with the basket updating in real-time). The
+            stepper pattern is familiar and immediately understandable.</li>
+        </ul>
+        <h3>Higher-Fidelity Design</h3>
+        <p>Once the basic structure was validated, I created higher-fidelity mockups following established booking
+          patterns whilst implementing improvements that came out of my research. As feedback indicated a large amount
+          of information,
+          whilst necessary for transparency, could be overwhelming, I focused on visual hierarchy to make primary
+          actions
+          obvious.</p>
+      </div>
+
+      <div class="image-section image-grid wireframes three-col">
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/ux-course/wireframe-results-full-list.png" />
+        </div>
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/ux-course/wireframe-fare-selection.png" />
+        </div>
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/ux-course/wireframe-baggage.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel">
+    <h2>Key Learnings</h2>
+    <p>Through this project I gained more experience in conducting a structured research process, and saw how spending
+      time analysing and processing the research data before jumping into wireframes (and instead of conducting these
+      two tasks side-by-side), can lead to a more effcicient design process and save time in the long-term.</p>
+
+    <p>Watching real users interact with booking flows was eye-opening and revealed behaviours I hadn't anticipated, for
+      example skipping over
+      selections or information I thought was obvious. This highlighted to me the importance of continually testing
+      designs, as that what is obvious to the designer (especially in the middle of the project when they are deeply
+      familiar with all the options being presented) may be
+      completely missed by users, especially when they are focused on completing a task quickly.</p>
+    <p>Flight booking is complex, potentially with multiple passengers, different fare types, add-ons, payment options
+      etc. Good
+      UX doesn't eliminate this complexity, but it presents information and options in a way that is predictable and
+      digestible. A large part of the design challenge for this project involved ensuring the information was visible
+      enough, with enough options to give the required flexibility, but without overwhelming the user. My research
+      showed that users expect certain patterns in flight booking, and this can help with reducing cognitive load by
+      leveraging familiar mental models.</p>
+  </div>
 
 </main>
 

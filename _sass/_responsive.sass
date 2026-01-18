@@ -50,7 +50,7 @@
     .image-section
       margin-bottom: 2em
 
-  .user-stories
+  .card-grid
     grid-template-columns: repeat(2, 1fr)
   
   #projects .project-details .panel
@@ -117,7 +117,7 @@
         +light-dark-color(color, $white, $accent-light)
 
         &:hover
-        +light-dark-color(color, $white, $accent-light)
+          +light-dark-color(color, $white, $accent-light)
 
       i
         font-size: 1.5em
@@ -322,10 +322,10 @@
         span:nth-of-type(2)
           display: none
 
-  .user-stories, .user-task-map
+  .card-grid, .user-task-map
     grid-template-columns: 1fr
 
-  .user-task-map .headings-col
+  .user-task-map .headings-col  
     display: none
 
   .journey
@@ -398,9 +398,6 @@
     .modal-close
       top: 1.5em
       right: calc(50% - 16px)
-
-  .slide-down-panel
-    //padding: 1.3em 0
 
   .full-width-panel-highlight
     padding-top: 1.5em
@@ -553,3 +550,4 @@
   .image-section.image-grid
     column-width: 100%
     column-gap: 0.8rem
+    grid-template-columns: 1fr !important
