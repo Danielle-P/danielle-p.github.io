@@ -1,0 +1,14 @@
+# Query: dparkinson2@hotmail.co.uk
+# ContextLines: 1
+
+2 results - 2 files
+
+_layouts/page.html:
+  42            <div class="footer-links">
+  43:             <a href="mailto:hi@danielleparkinson.me" target="_blank"><i class="far fa-envelope"></i></a>
+  44              <a href="https://www.linkedin.com/in/parkinsondanielle/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+contact/index.html:
+  17        <div class="card-grid">
+  18:             <a class="item slide-in" href="mailto:hi@danielleparkinson.me">
+  19                    <h3>Email</h3>
