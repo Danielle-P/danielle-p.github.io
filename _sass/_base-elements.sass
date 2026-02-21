@@ -1111,7 +1111,7 @@ input:checked + .slider
 
     @for $n from 1 through 8
       &.visible:nth-of-type(#{$n})
-        +journey-line-animation-desktop(#{($n - 1) * 0.6}s)
+        +journey-line-animation-desktop(#{($n - 1) * 0.5}s)
 
         &:last-of-type::after
           display: none
@@ -1259,13 +1259,13 @@ input:checked + .slider
 
       .panel-heading
         h2
-          +slide-down(2.4s)
+          +slide-down(3s)
 
         h3
-          +slide-down(2.6s)
+          +slide-down(3.2s)
 
         figcaption
-          +slide-down(2.8s)
+          +slide-down(3.4s)
 
       .slide-in
-        +slide-down(3s)
+        +slide-down(3.6s)

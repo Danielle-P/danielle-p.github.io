@@ -41,41 +41,45 @@
       align-items: center
       flex-direction: column
       padding: 7% 0 4%
-      margin-top: 12%
+      margin-top: 10%
       text-align: center
 
       .header
         h1
-          font-size: 3.2em
+          font-size: 3.4em
           font-weight: 600
           margin-bottom: 0.1em
           opacity: 0
           +translate-scale-on-load(.2s)
 
-        .tags
-          display: flex
-          flex-direction: row
-          margin: 1em auto 1.6em
+      .tags
+        display: flex
+        flex-direction: row
+        justify-content: center
+        margin: 1em auto 1.6em
 
-          .tag-label
-            opacity: 0
-            +translate-scale-on-load(.3s)
-        
+        .tag-label
+          opacity: 0
+          +translate-scale-on-load(.6s)
 
       .sub-header
-        max-width: 880px
+        max-width: 700px
+        padding-top: 1.2em
         font-size: 1.1em
         opacity: 0
-        +translate-scale-on-load(.6s)
+        +translate-scale-on-load(.4s)
         p
           text-align: center
+
+  .case-study-section
+    margin-bottom: 2%
 
     .case-study-tiles
       display: grid
       grid-auto-flow: column
       grid-template-columns: repeat(5, 1fr)
       grid-column-gap: 1.2em
-      margin-bottom: 6%
+      margin-bottom: 2%
       opacity: 0
       +translate-scale-on-load(1.3s)
 
@@ -136,30 +140,12 @@
           opacity: 1
           +transition-ease
 
-    &.application-specific
-
-      .header
-        h1
-          +translate-scale-on-load(.2s)
-
-      .sub-header
-        +translate-scale-on-load(.6s)
-
-      .case-study-tiles
-        width: 100%
-        +translate-scale-on-load(1.6s)
-
-      .tag-label
-        opacity: 0
-        margin: 0 auto 2em
-        font-size: 0.9em
-        text-align: center
-        background: none
-        +translate-scale-on-load(1.3s)
-
-        .highlight
-          color: #2cbe3e
-          text-shadow: 0 0 2px rgba(255,255,255, 0.8)
+    figcaption
+      opacity: 0
+      font-size: 0.9em
+      text-align: center
+      +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
+      +translate-scale-on-load(1.4s)
 
       h1
         margin-top: 0.5em
@@ -265,12 +251,14 @@
   .resume-link
     justify-self: center
     align-self: center
+    opacity: 0
+    +slide-down($delay: 3s)
 
   .open-resume
     display: none
 
   .journey
-    margin: 6em 0.6em 6em 0
+    margin: 2em 0.6em 3em 0
 
   .full-width-panel-highlight
     padding-bottom: 4em
