@@ -8,7 +8,7 @@ lazy-animations: true
 <main class="project-details knack">
   <h1>Knack No-code Web Application</h1>
   <figcaption class="caption-container heading">
-    <span class="tag-label"><i class="icofont-building-alt"></i>&nbsp;Senior Product Designer, Knack</span>
+    <span class="tag-label"><i class="icofont-building-alt"></i>&nbsp;Senior Designer, Knack</span>
     <span class="tag-label"><i class="icofont-location-pin"></i>&nbsp;Remote from Barcelona</span>
   </figcaption>
 
@@ -23,29 +23,250 @@ lazy-animations: true
     </div>
 
     <div class="info-section">
-      <p>I'm currently a Senior Product Designer At Knack, a no-code platform that helps users build custom web
-        applications. I work with a small team of 2 product managers to design our builder-side and
-        end-user experiences.
-      <p>I am responsible for the end-to-end design across the three main areas of the platform:</p>
+      <p>I'm currently the sole Designer at Knack, a no-code app building tool which helps its user base of over 110,000
+        businesses and independent
+        creators build and manage custom web
+        applications without writing code.</p>
+      <p>In my role, I have full responsibility for designing the entire
+        Knack ecosystem, including growing and maintaining our
+        design system and working with product managers to design and test new features.</p>
+      <p>This includes the UI design for two main parts of platform, which have very different needs:
       <ul>
-        <li>Builder interface to set up and manage data, user roles, rules, flows</li>
-        <li>Page Editor where users build the experience for their end users</li>
-        <li>Live App interface, where the end-users can access the application</li>
+        <li>the Builder interface, where customers set up and manage their data structures, configure the app's pages,
+          rules and permissions</li>
+        <li>the Live App interface, where the end-users can access the application</li>
       </ul>
+      </p>
     </div>
   </section>
 
   <div class="full-width-panel-highlight">
     <div class="panel">
-      <p>My recent projects have included co-leading the redesign of the
-        entire platform. This included supporting my designer colleague on restructuring and rebuilding the UI of the
-        Builder interface, whilst leading on the redesign of the Live App side.</p>
-      <p>As part of this I have maintained and expanded upon an existing design system, and scaled it to
-        accommodate multiple themes, presets and elements for our customers' Live Apps.</p>
+      <h2>Redesign Project</h2>
+      <p>After years of incremental updates on top of a legacy codebase, the platform had accumulated significant visual
+        inconsistencies
+        and structural debt. The Builder interface had become cluttered and difficult to navigate, and the Live App's
+        components were outdated and lacked the visual consistency and flexibility that
+        customers needed. I worked with a small team of 2 product managers and 1 other designer/contractor to re-design
+        both the
+        Builder and Live App interfaces.</p>
+      <p>In my role as Senior Designer, I made improvements to our existing design system, and scaled it to
+        accommodate multiple themes, additional components, presets and elements for our customers' Live Apps. Full
+        details of other projects I have worked on at Knack are
+        confidential, but I have outlined some parts of this redesign project below as these are now live.</p>
+      <h3>Team</h3>
+      <div class="team-members">
+        <span class="tag-label">2 Designers</span>
+        <span class="tag-label">2 Product Managers</span>
+        <span class="tag-label">1 Tech Lead</span>
+        <span class="tag-label">5-7 Engineers</span>
+      </div>
+    </div>
+  </div>
 
-      <p>Full details of what I have worked on at Knack are
-        confidential, but for more information about my role here please <a href="/contact/index.html">get in
-          touch.</a></p>
+
+  <div class="panel">
+    <h2>Main UI Challenges</h2>
+    <p>The redesign had two main interconnected design/UI challenges. There were also significant technical limitations
+      throughout the project - we worked closely with engineers throughout all design phases to ensure we were designing
+      our components and the new UI in a way that was technically feasible.</p>
+
+    <div class="card-grid">
+      <div class="item">
+        <div class="row">
+          <h3>The Builder interface itself</h3>
+          <p>The Builder contains a large amount of information, settings and controls (page tree, section and element
+            editors, settings panels) all within a single
+            view. We had received feedback that this interface was overwhelming, with a steep learning curve before
+            customers could start building their apps.</p>
+          <p>In the legacy UI there was no clear hierarchy to guide customers,
+            orient them in the system, or help them understand what they were editing.</p>
+          <p>Settings panels had grown organically over time, which had resulted in a lot of visual inconsistency,
+            confusing layouts and cognitive overload.</p>
+          <p>The main UI
+            challenge here was to distil a highly complex system into a coherent interface that felt manageable
+            and clear.</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="row">
+          <h3>Modernising and improving Live App components</h3>
+          <p>For example, our data visualisation components in particular were very limited and outdated</p>
+          <p>Migrating from Highcharts to Recharts meant we had the opportunity
+            to redesign default visual behaviours and chart colour systems.</p>
+          <p>The
+            complicating factor here was that Knack allows customers to set their own themes, which
+            means
+            chart
+            colours need to work across a range of possible brand contexts.</p>
+          <p>We needed to design a system that produced
+            good results across various brand contexts and custom themes, whilst remaining accessible and consistent.
+          </p>
+        </div>
+      </div>
+    </div>
+    </p>
+  </div>
+
+  <div class="full-width-panel-highlight">
+    <div class="panel">
+      <h2>1. Enhancing Visual Clarity in the Builder Interface</h2>
+      <p>To address the problems we had heard from customers about the Builder interface (namely that it was
+        overwhelming, had a steep learning curve and was hard to navigate), we reviewed every control and setting that
+        existed in the Builder and simplified, reorganised and merged any
+        that we could without impacting legacy apps. We conducted heuristic evaluations as we worked through the various
+        parts of the Builder, and periodically tested new UI designs with existing customers to ensure we were on track.
+      </p>
+      <p>The core principles we adhered to throughout the Builder redesign were:
+      <ul>
+        <li>Reducing visual noise without compromising functionality.</li>
+        <li>Creating clear visual hierarchies and structures.</li>
+        <li>Ensuring consistency in both layout and interaction patterns.</li>
+      </ul>
+
+    </div>
+    <div class="panel two-column">
+      <div>
+        <h3>Page Tree Redesign</h3>
+        <p>The page tree redesign was a core focus area for me, and a key example of a large and overwhelming amount of
+          information being shown at once. The legacy design showed all pages in a single-background
+          cascade, which became unreadable at scale (many Knack apps have a large number of pages with complex nesting).
+          I
+          redesigned the hierarchy to be visually distinct at each level, with clear affordances for expanding and
+          collapsing groups, and also to show restricted vs public pages. I tested multiple iterations of this with
+          customers,
+          focusing specifically on whether they
+          could locate pages quickly and understand their app's structure at a glance.</p>
+      </div>
+      <div class="image-section overlap two-img">
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/knack/page-tree-specs.png" />
+        </div>
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/knack/example-page-tree.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Settings Panels</h3>
+      <p>Previously, different element types had panels that were
+        structured differently from one other depending. This added
+        unnecessary complexity (including in terms of maintaining the codebase) and contributed to the steep learning
+        curve and cognitive load we heard in customer feedback. I redesigned the settings panels and also the section
+        and element preview to make the relationship between sections and the
+        elements within them visually obvious.
+      </p>
+
+      <p>In this part of the redesign, I focused on three areas:</p>
+      <ul>
+        <li>Logically grouping settings and ensuring clear visual separation between
+          them so the content was easy to parse
+        <li>
+        <li>Creating a consistent layout pattern to ensure each panel behaved predictably regardless of which element or
+          section was selected.</li>
+        <li>Implementing a breadcrumb pattern to better orient customers within the settings and show exactly what
+          they were editing</li>
+        <li>Ensuring the preview clearly communicated the page structure so that builders
+          could easily understand and edit the relevant settings.</li>
+      </ul>
+
+      <div class="panel screenshots-section">
+        <div class="image-section">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/element-settings-panels.png" />
+          </div>
+        </div>
+      </div>
+      <div class="panel screenshots-section">
+
+        <div class="image-section image-grid">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/example-settings-panel.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>2. Designing a Color System for Data Visualisations</h2>
+    <p>
+      One of the main problems we identified with our legacy Live App components existed within the Reports element,
+      where customers can set up various data visualisations. This element in particular lacked the flexibility
+      customers needed and was also visually outdated and based on a single color chart color scheme. To give us more
+      options in terms of chart settings, flexibility
+      and
+      customisations, we moved from Highcharts to Recharts and this provided an opporunty to redesign our chart styling
+      options. I took responsiblity for the redesign of this area, both in the Builder settings and the Live App
+      elements. This included creating a new, consistent color system which could be used across all data
+      visualisations. Customers are able to set their own app-level theme based on a set of preset options we provide,
+      or via a custom option - this made desiging chart color palettes one of the more complex UI problems in the
+      redesign as they needed to work
+      across customer-set
+      themes, as well as for light and dark modes.</p>
+
+    <p>Rather than choosing a single default colour palette, I designed sets of presets and rules
+      that could produce visually coherent, accessible charts across any theme a customer might select for their app. A
+      key
+      design decision came from considering the different chart data sets. Data series that are related to
+      each other (e.g., different segments of the same category) are better represented with monochromatic
+      or analogous colours, which signal that the data points belong together. Whilst data sets which are not related to
+      each other require high contrast and visually distinct colours. I designed a pattern of both analogous and high
+      contrast chart color presets which would match the general theme color that the customer had selected for their
+      app. This meant the charts would visually match the customer's own theme colour and
+      feel on-brand without
+      requiring manual configuration.</p>
+    <p>I checked every chart color palette against W3C accessibility contrast requirements for both
+      light and dark themes to ensure legibility regardless of what theme colours a customer selected.</p>
+    <p>This worked for the majority of use cases, as most customers would be using the general preset theme colors we
+      offered. However, as part of the Live App redesign we had also decided to offer a fully custom theme, where the
+      user could create a theme based on an entirely custom primary theme color. For these
+      entirely
+      custom themes, the chart color palettes would need adapting to match the customer's custom theme. We created
+      formulas to adjust the luminosity and saturation values of the base chart preset colours to match the custom
+      primary color set and
+      ensure, as far as possible, a similar contrast level and perceptual weight.</p>
+    <p>The next step is to allow customers to easily select a color for specific series (this is based on feedback we
+      have received after we released the chart color system). For example, a customer may always was Series B to be
+      blue, across all charts. This can currently be achieved by setting chart-level display rules to set the color of
+      specific series, however there is a need to set this at an app level to ensure consistency across all chart in the
+      app, and to make this configuration easier.</p>
+    </p>
+    <div class="screenshots-section">
+      <div class="image-section image-grid three-col">
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/knack/chart-color-specs-analogous.png" />
+        </div>
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/knack/chart-color-specs-high-contrast.png" />
+        </div>
+        <div class="project-image image-intersect">
+          <img class="lazy" data-src="/images/knack/chart-example.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="full-width-panel-highlight">
+    <div class="panel">
+      <h2>Outcome</h2>
+      <p>
+        Since the redesign launched, Knack has seen a 3.5% increase in trial conversion. While this reflects the
+        impact of
+        the full redesign alongside other improvements and features which have since been added, the builder interface
+        and data visualisation improvements
+        were
+        important to the updated experience because the clearer, more visually coherent builder is what
+        potential
+        customers interact with during their trial period.
+        The component and design system work from this project also now forms the foundation for all ongoing UI
+        development, with consistent patterns and documented standards that allow new features to be designed and
+        shipped
+        more
+        efficiently.
+      </p>
     </div>
   </div>
 
