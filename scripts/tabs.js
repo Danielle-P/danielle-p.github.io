@@ -33,6 +33,30 @@
     })
   })
 
+  const projectFilterButtons = getElements('project-filter-buttons')[0]
+
+  if (projectFilterButtons) {
+    const filterButtons = Array.from(projectFilterButtons.querySelectorAll('.filter-button'))
+    const filterContents = getElements('tab-content')
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((filterButton) => filterButton.classList.remove('active'))
+        button.classList.add('active')
+
+        const filter = button.getAttribute('data-filter')
+        filterContents.forEach((content) => {
+          const isVisible = filter === 'all' || content.getAttribute('data-filter-content') === filter
+          content.classList.toggle('show', isVisible)
+
+          if (isVisible && filter !== 'all') {
+            content.scrollIntoView({behavior: 'smooth', block: 'start'})
+          }
+        })
+      })
+    })
+  }
+
 
   nextTabLinks.forEach((link) => {
 

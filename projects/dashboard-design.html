@@ -27,20 +27,14 @@ lazy-animations: true
       the branding has been anonymised).</p>
   </section>
 
-  <div class="full-width-panel-highlight tabs-container">
-    <div class="tab selected">
-      <a class="tab-link-airline">Insights Dashboard</a>
-    </div>
-    <div class="tab">
-      <a class="tab-link-reports">Reporting Feature</a>
-    </div>
-    <div class="tab">
-      <a class="tab-link-banking">Analytics Dashboard</a>
-    </div>
+  <div class="filter-buttons project-filter-buttons">
+    <button class="filter-button active" data-filter="airline">Insights Dashboard</button>
+    <button class="filter-button" data-filter="reports">Reporting Feature</button>
+    <button class="filter-button" data-filter="banking">Analytics Dashboard</button>
   </div>
 
   <div class="tab-section">
-    <div class="tab-content tab-link-airline show" id="airline-design">
+    <div class="tab-content show" data-filter-content="airline" id="airline-design">
 
       <div class="full-width-panel-highlight">
         <div class="panel two-column intro-text-callout">
@@ -63,7 +57,7 @@ lazy-animations: true
               high-level snapshot of their team's performance.</p>
             <p>We designed and built a new dashboard from scratch, focusing on addressing the differing needs of each
               user group.</p>
-            <h2>Team</h2>
+            <h3>Team</h3>
             <div class="team-members">
               <span class="tag-label">1 UX/UI Designer</span>
               <span class="tag-label">2 Data Experts</span>
@@ -337,7 +331,7 @@ lazy-animations: true
       </div>
     </div>
 
-    <div class="tab-content tab-link-reports" id="reports-design">
+    <div class="tab-content" data-filter-content="reports" id="reports-design">
 
       <div class="full-width-panel-highlight">
         <div class="panel two-column intro-text-callout">
@@ -654,7 +648,7 @@ lazy-animations: true
       </div>
     </div>
 
-    <div class="tab-content tab-link-banking" id="banking-design">
+    <div class="tab-content" data-filter-content="banking" id="banking-design">
 
       <div class="full-width-panel-highlight">
 

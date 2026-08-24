@@ -1,0 +1,203 @@
+/* Asterisk · Outside Nav — shared stylesheet.
+   Canonical home for the navbar + left icon rail that wraps the Builder.
+   Used both by the standalone /ui_kits/outside-nav doc page and by the
+   Builder UI Kit (which composes the rest of the builder around it).
+
+   Geometry comes straight from Figma /Outside-Nav:
+     • Navbar  : 56px tall, white surface, hairline bottom border
+     • Rail    : 56px wide, white surface, hairline right border
+     • Nav btn : 56×56 outer hit target with 44×44 inner pill, 24px icon
+     • Avatar  : 32×32 brand-gradient tile, bottom-left corner
+*/
+
+/* ---------------------------------- Icon filters
+   The icon set ships as black-fill SVGs; these filter recipes recolor them
+   to design-token colors. */
+:root {
+  /* gray-550 #7b7079 — resting nav icons */
+  --ico-filter-rest: brightness(0) saturate(100%) invert(50%) sepia(7%) saturate(286%) hue-rotate(266deg) brightness(89%) contrast(85%);
+  /* brand-500 #982a86 — hover + selected nav icons */
+  --ico-filter-brand: brightness(0) saturate(100%) invert(20%) sepia(72%) saturate(2962%) hue-rotate(295deg) brightness(85%) contrast(98%);
+  /* white */
+  --ico-filter-white: brightness(0) invert(1);
+  /* gray-700 — secondary button icons */
+  --ico-filter-700: brightness(0) saturate(100%) invert(31%) sepia(5%) saturate(396%) hue-rotate(266deg) brightness(95%) contrast(85%);
+}
+
+/* ============================================================ Nav icon button
+   Property 1=Resting / Hover / Selected. */
+.on-nav-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  padding: 6px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.on-nav-btn-inner {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 120ms ease;
+}
+.on-nav-btn-inner img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+/* Resting */
+.on-nav-btn .on-nav-btn-inner img { filter: var(--ico-filter-rest); }
+/* Hover */
+.on-nav-btn:hover .on-nav-btn-inner,
+.on-nav-btn[data-hover] .on-nav-btn-inner {
+  background: var(--brand-50, #fbeff9);
+}
+.on-nav-btn:hover .on-nav-btn-inner img,
+.on-nav-btn[data-hover] .on-nav-btn-inner img {
+  filter: var(--ico-filter-brand);
+}
+/* Selected */
+.on-nav-btn[aria-current="page"] .on-nav-btn-inner,
+.on-nav-btn[data-selected] .on-nav-btn-inner {
+  background: var(--brand-100, #e7c8e2);
+}
+.on-nav-btn[aria-current="page"] .on-nav-btn-inner img,
+.on-nav-btn[data-selected] .on-nav-btn-inner img {
+  filter: var(--ico-filter-brand);
+}
+
+/* ============================================================ Navbar */
+.on-navbar {
+  height: 56px;
+  background: #fff;
+  border-bottom: 1px solid var(--border-subtle, #ECE9EB);
+  display: flex;
+  align-items: center;
+  padding: 0 16px 0 14px;
+  gap: 12px;
+}
+.on-nav-logo {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  flex: none;
+}
+.on-nav-logo img { width: 28px; height: 28px; display: block; }
+.on-nav-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px 0 8px;
+  height: 36px;
+  border-radius: 6px;
+  font: 500 14px/20px var(--font-sans);
+  color: var(--content-default);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+.on-nav-title:hover { background: var(--gray-100, #F5F4F5); }
+.on-nav-title .chev {
+  width: 16px; height: 16px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.on-nav-title .chev img { width: 14px; height: 14px; filter: var(--ico-filter-rest); }
+.on-nav-kebab {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: transparent; border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.on-nav-kebab:hover { background: var(--gray-100, #F5F4F5); }
+.on-nav-kebab img { width: 16px; height: 16px; filter: var(--ico-filter-rest); }
+.on-nav-saving {
+  margin-left: 8px;
+  font: 400 14px/20px var(--font-sans);
+  color: var(--gray-600, #564D54);
+  opacity: 0;
+}
+.on-nav-spacer { flex: 1; }
+.on-nav-trial {
+  display: flex; align-items: center; gap: 8px;
+  margin-right: 8px;
+}
+.on-nav-trial .label {
+  font: 400 14px/20px var(--font-sans);
+  color: var(--gray-600, #564D54);
+}
+.on-nav-link {
+  background: transparent; border: 0; padding: 0;
+  font: 500 14px/20px var(--font-sans);
+  color: var(--brand-500, #982a86);
+  cursor: pointer;
+}
+.on-nav-link:hover { text-decoration: underline; }
+.on-nav-icon-btn {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: transparent; border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.on-nav-icon-btn:hover { background: var(--gray-100, #F5F4F5); }
+.on-nav-icon-btn img { width: 18px; height: 18px; filter: var(--ico-filter-rest); }
+
+.on-nav-secondary {
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border-default, #D3CFD2);
+  background: #fff;
+  padding: 0 12px;
+  font: 500 14px/20px var(--font-sans);
+  color: var(--content-default);
+  display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+.on-nav-secondary:hover { background: var(--gray-50, #FAFAFA); }
+.on-nav-secondary img { width: 16px; height: 16px; filter: var(--ico-filter-700); }
+.on-nav-secondary.icon-only { width: 36px; padding: 0; justify-content: center; }
+
+/* ============================================================ Left rail */
+.on-left-rail {
+  width: 56px;
+  background: #fff;
+  border-right: 1px solid var(--border-subtle, #ECE9EB);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 0;
+  gap: 0;
+}
+.on-left-rail .on-nav-btn:first-child {
+  height: 50px;
+  padding-top: 0;
+}
+.on-left-rail-spacer { flex: 1; }
+
+/* Avatar slot — bottom-left tile under the rail */
+.on-avatar-slot {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-right: 1px solid var(--border-subtle, #ECE9EB);
+  border-top: 1px solid var(--border-subtle, #ECE9EB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.on-avatar {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--brand-400, #C66EB8), var(--brand-600, #761c69));
+  color: #fff;
+  font: 600 12px/16px var(--font-sans);
+  display: flex; align-items: center; justify-content: center;
+  letter-spacing: .02em;
+}

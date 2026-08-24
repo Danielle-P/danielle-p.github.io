@@ -23,265 +23,756 @@ lazy-animations: true
     </div>
 
     <div class="info-section">
-      <p>I'm currently the sole Designer at Knack, a no-code app building tool which helps its user base of over 110,000
-        businesses and independent
-        creators build and manage custom web
-        applications without writing code.</p>
-      <p>In my role, I have full responsibility for designing the entire
-        Knack ecosystem, including growing and maintaining our
-        design system and working with product managers to design and test new features.</p>
-      <p>This includes the UI design for two main parts of platform, which have very different needs:
+      <p>As the sole Designer at Knack, I have full responsibility for the end-to-end design of
+        the
+        entire ecosystem, including growing and maintaining our Design System and working with product managers to
+        design, test and iterate on new features.</p>
+      <p>Knack is a no-code app building platform with over 110k businesses and independent
+        creators using it to build and manage custom web applications without writing code.</p>
+      <p>The platform is highly flexible and comprises 2 parts which
+        have very different target users. I am responsible for the UI and UX design of both:</p>
       <ul>
-        <li>the Builder interface, where customers set up and manage their data structures, configure the app's pages,
-          rules and permissions</li>
-        <li>the Live App interface, where the end-users can access the application</li>
+        <li>Builder interface: this is more technical and is where customers set up and manage
+          their data, workflows, roles/permissions, and configure their end apps.</li>
+        <li>End-user apps: the apps used by our customers' users. They are built using the Builder interface and need to
+          be
+          accessible, responsive, and very flexible to accommodate a wide range of app types.</li>
       </ul>
-      </p>
     </div>
   </section>
 
-  <div class="full-width-panel-highlight">
-    <div class="panel">
-      <h2>Redesign Project</h2>
-      <p>After years of incremental updates on top of a legacy codebase, the platform had accumulated significant visual
-        inconsistencies
-        and structural debt. The Builder interface had become cluttered and difficult to navigate, and the Live App's
-        components were outdated and lacked the visual consistency and flexibility that
-        customers needed. I worked with a small team of 2 product managers and 1 other designer/contractor to re-design
-        both the
-        Builder and Live App interfaces.</p>
-      <p>In my role as Senior Designer, I made improvements to our existing design system, and scaled it to
-        accommodate multiple themes, additional components, presets and elements for our customers' Live Apps. Full
-        details of other projects I have worked on at Knack are
-        confidential, but I have outlined some parts of this redesign project below as these are now live.</p>
-      <h3>Team</h3>
-      <div class="team-members">
-        <span class="tag-label">2 Designers</span>
-        <span class="tag-label">2 Product Managers</span>
-        <span class="tag-label">1 Tech Lead</span>
-        <span class="tag-label">5-7 Engineers</span>
-      </div>
-    </div>
+  <div class="filter-buttons project-filter-buttons">
+    <button class="filter-button active" data-filter="redesign">Redesign Project</button>
+    <!-- <button class="filter-button" data-filter="data-access">Data Access Project</button> -->
+    <button class="filter-button" data-filter="page-tree">Page Tree Redesign</button>
+    <button class="filter-button" data-filter="data-visualisation">Data Visualisation Project</button>
   </div>
 
+  <div class="tab-section">
+    <div class="tab-content show" data-filter-content="redesign">
 
-  <div class="panel">
-    <h2>Main UI Challenges</h2>
-    <p>The redesign had two main interconnected design/UI challenges. There were also significant technical limitations
-      throughout the project - we worked closely with engineers throughout all design phases to ensure we were designing
-      our components and the new UI in a way that was technically feasible.</p>
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>Background</h2>
+          <p>The platform had accumulated
+            significant visual inconsistencies and tech/design debt over 10 years of incremental updates on top of a
+            legacy codebase. The App-Builder interface was cluttered and
+            difficult to navigate, and the themes and elements for the end-user apps were outdated and lacked visual
+            consistency and the flexibility that customers needed. This was a full redesign project spanning 2 years,
+            covering both
+            the Builder and end-user App interfaces.</p>
+        </div>
+        <div class="panel two-column intro-text-callout">
+          <div class="image-section overlap two-img">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/before-redesign.png" alt="Before redesign Builder interface" />
+            </div>
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/example-page-tree.png" alt="Redesigned Knack interface" />
+            </div>
+          </div>
 
-    <div class="card-grid">
-      <div class="item">
-        <div class="row">
-          <h3>The Builder interface itself</h3>
-          <p>The Builder contains a large amount of information, settings and controls (page tree, section and element
-            editors, settings panels) all within a single
-            view. We had received feedback that this interface was overwhelming, with a steep learning curve before
-            customers could start building their apps.</p>
-          <p>In the legacy UI there was no clear hierarchy to guide customers,
-            orient them in the system, or help them understand what they were editing.</p>
-          <p>Settings panels had grown organically over time, which had resulted in a lot of visual inconsistency,
-            confusing layouts and cognitive overload.</p>
-          <p>The main UI
-            challenge here was to distil a highly complex system into a coherent interface that felt manageable
-            and clear.</p>
+          <div class="info-section">
+            <h3>Project Aims:</h3>
+            <ul>
+              <li>Update the design system and patterns library to resolve visual inconsistencies and create unified,
+                consistent interaction patterns and styling.</li>
+              <li>Resolve problematic/unintuitive flows and UX within the Builder interface to allow users to manage
+                their data more easily and build apps faster.</li>
+              <li>Build on the Live App capabilities and styles to allow more flexibility.</li>
+            </ul>
+
+            <h3>Team</h3>
+            <p>I was the permanent designer on this project, working with:</p>
+            <div class="team-members">
+              <span class="tag-label">1-2 Designers</span>
+              <span class="tag-label">2 Product Managers</span>
+              <span class="tag-label">1 Tech Lead</span>
+              <span class="tag-label">5-7 Engineers</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="item">
-        <div class="row">
-          <h3>Modernising and improving Live App components</h3>
-          <p>For example, our data visualisation components in particular were very limited and outdated</p>
-          <p>Migrating from Highcharts to Recharts meant we had the opportunity
-            to redesign default visual behaviours and chart colour systems.</p>
-          <p>The
-            complicating factor here was that Knack allows customers to set their own themes, which
-            means
-            chart
-            colours need to work across a range of possible brand contexts.</p>
-          <p>We needed to design a system that produced
-            good results across various brand contexts and custom themes, whilst remaining accessible and consistent.
-          </p>
+
+      <div class="panel">
+        <h2>Problems to Solve</h2>
+        <p>We had identified the main interconnected UX/UI problems based on user feedback and heuristic reviews.
+          These
+          problems touched both the Builder interface and the end-user apps. Part-way through the project we
+          shifted our focus to be almost entirely on the Builder side. This was due to the wider adoption
+          of
+          AI and the need to shift the end-user app setup to be a more flexible and AI-driven to match shifting user
+          expectations. This meant the redesign work specifically centred on improving existing end-user app elements
+          and themes features was put on hold in favour of a separate AI
+          integrations project.</p>
+
+        <div class="card-grid">
+          <div class="item">
+            <div class="row">
+              <h3>Builder Interface Problems</h3>
+              <ul>
+                <li>We needed to distil a highly complex system into a coherent, manageable, clear interface. This
+                  was based on longstanding feedback that the UI was overwhelming, with a steep learning curve.</li>
+                <li>Poor information hierarchy: users lacked guidance, quickly became disoriented in the system, and
+                  struggled to understand wider implications of some settings.</li>
+                <li>Hard to discover features: barrier to successful onboarding and led to churn and our
+                  Customer
+                  Success team spending a lot of time educating users.</li>
+                <li>Visual inconsistencies and confusing layouts: cognitive overload in settings areas.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <h3>End-User App Problems</h3>
+              <ul>
+                <li>We needed to modernise the overall look and feel options based on feedback that it was outdated
+                  and
+                  lacked flexibility.</li>
+                <li>We needed a system that produced good baseline results across various brand contexts and custom
+                  themes.</li>
+                <li>Data visualisation components in particular were very limited and outdated.</li>
+              </ul>
+              <p>This part of the project was put on hold due to a shift in focus to an AI-driven frontend for the
+                end-user apps.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <h3>General Challenges</h3>
+              <ul>
+                <li>Mix of less-technical and tech-savvy users: difficult to balance simplicity with the
+                  complex features required by some users.</li>
+                <li>We needed to continue supporting legacy apps without creating separate design systems.</li>
+                <li>Components were shared between the Builder and Live App.</li>
+                <li>We had a nascent design system with limited documentation and components which had been built in
+                  the platform but were not included in the design system.</li>
+                <li>The project needed to include a time-consuming refactor of the legacy codebase.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="screenshots-section">
+          <div class="image-section">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/before-redesign.png"
+                alt="Before redesign Builder interface with annotated usability problems" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </p>
-  </div>
 
-  <div class="full-width-panel-highlight">
-    <div class="panel">
-      <h2>1. Enhancing Visual Clarity in the Builder Interface</h2>
-      <p>To address the problems we had heard from customers about the Builder interface (namely that it was
-        overwhelming, had a steep learning curve and was hard to navigate), we reviewed every control and setting that
-        existed in the Builder and simplified, reorganised and merged any
-        that we could without impacting legacy apps. We conducted heuristic evaluations as we worked through the various
-        parts of the Builder, and periodically tested new UI designs with existing customers to ensure we were on track.
-      </p>
-      <p>The core principles we adhered to throughout the Builder redesign were:
-      <ul>
-        <li>Reducing visual noise without compromising functionality.</li>
-        <li>Creating clear visual hierarchies and structures.</li>
-        <li>Ensuring consistency in both layout and interaction patterns.</li>
-      </ul>
+      <div class="full-width-panel-highlight">
+        <div class="panel two-column">
+          <div class="info-section">
+            <span>
+              <span class="tag-label"></i>Deep Dive</span>
+              <h2>Redesigning the Information Architecture</h2>
+            </span>
+            <p>A key part of the redesign project was the restructure of information architecture for the various
+              element and page settings, which were shown in a Page Editor view. We knew from feedback that this was the
+              main area where users got
+              lost in the settings and found it hard to discover features and configuration options.</p>
+            <h3>Problems</h3>
+            <ul>
+              <li>Inconsistency across elements: we lacked standard, reusable, documented patterns which meant the
+                settings were unpredictable from one element to another.</li>
+              <li>Illogical groupings of settings: there was a mismatch between the implementation and users' mental
+                models.</li>
+              <li>Convoluted paths to some settings which were hidden and hard to get back to, or just not
+                discoverable
+                at
+                all.</li>
+            </ul>
+          </div>
+          <div class="image-section overlap two-img">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/before-redesign.png" alt="Before redesign Builder interface" />
+            </div>
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/form-settings.png" alt="Redesigned form settings" />
+            </div>
+          </div>
 
+        </div>
+      </div>
+
+      <div class="panel">
+        <span>
+          <span class="tag-label"></i>Deep Dive</span>
+          <h2>Information Architecture Approach</h2>
+        </span>
+        <p>We started by reviewing the problems and, specifically, the main areas to focus on. We had available to
+          us
+          some easily-accessible resources to help with this review and prioritisation exercise:</p>
+        <ul>
+          <li>Customer Success team: colleagues who were able to
+            provide
+            context and share their knowledge of customer feedback over many years.</li>
+          <li>Partner Builders: people/agencies building Knack apps for their clients were able to share
+            their
+            experiences and opinions on efficient building.</li>
+          <li>We already had a backlog of customer feedback in Jira that we could also utilise.</li>
+        </ul>
+        <div class="card-grid">
+          <div class="item">
+            <h3>1 &nbsp;Reviewing &amp; Mapping</h3>
+            <ul>
+              <li>Mapped all element settings</li>
+              <li>Reviewed to find commonalities between elements</li>
+              <li>Identified missing settings and inconsistencies (e.g. tables had some extra settings which pivot
+                tables did not have, but should have had).</li>
+              <li>Simplified and streamlined config options by combining them if relevant</li>
+              <li>Sunset unused settings (determined via usage data and CS Team feedback)</li>
+            </ul>
+            <div class="team-members">
+              <span class="tag-label">Design</span>
+              <span class="tag-label">PM</span>
+              <span class="tag-label">CS Team</span>
+            </div>
+          </div>
+          <div class="item">
+            <h3>2 &nbsp;Restructuring IA</h3>
+            <ul>
+              <li>Reorganised and grouped settings</li>
+              <li>Created new groups and options as needed</li>
+              <li>Tested groupings with CS and customers periodically to ensure matching mental models</li>
+              <li>Added new breadcrumbs pattern to address feedback about settings being difficult to navigate</li>
+            </ul>
+            <div class="team-members">
+              <span class="tag-label">Design</span>
+              <span class="tag-label">PM</span>
+              <span class="tag-label">CS Team</span>
+              <span class="tag-label">Partners</span>
+            </div>
+          </div>
+          <div class="item">
+            <h3>3 &nbsp;Designing Consistent Patterns</h3>
+            <ul>
+              <li>Created a new standard pattern applied across all elements</li>
+              <li>Documented the new patterns and guidelines</li>
+              <li>Updated components in the design system to correct any UX or UI issues</li>
+              <li>Added missing components to the design system and resolved those with incorrect states</li>
+              <li>Worked with engineers on feasibility issues which came up when moving/streamlining some settings</li>
+            </ul>
+            <div class="team-members">
+              <span class="tag-label">Design</span>
+              <span class="tag-label">Engineers</span>
+              <span class="tag-label">PM</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="screenshots-section">
+          <div class="image-section image-grid">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/settings-info-architecture.png"
+                alt="Element settings information architecture" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <span>
+            <span class="tag-label"></i>Deep Dive</span>
+            <h2>IA Constraints and Challenges</h2>
+          </span>
+          <div class="card-grid">
+            <div class="item">
+              <p>Design system changes had to be compatible with the old/legacy version: we could not
+                introduce changes that would significantly alter/break existing end-user apps. Changes which
+                affected the Builder area were fine, but the challenge was updating shared components.</p>
+            </div>
+            <div class="item">
+              <p>Unforeseen technical issues when updating the UX of some settings/features: sometimes streamlining
+                configuration options, or grouping them, led to schema changes which caused technical issues.</p>
+            </div>
+            <div class="item">
+              <p>Legacy codebase: often engineers did not know about feasibility issues until they began work on an
+                area
+                of the platform. This was simply a consequence of working with an old codebase in need of refactoring.
+              </p>
+            </div>
+            <div class="item">
+              <p>A general challenge with the re-design was balancing feedback on the new designs with the familiarity
+                of the old designs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <span>
+          <span class="tag-label"></i>Deep Dive</span>
+          <h2>IA Restructure Outcomes</h2>
+        </span>
+
+        <div class="card-grid">
+          <div class="item">
+            <h3>New Information Architecture</h3>
+            <ul>
+              <li>Logical settings groups, consistent across elements.</li>
+              <li>Consistent layout pattern to ensure predictability - Level 0 card groups > Level 1 + tabs > Level 2.
+              </li>
+              <li>Consistent card pattern for rules, actions, and conditions - more readable, with less truncation.
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h3>UX & UI Improvements</h3>
+            <ul>
+              <li>Clear visual separation via cards - content is easier to parse.</li>
+              <li>New breadcrumb pattern to better orient customers and improve navigation.</li>
+              <li>Collapsible cards within the panels to maximise space and allow users to close sections as desired for
+                more focused work.</li>
+              <li>Improved ribbons in the preview.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="screenshots-section">
+          <div class="image-section image-grid two-col">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/settings-panels.png" alt="Element settings panels" />
+            </div>
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/rules-cards-pattern.png" alt="Rules cards pattern" />
+            </div>
+          </div>
+        </div>
+
+        <div class="screenshots-section">
+          <div class="image-section image-grid">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/element-settings-panels.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>Overall Redesign Project Results</h2>
+          <p>The overall output at the end of the full project included:</p>
+          <ul>
+            <li>A re-designed, comprehensive, fully-documented design system, scaled to accommodate multiple themes,
+              new components, presets and elements.</li>
+            <li>A reworked Builder interface with a streamlined UX and better data management capabilities.</li>
+            <li>A reworked information architecture for the page-builder settings for a more intuitive experience,
+              allowing users to build app pages more quickly and confidently, without getting overwhelmed or lost in
+              a sea of poorly grouped settings.</li>
+          </ul>
+          <p>Since the redesign launched, Knack has seen a 3.5% increase in trial conversion. All new customers and
+            trialers are using the new redesigned version of the platform. We did encounter slower adoption,
+            especially
+            at first, for existing customers. The reluctance to switch to the new version can be attributed to a few
+            key barriers to adoption.</p>
+
+          <h3>Design System Impact</h3>
+          <p>The component and design system work from this redesign now forms the foundation for all ongoing UI
+            development, with consistent patterns and documented standards that allow new features to be designed and
+            shipped more efficiently.</p>
+          <p>More solid, scalable design system:</p>
+          <ul>
+            <li>Total <strong>106</strong> component sets, plus variants.</li>
+            <li><strong>63</strong> new components.</li>
+            <li>New patterns library with standardised, fully documented patterns.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Reflections</h2>
+        <p>This was a long-term and, at times, challenging project. As with any long-term project, the need to
+          regularly re-align and be clear on the goal was important. When this slipped, we fell into the trap of
+          spending a lot of time going back and forth on certain features and details. Maintaining alignment
+          mitigates this: if we can keep certain guiding principles in mind, we can better prioritise decisions and
+          discuss trade-offs more effectively. I learned that using design reviews not only to discuss designs but
+          to
+          bring in user feedback and seek alignment was critical.</p>
+        <p>We were constantly balancing long-term improvements based on best practices and removing poor patterns
+          with existing customers' familiarity. It's difficult to please all users, especially when there is a large
+          existing user base of such varying technical abilities. We also had significant gaps in our data, so it
+          was
+          often hard to review the performance of certain features. We found working closely with the Customer
+          Success
+          team really valuable here, because it helped us cut to the most common feedback and use cases.</p>
+      </div>
     </div>
-    <div class="panel two-column">
+
+    <div class="tab-content" data-filter-content="data-access">
+
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>Data Access: Adding Role-Based Permissions</h2>
+          <p>Builders on this platform needed a way to control who sees what — down to individual fields — without
+            writing
+            a
+            line of code. I designed the data access system that makes that possible.</p>
+          <h3>The Problem</h3>
+          <p>As builders scale their apps, they need fine-grained control over data visibility. A sales rep
+            shouldn't see the same records as an admin. An HR table might need salary fields hidden from everyone
+            except
+            a
+            specific role. Handling this well requires balancing power (granular enough to cover real use cases) with
+            simplicity
+            (a no-code user still has to configure it without a developer's mental model).</p>
+        </div>
+      </div>
       <div>
-        <h3>Page Tree Redesign</h3>
-        <p>The page tree redesign was a core focus area for me, and a key example of a large and overwhelming amount of
-          information being shown at once. The legacy design showed all pages in a single-background
-          cascade, which became unreadable at scale (many Knack apps have a large number of pages with complex nesting).
-          I
-          redesigned the hierarchy to be visually distinct at each level, with clear affordances for expanding and
-          collapsing groups, and also to show restricted vs public pages. I tested multiple iterations of this with
-          customers,
-          focusing specifically on whether they
-          could locate pages quickly and understand their app's structure at a glance.</p>
-      </div>
-      <div class="image-section overlap two-img">
-        <div class="project-image image-intersect">
-          <img class="lazy" data-src="/images/knack/page-tree-specs.png" />
+
+        <div class="panel">
+          <h2>Designing</h2>
+          <p>Role-based permissions — builders assign access rules by user role rather than per-user, so permissions
+            scale
+            with
+            the app instead of becoming unmanageable as user counts grow
+            Table-level access — controlling which data tables and user tables each role can see or interact with
+            Field-level access — within a permitted table, builders can restrict visibility down to individual fields,
+            so
+            a
+            role
+            might see a record but not every column in it
+            A matrix-style interface — surfacing all of this as a single, scannable grid rather than forcing builders
+            to
+            configure access role-by-role, table-by-table, in isolated screens.</p>
+
+          <p>Why it mattered: This is the kind of complexity that's easy to get wrong — either too simplistic to be
+            useful,
+            or so
+            granular it becomes its own configuration nightmare. The design had to make a genuinely complex permission
+            model
+            feel like a single coherent system a non-technical builder could reason about.</p>
         </div>
-        <div class="project-image image-intersect">
-          <img class="lazy" data-src="/images/knack/example-page-tree.png" />
+
+        <div class="panel prototype-panel">
+          <div class="prototype-window">
+            <button class="prototype-window-bar" type="button" aria-label="Open Data Access Prototype full screen">
+              <span class="prototype-window-dot"></span>
+              <span class="prototype-window-dot"></span>
+              <span class="prototype-window-dot"></span>
+              <span class="prototype-window-title">Data Access Prototype</span>
+              <span class="prototype-window-expand"><i class="icofont-expand"></i> Open full screen</span>
+            </button>
+            <iframe src="/prototypes/data-access/index.html" title="Data Access Prototype"></iframe>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="panel">
-      <h3>Settings Panels</h3>
-      <p>Previously, different element types had panels that were
-        structured differently from one other depending. This added
-        unnecessary complexity (including in terms of maintaining the codebase) and contributed to the steep learning
-        curve and cognitive load we heard in customer feedback. I redesigned the settings panels and also the section
-        and element preview to make the relationship between sections and the
-        elements within them visually obvious.
-      </p>
+    <div class="tab-content" data-filter-content="page-tree">
+      <div class="full-width-panel-highlight">
+        <div class="panel two-column intro-text-callout">
+          <div class="image-section">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/new.png" />
+            </div>
+          </div>
+          <div class="info-section">
+            <h2>Page Tree Redesign</h2>
+            <p>The page tree was a core focus area for improvement. The legacy design listed all pages in a
+              single-background
+              cascade, which became
+              unreadable at scalewhich became unreadable at scale, with a large and
+              overwhelming
+              amount
+              of
+              information being shown at once. This was a problem because many Knack apps have a large number of pages
+              with complex
+              nesting.</p>
 
-      <p>In this part of the redesign, I focused on three areas:</p>
-      <ul>
-        <li>Logically grouping settings and ensuring clear visual separation between
-          them so the content was easy to parse
-        <li>
-        <li>Creating a consistent layout pattern to ensure each panel behaved predictably regardless of which element or
-          section was selected.</li>
-        <li>Implementing a breadcrumb pattern to better orient customers within the settings and show exactly what
-          they were editing</li>
-        <li>Ensuring the preview clearly communicated the page structure so that builders
-          could easily understand and edit the relevant settings.</li>
-      </ul>
+            <h3>My Role</h3>
+            <p>I redesigned the
+              page tree hierarchy and structure so each level was visually distinct, with clear affordances for
+              expanding
+              and collapsing groups, and
+              a clearer distinction between page types. I tested multiple iterations with customers,
+              focusing specifically on whether they could locate pages quickly and understand their app's structure at a
+              glance.</p>
 
-      <div class="panel screenshots-section">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel two-column">
+        <div class="info-section">
+          <h2>Problems to Solve</h2>
+          <p>Particularly in larger apps, the page tree had multiple levels of nesting, which made it hard to read and
+            difficult to manage — drag and drop especially.</p>
+
+          <p>It was also missing some fairly basic features: there was no way to search pages, or to expand and
+            collapse
+            groups all at once.</p>
+
+          <p>The distinction between public pages and those behind a login wasn't clear enough either, particularly
+            once
+            pages were
+            nested inside groups.</p>
+        </div>
         <div class="image-section">
           <div class="project-image image-intersect">
-            <img class="lazy" data-src="/images/knack/element-settings-panels.png" />
+            <img class="lazy" data-src="/images/knack/old-page-tree.png" alt="Old page tree design" />
           </div>
         </div>
       </div>
-      <div class="panel screenshots-section">
 
-        <div class="image-section image-grid">
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>Approach</h2>
+          <p>I refactored the UI based on established tree-navigation patterns, then tested different versions both
+            internally, with CS and engineers, and externally with partners. I ran accessibility checks throughout,
+            and
+            the result fed into an updated pattern in the design system.</p>
+
+          <h3>Challenges</h3>
+          <p>The main challenge was that the tree "lines" that connected nested items were time-consuming for
+            engineers
+            to
+            implement. However these were a key part of letting users see the structure at a glance, so we kept them
+            in
+            scope.
+            The other ongoing challenge was just the sheer number of pages some apps have, which meant the design
+            needed
+            to hold up
+            at that scale, not just look good in a simple example.</p>
+
+        </div>
+      </div>
+
+      <div class="panel two-column">
+        <div class="info-section">
+          <h2>Design & Outcome</h2>
+
+          <p>After research and several rounds of testing and iterations, I designed a solution that solved the key
+            problems of the legacy page tree. Key design features/decisions included:</p>
+          <ul>
+            <li>Keeping the UI uncluttered by only showing information when relevant: this included showing the page
+              options only on hover/selection, replacing the icon indicating whether the page was public or behind a
+              login, rather than showing this along with all the other information in the resting state.
+            <li>
+            <li>Using locked/unlocked
+              icons to indicate which pages are public and which are behind a login. This helped users see at a glance
+              the
+              access set for each page, and helped give peace of mind that content was protected by a login when needed.
+            </li>
+            <li>Adding a pattern to groups of pages behind a login via a dot on pages nested
+              below
+              a
+              protected parent more clearly showed pages that inherited parent page restrictions.</li>
+            <li>A general search on the pages side panel meant users no longer had to scroll through a long page list,
+              or
+              remember how they had structured their pages, in order to find and select a page to edit it. </li>
+            <li>Animating the panel header to minimise down to an icon-only state
+              on scroll meant the actions in the header remained easily accessible but did not permanently taking up
+              space.</li>
+          </ul>
+        </div>
+        <div class="image-section">
           <div class="project-image image-intersect">
-            <img class="lazy" data-src="/images/knack/example-settings-panel.png" />
+            <img class="lazy" data-src="/images/knack/page-tree-header-specs.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="panel two-column">
+        <div class="image-section overlap">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/page-tree-panel-specs.png" />
+          </div>
+        </div>
+        <div class="info-section">
+          <ul>
+            <li>Styling page groups as expandable/collapsible cards, with a clear background, helped with the visual
+              differentiation of groupings.</li>
+            <li>Adding expand/collapse-all links at the top of the panel solved a
+              functional
+              gap customers had flagged, by allowing users to get a full picture of their page structure
+              without manually opening/closing every group.</li>
+            <li>Implementing the common pattern of subtle tree lines in the nested groups helped show which level a page
+              sat
+              at even several levels deep, or inside a group with many pages.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p>The resulting page tree design was able to scale to apps with hundreds of pages without becoming
+          unreadable. The gropuing of pages into cards was noted as being particularly helpful in terms of making the
+          whole tree easier to scan. This
+          also reused a pattern already established in the settings panels, so it felt familiar.</p>
+        <div class="screenshots-section">
+          <div class="image-section">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/new-page-tree.png" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="panel">
-    <h2>2. Designing a Color System for Data Visualisations</h2>
-    <p>
-      One of the main problems we identified with our legacy Live App components existed within the Reports element,
-      where customers can set up various data visualisations. This element in particular lacked the flexibility
-      customers needed and was also visually outdated and based on a single color chart color scheme. To give us more
-      options in terms of chart settings, flexibility
-      and
-      customisations, we moved from Highcharts to Recharts and this provided an opporunty to redesign our chart styling
-      options. I took responsiblity for the redesign of this area, both in the Builder settings and the Live App
-      elements. This included creating a new, consistent color system which could be used across all data
-      visualisations. Customers are able to set their own app-level theme based on a set of preset options we provide,
-      or via a custom option - this made desiging chart color palettes one of the more complex UI problems in the
-      redesign as they needed to work
-      across customer-set
-      themes, as well as for light and dark modes.</p>
+    <div class="tab-content" data-filter-content="data-visualisation">
 
-    <p>Rather than choosing a single default colour palette, I designed sets of presets and rules
-      that could produce visually coherent, accessible charts across any theme a customer might select for their app. A
-      key
-      design decision came from considering the different chart data sets. Data series that are related to
-      each other (e.g., different segments of the same category) are better represented with monochromatic
-      or analogous colours, which signal that the data points belong together. Whilst data sets which are not related to
-      each other require high contrast and visually distinct colours. I designed a pattern of both analogous and high
-      contrast chart color presets which would match the general theme color that the customer had selected for their
-      app. This meant the charts would visually match the customer's own theme colour and
-      feel on-brand without
-      requiring manual configuration.</p>
-    <p>I checked every chart color palette against W3C accessibility contrast requirements for both
-      light and dark themes to ensure legibility regardless of what theme colours a customer selected.</p>
-    <p>This worked for the majority of use cases, as most customers would be using the general preset theme colors we
-      offered. However, as part of the Live App redesign we had also decided to offer a fully custom theme, where the
-      user could create a theme based on an entirely custom primary theme color. For these
-      entirely
-      custom themes, the chart color palettes would need adapting to match the customer's custom theme. We created
-      formulas to adjust the luminosity and saturation values of the base chart preset colours to match the custom
-      primary color set and
-      ensure, as far as possible, a similar contrast level and perceptual weight.</p>
-    <p>The next step is to allow customers to easily select a color for specific series (this is based on feedback we
-      have received after we released the chart color system). For example, a customer may always was Series B to be
-      blue, across all charts. This can currently be achieved by setting chart-level display rules to set the color of
-      specific series, however there is a need to set this at an app level to ensure consistency across all chart in the
-      app, and to make this configuration easier.</p>
-    </p>
-    <div class="screenshots-section">
-      <div class="image-section image-grid three-col">
-        <div class="project-image image-intersect">
-          <img class="lazy" data-src="/images/knack/chart-color-specs-analogous.png" />
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>Data Visualisation: Updating Charts and Color Schemes</h2>
+          <h3>Background</h3>
+          <p>One of the problems we identified in our legacy end-user App was in the Reports
+            element,
+            where
+            customers build out data visualisations. It was built on a single chart color scheme which did not meet
+            accessibility standards, was visually
+            outdated,
+            and lacked the flexibility customers needed. We
+            switched
+            from Highcharts to Recharts to give users more customisation options, and this also gave us the
+            opportunity
+            to redesign the data visualisation colors and options.</p>
         </div>
-        <div class="project-image image-intersect">
-          <img class="lazy" data-src="/images/knack/chart-color-specs-high-contrast.png" />
+        <div class="panel two-column intro-text-callout">
+          <div class="image-section overlap two-img">
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/chart-color-specs-analogous.png"
+                alt="Analogous chart color specs" />
+            </div>
+            <div class="project-image image-intersect">
+              <img class="lazy" data-src="/images/knack/chart-example.png" alt="Redesigned chart color pattern" />
+            </div>
+          </div>
+
+          <div class="info-section">
+            <h3>My Role</h3>
+            <p>I created a new color system which could be used across all data visualisations. The challenge in this
+              project
+              was around Knack's theming
+              model: customers could set an app-level theme from a set of presets, or define a fully custom
+              one.
+              The chart color palettes and color system needed to work across any of those preset themes, and also
+              apply
+              across light and dark mode.</p>
+
+            <p>I led the full design which covered creating the color system, defining how the presets would work, and
+              the rules for applying the color system to the presets.</p>
+          </div>
         </div>
-        <div class="project-image image-intersect">
-          <img class="lazy" data-src="/images/knack/chart-example.png" />
+
+      </div>
+
+      <div class="panel">
+        <h2>The Approach</h2>
+        <p>Rather than picking a single default palette, I designed a set of schemes and rules that would result in
+          visually
+          coherent, accessible charts across any theme a customer might pick.</p>
+      </div>
+
+      <div class="panel two-column">
+        <div class="info-section">
+          <p>A key consideration when defining the color system came from thinking about the data in each chart type
+            and
+            the need for different color rules depening on how groups of data/series related
+            to
+            one another. Data series that relate to each other (i.e. different
+            segments within the same category) are better shown in monochromatic or analogous colors, which signal
+            that the points belong together. Data series that aren't related (i.e. distinct data points in unrelated
+            categories) benefit from higher contrast, more visually
+            distinct
+            colors.</p>
+          <p>The default setting (analogous or high contrast) would be automatically selected based on the
+            chart
+            type the user was adding to their app, but they would always have the option to switch to the other
+            setting
+            if
+            desired. This would allow the user to always have accessible chart color options (the high contrast
+            setting)
+            if required, but it would also prevent the charts from becoming visually overwhelming via the use of the
+            analogous color scheme when appropriate.</p>
+          <p>The next step was to ensure a way for the colors to be appropriate to the user's selected overall app
+            theme.
+            We were using Tailwind colors for the themes, so I devised a color sequence using Tailwind for both
+            analogous
+            and
+            high-contrast color presets. The color sequence included colors from each color palette in the themes
+            pre-sets, so the starting point in the sequence could simply be the corresponding theme color and the
+            colors
+            would then cycle through the rest of the sequence from there. This way,
+            charts would visually match the user's selected theme and feel on-brand.</p>
+        </div>
+
+        <div class="image-section overlap two-img">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/color-examples-dark.png" />
+          </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/color-examples-light.png" />
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <p>Every palette was checked against W3C accessibility contrast requirements, for both light and dark
+          themes.
+        </p>
+        <div class="image-section two-img">
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/chart-color-specs-analogous.png" />
+          </div>
+          <div class="project-image image-intersect">
+            <img class="lazy" data-src="/images/knack/chart-color-specs-high-contrast.png" />
+          </div>
+        </div>
+
+        <h3>Handling Custom Themes</h3>
+        <p>Most use cases were covered by the sequencing pattern I had defined, however, app-level Themes allowed
+          customers to choose a completely custom color as their primary color which would then apply that hue (with
+          luminosity calculations built in to ensure accessibility) to all other colors in the app. In these cases,
+          the
+          user can select from a set of options for the analogous colors to choose the closest to their chosen
+          theme. We
+          decided to start with this simple approach and build on it later if we hear from customers that they want
+          to
+          be able to create their own custom chart color scheme.
+        <p>
+      </div>
+
+      <div class="full-width-panel-highlight">
+        <div class="panel">
+          <h2>What's Next</h2>
+          <p>The main feedback we have received has been around setting specific colors per series within charts, for
+            example fixing Series B to always be blue across every chart in the app. We already have chart-level
+            display
+            rules which allow the series color to be fixed per chart, but there's a clear need to alow users to set
+            this
+            up once at the app
+            level, to
+            make
+            the configuration easier and ensure consistency.</p>
         </div>
       </div>
     </div>
-  </div>
-  </div>
 
-  <div class="full-width-panel-highlight">
-    <div class="panel">
-      <h2>Outcome</h2>
-      <p>
-        Since the redesign launched, Knack has seen a 3.5% increase in trial conversion. While this reflects the
-        impact of
-        the full redesign alongside other improvements and features which have since been added, the builder interface
-        and data visualisation improvements
-        were
-        important to the updated experience because the clearer, more visually coherent builder is what
-        potential
-        customers interact with during their trial period.
-        The component and design system work from this project also now forms the foundation for all ongoing UI
-        development, with consistent patterns and documented standards that allow new features to be designed and
-        shipped
-        more
-        efficiently.
-      </p>
+    <div class="next-previous-projects">
+      <div class="previous"></div>
+      <div class="next">
+        <a href="/projects/vaayu.html">
+          <div>CO2 Tracking Dashboard <i class="icofont-dotted-right"></i></div>
+        </a>
+      </div>
     </div>
-  </div>
-
-  <div class="next-previous-projects">
-    <div class="previous"></div>
-    <div class="next">
-      <a href="/projects/vaayu.html">
-        <div>CO2 Tracking Dashboard <i class="icofont-dotted-right"></i></div>
-      </a>
-    </div>
-  </div>
 
 </main>
 
 <div id="image-expand-modal">
   <img class="modal-image" />
   <a class="modal-close btn-animate"><i class="icofont-close"></i><span></span></a>
+</div>
+
+<div id="prototype-expand-modal" role="dialog" aria-modal="true" aria-label="Data Access Prototype">
+  <button class="modal-close btn-animate" type="button" aria-label="Close full screen prototype">
+    <i class="icofont-close"></i>
+  </button>
+  <iframe title="Data Access Prototype full screen"></iframe>
 </div>

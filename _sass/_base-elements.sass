@@ -16,7 +16,6 @@ main
   min-height: calc(100vh - 112px)
   padding: 8em 0 0
   margin: 0 auto
-  overflow-x: hidden
 
   ::selection,
     +light-dark-color(background, $accent-dark, $accent-light)
@@ -32,10 +31,10 @@ h1
   +header-font-style
 
 h2
-  +subheader-font-style($margin: 0.5em 0 1.1em)
+  +subheader-font-style($margin: 0.4em 0 0.3em)
 
 h3
-  +subheader-font-style($font-size: 1em, $margin: 0 0 0.5em)
+  +subheader-font-style($font-size: 1em, $margin: 1.2em 0 0.5em)
   font-weight: 500
 
 p, figcaption
@@ -219,6 +218,20 @@ button
   gap: 0.5em
   margin: 1.2em auto 3em
 
+  &.project-filter-buttons
+    width: 100%
+    position: sticky
+    top: 0
+    margin: 0 auto
+    padding: 1.4em 0
+    z-index: 3
+    +light-dark-color(background, rgba(255, 255, 255, 0.7), rgba(29, 28, 33, 0.7))
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+
+  & + .tab-section .tab-content > .full-width-panel-highlight:first-child
+    margin-top: 0
+
   .filter-button
     padding: 0.6em 1em
     border: 1px solid transparent
@@ -226,8 +239,18 @@ button
     font-size: 0.9em
     cursor: pointer
     border-radius: $border-radius
+    +light-dark-color(border-color, $border-light, $border-dark)
     +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
     +animated-gradient-border()
+    overflow: visible
+
+    &::before
+      inset: -1px
+      border-radius: calc(#{$border-radius} + 1px)
+      pointer-events: none
+
+    &:hover
+      border-color: transparent
 
     &.active
       +light-dark-color(background, $accent-light, $surface-accent-dark)
@@ -268,6 +291,7 @@ button
 
   .tab-content
     display: none
+    scroll-margin-top: 5em
 
     &.show
       display: block
@@ -554,8 +578,8 @@ input:checked + .slider
   display: grid
   margin: 1em 0 2.5em
 
-  h5
-    margin: 0.5em 0
+  h3, h5
+    margin: 0.2em 0
     font-weight: 600
 
   .item
@@ -620,9 +644,8 @@ input:checked + .slider
 
 
   .heading
-    +subheader-font-style(0.9em)
+    +subheader-font-style($font-size: 0.9em, $margin: 1.8em 0 0.4em)
     font-weight: bold
-    margin-top: 1.8em
 
     &:first-of-type
       +light-dark-color(color, $accent-light, $accent-dark)
@@ -647,7 +670,7 @@ input:checked + .slider
       grid-column: 1 / 3
 
 .panel .image-section.image-masonry-grid
-  column-width: 220px
+  column-width: 240px
   column-gap: 1.2rem
   display: block
 
@@ -772,12 +795,12 @@ input:checked + .slider
       h2, p
         +light-dark-color(color, $text-primary-dark, $text-primary-dark)
         text-align: center
-        padding-bottom: 0
+        //padding-bottom: 0
         margin: 0
 
       p
         opacity: 0.6
-        line-height: 1.3
+        //line-height: 1.3
 
     .feature-image
       border-radius: $border-radius
@@ -865,6 +888,7 @@ input:checked + .slider
   flex-wrap: wrap
   text-align: center
   row-gap: 0.4em
+  padding-bottom: 1.2em
 
 .caption-container
   display: flex
@@ -878,14 +902,18 @@ input:checked + .slider
 
 .tag-label
   margin: 0 0.5em 0 0
-  padding: 0.4em 0.7em
+  padding: 0.25em 0.5em
   border-radius: $border-radius-small
-  line-height: 1.3
-  font-size: 0.8em
-  font-weight: 500
+  font-size: 14px
   text-transform: none
+  font-weight: 500
   +light-dark-color(background, $surface-accent-light, $surface-accent-dark)
   +light-dark-color(color, $text-primary-light, $text-primary-dark)
+
+span .tag-label
+  padding: 0.15em 0.4em
+  text-transform: uppercase
+  opacity: 0.8
 
 /** Panels
  */
@@ -896,9 +924,64 @@ input:checked + .slider
   max-height: 380px
 
 .panel
-  display: grid
   width: 75%
+  display: grid
   margin: 0 auto 2.5em
+
+  &.prototype-panel
+    display: block
+    width: 90%
+
+    .prototype-window
+      overflow: hidden
+      border-radius: $border-radius-large
+      +light-dark-color(background, $surface-accent-light, $surface-accent-dark)
+      box-shadow: 0 1em 2.5em -1.5em $shadow
+
+    .prototype-window-bar
+      width: 100%
+      height: 2.5em
+      display: flex
+      align-items: center
+      gap: 0.45em
+      padding: 0 1em
+      border: none
+      border-bottom: 1px solid
+      cursor: pointer
+      text-align: left
+      +light-dark-color(border-color, $border-light, $border-dark)
+      +light-dark-color(background, rgba(255, 255, 255, 0.7), rgba(29, 28, 33, 0.7))
+
+      &:hover .prototype-window-expand
+        opacity: 1
+
+    .prototype-window-dot
+      width: 0.55em
+      height: 0.55em
+      flex: 0 0 auto
+      border-radius: 50%
+      +light-dark-color(background, $border-light, $border-dark)
+
+    .prototype-window-title
+      margin-left: 0.5em
+      font-size: 0.8em
+
+    .prototype-window-expand
+      display: flex
+      align-items: center
+      gap: 0.4em
+      margin-left: auto
+      font-size: 0.8em
+      //opacity: 0.65
+
+      i
+        font-size: 1.2em
+
+    iframe
+      width: 100%
+      height: 85vh
+      display: block
+      border: none
 
   &.two-column
     grid-template-columns: repeat(2, 1fr)
@@ -908,15 +991,12 @@ input:checked + .slider
       grid-template-rows: repeat(2, 1fr)
       grid-gap: 3em
 
-  .info-section
-    align-self: center
-
   .image-section
-    justify-self: center
+    display: grid
     flex: 1
+    justify-self: center
     justify-items: center
     align-items: center
-    display: grid
 
     .project-image img
       max-width: 100%
@@ -1058,8 +1138,34 @@ input:checked + .slider
     padding: 1.3em 1.5em 1em
     border-radius: $border-radius
 
-  &.info-section p
-    padding: 0 0 0.8em 0
+#prototype-expand-modal
+  width: 100%
+  height: 100%
+  display: flex
+  position: fixed
+  top: 0
+  left: 0
+  align-items: center
+  justify-content: center
+  padding: 4em 2em 2em
+  background: rgba(1, 9, 13, 0.9)
+  visibility: hidden
+  opacity: 0
+  pointer-events: none
+  transition: opacity 0.2s ease-in
+  z-index: 10
+
+  &.open
+    visibility: visible
+    opacity: 1
+    pointer-events: auto
+
+  iframe
+    width: min(1400px, 100%)
+    height: 100%
+    border: none
+    border-radius: $border-radius
+    background: $white
 
 .full-width-panel-highlight
   +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
@@ -1074,6 +1180,7 @@ input:checked + .slider
 
   .intro-text-callout
     margin: 0 auto 2em
+    align-items: center
     border-left: none
 
 /** Journey

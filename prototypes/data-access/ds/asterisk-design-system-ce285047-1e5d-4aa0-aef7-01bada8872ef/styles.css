@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Asterisk Design System — root stylesheet
+   Single entry point for consumers. Link THIS file, not the individual sheets:
+     <link rel="stylesheet" href=".../styles.css">
+
+   It pulls in the canonical token foundation (colors, type, spacing, radii,
+   shadows, fonts) plus the live-app theme scope. Everything a design needs to
+   reference `var(--…)` tokens and the Asterisk type families lives here.
+   ========================================================================== */
+
+/* Foundation — tokens, @font-face, type scale, semantic ramps, live-app scope */
+@import url("./colors_and_type.css");
+
+/* --------------------------------------------------------------------------
+   Optional UI-kit layouts (NOT imported by default — they ship page-level
+   layout rules, not foundations). Link the one you need alongside styles.css:
+     ui_kits/builder/builder.css       — Builder four-column shell + Outside Nav
+     ui_kits/outside-nav/outside-nav.css — standalone Outside Nav chrome
+   The kit/ directory holds older copies kept for reference only.
+   -------------------------------------------------------------------------- */
