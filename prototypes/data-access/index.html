@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +49,9 @@
     .aopt-chip { display:inline-flex; align-items:center; padding:3px 8px; border-radius:6px; font:600 13px/18px var(--font-sans); margin-bottom:5px; }
     .aopt-desc { font:400 12px/16px var(--font-sans); color:var(--gray-500); padding-left:8px; }
 
-    .row-desc { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%; padding-left:21px; }
-    .is-grouped .row-desc { padding-left:21px; }
-    .is-grouped .matrix-row > div:first-child > p:last-child { padding-left:21px; }
+    .row-desc { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%; }
+    .is-grouped .row-desc { padding-left:0; }
+    .is-grouped .matrix-row > div:first-child > p:last-child { padding-left:0; }
 
     .matrix-scroll-wrap { position:relative; margin-left:-24px; margin-right:-24px; padding-left:24px; padding-right:24px; }
     .matrix-scroll-wrap .matrix-inner { overflow-x:scroll; overflow-y:visible; background:transparent; scrollbar-width:none; -ms-overflow-style:none; }
@@ -460,6 +458,7 @@
       <div style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; background:var(--gray-100); border-bottom:1px solid var(--gray-200);">
         <div style="padding:8px 10px 8px 8px; border-right:1px solid var(--gray-200); display:flex; align-items:center; gap:7px; cursor:pointer;" onClick="{{ toggleDataGroup }}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-600);flex-shrink:0;"><path d="{{ dataGroupIcon }}"></path></svg>
+          <img src="on-icons/table-cells.svg" alt="" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;">
           <span style="font:600 11px/16px var(--font-sans); letter-spacing:0.05em; text-transform:uppercase; color:var(--gray-700);">Data Tables</span>
           <span style="display:inline-flex;align-items:center;padding:1px 6px;background:var(--gray-200);border-radius:4px;font:500 11px/14px var(--font-sans);color:var(--gray-600);">4</span>
         </div>
@@ -474,7 +473,7 @@
       <div style="display:{{ dataRowsContents }}">
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/table-cells.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Patients</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Patients</p></div>
           <span class="tt-wrap row-desc-wrap"><p class="row-desc" style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;">Demographics, status and care team</p><span class="tt" role="tooltip" style="max-width:200px;">Patient demographics, status, and care team</span></span>
         </div>
         <div class="access-cell" data-value="full" data-row="0" data-group="data" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -487,7 +486,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/table-cells.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Appointments</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Appointments</p></div>
           <span class="tt-wrap row-desc-wrap"><p class="row-desc" style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;">Scheduling and check-in details</p><span class="tt" role="tooltip" style="max-width:200px;">Scheduling, check-in, and follow-up details</span></span>
         </div>
         <div class="access-cell" data-value="full" data-row="1" data-group="data" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -500,7 +499,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/table-cells.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Care Plans</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Care Plans</p></div>
           <span class="tt-wrap row-desc-wrap"><p class="row-desc" style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;">Active plans and milestones</p><span class="tt" role="tooltip" style="max-width:200px;">Active plans, milestones, and care tasks</span></span>
         </div>
         <div class="access-cell" data-value="full" data-row="2" data-group="data" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -513,7 +512,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/table-cells.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Health Insurance Records</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Health Insurance Records</p></div>
           <span class="tt-wrap row-desc-wrap"><p class="row-desc" style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;">Coverage and verification</p><span class="tt" role="tooltip" style="max-width:200px;">Coverage and verification details</span></span>
         </div>
         <div class="access-cell" data-value="full" data-row="4" data-group="data" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -528,6 +527,7 @@
       <div style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; background:var(--gray-100); border-bottom:1px solid var(--gray-200);">
         <div style="padding:8px 10px 8px 8px; border-right:1px solid var(--gray-200); display:flex; align-items:center; gap:7px; cursor:pointer;" onClick="{{ toggleUserGroup }}">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--gray-600);flex-shrink:0;"><path d="{{ userGroupIcon }}"></path></svg>
+          <img src="on-icons/user.svg" alt="" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;">
           <span style="font:600 11px/16px var(--font-sans); letter-spacing:0.05em; text-transform:uppercase; color:var(--gray-700);">User Tables</span>
           <span style="display:inline-flex;align-items:center;padding:1px 6px;background:var(--gray-200);border-radius:4px;font:500 11px/14px var(--font-sans);color:var(--gray-600);">6</span>
         </div>
@@ -542,7 +542,7 @@
       <div style="display:{{ userRowsContents }}">
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Administrators</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Administrators</p></div>
           <p style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">System administrators and owners</p>
         </div>
         <div class="access-cell" data-value="full" data-row="5" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -555,7 +555,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Care Coordinators</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Care Coordinators</p></div>
           <p style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Coordination and scheduling staff</p>
         </div>
         <div class="access-cell" data-value="full" data-row="6" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -568,7 +568,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Front Desk</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Front Desk</p></div>
           <p style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Reception and intake staff</p>
         </div>
         <div class="access-cell" data-value="full" data-row="7" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -581,7 +581,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Providers</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Providers</p></div>
           <span class="tt-wrap row-desc-wrap"><p class="row-desc" style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;">Provider directory</p><span class="tt" role="tooltip" style="max-width:200px;">Provider directory and specialty records</span></span>
         </div>
         <div class="access-cell" data-value="full" data-row="3" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -594,7 +594,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Practice Owners</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Practice Owners</p></div>
           <p style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Practice directors and owners</p>
         </div>
         <div class="access-cell" data-value="full" data-row="11" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-full">Full Access</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>
@@ -607,7 +607,7 @@
 
       <div class="matrix-row" style="display:grid; grid-template-columns:300px 200px 200px 200px 200px 200px 200px; border-bottom:1px solid var(--gray-200); min-height:60px;">
         <div style="padding:8px 8px 8px 8px; border-right:1px solid var(--gray-200); overflow:hidden;">
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><img src="on-icons/user.svg" alt="" class="row-type-icon" style="width:14px;height:14px;filter:var(--ico-filter-rest);flex-shrink:0;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Locums</p></div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:1px;"><p style="font:600 13px/20px var(--font-sans);color:var(--content-default);margin:0;">Locums</p></div>
           <p style="font:400 11px/16px var(--font-sans);color:var(--gray-400);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Temporary and contract staff</p>
         </div>
         <div class="access-cell" data-value="viewonly" data-row="12" data-group="user" data-col="0" onclick="openAccessDropdown(this,event)" style="border-right:1px solid var(--gray-200);"><span class="access-chip chip-viewonly">View Only</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="cell-chevron" style="color:var(--content-default);flex-shrink:0;"><path d="m6 9 6 6 6-6"></path></svg></div>

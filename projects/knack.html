@@ -43,7 +43,7 @@ lazy-animations: true
 
   <div class="filter-buttons project-filter-buttons">
     <button class="filter-button active" data-filter="redesign">Redesign Project</button>
-    <!-- <button class="filter-button" data-filter="data-access">Data Access Project</button> -->
+    <button class="filter-button" data-filter="data-access">Data Access Project</button>
     <button class="filter-button" data-filter="page-tree">Page Tree Redesign</button>
     <button class="filter-button" data-filter="data-visualisation">Data Visualisation Project</button>
   </div>
@@ -409,47 +409,186 @@ lazy-animations: true
 
       <div class="full-width-panel-highlight">
         <div class="panel">
-          <h2>Data Access: Adding Role-Based Permissions</h2>
-          <p>Builders on this platform needed a way to control who sees what — down to individual fields — without
-            writing
-            a
-            line of code. I designed the data access system that makes that possible.</p>
-          <h3>The Problem</h3>
-          <p>As builders scale their apps, they need fine-grained control over data visibility. A sales rep
-            shouldn't see the same records as an admin. An HR table might need salary fields hidden from everyone
-            except
-            a
-            specific role. Handling this well requires balancing power (granular enough to cover real use cases) with
-            simplicity
-            (a no-code user still has to configure it without a developer's mental model).</p>
+          <h2>Background: Adding Role-Based Permissions</h2>
+          <p>Users building no-code apps needed a way to control access to data stored in their Knack app based on user
+            roles and defined permissions rules. We
+            already had access restrictions set up for the end-user App, which allowed users to set access rules for
+            which
+            pages/page groups (and even which data on page elements) would be visible to end-users based on their role.
+            We
+            needed to advance this functionality to include the ability to restrict access to data tables in the Builder
+            - for example, a receptionist at GP practice might have full edit access to the data table storing
+            patients' details, but should have read-only access to the data table storing GP information.</p>
+
+          <h3>My Role</h3>
+          <p>I worked with others in the Product team (Product Manager, Head of Product) and a design contractor to
+            scope out the work, and iterate on designs. We collaborated with the Customer Success team and tested
+            designs with partner members to validate ideas and test flows to ensure they were understandable.</p>
         </div>
       </div>
       <div>
 
         <div class="panel">
-          <h2>Designing</h2>
-          <p>Role-based permissions — builders assign access rules by user role rather than per-user, so permissions
-            scale
-            with
-            the app instead of becoming unmanageable as user counts grow
-            Table-level access — controlling which data tables and user tables each role can see or interact with
-            Field-level access — within a permitted table, builders can restrict visibility down to individual fields,
-            so
-            a
-            role
-            might see a record but not every column in it
-            A matrix-style interface — surfacing all of this as a single, scannable grid rather than forcing builders
-            to
-            configure access role-by-role, table-by-table, in isolated screens.</p>
+          <h2>The Problem</h2>
+          <p>As builders scale their apps, they need full control over data visibility and CRUD permissions in their
+            data tables. We needed a
+            way to allow users to set up data access permissions for their app to a granular level (down to CRUD
+            permissions at a field level, not just per record). We needed this to be intuitive and easy to use so that
+            no-code users (most of whom do not have the mental model of a developer or significant database experience)
+            would be able to configure their settings easily and wtih
+            confidence.</p>
+          <div class="user-task-map">
+            <div class="headings-col">
+              <div class="heading">User Stories</div>
+              <div class="heading">User Tasks</div>
+            </div>
 
-          <p>Why it mattered: This is the kind of complexity that's easy to get wrong — either too simplistic to be
-            useful,
-            or so
-            granular it becomes its own configuration nightmare. The design had to make a genuinely complex permission
-            model
-            feel like a single coherent system a non-technical builder could reason about.</p>
+            <div class="user-story-col">
+              <div class="row">
+                <div class="item">
+                  As an app-builder, I want to set access levels per role at a table-by-table level so that I can
+                  control
+                  which data tables each user role can access.
+                </div>
+              </div>
+              <div class="user-tasks">
+                <h5 class="hidden-mobile-label">User Tasks</h5>
+                <div class="item">Grant a role full access, view only, custom, or no access to a data table in one
+                  action
+                </div>
+                <div class="item">Set permissions for a group of tables at once rather than working through them
+                  table
+                  by table</div>
+                <div class="item">(Optionally) define rules based on field values for greater data access control, e.g.
+                  only allow receptionists
+                  to view patients with a status of Active
+                </div>
+                <div class="item">See at a glance which roles can access which tables across the whole app</div>
+                <div class="item">Find a specific table quickly to check the data permissions set</div>
+              </div>
+            </div>
+
+            <div class="user-story-col">
+              <div class="user-story">
+                <div class="item">
+                  As an app-builder, I want to restrict a user role's access so that users with that role can't edit or
+                  delete records
+                  that aren't owned by them
+                </div>
+              </div>
+              <div class="user-tasks">
+                <h5 class="hidden-mobile-label">User Tasks</h5>
+                <div class="item">Set different permissions for records the user owns and records owned by other users
+                  on the same table</div>
+                <div class="item">Set up multiple conditions within a rule using OR of ANDs</div>
+                <div class="item">Apply a common rule, such as "only records they own", in a single click rather than
+                  building a custom rule from scratch each time</div>
+              </div>
+            </div>
+
+            <div class="user-story-col">
+              <div class="user-story">
+                <div class="item">
+                  As an app-builder, I want to control which fields within a data table a role can view/edit so that
+                  sensitive
+                  information isn't
+                  exposed to all users with access to the table
+                </div>
+              </div>
+              <div class="user-tasks">
+                <h5 class="hidden-mobile-label">User Tasks</h5>
+                <div class="item">Hide specific fields from a user role whilst still allowing them to see other fields
+                  in the record</div>
+                <div class="item">Allow a user role to view a field without being able to edit it</div>
+                <div class="item">See which view rules are already applied to a role when setting their edit permissions
+                </div>
+                <div class="item">Check the effect of a configuration before saving, given the potentially high-impact
+                  consequences of a mistake</div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
+        <div class="full-width-panel-highlight">
+          <div class="panel">
+            <h2>Approach & Design</h2>
+            <h3>Phase 1: Pre-defined Permissions</h3>
+            <p>This was a technically complex project with a lot of backend setup work required, so we split it into
+              two
+              phases. The first phase included allowing users to set up basic, pre-defined permissions per table based
+              on
+              the
+              role. The custom permissions, including the filters and field-specific permissions, were deferred to Phase
+              2.</p>
+            <p>For phase 1, we focused on a new
+              matrix-style table (in line with industry standards and best practice) in a separate Data Permissions area
+              in the part of the builder where User roles and Users were managed. From this table
+              app-builders would be able to select a pre-defined permission level for each role per data table.</p>
+            <p>The pre-defined options were limited to start with, including Full Access, View Only, or No Access. For
+              each
+              table the permission could be set for records owned by the user, and separately for records owned by other
+              users. For example, in an appointments management app for a GP practice, the Care Coordinator role might
+              have full access to the patient
+              records they own, which would be the patients assigned to them, but view-only access to patient records
+              owned
+              by other coordinators.</p>
+
+            <h3>Feedback and Next Steps</h3>
+            <p>Once phase 1 was implemented, we gathered feedback from early adopters:</p>
+            <ul>
+              <li>the matrix view quickly became cluttered when there were a large number of tables because of the dual
+                columns required for each
+                table</li>
+              <li>it was confusing to manage the all users table because there was so much data on screen</li>
+              <li>initial setup was cumbersome because each column had to be configured individually</li>
+            </ul>
+            <p>Some of this feedback was anticipated and was
+              simply a
+              result of phase 2 not having been rolled out yet, but we tested designs for phase 2 to ensure we were
+              creating
+              something that was usable for most people and didn't require them to already be familiar with CRUD
+              permissions
+              management or database structures.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Phase 2</h2>
+          <p>Based on the feedback and the initial implementation plan, I designed missing featured, and re-designed
+            parts of the feature that had been flagged in the feedback. This included:</p>
+          <ul>
+            <li>Reducing visual overload by grouping user tables and data tables into collapsible row groups. This
+              allowed for more focused working and reduced visual load. This also meant I could move the icons
+              indicating the table type to the row group headers rather than per row which also helped with the visual
+              load problem.</li>
+            <li>Allowing users to set permissions for groups of tables from the row group headers. This
+              reduced the time taken to initially set up permissions. We can expand on this in the future by including
+              batch
+              editing options in a later phase.</li>
+            <li>Adding in the missing functionality, such as search and filter options.</li>
+            <li>Including the missing Custom option to give the granularity needed. This was always going to be
+              included in phase 2, but it required a lot of testing to ensure we were creating something people had
+              confidence in using. I utilised an existing pattern we have elsewhere in the Builder which
+              allows
+              users to set up filters and filter groups. The Custom option also allowed users to set up field-level
+              permissions.</li>
+          </ul>
+          <p>For this phase, I created a
+            Claude Design prototype (hooked up to our design system)
+            rather than only Figma designs, partly because it was important when testing the design to be able to show
+            a fully-functional prototype, and
+            also
+            because it was useful to show to engineers and other team members because it was easier to demo
+            the multiple options and combinations involved. Based on feedback on the prototype, we reworded some parts
+            of the design to make functionality clearer, included an example of a common
+            rule
+            which the user could simply click to add, and included a summary of the view permissions in the custom
+            edit section for extra clarity.</li>
+          <h3>Working Prototype</h3>
+          <p>Here is the fully working prototype of phase 2 of the project:</p>
+        </div>
         <div class="panel prototype-panel">
           <div class="prototype-window">
             <button class="prototype-window-bar" type="button" aria-label="Open Data Access Prototype full screen">
@@ -460,6 +599,40 @@ lazy-animations: true
               <span class="prototype-window-expand"><i class="icofont-expand"></i> Open full screen</span>
             </button>
             <iframe src="/prototypes/data-access/index.html" title="Data Access Prototype"></iframe>
+          </div>
+        </div>
+
+        <div class="full-width-panel-highlight">
+          <div class="panel">
+            <h2>Reflections & Learnings</h2>
+            <p>Splitting this into two phases was necessary because of the backend work needed but it did
+              mean
+              releasing something that was incomplete/did not have the full functionality our users needed and much of
+              the phase 1 feedback was about problems we
+              already
+              had solutions planned for. The phased roll-out meant it was at times difficult to
+              separate the issues that come from the design itself and the issues that come from the implementation not
+              being complete. However, what was useful was where the feedback shows us where the phase 1
+              approach
+              did not work at scale, which we improved in the phase 2 designs.</p>
+            <p>Building a working prototype rather than static designs was useful for this project.
+              because the access
+              permissions had many possible setup combinations, flows and dependencies. Being able to
+              click through those combinations surfaced problems that wouldn't have come up in a static Figma design. I
+              still used Figma to spec out more detailed components and UI patterns, but the prototype was much easier
+              to talk through with engineers, user and other team members.</p>
+            <p>Reusing the existing filter group patterns we already had elsewhere in the Builder reduced the learning
+              curve for
+              the user because the pattern was familiar - taking the approach to reuse patterns wherever we could, even
+              where a
+              purpose-built pattern might have been slightly more efficient in isolation was a simple, efficient way to
+              reduce cognitive load.</p>
+            <p>Phase 2 has not yet been implemented, so the designs above are the tested prototype rather than the
+              shipped
+              feature. The main open question is whether the Custom option gives builders enough confidence to
+              use
+              it without needing support - this is something we will be able to measure once the feature has been rolled
+              out.</p>
           </div>
         </div>
       </div>
@@ -492,7 +665,8 @@ lazy-animations: true
               expanding
               and collapsing groups, and
               a clearer distinction between page types. I tested multiple iterations with customers,
-              focusing specifically on whether they could locate pages quickly and understand their app's structure at a
+              focusing specifically on whether they could locate pages quickly and understand their app's structure at
+              a
               glance.</p>
 
           </div>
@@ -558,7 +732,8 @@ lazy-animations: true
             <li>Using locked/unlocked
               icons to indicate which pages are public and which are behind a login. This helped users see at a glance
               the
-              access set for each page, and helped give peace of mind that content was protected by a login when needed.
+              access set for each page, and helped give peace of mind that content was protected by a login when
+              needed.
             </li>
             <li>Adding a pattern to groups of pages behind a login via a dot on pages nested
               below
@@ -593,7 +768,8 @@ lazy-animations: true
               functional
               gap customers had flagged, by allowing users to get a full picture of their page structure
               without manually opening/closing every group.</li>
-            <li>Implementing the common pattern of subtle tree lines in the nested groups helped show which level a page
+            <li>Implementing the common pattern of subtle tree lines in the nested groups helped show which level a
+              page
               sat
               at even several levels deep, or inside a group with many pages.</li>
           </ul>

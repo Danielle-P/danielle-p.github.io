@@ -33,4 +33,4 @@ exclude:
 
 include:
   - prototypes
-  - prototypes/data-access/_ds
+  - prototypes/data-access/ds
