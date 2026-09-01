@@ -43,7 +43,7 @@ lazy-animations: true
 
   <div class="filter-buttons project-filter-buttons">
     <button class="filter-button active" data-filter="redesign">Redesign Project</button>
-    <button class="filter-button" data-filter="data-access">Data Access Project</button>
+    <!-- <button class="filter-button" data-filter="data-access">Data Access Project</button> -->
     <button class="filter-button" data-filter="page-tree">Page Tree Redesign</button>
     <button class="filter-button" data-filter="data-visualisation">Data Visualisation Project</button>
   </div>
@@ -535,7 +535,7 @@ lazy-animations: true
               owned
               by other coordinators.</p>
 
-            <h3>Feedback and Next Steps</h3>
+            <!-- <h3>Feedback and Next Steps</h3>
             <p>Once phase 1 was implemented, we gathered feedback from early adopters:</p>
             <ul>
               <li>the matrix view quickly became cluttered when there were a large number of tables because of the dual
@@ -550,14 +550,126 @@ lazy-animations: true
               creating
               something that was usable for most people and didn't require them to already be familiar with CRUD
               permissions
-              management or database structures.</p>
+              management or database structures.</p> -->
           </div>
         </div>
 
         <div class="panel">
-          <h2>Phase 2</h2>
-          <p>Based on the feedback and the initial implementation plan, I designed missing featured, and re-designed
-            parts of the feature that had been flagged in the feedback. This included:</p>
+          <h3>Feedback and Next Steps</h3>
+          <p>After phase 1 was released, we gathered feedback from early adopters via the CS team, feedback that was
+            sent to us and outreach by the Product Manager to partners. The main feedback included:</p>
+          <ul>
+            <li>Matrix view quickly became cluttered when there were a large number of tables because of the dual
+              columns required for each table, and with more than a few roles it required horizontal scrolling to see
+              the
+              full picture</li>
+            <li>it was confusing to manage the All Users table because there was so much data on screen, and no visual
+              grouping to separate data tables from user tables</li>
+            <li>initial setup was cumbersome because each column had to be configured individually, with no way to set a
+              default and adjust the exceptions</li>
+            <li>it was hard to tell at a glance which parts of the matrix had been deliberately configured and which
+              were
+              still sitting on their default values</li>
+          </ul>
+          <p>Some of this feedback was anticipated and was simply a result of phase 2 not having been rolled out yet,
+            but
+            we tested designs for phase 2 to ensure we were creating something that was usable for most people and
+            didn't
+            require them to already be familiar with CRUD permissions management or database structures.</p>
+        </div>
+
+        <div class="full-width-panel-highlight">
+          <div class="panel">
+            <h2>Phase 2</h2>
+            <h3>Fixes based on Feedback</h3>
+            <p>The first set of phase 2 designs addressed the problems identified in the feedback with the matrix grid:
+            </p>
+            <ul>
+              <li>Grouping user tables and data tables into collapsible row groups to reduce visual load. This
+                allowed
+                for more focused working and also meant I could move the icons indicating the
+                table
+                type to the row group headers rather than repeating them per row, which also helped with the visual load
+                problem.</li>
+              <li>Allowing users to set permissions for groups of tables from the row group headers. This reduced the
+                time
+                taken to initially set up permissions, and gave builders a way to set a broad default and then adjust
+                the
+                individual tables that needed to differ. We can expand on this in the future by including batch editing
+                options in a later phase.</li>
+              <li>Adding in missing functionality, such as search and filter options, which became necessary once apps
+                had more than a handful of tables.</li>
+              <li>Adding a summary of the access levels (Add, View, Edit, Delete) on row for specific user role tables
+                (not
+                the overall matrix, as this would add too much content to that table), so builders could
+                easily see permission levels at a glance.</li>
+            </ul>
+            <p>Alongside the main matrix table showing all user roles, each user role has its own Data Access tab
+              showing a
+              version of the same matrix
+              but limited to that specific role. This gives a summary of what that specific role can access across every
+              table and is used for more specific workflows e.g. when builders are checking 'what can Care Coordinators
+              access?'' this view is more targetted. Keeping the same matrix pattern in both places meant
+              builders were familiar with the UI, but could approach access permissions from either direction depending
+              on
+              their goal (e.g. 'what can Care Coordinators see' vs 'who has access to the Patients table?').</p>
+
+            <h3>Adding a Custom Option</h3>
+            <p>The Custom option had been planned for phase 2 and required a user testing of the designs to ensure we
+              were creating something intuitive that builders were able to use confidently. To restrict access based on
+              conditions as well as user role, I reused an existing pattern we
+              have elsewhere in
+              the
+              Builder which allows users to set up filters and filter groups. The Custom option also allowed users to
+              set
+              up
+              field-level permissions, so that certain user roles would have permission to view and/or edit records but
+              would also be able to exclude certain fields from that. This was particularly important for HIPAA
+              customers
+              who might want to restrict sensitive data in records to only be visible or editable by certain roles,
+              whilst
+              keeping the
+              rest of the record visible/editable.</p>
+            <p>We identified several problems with the first (Figma) versions of the Custom option design:</p>
+            <ul>
+              <li>Relationship between the View, Edit and Delete sections wasn't obvious. A user can only edit records
+                they can view, but the UI in the initial design did not make this dependency visible, so it was possible
+                to
+                set up an
+                edit rule that looked like it granted access it didn't actually grant. This is obvious when thinking
+                about
+                it (e.g. I can't edit something I can't see) but that required extra cognitive load on the user, and the
+                fact this was not spelled out could lead to a lack of confidence in the Custom permission being created.
+              </li>
+              <li>Wording used was too technical. It was closer to the underlying data structure and not close enough to
+                how
+                builders
+                describe what they want. It led to confusion and made the feature harder to use for less technical
+                users.
+              </li>
+              <li>Rules/filters had to be built from scratch. We identified a common use case of needing to restrict a
+                role's view/edit permissions to
+                their own records. Showing this as a pre-built option not only meant users could then add that option
+                with a
+                single click, but also provided an example for how these filters could be used.</li>
+              <li>Field-level permissions at the bottom of each section were not obvious enough and were easy to miss.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Working Prototype</h3>
+          <p>Based on the feedback I iterated on the Figma designs. Instead of continuing in Figma, I created a
+            Claude Design prototype, partly because it was important when testing the design to be able to show a
+            fully-functional
+            prototype, and also because it was easier to demo to engineers and other team members because I was able
+            to
+            build in the multiple settings, combinations of options, and flows we needed. I had previously imported
+            our
+            design system into Claude Design so I was able to use our components in the prototype, and I imported the
+            relevant Figma screens as a starting point.</p>
+          <p>Key changes included:</p>
           <ul>
             <li>Reducing visual overload by grouping user tables and data tables into collapsible row groups. This
               allowed for more focused working and reduced visual load. This also meant I could move the icons
@@ -575,19 +687,7 @@ lazy-animations: true
               users to set up filters and filter groups. The Custom option also allowed users to set up field-level
               permissions.</li>
           </ul>
-          <p>For this phase, I created a
-            Claude Design prototype (hooked up to our design system)
-            rather than only Figma designs, partly because it was important when testing the design to be able to show
-            a fully-functional prototype, and
-            also
-            because it was useful to show to engineers and other team members because it was easier to demo
-            the multiple options and combinations involved. Based on feedback on the prototype, we reworded some parts
-            of the design to make functionality clearer, included an example of a common
-            rule
-            which the user could simply click to add, and included a summary of the view permissions in the custom
-            edit section for extra clarity.</li>
-          <h3>Working Prototype</h3>
-          <p>Here is the fully working prototype of phase 2 of the project:</p>
+          <p>Here is the final, functional prototype:</p>
         </div>
         <div class="panel prototype-panel">
           <div class="prototype-window">
@@ -611,27 +711,33 @@ lazy-animations: true
               the phase 1 feedback was about problems we
               already
               had solutions planned for. The phased roll-out meant it was at times difficult to
-              separate the issues that come from the design itself and the issues that come from the implementation not
+              separate the issues from the design itself from issues that were simply due to the implementation
+              not
               being complete. However, what was useful was where the feedback shows us where the phase 1
               approach
               did not work at scale, which we improved in the phase 2 designs.</p>
-            <p>Building a working prototype rather than static designs was useful for this project.
+            <p>Building a working prototype rather than static designs was useful for this project
               because the access
               permissions had many possible setup combinations, flows and dependencies. Being able to
-              click through those combinations surfaced problems that wouldn't have come up in a static Figma design. I
+              click through those combinations surfaced problems that wouldn't have come up in a static Figma design.
+              I
               still used Figma to spec out more detailed components and UI patterns, but the prototype was much easier
-              to talk through with engineers, user and other team members.</p>
+              to talk through with engineers, user and other team members. With hindsight, it would have been useful to
+              have the prototype for the phase 1 designs.</p>
             <p>Reusing the existing filter group patterns we already had elsewhere in the Builder reduced the learning
               curve for
-              the user because the pattern was familiar - taking the approach to reuse patterns wherever we could, even
+              the user because the pattern was familiar - taking the approach to reuse patterns wherever we could,
+              even
               where a
-              purpose-built pattern might have been slightly more efficient in isolation was a simple, efficient way to
+              purpose-built pattern might have been slightly more efficient in isolation was a simple, efficient way
+              to
               reduce cognitive load.</p>
             <p>Phase 2 has not yet been implemented, so the designs above are the tested prototype rather than the
               shipped
               feature. The main open question is whether the Custom option gives builders enough confidence to
               use
-              it without needing support - this is something we will be able to measure once the feature has been rolled
+              it without needing support - this is something we will be able to measure once the feature has been
+              rolled
               out.</p>
           </div>
         </div>
