@@ -1,0 +1,112 @@
+- project: Knack No-code Platform
+  category: work
+  url: /projects/knack.html
+  section: Redesign Project
+  excerpt: Redesigning the Builder interface, design system, and end-user app experience.
+  keywords: UX, no-code, web app, app builder, product design, design system, interface redesign, user experience, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: knack-redesign
+- project: Knack No-code Platform
+  category: work
+  url: /projects/knack.html
+  section: Information Architecture
+  excerpt: Restructuring element and page settings to make complex configuration easier to navigate.
+  keywords: UX, product design, information architecture, IA, page editor, settings, navigation, patterns, mental models, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: knack-information-architecture
+- project: Knack No-code Platform
+  category: work
+  url: /projects/knack.html
+  section: Design System Impact
+  excerpt: Building a scalable, documented component and patterns library for ongoing product development.
+  keywords: UX, product design, design system, components, patterns, documentation, scalability, UI, visual consistency, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: knack-design-system-impact
+- project: Knack No-code Platform
+  category: work
+  url: /projects/knack.html
+  section: Data Access Permissions
+  excerpt: Designing role-based permissions and field-level access controls for no-code app builders.
+  keywords: UX, product design, data access, permissions, roles, CRUD, tables, fields, user research, prototype, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: data-access
+- project: Vaayu CO2 Emissions Tools
+  category: work
+  url: /projects/vaayu.html
+  section: Carbon Emissions Platform
+  excerpt: Designing dashboards and tools to calculate, track, and reduce carbon emissions.
+  keywords: UX, product design, carbon, CO2, emissions, climate tech, sustainability, dashboard, data visualisation, scenario modelling
+  anchor: vaayu-platform
+- project: QA SaaS Platform
+  category: work
+  url: /projects/qa-platform.html
+  section: Issue Triage Workflow
+  excerpt: Designing a faster way for QA teams to review, accept, reject, and communicate issues.
+  keywords: UX, SaaS, QA, quality assurance, testing, triage, issues, workflow, product design
+  anchor: qa-triage-workflow
+- project: QA SaaS Platform
+  category: work
+  url: /projects/qa-platform.html
+  section: Customer Research and Pain Points
+  excerpt: Using customer interviews and product data to understand the cost and friction of issue triage.
+  keywords: UX, product design, research, customer interviews, user pain points, data, HotJar, discovery
+  anchor: qa-customer-research
+- project: KPMG Customer Voice Dashboards
+  category: work
+  url: /projects/dashboard-design.html
+  section: Insights Dashboard
+  excerpt: Designing customer satisfaction dashboards for different user groups and levels of detail.
+  keywords: UX, product design, dashboard, data visualisation, customer experience, customer insights, KPIs, analytics, information architecture, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: airline-design
+- project: KPMG Customer Voice Dashboards
+  category: work
+  url: /projects/dashboard-design.html
+  section: Reporting Feature
+  excerpt: Redesigning saved reports with visual previews, search, filters, tags, sharing, and export options.
+  keywords: UX, product design, reporting, reports, search, filters, tags, sharing, export, SaaS, component design, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: reports-design
+- project: KPMG Customer Voice Dashboards
+  category: work
+  url: /projects/dashboard-design.html
+  section: Analytics Dashboard
+  excerpt: Creating mobile-friendly KPI dashboards with regional rankings and customer satisfaction data.
+  keywords: UX, product design, analytics, dashboard, mobile, KPIs, rankings, customer satisfaction, data visualisation, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: banking-design
+- project: Insights Dashboard Case Study
+  category: work
+  url: /projects/dashboard-study.html
+  section: Dashboard Overview
+  excerpt: Creating a clear visual overview of business performance, KPIs, and customer satisfaction data.
+  keywords: UX, product design, dashboard, customer insights, KPIs, data visualisation, customer satisfaction, Highcharts, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: insights-dashboard
+- project: MealsUp iOS App
+  category: side
+  url: /projects/mealsup.html
+  section: Meal Planning Experience
+  excerpt: Co-creating an iOS app for planning meals, managing recipes, and generating shopping lists.
+  keywords: iOS, mobile, app, meal planning, recipes, groceries, product design, user journey, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: mealsup-anchor
+- project: adventure.gen App
+  category: side
+  url: /projects/adventure-gen.html
+  section: Narrative Game App
+  excerpt: Designing a simple, flexible interface for an illustrated choose-your-own-adventure game.
+  keywords: iOS, game, interactive, narrative, illustration, app, interaction design, side project, responsive, accessible, accessibility, acessible, WCAG, inclusive design
+  anchor: adventure-narrative-game
+- project: Other Creative Projects
+  category: side
+  url: /projects/other-projects.html
+  section: Illustration and Sketches
+  excerpt: A collection of observational sketches and creative illustration work.
+  keywords: illustration, sketches, drawing, creative, visual design
+  anchor: other-illustration
+- project: UX Diploma Coursework
+  category: side
+  url: /projects/ux-course.html
+  section: Research and Analysis
+  excerpt: Applying competitor analysis, usability testing, empathy mapping, and affinity mapping.
+  keywords: UX, product design, user research, usability testing, competitor analysis, empathy map, affinity mapping
+  anchor: ux-research-analysis
+- project: UX Diploma Coursework
+  category: side
+  url: /projects/ux-course.html
+  section: Flight Booking Design
+  excerpt: Designing a flight booking flow with clear fares, baggage options, pricing, and progress states.
+  keywords: UX, product design, interaction design, information architecture, wireframes, flight booking, mobile, user flow
+  anchor: ux-flight-booking-design

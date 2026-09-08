@@ -223,7 +223,7 @@ button
     position: sticky
     top: 0
     margin: 0 auto
-    padding: 1.4em 0
+    padding: 1.3em 0
     z-index: 3
     +light-dark-color(background, rgba(255, 255, 255, 0.7), rgba(29, 28, 33, 0.7))
     backdrop-filter: blur(10px)
@@ -233,6 +233,7 @@ button
     margin-top: 0
 
   .filter-button
+    height: 40px
     padding: 0.6em 1em
     border: 1px solid transparent
     background: transparent
@@ -256,6 +257,193 @@ button
       +light-dark-color(background, $accent-light, $surface-accent-dark)
       +light-dark-color(color, $white, $white)
       border-color: transparent
+
+.project-controls
+  width: 100%
+  display: flex
+  justify-content: space-between
+  gap: 1.2em
+  margin: 0 auto 0.5em
+
+  .filter-buttons
+    flex: 0 0 auto
+    gap: 0.5em
+    margin: 0
+
+.project-search
+  max-width: 22em
+  flex: 0 1 22em
+  position: relative
+  z-index: 1
+
+  label
+    position: absolute
+    width: 1px
+    height: 1px
+    padding: 0
+    margin: -1px
+    overflow: hidden
+    clip: rect(0, 0, 0, 0)
+    white-space: nowrap
+    border: 0
+
+.project-search-input
+  height: 40px
+  display: flex
+  align-items: center
+  gap: 0.3em
+  padding: 0.6em 0.8em
+  border: 1px solid
+  border-radius: $border-radius
+  +light-dark-color(border-color, $border-light, $border-dark)
+  +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+
+  i
+    font-size: 1em
+    +light-dark-color(color, $accent-light, $accent-dark)
+
+  input
+    width: 100%
+    height: auto
+    padding: 0
+    border: 0
+    outline: 0
+    cursor: text
+    pointer-events: auto
+    background: transparent
+    color: inherit
+    font: inherit
+    opacity: 1
+
+    &::-webkit-search-cancel-button
+      display: none
+
+    &::placeholder
+      opacity: 0.6
+
+.project-search-clear
+  display: none
+  width: 1.5em
+  height: 1.5em
+  flex: 0 0 auto
+  align-items: center
+  justify-content: center
+  padding: 0
+  border: 0
+  background: transparent
+  color: inherit
+  cursor: pointer
+
+  &.is-visible
+    display: flex
+
+  i
+    font-size: 0.9em
+
+.project-search-examples
+  display: none
+  position: absolute
+  top: calc(100%+4px)
+  left: 0
+  right: 0
+  flex-direction: column
+  align-items: stretch
+  gap: 0.2em
+  padding: 0.65em
+  border: 1px solid
+  border-radius: $border-radius
+  +light-dark-color(border-color, $border-light, $border-dark)
+  +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+  box-shadow: 0 0.6em 1.2em -0.8em $shadow
+  z-index: 2
+  font-size: 0.8em
+
+  .project-search-examples-label
+    opacity: 0.8
+    padding: 0.2em 0.5em 0.35em
+    font-size: 1.05em
+    +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
+
+  button
+    width: 100%
+    padding: 0.45em 0.5em
+    border: 0
+    background: transparent
+    text-align: left
+    +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
+    cursor: pointer
+    font: inherit
+    font-size: 1.2em
+
+    &:hover
+      +light-dark-color(color, $accent-light, $accent-dark)
+
+.project-search:focus-within .project-search-examples
+  display: flex
+
+.project-search.has-query .project-search-examples
+  display: none
+
+.project-search-status
+  min-height: 1.3em
+  margin: 0.5em 0 0
+  font-size: 0.85em
+  opacity: 0.7
+
+.project-search-results
+  display: none
+  grid-template-columns: repeat(3, 1fr)
+  gap: 1.2em
+  margin: 0 auto 2em
+
+  &.has-query
+    display: grid
+
+.case-study-tiles .filter-panel.masonry.search-active
+  display: none
+
+.project-search-result
+  display: flex
+  flex-direction: column
+  padding: 1.2em
+  border-radius: $border-radius
+  +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+  +animated-gradient-border()
+  +transition-ease
+
+  &:hover
+    opacity: 1
+
+  &.is-hidden
+    display: none
+
+  h2
+    margin: 0.25em 0 0.4em
+    font-size: 1.2em
+    +light-dark-color(color, $accent-light, $accent-dark)
+
+  p
+    margin: 0 0 0.3em
+    font-size: 0.9em
+
+.project-search-result-project
+  font-size: 0.9em
+  opacity: 0.9
+  +light-dark-color(color, $text-secondary-light, $text-secondary-dark)
+
+.project-search-result-link
+  margin-top: auto
+  font-size: 0.9em
+  +light-dark-color(color, $accent-light, $accent-dark)
+
+.project-search-empty
+  display: none
+  grid-column: 1 / -1
+  margin: 0
+  text-align: center
+
+  &.is-visible
+    display: block
 
 /*Tabs
  **/
@@ -795,12 +983,10 @@ input:checked + .slider
       h2, p
         +light-dark-color(color, $text-primary-dark, $text-primary-dark)
         text-align: center
-        //padding-bottom: 0
         margin: 0
 
       p
         opacity: 0.6
-        //line-height: 1.3
 
     .feature-image
       border-radius: $border-radius

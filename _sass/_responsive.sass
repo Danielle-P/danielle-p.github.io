@@ -223,28 +223,29 @@
         span
           opacity: 100%
 
-  #projects-landing .case-study-tiles .panel
-    grid-template-columns: repeat(2, 1fr)
-    gap: 1.4em
-    grid-auto-rows: auto
-
-    .case-study
-      grid-area: auto
-      width: 100%
-    
-    &#work 
-      .ux-course, .mealsup, .adventure, .other
-        display: none
+  #projects-landing
+    .panel.case-study-tiles .masonry, .project-search-results
+      grid-template-columns: repeat(2, 1fr)
+      gap: 1.4em
+      grid-auto-rows: auto
 
       .case-study
+        width: 100%
         grid-area: auto
+      
+      &#work 
+        .ux-course, .mealsup, .adventure, .other
+          display: none
 
-    &#side
-      .knack, .gat-design, .vaayu, .dashboard, .dashboard-case-study
-        display: none
+        .case-study
+          grid-area: auto
 
-      .case-study
-        grid-area: auto
+      &#side
+        .knack, .gat-design, .vaayu, .dashboard, .dashboard-case-study
+          display: none
+
+        .case-study
+          grid-area: auto
 
   #projects
     .project-details
@@ -275,12 +276,34 @@
           max-height: 12em
 
 @media (max-width: $breakpoint-mobile)
+  #projects-landing .toggle-switch
+    display: none
+
   body main
     min-height: calc(100vh - 84px)
 
     > h1, .caption-container
       max-width: 84%
       margin: 0.5em auto 1.2em
+
+  .filter-buttons
+    justify-content: center
+
+    .filter-button
+      height: 44px
+      padding: 0 1rem
+
+  .filter-buttons.project-filter-buttons
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: 0.5em
+    padding: 1rem
+
+    .filter-button
+      width: 100%
+      height: auto
+      min-height: 44px
+      padding: 0.45em 0.6em
 
   .page-content, .panel, .landing-content, .slide-down-panel 
     max-width: 84%
@@ -459,15 +482,27 @@
     .card-grid, .image-section.three-col, .image-section.four-col
       grid-template-columns: 1fr
 
-  #projects-landing .case-study-tiles
-    .masonry, .masonry#work, .masonry#side
-      grid-template-columns: 1fr
-      gap: 1em
-      grid-auto-rows: auto
+  #projects-landing
+    .case-study-tiles
+      justify-items: center
 
-      .case-study
-        grid-area: auto
-        width: 100%
+      .filter-panel.masonry, .masonry#work, .masonry#side, .project-search-results
+        grid-template-columns: 1fr
+        gap: 1em
+        grid-auto-rows: auto
+
+        .case-study
+          grid-area: auto
+          width: 100%
+          
+      .project-controls
+        flex-direction: column
+        align-items: stretch
+        gap: 1em
+
+        .project-search
+          max-width: none
+          flex: 1 1 auto
 
   #projects
     main.project-details
@@ -537,7 +572,6 @@
 
       .contact-method
         padding: 1em
-
 
 
 // responsive adjustments

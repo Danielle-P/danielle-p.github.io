@@ -6,14 +6,52 @@ background-animation: false
 
 <main>
   <h1>Projects &amp; Roles</h1>
-  <section class="case-study-tiles">
+  <section class="panel case-study-tiles">
 
-    <div class="filter-buttons">
-      <button class="filter-button active" data-filter="all">All</button>
-      <button class="filter-button" data-filter="work">Work Projects</button>
-      <button class="filter-button" data-filter="side">Side Projects</button>
+    <div class="project-controls">
+      <div class="filter-buttons">
+        <button class="filter-button active" data-filter="all">All</button>
+        <button class="filter-button" data-filter="work">Work Projects</button>
+        <button class="filter-button" data-filter="side">Side Projects</button>
+      </div>
+
+      <div class="project-search">
+        <label for="project-search-input">Search for a specific skill or project type...</label>
+        <div class="project-search-input">
+          <i class="icofont-search-1" aria-hidden="true"></i>
+          <input id="project-search-input" type="search" placeholder="Search for a skill or project"
+            autocomplete="off" />
+          <button class="project-search-clear" type="button" aria-label="Clear search" title="Clear search">
+            <i class="icofont-close" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="project-search-examples">
+          <h5 class="project-search-examples-label">Example searches</h5>
+          <button type="button" data-search-example="UX">UX</button>
+          <button type="button" data-search-example="product design">Product design</button>
+          <button type="button" data-search-example="dashboard">Dashboards</button>
+          <button type="button" data-search-example="information architecture">Information architecture</button>
+          <button type="button" data-search-example="accessibility">Accessibility</button>
+        </div>
+        <p class="project-search-status" aria-live="polite"></p>
+      </div>
     </div>
-    <div class="panel filter-panel masonry">
+
+    <div class="project-search-results" aria-live="polite">
+      {% for result in site.data.project-search %}
+      <a class="project-search-result" data-category="{{ result.category }}"
+        data-search="{{ result.project }} {{ result.section }} {{ result.excerpt }} {{ result.keywords }}"
+        href="{{ result.url }}#{{ result.anchor }}">
+        <h5 class="project-search-result-project">{{ result.project }}</h5>
+        <h2>{{ result.section }}</h2>
+        <p>{{ result.excerpt }}</p>
+        <span class="project-search-result-link">View <i class="icofont-dotted-right"></i></span>
+      </a>
+      {% endfor %}
+      <p class="project-search-empty">No matching project sections found.</p>
+    </div>
+
+    <div class="filter-panel masonry">
       <a class="case-study knack" href="/projects/knack.html">
         <div class="info-section">
           <h2>Knack No-code Platform</h2>

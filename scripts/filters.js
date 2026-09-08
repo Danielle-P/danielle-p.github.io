@@ -104,3 +104,60 @@ filterButtons.forEach(button => {
     });
   });
 });
+
+const projectSearchInput = document.querySelector('#project-search-input');
+const projectSearchResults = document.querySelector('.project-search-results');
+
+if (projectSearchInput && projectSearchResults) {
+  const projectSearchStatus = document.querySelector('.project-search-status');
+  const projectSearchClear = document.querySelector('.project-search-clear');
+  const projectSearchExamples = Array.from(document.querySelectorAll('[data-search-example]'));
+  const projectSearchItems = Array.from(projectSearchResults.querySelectorAll('.project-search-result'));
+  const projectSearchEmpty = projectSearchResults.querySelector('.project-search-empty');
+  const projectTiles = document.querySelector('.case-study-tiles .filter-panel.masonry');
+
+  const normalizeSearchText = value => String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, ' ');
+
+  const updateProjectSearch = () => {
+    const query = normalizeSearchText(projectSearchInput.value);
+    const queryWords = query.split(' ').filter(Boolean);
+    let visibleCount = 0;
+
+    projectSearchItems.forEach(item => {
+      const searchableText = normalizeSearchText(item.getAttribute('data-search'));
+      const queryMatches = queryWords.every(word => searchableText.includes(word));
+      const isVisible = Boolean(query) && queryMatches;
+
+      item.classList.toggle('is-hidden', !isVisible);
+      if (isVisible) visibleCount += 1;
+    });
+
+    projectSearchResults.classList.toggle('has-query', Boolean(query));
+    projectSearchInput.closest('.project-search')?.classList.toggle('has-query', Boolean(query));
+    projectTiles?.classList.toggle('search-active', Boolean(query));
+    projectSearchClear?.classList.toggle('is-visible', Boolean(query));
+    projectSearchEmpty.classList.toggle('is-visible', Boolean(query) && visibleCount === 0);
+
+    if (projectSearchStatus) {
+      projectSearchStatus.textContent = query
+        ? `${visibleCount} matching project section${visibleCount === 1 ? '' : 's'}`
+        : '';
+    }
+  };
+
+  projectSearchInput.addEventListener('input', updateProjectSearch);
+  projectSearchClear?.addEventListener('click', () => {
+    projectSearchInput.value = '';
+    updateProjectSearch();
+    projectSearchInput.focus();
+  });
+  projectSearchExamples.forEach(example => example.addEventListener('click', () => {
+    projectSearchInput.value = example.getAttribute('data-search-example') || '';
+    updateProjectSearch();
+    projectSearchInput.focus();
+  }));
+  updateProjectSearch();
+}

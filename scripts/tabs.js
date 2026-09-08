@@ -55,6 +55,26 @@
         })
       })
     })
+
+    const hash = decodeURIComponent(window.location.hash.slice(1))
+    const hashTab = filterContents.find((content) => content.id === hash)
+
+    if (hashTab) {
+      const matchingButton = filterButtons.find((button) =>
+        button.getAttribute('data-filter') === hashTab.getAttribute('data-filter-content'))
+
+      if (matchingButton) {
+        filterButtons.forEach((button) => button.classList.remove('active'))
+        matchingButton.classList.add('active')
+        filterContents.forEach((content) => {
+          content.classList.toggle('show', content === hashTab)
+        })
+
+        window.setTimeout(() => {
+          hashTab.scrollIntoView({behavior: 'smooth', block: 'start'})
+        }, 0)
+      }
+    }
   }
 
 
