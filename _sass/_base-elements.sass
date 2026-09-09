@@ -242,6 +242,7 @@ button
     border-radius: $border-radius
     +light-dark-color(border-color, $border-light, $border-dark)
     +light-dark-color(background, $surface-opaque-light, $surface-opaque-dark)
+    +light-dark-color(color, $text-primary-light, $text-primary-dark)
     +animated-gradient-border()
     overflow: visible
 
@@ -343,7 +344,7 @@ button
 .project-search-examples
   display: none
   position: absolute
-  top: calc(100%+4px)
+  top: calc(100% - 20px)
   left: 0
   right: 0
   flex-direction: column
