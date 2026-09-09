@@ -10,15 +10,16 @@ $border-radius-large: 12px
 // Card/panel backgrounds
 $surface-opaque-light: rgba(255, 255, 255, 1)      
 $surface-accent-light: rgba(43, 100, 110, 0.1)           
-$surface-opaque-dark: rgba(29, 28, 33, 1)
-$surface-accent-dark: rgba(100, 181, 246, 0.3)
+$surface-opaque-dark: rgba(255, 255, 255, 0.045)
+$surface-accent-dark: rgba(184, 175, 230, 0.14)
+$surface-solid-dark: #1E1A28
 
 // Text
 $text-primary-light: #2c3e50      
-$text-primary-dark: #ffffff       
+$text-primary-dark: #E8E5F0
 
 $text-secondary-light: #6c757d    
-$text-secondary-dark: #b8bcc0     
+$text-secondary-dark: #A9A3BA
 
 //not used?
 $text-muted-light: #8a8a8a        
@@ -26,14 +27,15 @@ $text-muted-dark: #888888
 
 // For links/interactive elements
 $accent-light: #2B646E          
-$accent-dark: #d7d4e8
+$accent-dark: #B8AFE6
 
 // Card borders/dividers
 $border-light: rgba(116, 135, 158, 0.3)            
-$border-dark: rgba(116, 135, 158, 0.3)             
+$border-dark: rgba(255, 255, 255, 0.10)
 
 //Box shadows
-$shadow: rgba(0, 0, 0, 0.08)
+$shadow-light: rgba(0, 0, 0, 0.08)
+$shadow-dark: rgba(0, 0, 0, 0.5)
   
 @function theme-color($light, $dark)
   @return light-dark(#{$light}, #{$dark})
@@ -42,7 +44,7 @@ $shadow: rgba(0, 0, 0, 0.08)
   #{$property}: light-dark(#{$light-value}, #{$dark-value})
 
 =background-gradient
-  background: linear-gradient(to bottom, light-dark(#eaf4ff, #110f15), light-dark(#E3E1EF, #302B3D))
+  background: linear-gradient(to bottom, light-dark(#eaf4ff, #14111B), light-dark(#E3E1EF, #241F30))
   -webkit-background-clip: text
   background-clip: text
 
